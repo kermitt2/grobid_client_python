@@ -45,16 +45,15 @@ optional arguments:
   --n N            Concurrency for service usage
 ```
 
-
 Example:
 
 > python3 grobid-client.py --input ~/tmp/in2 --output ~/tmp/out processFulltextDocument
 
-This command will process all the PDF files present in the input directory (file with extension `.pdf` only) with the `processFulltextDocument` service of GROBID, and write the resulting XML TEI files under the output directory, reusing the file name with a different file extension (`.tei.xml`), using the default `10` concurrent workers. 
+This command will process all the PDF files present in the input directory (files with extension `.pdf` only) with the `processFulltextDocument` service of GROBID, and write the resulting XML TEI files under the output directory, reusing the file name with a different file extension (`.tei.xml`), using the default `10` concurrent workers. 
 
 > python3 grobid-client.py --input ~/tmp/in2 --output ~/tmp/out --n 20 processHeaderDocument
 
-This command will process all the PDF files present in the input directory (file with extension `.pdf` only) with the `processHeaderDocument` service of GROBID, and write the resulting XML TEI files under the output directory, reusing the file name with a different file extension (`.tei.xml`), using `20` concurrent workers. 
+This command will process all the PDF files present in the input directory (files with extension `.pdf` only) with the `processHeaderDocument` service of GROBID, and write the resulting XML TEI files under the output directory, reusing the file name with a different file extension (`.tei.xml`), using `20` concurrent workers. 
 
 ## Benchmarking
 
@@ -62,14 +61,14 @@ Full text processing of __136 PDF__ (total 3443 pages, in average 25 pages per P
 
 | n  | runtime (s)| s/PDF | 
 |----|------------|-------|
-| 1  | 209.0 | 1.       | 
-| 2  | 112.0 | 0.       |
-| 3  | 80.4  | 0.       |
-| 5  | 62.9  | 0.       |
-| 8  | 55.7  | 0.       |
-| 10 | 55.3  | 0.       |
+| 1  | 209.0 | 1.54       | 
+| 2  | 112.0 | 0.82       |
+| 3  | 80.4  | 0.59       |
+| 5  | 62.9  | 0.46       |
+| 8  | 55.7  | 0.41       |
+| 10 | 55.3  | 0.40       |
 
-![Runtime Plot](resources/)
+![Runtime Plot](resources/20180928112135.png)
 
 As complementary info, GROBID processing of header, with of the 136 PDF and with `n=10` takes 3.74 s (15 times faster than the complete full text processing because only the two first pages of the PDF are considered). In similar conditions, extraction and structuring of bibliographical references takes 26.9 s.
 

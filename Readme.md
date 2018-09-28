@@ -24,11 +24,6 @@ It is advised to setup first a virtual environment to avoid falling into one of 
 
 > source env/bin/activate
 
-Install the dependencies, use:
-
-> pip3 install -r requirements.txt
-
-
 ## Usage and options
 
 ```

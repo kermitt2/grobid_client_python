@@ -35,13 +35,13 @@ Client for GROBID services
 
 positional arguments:
   service          one of [processFulltextDocument, processHeaderDocument,
-                   processReference]
+                   processReferences]
 
 optional arguments:
   -h, --help       show this help message and exit
   --input INPUT    path to the directory containing PDF to process
+  --output OUTPUT  path to the directory where to put the results
   --config CONFIG  path to the config file, default is ./config.json
-  --output OUTPUT  Path to the directory where to put the results
   --n N            Concurrency for service usage
 ```
 

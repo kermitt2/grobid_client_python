@@ -92,10 +92,10 @@ def test():
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description = "Client for GROBID services")
-    parser.add_argument("service", help="one of [processFulltextDocument, processHeaderDocument, processReference]")
+    parser.add_argument("service", help="one of [processFulltextDocument, processHeaderDocument, processReferences]")
     parser.add_argument("--input", default=None, help="path to the directory containing PDF to process") 
+    parser.add_argument("--output", default=None, help="path to the directory where to put the results") 
     parser.add_argument("--config", default="./config.json", help="path to the config file, default is ./config.json") 
-    parser.add_argument("--output", default=None, help="Path to the directory where to put the results") 
     parser.add_argument("--n", default=10, help="Concurrency for service usage") 
 
     args = parser.parse_args()

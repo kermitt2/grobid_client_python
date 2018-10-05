@@ -1,5 +1,6 @@
 {
     "grobid_server": "localhost",
     "grobid_port": "8070",
-    "batch_size": 1000
+    "batch_size": 1000,
+    "sleep_time": 5
 }

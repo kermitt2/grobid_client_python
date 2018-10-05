@@ -46,7 +46,7 @@ class grobid_client(ApiClient):
             self.process_batch(pdf_files, output, n)
 
     def process_batch(self, pdf_files, output, n):
-        print(len(pdf_files))
+        print(len(pdf_files), "PDF files to process")
         #with concurrent.futures.ThreadPoolExecutor(max_workers=n) as executor:
         with concurrent.futures.ProcessPoolExecutor(max_workers=n) as executor:
             for pdf_file in pdf_files:
@@ -73,7 +73,7 @@ class grobid_client(ApiClient):
         #print(res.text)
 
         if status == 503:
-            time.sleep(5)
+            time.sleep(self.config['sleep_time'])
             return self.process_pdf(pdf_file, output)
         elif status != 200:
             print('Processing failed with error ' + str(status))

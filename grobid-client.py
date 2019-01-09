@@ -63,8 +63,15 @@ class grobid_client(ApiClient):
             )
         }
         
+        the_url = 'http://'+self.config['grobid_server']
+        if len(self.config['grobid_port'])>0:
+            the_url += ":"+self.config['grobid_port']
+        the_url += "/api/"+service
+
+        #print(the_url)
+
         res, status = self.post(
-            url='http://'+self.config['grobid_server']+":"+self.config['grobid_port']+"/api/"+service,
+            url=the_url,
             files=files,
             headers={'Accept': 'text/plain'}
         )

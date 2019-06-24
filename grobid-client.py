@@ -75,7 +75,7 @@ class grobid_client(ApiClient):
         if len(self.config['grobid_port'])>0:
             the_url += ":"+self.config['grobid_port']
         the_url += "/api/"+service
-        print(the_url)
+        #print(the_url)
 
         # set the GROBID parameters
         the_data = {}
@@ -132,6 +132,16 @@ if __name__ == "__main__":
         n = int(args.n)
     except ValueError:
         print("Invalid concurrency parameter n:", n, "n = 10 will be used by default")
+
+    # if output path does not exist, we create it
+    if not os.path.isfile(output_path):
+        try:  
+            print("output directory does not exist but will be created:", output_path)
+            os.makedirs(output_path)
+        except OSError:  
+            print ("Creation of the directory %s failed" % output_path)
+        else:  
+            print ("Successfully created the directory %s" % output_path)
 
     service = args.service
     generateIDs = args.generateIDs

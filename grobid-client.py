@@ -44,7 +44,7 @@ class grobid_client(ApiClient):
         else:
             print("GROBID server is up and running")
 
-    def process(self, input, output, n, service, generateIDs, consolidate_header, consolidate_citations, force):
+    def process(self, input, output, n, service, generateIDs, consolidate_header, consolidate_citations, force, teiCoordinates):
         batch_size_pdf = self.config['batch_size']
         pdf_files = []
 
@@ -52,21 +52,21 @@ class grobid_client(ApiClient):
             pdf_files.append(pdf_file)
 
             if len(pdf_files) == batch_size_pdf:
-                self.process_batch(pdf_files, output, n, service, generateIDs, consolidate_header, consolidate_citations, force)
+                self.process_batch(pdf_files, output, n, service, generateIDs, consolidate_header, consolidate_citations, force, teiCoordinates)
                 pdf_files = []
 
         # last batch
         if len(pdf_files) > 0:
-            self.process_batch(pdf_files, output, n, service, generateIDs, consolidate_header, consolidate_citations, force)
+            self.process_batch(pdf_files, output, n, service, generateIDs, consolidate_header, consolidate_citations, force, teiCoordinates)
 
-    def process_batch(self, pdf_files, output, n, service, generateIDs, consolidate_header, consolidate_citations, force):
+    def process_batch(self, pdf_files, output, n, service, generateIDs, consolidate_header, consolidate_citations, force, teiCoordinates):
         print(len(pdf_files), "PDF files to process")
         #with concurrent.futures.ThreadPoolExecutor(max_workers=n) as executor:
         with concurrent.futures.ProcessPoolExecutor(max_workers=n) as executor:
             for pdf_file in pdf_files:
-                executor.submit(self.process_pdf, pdf_file, output, service, generateIDs, consolidate_header, consolidate_citations, force)
+                executor.submit(self.process_pdf, pdf_file, output, service, generateIDs, consolidate_header, consolidate_citations, force, teiCoordinates)
 
-    def process_pdf(self, pdf_file, output, service, generateIDs, consolidate_header, consolidate_citations, force):
+    def process_pdf(self, pdf_file, output, service, generateIDs, consolidate_header, consolidate_citations, force, teiCoordinates):
         # check if TEI file is already produced 
         # we use ntpath here to be sure it will work on Windows too
         pdf_file_name = ntpath.basename(pdf_file)
@@ -89,7 +89,6 @@ class grobid_client(ApiClient):
         if len(self.config['grobid_port'])>0:
             the_url += ":"+self.config['grobid_port']
         the_url += "/api/"+service
-        #print(the_url)
 
         # set the GROBID parameters
         the_data = {}
@@ -98,7 +97,9 @@ class grobid_client(ApiClient):
         if consolidate_header:
             the_data['consolidateHeader'] = '1'
         if consolidate_citations:
-            the_data['consolidateCitations'] = '1'    
+            the_data['consolidateCitations'] = '1'   
+        if teiCoordinates:
+            the_data['teiCoordinates'] = self.config['coordinates'] 
 
         res, status = self.post(
             url=the_url,
@@ -106,9 +107,6 @@ class grobid_client(ApiClient):
             data=the_data,
             headers={'Accept': 'text/plain'}
         )
-
-        #print(str(status))
-        #print(res.text)
 
         if status == 503:
             time.sleep(self.config['sleep_time'])
@@ -139,6 +137,7 @@ if __name__ == "__main__":
     parser.add_argument("--consolidate_header", action='store_true', help="call GROBID with consolidation of the metadata extracted from the header") 
     parser.add_argument("--consolidate_citations", action='store_true', help="call GROBID with consolidation of the extracted bibliographical references") 
     parser.add_argument("--force", action='store_true', help="force re-processing pdf input files when tei output files already exist")
+    parser.add_argument("--teiCoordinates", action='store_true', help="add the original PDF coordinates (bounding boxes) to the extracted elements")
 
     args = parser.parse_args()
 
@@ -152,7 +151,7 @@ if __name__ == "__main__":
         print("Invalid concurrency parameter n:", n, "n = 10 will be used by default")
 
     # if output path does not exist, we create it
-    if not os.path.isfile(output_path):
+    if not os.path.isdir(output_path):
         try:  
             print("output directory does not exist but will be created:", output_path)
             os.makedirs(output_path)
@@ -166,12 +165,13 @@ if __name__ == "__main__":
     consolidate_header = args.consolidate_header
     consolidate_citations = args.consolidate_citations
     force = args.force
+    teiCoordinates = args.teiCoordinates
 
     client = grobid_client(config_path=config_path)
 
     start_time = time.time()
 
-    client.process(input_path, output_path, n, service, generateIDs, consolidate_header, consolidate_citations, force)
+    client.process(input_path, output_path, n, service, generateIDs, consolidate_header, consolidate_citations, force, teiCoordinates)
 
     runtime = round(time.time() - start_time, 3)
     print("runtime: %s seconds " % (runtime))

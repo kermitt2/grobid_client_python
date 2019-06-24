@@ -27,8 +27,10 @@ It is advised to setup first a virtual environment to avoid falling into one of 
 ## Usage and options
 
 ```
-usage: grobid-client.py [-h] [--input INPUT] [--config CONFIG]
-                        [--output OUTPUT] [--n N]
+usage: grobid-client.py [-h] [--input INPUT] [--output OUTPUT]
+                        [--config CONFIG] [--n N] [--generateIDs]
+                        [--consolidate_header] [--consolidate_citations]
+                        [--force]
                         service
 
 Client for GROBID services
@@ -50,6 +52,8 @@ optional arguments:
   --consolidate_citations
                         call GROBID with consolidation of the extracted
                         bibliographical references
+  --force               force re-processing pdf input files when tei output
+                        files already exist
 ```
 
 Examples:
@@ -61,6 +65,9 @@ This command will process all the PDF files present in the input directory (file
 > python3 grobid-client.py --input ~/tmp/in2 --output ~/tmp/out --n 20 processHeaderDocument
 
 This command will process all the PDF files present in the input directory (files with extension `.pdf` only) with the `processHeaderDocument` service of GROBID, and write the resulting XML TEI files under the output directory, reusing the file name with a different file extension (`.tei.xml`), using `20` concurrent workers. 
+
+By default if an existing `.tei.xml` file is present in the output directory corresponding to a PDF in the input directory, this PDF will be skipped to avoid reprocessing several times the same PDF. To force the processing of PDF and over-write of existing TEI files, use the parameter `--force`.   
+
 
 ## Benchmarking
 

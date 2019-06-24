@@ -8,6 +8,7 @@ import concurrent.futures
 import glob
 from client import ApiClient
 import ntpath
+import requests
 
 '''
 This version uses the standard ProcessPoolExecutor for parallelizing the concurrent calls to the GROBID services. 
@@ -29,6 +30,19 @@ class grobid_client(ApiClient):
         """
         config_json = open(path).read()
         self.config = json.loads(config_json)
+
+        # test if the server is up and running...
+        the_url = 'http://'+self.config['grobid_server']
+        if len(self.config['grobid_port'])>0:
+            the_url += ":"+self.config['grobid_port']
+        the_url += "/api/isalive"
+        r = requests.get(the_url)
+        status = r.status_code
+
+        if status != 200:
+            print('GROBID server does not appear up and running ' + str(status))
+        else:
+            print("GROBID server is up and running")
 
     def process(self, input, output, n, service, generateIDs, consolidate_header, consolidate_citations, force):
         batch_size_pdf = self.config['batch_size']
@@ -103,8 +117,12 @@ class grobid_client(ApiClient):
             print('Processing failed with error ' + str(status))
         else:
             # writing TEI file
-            with io.open(filename,'w',encoding='utf8') as tei_file:
-                tei_file.write(res.text)
+            try:
+                with io.open(filename,'w',encoding='utf8') as tei_file:
+                    tei_file.write(res.text)
+            except OSError:  
+               print ("Writing resulting TEI XML file %s failed" % filename)
+ 
 
 def test():
     client = grobid_client()

@@ -42,7 +42,7 @@ positional arguments:
 optional arguments:
   -h, --help            show this help message and exit
   --input INPUT         path to the directory containing PDF to process
-  --output OUTPUT       path to the directory where to put the results
+  --output OUTPUT       path to the directory where to put the results (optional)
   --config CONFIG       path to the config file, default is ./config.json
   --n N                 concurrency for service usage
   --generateIDs         generate random xml:id to textual XML elements of the
@@ -60,7 +60,9 @@ Examples:
 
 > python3 grobid-client.py --input ~/tmp/in2 --output ~/tmp/out processFulltextDocument
 
-This command will process all the PDF files present in the input directory (files with extension `.pdf` only) with the `processFulltextDocument` service of GROBID, and write the resulting XML TEI files under the output directory, reusing the file name with a different file extension (`.tei.xml`), using the default `10` concurrent workers. 
+This command will process all the PDF files present under the input directory recursively (files with extension `.pdf` only) with the `processFulltextDocument` service of GROBID, and write the resulting XML TEI files under the output directory, reusing the file name with a different file extension (`.tei.xml`), using the default `10` concurrent workers. 
+
+If `--output` is omitted, the resulting XML TEI documents will be produced alongside the PDF in the `--input` directory.
 
 > python3 grobid-client.py --input ~/tmp/in2 --output ~/tmp/out --n 20 processHeaderDocument
 

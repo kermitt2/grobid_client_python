@@ -5,7 +5,6 @@ import json
 import argparse
 import time
 import concurrent.futures
-import glob
 from client import ApiClient
 import ntpath
 import requests
@@ -48,12 +47,14 @@ class grobid_client(ApiClient):
         batch_size_pdf = self.config['batch_size']
         pdf_files = []
 
-        for pdf_file in glob.glob(input + "/*.pdf"):
-            pdf_files.append(pdf_file)
+        for (dirpath, dirnames, filenames) in os.walk(input):
+            for filename in filenames:
+                if filename.endswith('.pdf') or filename.endswith('.PDF'): 
+                    pdf_files.append(os.sep.join([dirpath, filename]))
 
-            if len(pdf_files) == batch_size_pdf:
-                self.process_batch(pdf_files, output, n, service, generateIDs, consolidate_header, consolidate_citations, force, teiCoordinates)
-                pdf_files = []
+                    if len(pdf_files) == batch_size_pdf:
+                        self.process_batch(pdf_files, output, n, service, generateIDs, consolidate_header, consolidate_citations, force, teiCoordinates)
+                        pdf_files = []
 
         # last batch
         if len(pdf_files) > 0:
@@ -70,11 +71,15 @@ class grobid_client(ApiClient):
         # check if TEI file is already produced 
         # we use ntpath here to be sure it will work on Windows too
         pdf_file_name = ntpath.basename(pdf_file)
-        filename = os.path.join(output, os.path.splitext(pdf_file_name)[0] + '.tei.xml')
+        if output is not None:
+            filename = os.path.join(output, os.path.splitext(pdf_file_name)[0] + '.tei.xml')
+        else:
+            filename = os.path.join(ntpath.dirname(pdf_file), os.path.splitext(pdf_file_name)[0] + '.tei.xml')
+
         if not force and os.path.isfile(filename):
             print(filename, "already exist, skipping... (use --force to reprocess pdf input files)")
             return
-        
+
         print(pdf_file)
         files = {
             'input': (
@@ -120,17 +125,13 @@ class grobid_client(ApiClient):
                     tei_file.write(res.text)
             except OSError:  
                print ("Writing resulting TEI XML file %s failed" % filename)
+               pass
  
-
-def test():
-    client = grobid_client()
-    # do some test...
-
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description = "Client for GROBID services")
     parser.add_argument("service", help="one of [processFulltextDocument, processHeaderDocument, processReferences]")
     parser.add_argument("--input", default=None, help="path to the directory containing PDF to process") 
-    parser.add_argument("--output", default=None, help="path to the directory where to put the results") 
+    parser.add_argument("--output", default=None, help="path to the directory where to put the results (optional)") 
     parser.add_argument("--config", default="./config.json", help="path to the config file, default is ./config.json") 
     parser.add_argument("--n", default=10, help="concurrency for service usage") 
     parser.add_argument("--generateIDs", action='store_true', help="generate random xml:id to textual XML elements of the result files") 
@@ -144,14 +145,17 @@ if __name__ == "__main__":
     input_path = args.input
     config_path = args.config
     output_path = args.output
-    n =1
-    try:
-        n = int(args.n)
-    except ValueError:
-        print("Invalid concurrency parameter n:", n, "n = 10 will be used by default")
+    
+    n =10
+    if args.n is not None:
+        try:
+            n = int(args.n)
+        except ValueError:
+            print("Invalid concurrency parameter n:", n, "n = 10 will be used by default")
+            pass
 
     # if output path does not exist, we create it
-    if not os.path.isdir(output_path):
+    if output_path is not None and not os.path.isdir(output_path):
         try:  
             print("output directory does not exist but will be created:", output_path)
             os.makedirs(output_path)

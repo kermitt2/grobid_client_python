@@ -12,7 +12,7 @@ This client has been developed and tested with Python 3.5.
 
 ## Install
 
-Get the github repo:
+__Method 1:__ Get the github repo:
 
 > git clone https://github.com/kermitt2/grobid-client-python
 
@@ -23,6 +23,12 @@ It is advised to setup first a virtual environment to avoid falling into one of 
 > virtualenv --system-site-packages -p python3 env
 
 > source env/bin/activate
+
+__Method 2:__ Install using pip directly from github:
+
+> pip install git+https://github.com/kermitt2/grobid-client-python.git
+
+This will download, build and install the client in your standard python environment. 
 
 ## Usage and options
 

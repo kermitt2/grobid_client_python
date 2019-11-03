@@ -18,11 +18,7 @@ __Method 1:__ Get the github repo:
 
 > cd grobid-client-python
 
-It is advised to setup first a virtual environment to avoid falling into one of these gloomy python dependency marshlands:
-
-> virtualenv --system-site-packages -p python3 env
-
-> source env/bin/activate
+There is nothing more to do to start using the python command lines, see the next section. 
 
 __Method 2:__ Install using pip directly from github:
 

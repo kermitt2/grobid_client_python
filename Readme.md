@@ -24,7 +24,7 @@ __Method 2:__ Install using pip directly from github:
 
 > pip install git+https://github.com/kermitt2/grobid-client-python.git
 
-This will download, build and install the client in your standard python environment. 
+This will download, build and install the client as a library in your standard python environment. You will be able to import it in your python stuff but for using the command lines you will need to use the above Method 1. 
 
 ## Usage and options
 
@@ -43,7 +43,7 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
-  --input INPUT         path to the directory containing PDF to process
+  --input INPUT         path to the directory containing PDF or text to process
   --output OUTPUT       path to the directory where to put the results (optional)
   --config CONFIG       path to the config file, default is ./config.json
   --n N                 concurrency for service usage
@@ -92,7 +92,7 @@ As complementary info, GROBID processing of header of the 136 PDF and with `n=10
 
 ## Todo
 
-Benchmarking with more files (e.g. million ISTEX PDF). Also implement existing GROBID services for text input (date, name, affiliation/address, raw bibliographical references, etc.). Better support for parameters (including elements where to put coordinates).
+Benchmarking with many more files (e.g. million ISTEX PDF). Also implement existing GROBID services for text input (date, name, affiliation/address, raw bibliographical references, etc.). Better support for parameters (including elements where to put coordinates).
 
 ## License and contact
 

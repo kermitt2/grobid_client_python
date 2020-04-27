@@ -12,19 +12,13 @@ This client has been developed and tested with Python 3.5.
 
 ## Install
 
-__Method 1:__ Get the github repo:
+Get the github repo:
 
 > git clone https://github.com/kermitt2/grobid-client-python
 
 > cd grobid-client-python
 
 There is nothing more to do to start using the python command lines, see the next section. 
-
-__Method 2:__ Install using pip directly from github:
-
-> pip install git+https://github.com/kermitt2/grobid-client-python.git
-
-This will download, build and install the client as a library in your standard python environment. You will be able to import it in your python stuff but for using the command lines you will need to use the above Method 1. 
 
 ## Usage and options
 
@@ -72,6 +66,7 @@ This command will process all the PDF files present in the input directory (file
 
 By default if an existing `.tei.xml` file is present in the output directory corresponding to a PDF in the input directory, this PDF will be skipped to avoid reprocessing several times the same PDF. To force the processing of PDF and over-write of existing TEI files, use the parameter `--force`.   
 
+The file `test.py` gives an example of usage from a another python script. 
 
 ## Benchmarking
 

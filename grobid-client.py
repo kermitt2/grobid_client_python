@@ -43,7 +43,7 @@ class grobid_client(ApiClient):
         else:
             print("GROBID server is up and running")
 
-    def process(self, input, output, n, service, generateIDs, consolidate_header, consolidate_citations, force, teiCoordinates):
+    def process(self, input, output, n, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates):
         batch_size_pdf = self.config['batch_size']
         pdf_files = []
 
@@ -53,21 +53,21 @@ class grobid_client(ApiClient):
                     pdf_files.append(os.sep.join([dirpath, filename]))
 
                     if len(pdf_files) == batch_size_pdf:
-                        self.process_batch(pdf_files, output, n, service, generateIDs, consolidate_header, consolidate_citations, force, teiCoordinates)
+                        self.process_batch(pdf_files, output, n, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates)
                         pdf_files = []
 
         # last batch
         if len(pdf_files) > 0:
-            self.process_batch(pdf_files, output, n, service, generateIDs, consolidate_header, consolidate_citations, force, teiCoordinates)
+            self.process_batch(pdf_files, output, n, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates)
 
-    def process_batch(self, pdf_files, output, n, service, generateIDs, consolidate_header, consolidate_citations, force, teiCoordinates):
+    def process_batch(self, pdf_files, output, n, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates):
         print(len(pdf_files), "PDF files to process")
         #with concurrent.futures.ThreadPoolExecutor(max_workers=n) as executor:
         with concurrent.futures.ProcessPoolExecutor(max_workers=n) as executor:
             for pdf_file in pdf_files:
-                executor.submit(self.process_pdf, pdf_file, output, service, generateIDs, consolidate_header, consolidate_citations, force, teiCoordinates)
+                executor.submit(self.process_pdf, pdf_file, output, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates)
 
-    def process_pdf(self, pdf_file, output, service, generateIDs, consolidate_header, consolidate_citations, force, teiCoordinates):
+    def process_pdf(self, pdf_file, output, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates):
         # check if TEI file is already produced 
         # we use ntpath here to be sure it will work on Windows too
         pdf_file_name = ntpath.basename(pdf_file)
@@ -103,6 +103,10 @@ class grobid_client(ApiClient):
             the_data['consolidateHeader'] = '1'
         if consolidate_citations:
             the_data['consolidateCitations'] = '1'   
+        if include_raw_citations:
+            the_data['includeRawCitations'] = '1'
+        if include_raw_affiliations:
+            the_data['includeRawAffiliations'] = '1'
         if teiCoordinates:
             the_data['teiCoordinates'] = self.config['coordinates'] 
 
@@ -115,7 +119,7 @@ class grobid_client(ApiClient):
 
         if status == 503:
             time.sleep(self.config['sleep_time'])
-            return self.process_pdf(pdf_file, output)
+            return self.process_pdf(pdf_file, output, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates)
         elif status != 200:
             print('Processing failed with error ' + str(status))
         else:
@@ -137,6 +141,8 @@ if __name__ == "__main__":
     parser.add_argument("--generateIDs", action='store_true', help="generate random xml:id to textual XML elements of the result files") 
     parser.add_argument("--consolidate_header", action='store_true', help="call GROBID with consolidation of the metadata extracted from the header") 
     parser.add_argument("--consolidate_citations", action='store_true', help="call GROBID with consolidation of the extracted bibliographical references") 
+    parser.add_argument("--include_raw_citations", action='store_true', help="call GROBID requesting the extraction of raw citations") 
+    parser.add_argument("--include_raw_affiliations", action='store_true', help="call GROBID requestiong the extraciton of raw affiliations") 
     parser.add_argument("--force", action='store_true', help="force re-processing pdf input files when tei output files already exist")
     parser.add_argument("--teiCoordinates", action='store_true', help="add the original PDF coordinates (bounding boxes) to the extracted elements")
 
@@ -168,6 +174,8 @@ if __name__ == "__main__":
     generateIDs = args.generateIDs
     consolidate_header = args.consolidate_header
     consolidate_citations = args.consolidate_citations
+    include_raw_citations = args.include_raw_citations
+    include_raw_affiliations = args.include_raw_affiliations
     force = args.force
     teiCoordinates = args.teiCoordinates
 
@@ -175,7 +183,7 @@ if __name__ == "__main__":
 
     start_time = time.time()
 
-    client.process(input_path, output_path, n, service, generateIDs, consolidate_header, consolidate_citations, force, teiCoordinates)
+    client.process(input_path, output_path, n, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates)
 
     runtime = round(time.time() - start_time, 3)
     print("runtime: %s seconds " % (runtime))

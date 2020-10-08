@@ -48,6 +48,10 @@ optional arguments:
   --consolidate_citations
                         call GROBID with consolidation of the extracted
                         bibliographical references
+  --include_raw_citations
+                        call GROBID requesting the extraction of raw citations 
+  --include_raw_affiliations
+                        call GROBID requestiong the extraciton of raw affiliations
   --force               force re-processing pdf input files when tei output
                         files already exist
 ```

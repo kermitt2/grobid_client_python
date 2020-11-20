@@ -5,7 +5,7 @@ import json
 import argparse
 import time
 import concurrent.futures
-from client import ApiClient
+from grobid_client_python.client import ApiClient
 import ntpath
 import requests
 

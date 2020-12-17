@@ -17,11 +17,13 @@ We are moving from first batch to the second one only when the first is entirely
 slightly sub-optimal, but should scale better. However acquiring a list of million of files in directories would
 require something scalable too, which is not implemented for the moment.   
 '''
+
 class grobid_client(ApiClient):
 
     def __init__(self, config_path='./config.json'):
         self.config = None
         self._load_config(config_path)
+        self.cache = []
 
     def _load_config(self, path='./config.json'):
         """
@@ -43,7 +45,7 @@ class grobid_client(ApiClient):
         else:
             print("GROBID server is up and running")
 
-    def process(self, input, output, n, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates):
+    def process(self, input, output, n, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates, download):
         batch_size_pdf = self.config['batch_size']
         pdf_files = []
 
@@ -53,21 +55,29 @@ class grobid_client(ApiClient):
                     pdf_files.append(os.sep.join([dirpath, filename]))
 
                     if len(pdf_files) == batch_size_pdf:
-                        self.process_batch(pdf_files, output, n, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates)
+                        self.process_batch(pdf_files, output, n, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates, download)
                         pdf_files = []
 
         # last batch
         if len(pdf_files) > 0:
-            self.process_batch(pdf_files, output, n, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates)
+            self.process_batch(pdf_files, output, n, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates, download)
 
-    def process_batch(self, pdf_files, output, n, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates):
+
+    def factory_wrapper(self, output, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates, download):
+        return lambda item: self.process_pdf(item, output, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates, download)
+
+
+    def process_batch(self, pdf_files, output, n, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates, download):
         print(len(pdf_files), "PDF files to process")
-        #with concurrent.futures.ThreadPoolExecutor(max_workers=n) as executor:
         with concurrent.futures.ProcessPoolExecutor(max_workers=n) as executor:
+            futures = []
             for pdf_file in pdf_files:
-                executor.submit(self.process_pdf, pdf_file, output, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates)
+                futures.append(executor.submit(self.process_pdf, pdf_file, output, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates, download))
+            for future in concurrent.futures.as_completed(futures):
+                self.cache.append(future.result())
 
-    def process_pdf(self, pdf_file, output, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates):
+
+    def process_pdf(self, pdf_file, output, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates, download):
         # check if TEI file is already produced 
         # we use ntpath here to be sure it will work on Windows too
         pdf_file_name = ntpath.basename(pdf_file)
@@ -109,6 +119,8 @@ class grobid_client(ApiClient):
             the_data['includeRawAffiliations'] = '1'
         if teiCoordinates:
             the_data['teiCoordinates'] = self.config['coordinates'] 
+        if download:
+            the_data['download'] = '1'
 
         res, status = self.post(
             url=the_url,
@@ -119,17 +131,22 @@ class grobid_client(ApiClient):
 
         if status == 503:
             time.sleep(self.config['sleep_time'])
-            return self.process_pdf(pdf_file, output, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates)
+            return self.process_pdf(pdf_file, output, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates, download)
         elif status != 200:
             print('Processing failed with error ' + str(status))
         else:
-            # writing TEI file
-            try:
-                with io.open(filename,'w',encoding='utf8') as tei_file:
-                    tei_file.write(res.text)
-            except OSError:  
-               print ("Writing resulting TEI XML file %s failed" % filename)
-               pass
+            if download:
+                # writing TEI file
+                try:
+                    with io.open(filename,'w',encoding='utf8') as tei_file:
+                        tei_file.write(res.text)
+                except OSError:  
+                    print ("Writing resulting TEI XML file %s failed" % filename)
+                    pass
+            else:
+                print("Saving to cache")
+                return (pdf_file_name, pdf_file, res.text)
+
  
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description = "Client for GROBID services")
@@ -145,6 +162,7 @@ if __name__ == "__main__":
     parser.add_argument("--include_raw_affiliations", action='store_true', help="call GROBID requestiong the extraciton of raw affiliations") 
     parser.add_argument("--force", action='store_true', help="force re-processing pdf input files when tei output files already exist")
     parser.add_argument("--teiCoordinates", action='store_true', help="add the original PDF coordinates (bounding boxes) to the extracted elements")
+    parser.add_argument("--download", action='store_true', help="1 to download the XML files, 0 to return them locally")
 
     args = parser.parse_args()
 
@@ -178,12 +196,13 @@ if __name__ == "__main__":
     include_raw_affiliations = args.include_raw_affiliations
     force = args.force
     teiCoordinates = args.teiCoordinates
+    download = args.download
 
     client = grobid_client(config_path=config_path)
 
     start_time = time.time()
 
-    client.process(input_path, output_path, n, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates)
+    client.process(input_path, output_path, n, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates, download)
 
     runtime = round(time.time() - start_time, 3)
     print("runtime: %s seconds " % (runtime))

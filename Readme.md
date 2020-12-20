@@ -26,7 +26,8 @@ There is nothing more to do to start using the python command lines, see the nex
 usage: grobid_client.py [-h] [--input INPUT] [--output OUTPUT]
                         [--config CONFIG] [--n N] [--generateIDs]
                         [--consolidate_header] [--consolidate_citations]
-                        [--force]
+                        [--include_raw_citations] [--include_raw_affiliations]
+                        [--force] [--teiCoordinates]
                         service
 
 Client for GROBID services
@@ -37,8 +38,9 @@ positional arguments:
 
 optional arguments:
   -h, --help            show this help message and exit
-  --input INPUT         path to the directory containing PDF or text to process
-  --output OUTPUT       path to the directory where to put the results (optional)
+  --input INPUT         path to the directory containing PDF to process
+  --output OUTPUT       path to the directory where to put the results
+                        (optional)
   --config CONFIG       path to the config file, default is ./config.json
   --n N                 concurrency for service usage
   --generateIDs         generate random xml:id to textual XML elements of the
@@ -49,11 +51,14 @@ optional arguments:
                         call GROBID with consolidation of the extracted
                         bibliographical references
   --include_raw_citations
-                        call GROBID requesting the extraction of raw citations 
+                        call GROBID requesting the extraction of raw citations
   --include_raw_affiliations
-                        call GROBID requestiong the extraciton of raw affiliations
+                        call GROBID requestiong the extraciton of raw
+                        affiliations
   --force               force re-processing pdf input files when tei output
                         files already exist
+  --teiCoordinates      add the original PDF coordinates (bounding boxes) to
+                        the extracted elements
 ```
 
 Examples:
@@ -82,6 +87,8 @@ import grobid_client as grobid
 client = grobid.grobid_client(config_path="./config.json")
 client.process("processFulltextDocument", "/mnt/data/covid/pdfs", n=20)
 ```
+
+See also `test.py`.
 
 ## Benchmarking
 

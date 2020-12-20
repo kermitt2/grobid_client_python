@@ -14,8 +14,9 @@ This version uses the standard ProcessPoolExecutor for parallelizing the concurr
 Given the limits of ThreadPoolExecutor (input stored in memory, blocking Executor.map until the whole input
 is acquired), it works with batches of PDF of a size indicated in the config.json file (default is 1000 entries). 
 We are moving from first batch to the second one only when the first is entirely processed - which means it is
-slightly sub-optimal, but should scale better. However acquiring a list of million of files in directories would
-require something scalable too, which is not implemented for the moment.   
+slightly sub-optimal, but should scale better. Working without batch would mean acquiring a list of million of 
+files in directories would require something scalable too (e.g. done in a separate thread), which is not 
+implemented for the moment.
 '''
 class grobid_client(ApiClient):
 
@@ -43,31 +44,44 @@ class grobid_client(ApiClient):
         else:
             print("GROBID server is up and running")
 
-    def process(self, input, output, n, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates):
+    def process(self, service, input_path, 
+            output=None, 
+            n=10, 
+            generateIDs=False, 
+            consolidate_header=True, 
+            consolidate_citations=False, 
+            include_raw_citations=False, 
+            include_raw_affiliations=False, 
+            teiCoordinates=False,
+            force=True):
         batch_size_pdf = self.config['batch_size']
         pdf_files = []
 
-        for (dirpath, dirnames, filenames) in os.walk(input):
+        print(input_path)
+
+        for (dirpath, dirnames, filenames) in os.walk(input_path):
+            print(dirpath, dirnames, filenames)
             for filename in filenames:
                 if filename.endswith('.pdf') or filename.endswith('.PDF'): 
+                    print(filename)
                     pdf_files.append(os.sep.join([dirpath, filename]))
 
                     if len(pdf_files) == batch_size_pdf:
-                        self.process_batch(pdf_files, output, n, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates)
+                        self.process_batch(service, pdf_files, output, n, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, teiCoordinates, force)
                         pdf_files = []
 
         # last batch
         if len(pdf_files) > 0:
-            self.process_batch(pdf_files, output, n, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates)
+            self.process_batch(service, pdf_files, output, n, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, teiCoordinates, force)
 
-    def process_batch(self, pdf_files, output, n, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates):
+    def process_batch(self, service, pdf_files, output, n, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, teiCoordinates, force):
         print(len(pdf_files), "PDF files to process")
         #with concurrent.futures.ThreadPoolExecutor(max_workers=n) as executor:
         with concurrent.futures.ProcessPoolExecutor(max_workers=n) as executor:
             for pdf_file in pdf_files:
-                executor.submit(self.process_pdf, pdf_file, output, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates)
+                executor.submit(self.process_pdf, service, pdf_file, output, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, teiCoordinates, force)
 
-    def process_pdf(self, pdf_file, output, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates):
+    def process_pdf(self, service, pdf_file, output, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, teiCoordinates, force):
         # check if TEI file is already produced 
         # we use ntpath here to be sure it will work on Windows too
         pdf_file_name = ntpath.basename(pdf_file)
@@ -152,7 +166,6 @@ if __name__ == "__main__":
     config_path = args.config
     output_path = args.output
     
-    n =10
     if args.n is not None:
         try:
             n = int(args.n)
@@ -183,7 +196,16 @@ if __name__ == "__main__":
 
     start_time = time.time()
 
-    client.process(input_path, output_path, n, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates)
+    client.process(service, input_path, 
+            output=output_path, 
+            n=n, 
+            generateIDs=generateIDs, 
+            consolidate_header=consolidate_header, 
+            consolidate_citations=consolidate_citations, 
+            include_raw_citations=include_raw_citations, 
+            include_raw_affiliations=include_raw_affiliations, 
+            teiCoordinates=teiCoordinates,
+            force=force)
 
     runtime = round(time.time() - start_time, 3)
     print("runtime: %s seconds " % (runtime))

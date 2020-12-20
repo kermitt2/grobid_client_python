@@ -1,6 +1,6 @@
 # Simple python client for GROBID REST services
 
-This Python client can be used to process in an efficient concurrent manner a set of PDF in a given directory by the [GROBID](https://github.com/kermitt2/grobid) service. Results are written in a given output directory and include the resulting XML TEI representation of the PDF. 
+This Python client can be used to process in an efficient concurrent manner a set of PDF in a given directory by the [GROBID](https://github.com/kermitt2/grobid) service. It includes a command line for processing PDF on a file system and write results in a given output directory and a library for import in other python scripts. 
 
 ## Build and run
 
@@ -8,22 +8,22 @@ You need first to install and start the *grobid* service, latest stable version,
 
 ## Requirements
 
-This client has been developed and tested with Python 3.5.
+This client has been developed and tested with Python `3.5` and should work with any higher `3.*` versions. It does not require any dependencies beyond the standard python ones.
 
 ## Install
 
 Get the github repo:
 
-> git clone https://github.com/kermitt2/grobid-client-python
+> git clone https://github.com/kermitt2/grobid_client_python
 
-> cd grobid-client-python
+> cd grobid_client_python
 
 There is nothing more to do to start using the python command lines, see the next section. 
 
 ## Usage and options
 
 ```
-usage: grobid-client.py [-h] [--input INPUT] [--output OUTPUT]
+usage: grobid_client.py [-h] [--input INPUT] [--output OUTPUT]
                         [--config CONFIG] [--n N] [--generateIDs]
                         [--consolidate_header] [--consolidate_citations]
                         [--force]
@@ -58,13 +58,13 @@ optional arguments:
 
 Examples:
 
-> python3 grobid-client.py --input ~/tmp/in2 --output ~/tmp/out processFulltextDocument
+> python3 grobid_client.py --input ~/tmp/in2 --output ~/tmp/out processFulltextDocument
 
 This command will process all the PDF files present under the input directory recursively (files with extension `.pdf` only) with the `processFulltextDocument` service of GROBID, and write the resulting XML TEI files under the output directory, reusing the file name with a different file extension (`.tei.xml`), using the default `10` concurrent workers. 
 
 If `--output` is omitted, the resulting XML TEI documents will be produced alongside the PDF in the `--input` directory.
 
-> python3 grobid-client.py --input ~/tmp/in2 --output ~/tmp/out --n 20 processHeaderDocument
+> python3 grobid_client.py --input ~/tmp/in2 --output ~/tmp/out --n 20 processHeaderDocument
 
 This command will process all the PDF files present in the input directory (files with extension `.pdf` only) with the `processHeaderDocument` service of GROBID, and write the resulting XML TEI files under the output directory, reusing the file name with a different file extension (`.tei.xml`), using `20` concurrent workers. 
 
@@ -72,18 +72,29 @@ By default if an existing `.tei.xml` file is present in the output directory cor
 
 The file `test.py` gives an example of usage from a another python script. 
 
+## Using the client in your python
+
+Import and call the client as follow:
+
+```
+import grobid_client as grobid
+
+client = grobid.grobid_client(config_path="./config.json")
+client.process("processFulltextDocument", "/mnt/data/covid/pdfs", n=20)
+```
+
 ## Benchmarking
 
 Full text processing of __136 PDF__ (total 3443 pages, in average 25 pages per PDF) on Intel Core i7-4790K CPU 4.00GHz, 4 cores (8 threads), 16GB memory, `n` being the concurrency parameter:
 
 | n  | runtime (s)| s/PDF | PDF/s |
 |----|------------|-------|-------|
-| 1  | 209.0 | 1.54       | 0.65 |
-| 2  | 112.0 | 0.82       | 1.21 |
-| 3  | 80.4  | 0.59       | 1.69 |
-| 5  | 62.9  | 0.46       | 2.16 |
-| 8  | 55.7  | 0.41       | 2.44 |
-| 10 | 55.3  | 0.40       | 2.45 |
+| 1  | 209.0      | 1.54  | 0.65  |
+| 2  | 112.0      | 0.82  | 1.21  |
+| 3  | 80.4       | 0.59  | 1.69  |
+| 5  | 62.9       | 0.46  | 2.16  |
+| 8  | 55.7       | 0.41  | 2.44  |
+| 10 | 55.3       | 0.40  | 2.45  |
 
 ![Runtime Plot](resources/20180928112135.png)
 
@@ -91,7 +102,7 @@ As complementary info, GROBID processing of header of the 136 PDF and with `n=10
 
 ## Todo
 
-Benchmarking with many more files (e.g. million ISTEX PDF). Also implement existing GROBID services for text input (date, name, affiliation/address, raw bibliographical references, etc.). Better support for parameters (including elements where to put coordinates).
+Benchmarking with many more files (e.g. million PDFs). Also implement existing GROBID services for text input (date, name, affiliation/address, raw bibliographical references, etc.). Better support for parameters.
 
 ## License and contact
 

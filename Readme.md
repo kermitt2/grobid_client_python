@@ -27,7 +27,7 @@ usage: grobid_client.py [-h] [--input INPUT] [--output OUTPUT]
                         [--config CONFIG] [--n N] [--generateIDs]
                         [--consolidate_header] [--consolidate_citations]
                         [--include_raw_citations] [--include_raw_affiliations]
-                        [--force] [--teiCoordinates]
+                        [--force] [--teiCoordinates] [--verbose]
                         service
 
 Client for GROBID services
@@ -59,6 +59,8 @@ optional arguments:
                         files already exist
   --teiCoordinates      add the original PDF coordinates (bounding boxes) to
                         the extracted elements
+  --verbose             print information about processed files in the console
+
 ```
 
 Examples:

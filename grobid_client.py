@@ -11,12 +11,12 @@ import requests
 
 '''
 This version uses the standard ProcessPoolExecutor for parallelizing the concurrent calls to the GROBID services. 
-Given the limits of ThreadPoolExecutor (input stored in memory, blocking Executor.map until the whole input
-is acquired), it works with batches of PDF of a size indicated in the config.json file (default is 1000 entries). 
-We are moving from first batch to the second one only when the first is entirely processed - which means it is
-slightly sub-optimal, but should scale better. Working without batch would mean acquiring a list of million of 
-files in directories would require something scalable too (e.g. done in a separate thread), which is not 
-implemented for the moment.
+Given the limits of ThreadPoolExecutor (the legendary GIL, input stored in memory, blocking Executor.map until 
+the whole input is acquired), ProcessPoolExecutor works with batches of PDF of a size indicated in the config.json 
+file (default is 1000 entries). We are moving from first batch to the second one only when the first is entirely 
+processed - which means it is slightly sub-optimal, but should scale better. Working without batch would mean 
+acquiring a list of millions of files in directories and would require something scalable too (e.g. done in a separate 
+thread), which is not implemented for the moment and possibly not implementable in Python as long it uses the GIL.
 '''
 class grobid_client(ApiClient):
 
@@ -53,35 +53,39 @@ class grobid_client(ApiClient):
             include_raw_citations=False, 
             include_raw_affiliations=False, 
             teiCoordinates=False,
-            force=True):
+            force=True,
+            verbose=False):
         batch_size_pdf = self.config['batch_size']
         pdf_files = []
 
-        print(input_path)
-
         for (dirpath, dirnames, filenames) in os.walk(input_path):
-            print(dirpath, dirnames, filenames)
             for filename in filenames:
                 if filename.endswith('.pdf') or filename.endswith('.PDF'): 
-                    print(filename)
+                    if verbose:
+                       try:
+                          print(filename)
+                       except Exception:
+                          # may happen on linux see https://stackoverflow.com/questions/27366479/python-3-os-walk-file-paths-unicodeencodeerror-utf-8-codec-cant-encode-s
+                          pass
                     pdf_files.append(os.sep.join([dirpath, filename]))
 
                     if len(pdf_files) == batch_size_pdf:
-                        self.process_batch(service, pdf_files, output, n, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, teiCoordinates, force)
+                        self.process_batch(service, pdf_files, output, n, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, teiCoordinates, force, verbose)
                         pdf_files = []
 
         # last batch
         if len(pdf_files) > 0:
-            self.process_batch(service, pdf_files, output, n, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, teiCoordinates, force)
+            self.process_batch(service, pdf_files, output, n, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, teiCoordinates, force, verbose)
 
-    def process_batch(self, service, pdf_files, output, n, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, teiCoordinates, force):
-        print(len(pdf_files), "PDF files to process")
+    def process_batch(self, service, pdf_files, output, n, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, teiCoordinates, force, verbose=False):
+        if verbose:
+            print(len(pdf_files), "PDF files to process in current batch")
         #with concurrent.futures.ThreadPoolExecutor(max_workers=n) as executor:
         with concurrent.futures.ProcessPoolExecutor(max_workers=n) as executor:
             for pdf_file in pdf_files:
-                executor.submit(self.process_pdf, service, pdf_file, output, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, teiCoordinates, force)
+                executor.submit(self.process_pdf, service, pdf_file, output, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, teiCoordinates, force, verbose)
 
-    def process_pdf(self, service, pdf_file, output, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, teiCoordinates, force):
+    def process_pdf(self, service, pdf_file, output, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, teiCoordinates, force, verbose=False):
         # check if TEI file is already produced 
         # we use ntpath here to be sure it will work on Windows too
         pdf_file_name = ntpath.basename(pdf_file)
@@ -90,11 +94,10 @@ class grobid_client(ApiClient):
         else:
             filename = os.path.join(ntpath.dirname(pdf_file), os.path.splitext(pdf_file_name)[0] + '.tei.xml')
 
-        if not force and os.path.isfile(filename):
+        if not force and os.path.isfile(filename) and verbose:
             print(filename, "already exist, skipping... (use --force to reprocess pdf input files)")
             return
 
-        print(pdf_file)
         files = {
             'input': (
                 pdf_file,
@@ -146,6 +149,8 @@ class grobid_client(ApiClient):
                pass
  
 if __name__ == "__main__":
+    valid_services = ["processFulltextDocument", "processHeaderDocument", "processReferences"]
+
     parser = argparse.ArgumentParser(description = "Client for GROBID services")
     parser.add_argument("service", help="one of [processFulltextDocument, processHeaderDocument, processReferences]")
     parser.add_argument("--input", default=None, help="path to the directory containing PDF to process") 
@@ -159,6 +164,7 @@ if __name__ == "__main__":
     parser.add_argument("--include_raw_affiliations", action='store_true', help="call GROBID requestiong the extraciton of raw affiliations") 
     parser.add_argument("--force", action='store_true', help="force re-processing pdf input files when tei output files already exist")
     parser.add_argument("--teiCoordinates", action='store_true', help="add the original PDF coordinates (bounding boxes) to the extracted elements")
+    parser.add_argument("--verbose", action='store_true', help="print information about processed files in the console")
 
     args = parser.parse_args()
 
@@ -191,6 +197,11 @@ if __name__ == "__main__":
     include_raw_affiliations = args.include_raw_affiliations
     force = args.force
     teiCoordinates = args.teiCoordinates
+    verbose = args.verbose
+
+    if service is None or not service in valid_services:
+        print("Missing or invalid service, must be one of", valid_services)
+        exit(1)
 
     client = grobid_client(config_path=config_path)
 
@@ -205,7 +216,8 @@ if __name__ == "__main__":
             include_raw_citations=include_raw_citations, 
             include_raw_affiliations=include_raw_affiliations, 
             teiCoordinates=teiCoordinates,
-            force=force)
+            force=force,
+            verbose=verbose)
 
     runtime = round(time.time() - start_time, 3)
     print("runtime: %s seconds " % (runtime))

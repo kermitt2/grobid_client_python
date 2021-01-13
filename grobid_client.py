@@ -1,4 +1,3 @@
-import sys
 import os
 import io
 import json
@@ -8,6 +7,7 @@ import concurrent.futures
 from client import ApiClient
 import ntpath
 import requests
+import pathlib
 
 '''
 This version uses the standard ProcessPoolExecutor for parallelizing the concurrent calls to the GROBID services. 
@@ -140,8 +140,7 @@ class grobid_client(ApiClient):
         else:
             # writing TEI file
             try:
-                if not os.path.exists(os.path.dirname(filename)):
-                    os.makedirs(os.path.dirname(filename))
+                pathlib.Path(os.path.dirname(filename)).mkdir(parents=True, exist_ok=True)
                 with io.open(filename,'w',encoding='utf8') as tei_file:
                     tei_file.write(res.text)
             except OSError:  

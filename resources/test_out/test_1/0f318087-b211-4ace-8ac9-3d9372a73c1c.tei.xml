@@ -1,0 +1,1094 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 /opt/grobid/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main">Clinical Characteristics, Electrophysiology, and Skin Biopsy of 38 Peripheral Neuropathy Cases with Small Fiber Involvement of Various Etiologies</title>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Ovid Technologies (Wolters Kluwer Health)</publisher>
+				<availability status="unknown"><p>Copyright Ovid Technologies (Wolters Kluwer Health)</p>
+				</availability>
+				<date type="published" when="2017-07">2017-07</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0" coords="1,155.71,179.95,20.79,7.91"><forename type="first">Bo</forename><surname>Sun</surname></persName>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0" coords="1,182.03,179.95,28.94,7.91"><forename type="first">Li-Zhi</forename><surname>Liu</surname></persName>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0" coords="1,215.89,179.95,27.54,7.91"><forename type="first">Yi-Fan</forename><surname>Li</surname></persName>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0" coords="1,248.04,179.95,45.03,7.91"><forename type="first">Zhao-Hui</forename><surname>Chen</surname></persName>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0" coords="1,298.67,179.95,20.33,7.91"><forename type="first">Li</forename><surname>Ling</surname></persName>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0" coords="1,324.12,179.95,25.39,7.91"><forename type="first">Fei</forename><surname>Yang</surname></persName>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0" coords="1,354.98,179.95,26.52,7.91"><forename type="first">Fang</forename><surname>Cui</surname></persName>
+						</author>
+						<author>
+							<persName xmlns="http://www.tei-c.org/ns/1.0" coords="1,386.55,179.95,53.02,7.91"><roleName>Dr</roleName><forename type="first">Xu-Sheng</forename><surname>Huang</surname></persName>
+						</author>
+						<author>
+							<affiliation key="aff0">
+								<orgName type="department">Department of Neurology</orgName>
+								<orgName type="institution">Chinese People&apos;s Liberation Army General Hospital</orgName>
+								<address>
+									<postCode>100853</postCode>
+									<settlement>Beijing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<affiliation key="aff1">
+								<orgName type="department">Department of Neurology, Chinese People&apos;s Liberation Army General Hospital</orgName>
+								<address>
+									<addrLine>No. 28 Fuxing Road</addrLine>
+									<postCode>100853</postCode>
+									<settlement>Beijing</settlement>
+									<country key="CN">China</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main">Clinical Characteristics, Electrophysiology, and Skin Biopsy of 38 Peripheral Neuropathy Cases with Small Fiber Involvement of Various Etiologies</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Chinese Medical Journal</title>
+						<title level="j" type="abbrev">Chinese Medical Journal</title>
+						<idno type="ISSN">0366-6999</idno>
+						<imprint>
+							<publisher>Ovid Technologies (Wolters Kluwer Health)</publisher>
+							<biblScope unit="volume">130</biblScope>
+							<biblScope unit="issue">14</biblScope>
+							<biblScope unit="page" from="1683" to="1688"/>
+							<date type="published" when="2017-07" />
+						</imprint>
+					</monogr>
+					<idno type="DOI">10.4103/0366-6999.209897</idno>
+					<note type="submission">Received: 28-02-2017</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.6.1" ident="GROBID" when="2021-01-13T14:04+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Impaired Glucose Tolerance</term>
+					<term>Intraepidermal Nerve Fiber Density</term>
+					<term>Metabolic Syndrome</term>
+					<term>Nerve Conduction Studies</term>
+					<term>Small Fiber Neuropathy</term>
+				</keywords>
+			</textClass>
+			<abstract>
+				<p>Peripheral neuropathy (PN) can be categorized according to the nerves involved. Pure small fiber neuropathy (SFN) affects only the small fiber nerves, pure large fiber neuropathy affects only large fiber nerves, and mixed small and large fiber neuropathy affects both types of nerves. [1] Small diameter, thinly myelinated Aδ and unmyelinated C fibers are primarily affected by SFN, resulting in sensory and/or autonomic symptoms such as allodynia, hyperalgesia, palpitations, and hyper/hypohidrosis. [1,2] Traditional nerve conduction studies (NCS) measure the integrity and function of large fibers independent of small fiber function. Thus, the evaluation of small fiber function has been challenging until the introduction of skin biopsies assessing intraepidermal nerve fiber density (IENFD). [3] Recently, other techniques such as quantitative sensory testing, contact heat evoked potentials, as well as questionnaires and scales (e.g., the SFN and Symptom</p>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<facsimile>
+		<surface n="1" ulx="0.0" uly="0.0" lrx="595.276" lry="807.874"/>
+		<surface n="2" ulx="0.0" uly="0.0" lrx="595.276" lry="807.874"/>
+		<surface n="3" ulx="0.0" uly="0.0" lrx="595.276" lry="807.874"/>
+		<surface n="4" ulx="0.0" uly="0.0" lrx="595.276" lry="807.874"/>
+		<surface n="5" ulx="0.0" uly="0.0" lrx="595.276" lry="807.874"/>
+		<surface n="6" ulx="0.0" uly="0.0" lrx="595.276" lry="807.874"/>
+	</facsimile>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Inventory Questionnaire <ref type="bibr" coords="2,148.52,61.54,19.70,9.69">[SIQ]</ref>), have been applied to evaluate small fiber damage in patients. <ref type="bibr" coords="2,169.29,73.28,6.64,5.65" target="#b0">[1,</ref><ref type="bibr" coords="2,175.93,73.28,2.21,5.65" target="#b2">[4]</ref><ref type="bibr" coords="2,178.15,73.28,2.21,5.65" target="#b3">[5]</ref><ref type="bibr" coords="2,180.36,73.28,4.43,5.65" target="#b4">[6]</ref> However, skin biopsies are still considered the single most reliable and necessary test in the diagnosis of SFN. <ref type="bibr" coords="2,137.41,97.90,6.49,5.65" target="#b0">[1,</ref><ref type="bibr" coords="2,143.90,97.90,4.33,5.65" target="#b5">7]</ref> Various etiologies have been shown to be associated with SFN. <ref type="bibr" coords="2,74.73,128.19,6.70,5.65" target="#b6">[8,</ref><ref type="bibr" coords="2,81.43,128.19,4.47,5.65" target="#b7">9]</ref> Therefore, obtaining a thorough medical history to determine possible causative factors should be carried out in patients suspected having SFN. In general, impaired glucose tolerance (IGT) is the most prevalent etiology resulting in SFN. <ref type="bibr" coords="2,74.33,177.43,6.68,5.65" target="#b6">[8]</ref> In addition to IGT, diabetes, dyslipidemia, connective tissue diseases, HIV infection, hepatitis C and other hepatic disorders, nutritional diseases, hyper/hypothyroidism, paraneoplastic syndromes, and neurotoxic agents such as oxaliplatin, paclitaxel, and vincristine <ref type="bibr" coords="2,213.47,226.67,7.23,5.65" target="#b0">[1,</ref><ref type="bibr" coords="2,220.70,226.67,7.23,5.65" target="#b8">10]</ref> have all been shown to result in SFN. Thorough screening in patients could help identifying the etiology; however, no definitive etiologies are easily identifiable in some patients, which are regarded as having idiopathic neuropathy. <ref type="bibr" coords="2,218.83,275.91,6.80,5.65" target="#b6">[8]</ref> The occurrence of SFN can precede the occurrence of the primary disease, and a routine follow-up should be performed to identify the etiology. <ref type="bibr" coords="2,88.51,312.84,7.40,5.65" target="#b9">[11]</ref><ref type="bibr" coords="2,95.91,312.84,2.47,5.65" target="#b10">[12]</ref><ref type="bibr" coords="2,95.91,312.84,2.47,5.65" target="#b11">[13]</ref><ref type="bibr" coords="2,98.38,312.84,7.40,5.65" target="#b12">[14]</ref> This study aimed to investigate the clinical features, electrophysiological parameters, and IENFD in patients with small fiber PN resulting from a variety of etiologies, and to compare the severity of disease among idiopathic PN, IGT-related PN, and MS-related PN.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Methods</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Ethical approval</head><p>The study was approved by the Ethics Committee of the Chinese People's Liberation Army (PLA) General Hospital, and all patients gave written informed consent before the study.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Patients</head><p>Sixty-eight consecutive patients with small fiber PN presenting to the department of neurology in the Chinese PLA General Hospital from December 20, 2013, to May 31, 2016, were enrolled. All patients presented with sensory or autonomic symptoms, which included disturbance of pinprick sensation and temperature sensation, allodynia, hyperalgesia, numbness, coldness, tightness, burning sensation, tingling sensation, bedsheet intolerance, restless legs, sensation of walking on sand or pebbles, muscle cramps, palpitations, hot flushes, hyper/hypohidrosis, skin discoloration, difficulty in urination, constipation/ diarrhea, sexual dysfunction, or sicca syndrome. A detailed medical history was taken from all patients, and a variety of laboratory tests were performed to screen for underlying etiologies. We identified 38 suitable patients with idiopathic PN (n = 17), IGT-related PN (n = 12), and metabolic syndrome (MS)-related PN (n = 9). Patients were divided into three groups according to the above etiologies. Patients included in the study were 22 males and 16 females, with a mean age of 54 ± 14 years.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Etiology screening</head><p>A detailed medical history was taken, including a history of smoking and alcohol consumption, renal disorders, nutritional diseases, hyper/hypothyroidism, hematological disorders, malignancy, connective tissue diseases, infection with hepatitis C and other hepatic disorders, paraneoplastic syndromes, a medication history, a history of neurotoxic agents, and the presence of a family history of any neuropathy.</p><p>Laboratory tests to determine disease etiology included a complete blood count, erythrocyte sedimentation rate, C-reactive protein, renal and hepatic function, lipid profile, fasting glucose, glycosylated hemoglobin, oral glucose tolerance test, folate and Vitamin B 12 , thyroid function test, antinuclear antibody, anti-extractable nuclear antigens antibody, serum protein electrophoresis, and tumor markers. Diagnosis of impaired fasting glucose, IGT, and diabetes was based on comparison with the diagnostic criteria published by the World Health Organization. <ref type="bibr" coords="2,444.60,287.16,9.71,5.65" target="#b13">[15]</ref> </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Clinical characteristics</head><p>Sensory and autonomic symptoms were recorded using the 13-item SFN-SIQ, which assessed factors including overly-sensitive leg skin, burning feet, bedsheet intolerance, restless legs at night, changes in sweating patterns, presence of diarrhea or constipation, urinary tract problems (including hesitation and incontinence), dry eyes, dry mouth, dizziness when standing up, palpitations, and hot flushes. A 4-point Likert scale (0: never present; 1: sometimes; 2: often; and 3: always present) was used to determine symptom severity. <ref type="bibr" coords="2,530.66,415.75,6.44,5.65" target="#b3">[5,</ref><ref type="bibr" coords="2,537.10,415.75,4.29,5.65" target="#b4">6]</ref> A neurological examination was also performed by an experienced neurologist and included examinations for muscle strength, pinprick and vibration sensation, and deep tendon reflexes. Pinprick and vibration perception were conducted using a disposable safety needle and 128 Hz tuning fork, respectively. As previously described, the neurologist was blinded to the clinical symptoms. <ref type="bibr" coords="2,505.22,506.62,9.71,5.65" target="#b14">[16]</ref> Nerve conduction studies Skin temperature was maintained at or above 32°C during the examination. NCS were performed using surface electrodes on the tibial, peroneal, and sural nerves in both lower limbs using the Keypoint electromyography (EMG) system (Medoc Ltd., Ramat Yishai, Israel). Motor conduction velocities (MCVs), proximal and distal compound muscle action potentials (CMAPs) of the tibial and peroneal nerves, as well as sensory conduction velocities and sensory nerve action potential of the sural nerve were measured. Results were compared with reference values utilized by the EMG laboratory of Chinese PLA General Hospital.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Assessment of intraepidermal nerve fiber density</head><p>Skin biopsies were conducted using a 3-mm diameter skin biopsy punch (Acuderm Inc., Fort Lauderdale, USA) approximately 10 cm above the lateral malleolus under local anesthesia. Specimens were acquired from the side with the most severe symptoms. The right side was selected if the clinical presentation was identical on both sides. Specimens were immunostained using rabbit polyclonal antibodies to human protein gene product 9.5 (Chemicon International Inc., Temecula, USA) as previously described. <ref type="bibr" coords="3,244.85,97.51,7.19,5.65" target="#b1">[3,</ref><ref type="bibr" coords="3,252.04,97.51,7.19,5.65" target="#b15">17]</ref> IENFs were counted in at least three sections as previously described, by two independent researchers blind to the clinical data. <ref type="bibr" coords="3,106.85,134.05,9.89,5.65" target="#b16">[18]</ref> A computerized imaging system -Image Pro Plus 6.0 (Media Cybernetics, Silver Spring, USA) was used to measure epidermal length. Thus, the average IENFD (number of fibers/mm) was calculated. An IENFD below the fifth percentile of the worldwide normative reference value was considered abnormal. <ref type="bibr" coords="3,225.73,194.95,9.89,5.65" target="#b17">[19]</ref> Statistical analysis SPSS version 19.0 (IBM, Armonk, USA) was applied to perform statistical analysis. Partial correlations, which were controlled for age and gender, were analyzed to determine relationships among the IENFD and visual analog scale (VAS), SFN-SIQ, and nerve conduction parameters. Analysis of variance (ANOVA) was conducted to compare the differences among idiopathic PN, IGT-related PN, and MS-related PN groups. Post hoc analyses (Least Significant Difference and Student-Newman-Keuls) were performed if significant differences were identified in the ANOVA. Kruskal-Wallis test was conducted if data were not normally distributed.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>results</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Clinical characteristics</head><p>All patients presented with a disturbance in pinprick sensation, temperature sensation, and/or allodynia or hyperalgesia, which was in accordance with the clinical manifestations of SFN.</p><p>Mean VAS score of all patients included was 4.66 ± 3.56. Mean VAS scores of all groups are presented in <ref type="table" coords="3,255.43,471.82,29.33,9.69" target="#tab_0">Table 1</ref>. No significant differences in VAS scores were revealed among the three groups ( χ 2 = 2.102, P = 0.350). Mean SFN-SIQ score of all patients included was 5.74 ± 2.42. Mean SFN-SIQ scores for all groups were also presented in <ref type="table" coords="3,53.76,532.72,27.13,9.69" target="#tab_0">Table 1</ref>. The mean SFN-SIQ score was significantly different among the three groups (F = 14.433, P &lt; 0.001). The mean SFN-SIQ score was significantly increased (P &lt; 0.001) in the MS-related PN group compared to IGT-related PN group. The mean SFN-SIQ score was significantly increased (P &lt; 0.001) in MS-related PN group compared to the idiopathic PN group (P &lt; 0.001).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Nerve conduction study and skin biopsy analysis</head><p>NCS was abnormal in 17 patients and normal in 21 patients. According to the international normative reference value, IENFD parameters were abnormal in 15 patients and normal in 23 patients. Eight patients were diagnosed with pure SFN, seven patients were diagnosed with mixed small and large fiber neuropathy, 10 patients were diagnosed with pure large fiber neuropathy, and 13 patients did not display any abnormalities in NCS and skin biopsies.</p><p>In the IGT-related PN group, three patients were diagnosed with mixed small and large fiber neuropathy, six patients were diagnosed with pure large fiber neuropathy, and three patients did not display any abnormalities in NCS and skin biopsies.</p><p>In the MS-related PN group, three patients were diagnosed with pure SFN, four patients were diagnosed with mixed small and large fiber neuropathy, one patient was diagnosed with pure large fiber neuropathy, and one patient did not display any abnormalities in NCS and skin biopsies.</p><p>In the idiopathic PN group, five patients were diagnosed with pure SFN, three patients were diagnosed with pure large fiber neuropathy, and nine patients did not display any abnormalities in NCS and skin biopsies.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Relationships among intraepidermal nerve fiber density, visual analog scale, small fiber neuropathy and symptom inventory questionnaire, and nerve conduction studies</head><p>The partial correlation coefficient between the IENFD and SFN-SIQ was r = −0.668 (P &lt; 0.001), indicating a moderate correlation. The partial correlation coefficient between the IENFD and MCV of the tibial nerve was r = 0.372 (P = 0.025), indicating low correlation. The partial correlation coefficient between the IENFD and proximal and distal CMAP of the tibial nerve was r = 0.383 (P = 0.021) and r = 0.358 (P = 0.032), respectively, indicating a low correlation. The partial correlation coefficient between the IENFD and MCV of the peroneal nerve was r = 0.399 (P = 0.016), indicating a low correlation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Comparison of parameters among different groups</head><p>IENFD parameters were significantly different among all three groups ( χ 2 = 9.901, P = 0.007). IENFD was significantly decreased ( χ 2 = 23.000, P = 0.003) in the MS-related PN group compared to the idiopathic PN group. IENFD was also decreased ( χ 2 = 27.000, P = 0.058) in the MS-related PN group compared to the IGT-related PN group, however, with no significant difference. IENFD was also decreased ( χ 2 = 64.000, P = 0.097) in the IGT-related PN group compared to the idiopathic PN group, again with no significant difference [ <ref type="table" coords="3,397.88,674.26,27.27,9.69" target="#tab_1">Table 2</ref>].</p><p>The MCV of the tibial nerve was significantly different among all three groups ( χ 2 = 8.172, P = 0.017). The MCV of the tibial nerve was also significantly decreased ( χ 2 = 29.503, P &lt; 0.009) in the MS-related PN group compared to the idiopathic PN group. The proximal and distal CMAP of the tibial nerve was significantly different between all three groups (F = 4.336, P = 0.021; F = 3.262, P = 0.049), respectively. The proximal CMAP of the tibial nerve was significantly decreased (P = 0.017) in the IGT-related PN group compared to the idiopathic PN group. The proximal CMAP of the tibial nerve was significantly decreased (P = 0.022) in the MS-related PN group compared to the idiopathic PN group. Furthermore, the distal CMAP of the tibial nerve was significantly decreased (P = 0.035) in the IGT-related PN group compared to the idiopathic PN group. The distal CMAP of the tibial nerve was significantly decreased (P = 0.049) in the MS-related PN group compared to the idiopathic PN group [ <ref type="table" coords="4,83.95,453.85,27.28,9.69" target="#tab_1">Table 2</ref>].</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>dIscussIon</head><p>This study identified that IENFD weakly correlated with the MCV and proximal and distal CMAPs of the tibial nerve. IENFD also weakly correlated with the MCV of the peroneal nerve. However, a conflicting study has previously demonstrated that IENFD does not relate to NCS parameters in patients with IGT and early diabetes, <ref type="bibr" coords="4,216.98,557.39,9.80,5.65" target="#b18">[20]</ref> indicating that the severity of small and large fiber damage may not coincide. Such findings may be accounted for by the fact that patients in the study were in the initial stages of IGT or diabetes-associated neuropathy, suggesting they may not have extensive nerve damage. The initial stages of IGT or diabetes-associated neuropathy involve small fiber damage, eventually progressing to large fiber involvement. <ref type="bibr" coords="4,259.92,642.53,9.80,5.65" target="#b18">[20]</ref> The aforementioned report enrolled only 14 patients, six with IGT and eight with early-stage diabetes. The small number of patients in that study may have led to a certain degree of outcome bias. In another previously published study, <ref type="bibr" coords="4,271.20,691.18,9.80,5.65" target="#b19">[21]</ref> a low to moderate correlation was identified between IENFD and the electrophysiological parameters in diabetic patients, which was in accordance with the findings in our study. One study <ref type="bibr" coords="4,97.95,739.83,10.10,5.65" target="#b19">[21]</ref> has indicated IENFD correlated with the various parameters of NCS, which is in accordance with our study. Furthermore, another study <ref type="bibr" coords="4,443.31,307.37,9.80,5.65" target="#b20">[22]</ref> found NCS remained within the normal range in type 2 diabetes, but there was a small significant decline after 5 years; IENFD changed from normal to abnormal after 5-year follow-up. This suggests that during early stages of IGT/diabetes-associated neuropathy, only IENFD are involved, and IENFD does not correlate initially with NCS parameters. Nevertheless, as the disease progresses, IENFD and electrophysiological parameters correlate, suggesting advancement in the degree of nerve damage. A recent study indicated that IENFD was able to serve as a marker of the course of diabetic neuropathy. <ref type="bibr" coords="4,354.02,441.50,9.80,5.65" target="#b21">[23]</ref> This study also demonstrated that IENFD significantly decreased in the MS-related group compared to the idiopathic PN group. The mean IENFD in the MS-related group was lower than that of the IGT-related group, although was not significantly different. The mean IENFD in the IGT-related group was lower than that of the idiopathic PN group, again with no significant difference. The MCV of the tibial nerve was significantly decreased in the MS-related PN group compared to the idiopathic PN group, and the proximal and distal CMAP of the tibial nerve was significantly different between all three groups. In a study focusing on IGT and diabetes-associated neuropathy, IENFD and electrophysiological parameters were reduced in diabetics compared to IGT-related PN patients, although not significantly. <ref type="bibr" coords="4,453.47,630.08,10.06,5.65" target="#b18">[20]</ref> The small number of included patients in that study may account for such findings. In our study, the number of included patients was comparably larger in comparison to other previously published reports, with significant differences in IENFD and NCS parameters between IGT/MS-related and idiopathic PN groups. This suggests that improving the number of patients in such a study might increase the power of the statistical findings associated with clinical parameters.  The IENFD and various NCS parameters in the MS-related PN group were decreased compared to the IGT-related PN group and idiopathic PN groups. Another study also indicated distal leg IENFD was significantly reduced in both MS and diabetic groups. <ref type="bibr" coords="5,118.28,108.97,9.71,5.65" target="#b22">[24]</ref> This may be caused by several factors. First, obesity, hypertension, and in particular, hyperlipidemia are crucial risk factors for small fiber damage. <ref type="bibr" coords="5,233.01,132.97,9.67,5.65" target="#b19">[21,</ref><ref type="bibr" coords="5,242.68,132.97,7.25,5.65" target="#b23">25,</ref><ref type="bibr" coords="5,249.93,132.97,7.25,5.65" target="#b24">26]</ref> Indeed, MS is more prevalent in patients with severe PN than with mild/moderate PN, <ref type="bibr" coords="5,131.25,156.97,9.71,5.65" target="#b23">[25]</ref> supporting our finding that IENFD in the MS-related PN group was lower. Second, in the MS-related PN group, six patients were diagnosed with diabetes mellitus, and three were diagnosed with IGT, which may partially explain the lower IENFD in the MS-related PN group compared with the IGT-related PN groups. In a recent study, dynamic worsening was present in relation to changes in glucose tolerance status, which was in accordance with our findings. <ref type="bibr" coords="5,124.73,252.97,9.71,5.65" target="#b25">[27]</ref> What's more, the IENFD and electrophysiological parameters in the idiopathic PN group were the least affected. The occurrence of SFN can precede the presentation of primary disease, with approximately 35-50% of idiopathic SFN cases being confirmed as IGT-related SFN. <ref type="bibr" coords="5,195.65,318.64,7.18,5.65" target="#b9">[11]</ref><ref type="bibr" coords="5,202.83,318.64,2.39,5.65" target="#b10">[12]</ref><ref type="bibr" coords="5,202.83,318.64,2.39,5.65" target="#b11">[13]</ref><ref type="bibr" coords="5,205.23,318.64,7.18,5.65" target="#b12">[14]</ref><ref type="bibr" coords="5,212.40,318.64,7.18,5.65" target="#b26">28]</ref> Dyslipidemia has also been identified in patients with idiopathic PN in routine follow-up. <ref type="bibr" coords="5,95.83,342.64,9.71,5.65" target="#b24">[26]</ref> Patients presenting with idiopathic PN in our study may precede IGT or dyslipidemia, thus, small and large fiber damage in the idiopathic PN group was less severe than in the IGT-and MS-related PN groups. Therefore, a routine follow-up to search for etiologies associated with idiopathic PN is of vital importance.</p><p>It is important, to mention that a limitation of this study was that the relatively small number of the patients. Large sample studies are warranted, and the relationship between dyslipidemia and PN should be evaluated in further studies.</p><p>In conclusion, the IENFD of patients included in our study weakly correlated with certain electrophysiological parameters. Peripheral nerves, including both small and large fibers, were more severely involved in MS-related PN than in idiopathic PN. All possible auxiliary examinations and routine follow-up should be conducted to search for underlying etiologies in idiopathic PN patients.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0" coords="4,365.73,233.74,172.82,7.75;4,56.72,243.34,481.83,7.75;4,56.72,252.94,481.84,7.75;4,56.72,262.54,481.84,7.75;4,56.72,272.14,481.83,7.75"><head>:</head><label></label><figDesc>Motor conduction velocity of tibial nerve; T.PCMAP: Proximal compound muscle action potential of tibial nerve; T.DCMAP: Distal compound muscle action potential of tibial nerve; PERI.MCV: Motor conduction velocity of peroneal nerve; P.PCMAP: Proximal compound muscle action potential of peroneal nerve; P.DCMAP (mV): Distal compound muscle action potential of peroneal nerve; SURA.SCV: Sensory conduction velocity of sural nerve; S.SNAP: Sensory nerve action potential of sural nerve; IGT: Impaired glucose tolerance; MS: Metabolic syndrome; PN: Peripheral neuropathy; SD: Standard deviation; NCS: Nerve conduction studies.</figDesc></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_0" coords="3,56.60,636.15,229.09,112.95"><head>Table 1 : VAS and SFN-SIQ scores of different types of peripheral neuropathy patients with small fiber involvement</head><label>1</label><figDesc></figDesc><table coords="3,56.60,665.12,229.09,83.99"><row><cell>Items</cell><cell>IGT-related</cell><cell>MS-related</cell><cell>Idiopathic</cell></row><row><cell></cell><cell>PN (n = 12)</cell><cell>PN (n = 9)</cell><cell>PN (n = 17)</cell></row><row><cell>VAS</cell><cell>3.75 ± 3.91</cell><cell>6.00 ± 3.91</cell><cell>4.59 ± 3.08</cell></row><row><cell>SFN-SIQ</cell><cell>5.33 ± 1.67</cell><cell>8.56 ± 2.51</cell><cell>4.53 ± 1.55</cell></row><row><cell cols="4">Data are shown as mean ± SD. VAS: Visual analog scale; SFN-SIQ: The</cell></row><row><cell cols="4">Small Fiber Neuropathy and Symptom Inventory Questionnaire; IGT:</cell></row><row><cell cols="4">Impaired glucose tolerance; MS: Metabolic syndrome; PN: Peripheral</cell></row><row><cell cols="2">neuropathy; SD: Standard deviation.</cell><cell></cell><cell></cell></row></table><note></note></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" type="table" xml:id="tab_1" coords="4,56.72,66.96,482.03,174.53"><head>Table 2 : IENFD and NCS parameters among different types of peripheral neuropathy patients with small fiber involvement</head><label>2</label><figDesc>Data are shown as n or mean ± SD. *F value. IENFD: Intraepidermal nerve fiber density; TIBI.MCV</figDesc><table coords="4,56.72,83.75,481.16,146.68"><row><cell>Parameters</cell><cell>IGT-related PN (n = 12)</cell><cell>MS-related PN (n = 9)</cell><cell>Idiopathic PN (n = 17)</cell><cell>F or χ 2</cell><cell>P</cell></row><row><cell>Age (years)</cell><cell>56.8 ± 12.7</cell><cell>60.2 ± 15.6</cell><cell>49.6 ± 14.2</cell><cell>1.924*</cell><cell>0.161</cell></row><row><cell>Gender (male), n</cell><cell>7</cell><cell>5</cell><cell>10</cell><cell>0.424</cell><cell>0.809</cell></row><row><cell>IENFD (number of</cell><cell>4.66 ± 5.25</cell><cell>2.57 ± 2.60</cell><cell>6.25 ± 2.51</cell><cell>9.901</cell><cell>0.007</cell></row><row><cell>fibers/mm)</cell><cell></cell><cell></cell><cell></cell><cell></cell><cell></cell></row><row><cell>TIBI.MCV (m/s)</cell><cell>40.48 ± 13.35</cell><cell>36.34 ± 15.68</cell><cell>47.44 ± 6.09</cell><cell>8.172</cell><cell>0.017</cell></row><row><cell>T.PCMAP (mV)</cell><cell>5.26 ± 3.39</cell><cell>5.03 ± 5.24</cell><cell>10.31 ± 6.42</cell><cell>4.336*</cell><cell>0.021</cell></row><row><cell>T.DCMAP (mV)</cell><cell>7.41 ± 4.91</cell><cell>7.32 ± 7.09</cell><cell>12.72 ± 6.97</cell><cell>3.262*</cell><cell>0.049</cell></row><row><cell>PERI.MCV (m/s)</cell><cell>42.24 ± 13.78</cell><cell>35.47 ± 20.24</cell><cell>47.98 ± 5.24</cell><cell>2.926</cell><cell>0.232</cell></row><row><cell>P.PCMAP (mV)</cell><cell>3.54 ± 2.64</cell><cell>4.10 ± 3.73</cell><cell>5.79 ± 2.84</cell><cell>2.189*</cell><cell>0.127</cell></row><row><cell>P.DCMAP (mV)</cell><cell>4.15 ± 3.20</cell><cell>4.86 ± 3.92</cell><cell>6.81 ± 2.27</cell><cell>3.024*</cell><cell>0.061</cell></row><row><cell>SURA.SCV (m/s)</cell><cell>34.43 ± 25.60</cell><cell>35.53 ± 27.02</cell><cell>46.48 ± 18.17</cell><cell>1.792</cell><cell>0.408</cell></row><row><cell>S.SNAP (µV)</cell><cell>4.68 ± 5.25</cell><cell>7.33 ± 8.30</cell><cell>9.59 ± 9.40</cell><cell>1.314*</cell><cell>0.282</cell></row></table><note></note></figure>
+		</body>
+		<back>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Financial support and sponsorship</head></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conflicts of interest</head><p>There are no conflicts of interest.</p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct coords="5,68.06,722.19,220.59,7.75;5,68.06,731.79,220.58,7.75;5,68.06,741.39,200.59,7.75;5,306.64,61.48,234.78,7.75;5,320.81,71.19,220.58,7.75;5,320.81,80.90,91.64,7.75" xml:id="b0">
+	<analytic>
+		<title level="a" type="main">Small fiber neuropathy: A common and important clinical disorder</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">E</forename><surname>Hoitsma</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">J</forename><forename type="middle">P</forename><surname>Reulen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">M</forename><surname>De Baets</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">M</forename><surname>Drent</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">F</forename><surname>Spaans</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">C</forename><forename type="middle">G</forename><surname>Faber</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jns.2004.08.012.2</idno>
+		<idno>doi: 10.1097/01. wco.0000093103.34793.5a</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Curr Opin Neurol</title>
+		<imprint>
+			<biblScope unit="volume">227</biblScope>
+			<biblScope unit="page" from="601" to="603" />
+			<date type="published" when="2003" />
+		</imprint>
+	</monogr>
+	<note>J Neurol Sci</note>
+</biblStruct>
+
+<biblStruct coords="5,320.81,90.62,220.57,7.75;5,320.81,100.33,220.59,7.75;5,320.81,110.04,220.58,7.75;5,320.81,119.75,58.22,7.75" xml:id="b1">
+	<analytic>
+		<title level="a" type="main">Cutaneous innervation in sensory neuropathies: Evaluation by skin biopsy</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">B</forename><forename type="middle">G</forename><surname>Mccarthy</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S-T</forename><surname>Hsieh</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">A</forename><surname>Stocks</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">P</forename><surname>Hauer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">C</forename><surname>Macko</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">D</forename><forename type="middle">R</forename><surname>Cornblath</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">W</forename><surname>Griffin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><forename type="middle">C</forename><surname>Mcarthur</surname></persName>
+		</author>
+		<idno type="DOI">10.1212/wnl.45.10.1848</idno>
+		<idno>doi: 10.1212/ WNL.45.10.1848</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Neurology</title>
+		<title level="j" type="abbrev">Neurology</title>
+		<idno type="ISSN">0028-3878</idno>
+		<idno type="ISSNe">1526-632X</idno>
+		<imprint>
+			<biblScope unit="volume">45</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="1848" to="1855" />
+			<date type="published" when="1995-10-01" />
+			<publisher>Ovid Technologies (Wolters Kluwer Health)</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,320.81,129.47,220.58,7.75;5,320.81,139.18,220.59,7.75;5,320.81,148.89,220.58,7.75;5,320.81,158.60,90.45,7.75" xml:id="b2">
+	<analytic>
+		<title level="a" type="main">Contact Heat-Evoked Potential Stimulation for the Evaluation of Small Nerve Fiber Function</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Henri</forename><forename type="middle">K</forename><surname>Parson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Van</forename><forename type="middle">T</forename><surname>Nguyen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Michael-Angelo</forename><surname>Orciga</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Amanda</forename><forename type="middle">L</forename><surname>Boyd</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Carolina</forename><forename type="middle">M</forename><surname>Casellini</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Aaron</forename><forename type="middle">I</forename><surname>Vinik</surname></persName>
+		</author>
+		<idno type="DOI">10.1089/dia.2012.0202</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Diabetes Technology &amp; Therapeutics</title>
+		<title level="j" type="abbrev">Diabetes Technology &amp; Therapeutics</title>
+		<idno type="ISSN">1520-9156</idno>
+		<idno type="ISSNe">1557-8593</idno>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="150" to="157" />
+			<date type="published" when="2013-02" />
+			<publisher>Mary Ann Liebert Inc</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,320.81,168.32,220.58,7.75;5,320.81,178.03,220.58,7.75;5,320.81,187.74,156.66,7.75" xml:id="b3">
+	<analytic>
+		<title level="a" type="main">Small fibers, large impact: Quality of life in small-fiber neuropathy</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Mayienne</forename><surname>Bakkers</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Catharina</forename><forename type="middle">G</forename><surname>Faber</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Janneke</forename><forename type="middle">G J</forename><surname>Hoeijmakers</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Giuseppe</forename><surname>Lauria</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Ingemar</forename><forename type="middle">S J</forename><surname>Merkies</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/mus.23910</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Muscle &amp; Nerve</title>
+		<title level="j" type="abbrev">Muscle Nerve</title>
+		<idno type="ISSN">0148-639X</idno>
+		<imprint>
+			<biblScope unit="volume">49</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="329" to="336" />
+			<date type="published" when="2013-06-28" />
+			<publisher>Wiley</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,320.81,197.45,220.58,7.75;5,320.81,207.17,220.59,7.75;5,320.81,216.88,220.58,7.75;5,320.81,226.59,83.54,7.75" xml:id="b4">
+	<analytic>
+		<title level="a" type="main">Intraepidermal nerve fiber density and its application in sarcoidosis</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">M</forename><surname>Bakkers</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">I</forename><forename type="middle">S J</forename><surname>Merkies</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">G</forename><surname>Lauria</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">G</forename><surname>Devigili</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">P</forename><surname>Penza</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">R</forename><surname>Lombardi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><forename type="middle">C E</forename><surname>Hermans</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">S</forename><forename type="middle">I</forename><surname>Van Nes</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">M</forename><surname>De Baets</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">C</forename><forename type="middle">G</forename><surname>Faber</surname></persName>
+		</author>
+		<idno type="DOI">10.1212/wnl.0b013e3181bacf05</idno>
+		<idno>doi: 10.1212/ WNL.0b013e3181bacf05</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Neurology</title>
+		<title level="j" type="abbrev">Neurology</title>
+		<idno type="ISSN">0028-3878</idno>
+		<idno type="ISSNe">1526-632X</idno>
+		<imprint>
+			<biblScope unit="volume">73</biblScope>
+			<biblScope unit="issue">14</biblScope>
+			<biblScope unit="page" from="1142" to="1148" />
+			<date type="published" when="2009-10-05" />
+			<publisher>Ovid Technologies (Wolters Kluwer Health)</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,320.81,236.30,220.58,7.75;5,320.81,246.02,220.58,7.75;5,320.81,255.73,220.58,7.75;5,320.81,265.44,74.22,7.75" xml:id="b5">
+	<analytic>
+		<title level="a" type="main">The diagnostic criteria for small fibre neuropathy: from symptoms to neuropathology</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">G</forename><surname>Devigili</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">V</forename><surname>Tugnoli</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">P</forename><surname>Penza</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">F</forename><surname>Camozzi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">R</forename><surname>Lombardi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">G</forename><surname>Melli</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">L</forename><surname>Broglio</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">E</forename><surname>Granieri</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">G</forename><surname>Lauria</surname></persName>
+		</author>
+		<idno type="DOI">10.1093/brain/awn093</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Brain</title>
+		<title level="j" type="abbrev">Brain</title>
+		<idno type="ISSN">0006-8950</idno>
+		<idno type="ISSNe">1460-2156</idno>
+		<imprint>
+			<biblScope unit="volume">131</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="1912" to="1925" />
+			<date type="published" when="2008-06-04" />
+			<publisher>Oxford University Press (OUP)</publisher>
+		</imprint>
+	</monogr>
+	<note>Pt 7</note>
+</biblStruct>
+
+<biblStruct coords="5,320.81,275.15,220.60,7.75;5,320.81,284.87,220.61,7.75;5,320.81,294.58,220.59,7.75;5,320.81,304.29,59.78,7.75" xml:id="b6">
+	<analytic>
+		<title level="a" type="main">Increased Prevalence of Impaired Glucose Tolerance in Patients With Painful Sensory Neuropathy</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">J</forename><forename type="middle">R</forename><surname>Singleton</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">A</forename><forename type="middle">G</forename><surname>Smith</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">M</forename><forename type="middle">B</forename><surname>Bromberg</surname></persName>
+		</author>
+		<idno type="DOI">10.2337/diacare.24.8.1448</idno>
+		<idno>doi: 10.2337/ diacare.24.8.1448</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Diabetes Care</title>
+		<title level="j" type="abbrev">Diabetes Care</title>
+		<idno type="ISSN">0149-5992</idno>
+		<idno type="ISSNe">1935-5548</idno>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page" from="1448" to="1453" />
+			<date type="published" when="2001-08-01" />
+			<publisher>American Diabetes Association</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,320.81,314.00,220.59,7.75;5,320.81,323.71,220.58,7.75;5,320.81,333.43,205.46,7.75" xml:id="b7">
+	<analytic>
+		<title level="a" type="main">The clinical approach to small fibre neuropathy and painful channelopathy</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Andreas</forename><forename type="middle">C</forename><surname>Themistocleous</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Juan</forename><forename type="middle">D</forename><surname>Ramirez</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Jordi</forename><surname>Serra</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">David</forename><forename type="middle">L H</forename><surname>Bennett</surname></persName>
+		</author>
+		<idno type="DOI">10.1136/practneurol-2013-000758</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Practical Neurology</title>
+		<title level="j" type="abbrev">Pract Neurol</title>
+		<idno type="ISSN">1474-7758</idno>
+		<idno type="ISSNe">1474-7766</idno>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="368" to="379" />
+			<date type="published" when="2014-04-28" />
+			<publisher>BMJ</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,320.81,343.14,220.58,7.75;5,320.81,352.85,220.58,7.75;5,320.81,362.56,220.58,7.75;5,320.81,372.28,63.41,7.75" xml:id="b8">
+	<analytic>
+		<title level="a" type="main">Chemotherapy-induced peripheral neuropathy: Current status and progress</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Jamie</forename><forename type="middle">R</forename><surname>Brewer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Gladys</forename><surname>Morrison</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">M</forename><forename type="middle">Eileen</forename><surname>Dolan</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Gini</forename><forename type="middle">F</forename><surname>Fleming</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.ygyno.2015.11.011</idno>
+		<idno>doi: 10.1016/j. ygyno.2015.11.011</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Gynecologic Oncology</title>
+		<title level="j" type="abbrev">Gynecologic Oncology</title>
+		<idno type="ISSN">0090-8258</idno>
+		<imprint>
+			<biblScope unit="volume">140</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="176" to="183" />
+			<date type="published" when="2016-01" />
+			<publisher>Elsevier BV</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,320.81,381.99,220.57,7.75;5,320.81,391.70,220.58,7.75;5,320.81,401.41,152.36,7.75" xml:id="b9">
+	<analytic>
+		<title level="a" type="main">Painful sensory polyneuropathy associated with impaired glucose tolerance</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">J</forename><forename type="middle">Robinson</forename><surname>Singleton</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">A</forename><forename type="middle">Gordon</forename><surname>Smith</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Mark</forename><forename type="middle">B</forename><surname>Bromberg</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/mus.1136</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Muscle &amp; Nerve</title>
+		<title level="j" type="abbrev">Muscle Nerve</title>
+		<idno type="ISSN">0148-639X</idno>
+		<idno type="ISSNe">1097-4598</idno>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="1225" to="1228" />
+			<date type="published" when="2001" />
+			<publisher>Wiley</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,320.81,411.13,220.57,7.75;5,320.81,420.84,220.59,7.75;5,320.81,430.55,183.92,7.75" xml:id="b10">
+	<analytic>
+		<title level="a" type="main">The spectrum of neuropathy in diabetes and impaired glucose tolerance</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">C</forename><forename type="middle">J</forename><surname>Sumner</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">S</forename><surname>Sheth</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">J</forename><forename type="middle">W</forename><surname>Griffin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">D</forename><forename type="middle">R</forename><surname>Cornblath</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">M</forename><surname>Polydefkis</surname></persName>
+		</author>
+		<idno type="DOI">10.1212/wnl.60.1.108</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Neurology</title>
+		<title level="j" type="abbrev">Neurology</title>
+		<idno type="ISSN">0028-3878</idno>
+		<idno type="ISSNe">1526-632X</idno>
+		<imprint>
+			<biblScope unit="volume">60</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="108" to="111" />
+			<date type="published" when="2003-01-14" />
+			<publisher>Ovid Technologies (Wolters Kluwer Health)</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,320.81,440.26,220.60,7.75;5,320.81,449.98,220.59,7.75;5,320.81,459.69,184.22,7.75" xml:id="b11">
+	<analytic>
+		<title level="a" type="main">The Diagnostic Yield of a Standardized Approach to Idiopathic Sensory-Predominant Neuropathy</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">A</forename><forename type="middle">Gordon</forename><surname>Smith</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">J</forename><forename type="middle">Robinson</forename><surname>Singleton</surname></persName>
+		</author>
+		<idno type="DOI">10.1001/archinte.164.9.1021</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Archives of Internal Medicine</title>
+		<title level="j" type="abbrev">Arch Intern Med</title>
+		<idno type="ISSN">0003-9926</idno>
+		<imprint>
+			<biblScope unit="volume">164</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page">1021</biblScope>
+			<date type="published" when="2004-05-10" />
+			<publisher>American Medical Association (AMA)</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,320.81,469.40,220.58,7.75;5,320.81,479.11,220.59,7.75;5,320.81,488.83,220.58,7.75;5,320.81,498.54,33.04,7.75" xml:id="b12">
+	<analytic>
+		<title level="a" type="main">The frequency of undiagnosed diabetes and impaired glucose tolerance in patients with idiopathic sensory neuropathy</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Steven</forename><forename type="middle">P</forename><surname>Novella</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Silvio</forename><forename type="middle">E</forename><surname>Inzucchi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Jonathan</forename><forename type="middle">M</forename><surname>Goldstein</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/mus.1137</idno>
+		<idno>doi: 10.1002/ mus.1137</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Muscle &amp; Nerve</title>
+		<title level="j" type="abbrev">Muscle Nerve</title>
+		<idno type="ISSN">0148-639X</idno>
+		<idno type="ISSNe">1097-4598</idno>
+		<imprint>
+			<biblScope unit="volume">24</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="1229" to="1231" />
+			<date type="published" when="2001" />
+			<publisher>Wiley</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,320.81,508.25,220.57,7.75;5,320.81,517.96,220.58,7.75;5,320.81,527.68,87.17,7.75" xml:id="b13">
+	<monogr>
+		<title level="m" type="main">Child mental health and psychosocial development.</title>
+		<idno type="DOI">10.1037/e400972004-001</idno>
+		<imprint>
+			<date type="published" when="1977" />
+			<publisher>American Psychological Association (APA)</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,320.81,537.39,220.58,7.75;5,320.81,547.10,145.51,7.75" xml:id="b14">
+	<monogr>
+		<title level="m" type="main">DeJong&apos;s the Neurologic Examination</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">A</forename><forename type="middle">F</forename><surname>Haerer</surname></persName>
+		</author>
+		<imprint>
+			<date type="published" when="1992" />
+			<publisher>Lippincott Williams &amp; Wilkins</publisher>
+			<biblScope unit="page">107</biblScope>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,320.81,556.81,220.59,7.75;5,320.81,566.53,220.58,7.75;5,320.81,576.24,220.58,7.75;5,320.81,585.95,78.44,7.75" xml:id="b15">
+	<analytic>
+		<title level="a" type="main">Intraepidermal nerve fiber density in patients with painful sensory neuropathy</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">N</forename><forename type="middle">R</forename><surname>Holland</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">A</forename><surname>Stocks</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">P</forename><surname>Hauer</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">D</forename><forename type="middle">R</forename><surname>Cornblath</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">J</forename><forename type="middle">W</forename><surname>Griffin</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">J</forename><forename type="middle">C</forename><surname>Mcarthur</surname></persName>
+		</author>
+		<idno type="DOI">10.1212/wnl.48.3.708</idno>
+		<idno>doi: 12.2316/WNL.32.7.122</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Neurology</title>
+		<title level="j" type="abbrev">Neurology</title>
+		<idno type="ISSN">0028-3878</idno>
+		<idno type="ISSNe">1526-632X</idno>
+		<imprint>
+			<biblScope unit="volume">48</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="708" to="711" />
+			<date type="published" when="1997-03-01" />
+			<publisher>Ovid Technologies (Wolters Kluwer Health)</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,320.81,595.66,220.58,7.75;5,320.81,605.38,220.58,7.75;5,320.81,615.09,107.54,7.75" xml:id="b16">
+	<analytic>
+		<title level="a" type="main">The innervation of human epidermis</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">W</forename><forename type="middle">R</forename><surname>Kennedy</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">G</forename><surname>Wendelschafer-Crabb</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/0022-510X</idno>
+	</analytic>
+	<monogr>
+		<title level="j">J Neurol Sci</title>
+		<imprint>
+			<biblScope unit="volume">115</biblScope>
+			<biblScope unit="issue">93</biblScope>
+			<biblScope unit="page">90223</biblScope>
+			<date type="published" when="1993" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,320.81,624.80,220.58,7.75;5,320.81,634.51,220.58,7.75;5,320.81,644.23,220.58,7.75;5,320.81,653.94,114.22,7.75" xml:id="b17">
+	<analytic>
+		<title level="a" type="main">Intraepidermal nerve fiber density at the distal leg: a worldwide normative reference study</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Giuseppe</forename><surname>Lauria</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Mayienne</forename><surname>Bakkers</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Christoph</forename><surname>Schmitz</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Raffaella</forename><surname>Lombardi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Paola</forename><surname>Penza</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Grazia</forename><surname>Devigili</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">A</forename><forename type="middle">Gordon</forename><surname>Smith</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Sung-Tsieh</forename><surname>Hsieh</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Svein</forename><forename type="middle">I</forename><surname>Mellgren</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Thirugnanam</forename><surname>Umapathi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Dan</forename><surname>Ziegler</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Catharina</forename><forename type="middle">G</forename><surname>Faber</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Ingemar</forename><forename type="middle">S J</forename><surname>Merkies</surname></persName>
+		</author>
+		<idno type="DOI">10.1111/j.1529-8027.2010.00271.x</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of the Peripheral Nervous System</title>
+		<idno type="ISSN">1085-9489</idno>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="202" to="207" />
+			<date type="published" when="2010-09" />
+			<publisher>Wiley</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,320.81,663.65,220.58,7.75;5,320.81,673.36,220.58,7.75;5,320.81,683.08,220.58,7.75;5,320.81,692.79,54.22,7.75" xml:id="b18">
+	<analytic>
+		<title level="a" type="main">Epidermal nerve innervation in impaired glucose tolerance and diabetes-associated neuropathy</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">A</forename><forename type="middle">G</forename><surname>Smith</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">P</forename><surname>Ramachandran</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">S</forename><surname>Tripp</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">J</forename><forename type="middle">R</forename><surname>Singleton</surname></persName>
+		</author>
+		<idno type="DOI">10.1212/wnl.57.9.1701</idno>
+		<idno>doi: 10.1212/ WNL.57.9.1701</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Neurology</title>
+		<title level="j" type="abbrev">Neurology</title>
+		<idno type="ISSN">0028-3878</idno>
+		<idno type="ISSNe">1526-632X</idno>
+		<imprint>
+			<biblScope unit="volume">57</biblScope>
+			<biblScope unit="issue">9</biblScope>
+			<biblScope unit="page" from="1701" to="1704" />
+			<date type="published" when="2001-11-13" />
+			<publisher>Ovid Technologies (Wolters Kluwer Health)</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,320.81,702.50,220.58,7.75;5,320.81,712.21,220.61,7.75;5,320.81,721.93,220.61,7.75;5,320.81,731.64,185.90,7.75" xml:id="b19">
+	<analytic>
+		<title level="a" type="main">Intraepidermal nerve fiber density and nerve conduction study parameters correlate with clinical staging of diabetic polyneuropathy</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Aiko</forename><surname>Arimura</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Takahisa</forename><surname>Deguchi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Kazuhiro</forename><surname>Sugimoto</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Tadashi</forename><surname>Uto</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Tomonori</forename><surname>Nakamura</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Yumiko</forename><surname>Arimura</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Kimiyoshi</forename><surname>Arimura</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Soroku</forename><surname>Yagihashi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Yoshihiko</forename><surname>Nishio</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Hiroshi</forename><surname>Takashima</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.diabres.2012.09.026</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Diabetes Research and Clinical Practice</title>
+		<title level="j" type="abbrev">Diabetes Research and Clinical Practice</title>
+		<idno type="ISSN">0168-8227</idno>
+		<imprint>
+			<biblScope unit="volume">99</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="24" to="29" />
+			<date type="published" when="2013-01" />
+			<publisher>Elsevier BV</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="5,320.81,741.35,220.58,7.75;6,68.06,61.48,220.58,7.75;6,68.06,71.08,220.58,7.75;6,68.06,80.68,60.67,7.75" xml:id="b20">
+	<analytic>
+		<title level="a" type="main">Small and large fiber neuropathy in those with type 1 and type 2 diabetes: a 5-year follow-up study</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Sissel</forename><surname>Løseth</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Erik</forename><forename type="middle">V</forename><surname>Stålberg</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Sigurd</forename><surname>Lindal</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Edel</forename><surname>Olsen</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Rolf</forename><surname>Jorde</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Svein</forename><forename type="middle">I</forename><surname>Mellgren</surname></persName>
+		</author>
+		<idno type="DOI">10.1111/jns.12154</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of the Peripheral Nervous System</title>
+		<title level="j" type="abbrev">J Peripher Nerv Syst</title>
+		<idno type="ISSN">1085-9489</idno>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="15" to="21" />
+			<date type="published" when="2016-03" />
+			<publisher>Wiley</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="6,68.06,90.28,220.58,7.75;6,68.06,99.88,220.58,7.75;6,68.06,109.48,220.58,7.75;6,68.06,119.08,130.66,7.75" xml:id="b21">
+	<analytic>
+		<title level="a" type="main">Intraepidermal nerve-fibre density as a biomarker of the course of neuropathy in patients with Type 2 diabetes mellitus</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">S</forename><surname>Divisova</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">E</forename><surname>Vlckova</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">I</forename><surname>Srotova</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">S</forename><surname>Kincova</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">M</forename><surname>Skorna</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">L</forename><surname>Dusek</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">P</forename><surname>Dubovy</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">J</forename><surname>Bednarik</surname></persName>
+		</author>
+		<idno type="DOI">10.1111/dme.12890</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Diabetic Medicine</title>
+		<title level="j" type="abbrev">Diabet. Med.</title>
+		<idno type="ISSN">0742-3071</idno>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="issue">5</biblScope>
+			<biblScope unit="page" from="650" to="654" />
+			<date type="published" when="2015-09-07" />
+			<publisher>Wiley</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="6,68.06,128.68,220.57,7.75;6,68.06,138.28,220.58,7.75;6,68.06,147.88,220.58,7.75;6,68.06,157.48,63.33,7.75" xml:id="b22">
+	<analytic>
+		<title level="a" type="main">Supervised exercise improves cutaneous reinnervation capacity in metabolic syndrome patients</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">J</forename><forename type="middle">Robinson</forename><surname>Singleton</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Robin</forename><forename type="middle">L</forename><surname>Marcus</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Margaret</forename><forename type="middle">K</forename><surname>Lessard</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Justin</forename><forename type="middle">E</forename><surname>Jackson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">A</forename><forename type="middle">Gordon</forename><surname>Smith</surname></persName>
+		</author>
+		<idno type="DOI">10.1002/ana.24310</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Annals of Neurology</title>
+		<title level="j" type="abbrev">Ann Neurol.</title>
+		<idno type="ISSN">0364-5134</idno>
+		<imprint>
+			<biblScope unit="volume">77</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="146" to="153" />
+			<date type="published" when="2014-12-04" />
+			<publisher>Wiley</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="6,68.06,167.08,220.58,7.75;6,320.81,61.48,220.58,7.75;6,320.81,71.08,126.22,7.75" xml:id="b23">
+	<analytic>
+		<title level="a" type="main">Metabolic Syndrome in Small Fiber Sensory Neuropathy</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Lan</forename><surname>Zhou</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Jianbo</forename><surname>Li</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Daniel</forename><surname>Ontaneda</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Joshua</forename><surname>Sperling</surname></persName>
+		</author>
+		<idno type="DOI">10.1097/cnd.0b013e3182196e3c</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of Clinical Neuromuscular Disease</title>
+		<title level="j" type="abbrev">Journal of Clinical Neuromuscular Disease</title>
+		<idno type="ISSN">1522-0443</idno>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="235" to="243" />
+			<date type="published" when="2011-06" />
+			<publisher>Ovid Technologies (Wolters Kluwer Health)</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="6,320.81,80.68,220.58,7.75;6,320.81,90.28,220.58,7.75;6,320.81,99.88,85.78,7.75" xml:id="b24">
+	<analytic>
+		<title level="a" type="main">Idiopathic neuropathy patients are at high risk for metabolic syndrome</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">A</forename><forename type="middle">Gordon</forename><surname>Smith</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Kristi</forename><surname>Rose</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">J</forename><forename type="middle">Robinson</forename><surname>Singleton</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.jns.2008.06.005</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Journal of the Neurological Sciences</title>
+		<title level="j" type="abbrev">Journal of the Neurological Sciences</title>
+		<idno type="ISSN">0022-510X</idno>
+		<imprint>
+			<biblScope unit="volume">273</biblScope>
+			<biblScope unit="issue">1-2</biblScope>
+			<biblScope unit="page" from="25" to="28" />
+			<date type="published" when="2008-10" />
+			<publisher>Elsevier BV</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="6,320.81,109.48,220.57,7.75;6,320.81,119.08,220.58,7.75;6,320.81,128.68,220.58,7.75;6,320.81,138.28,211.31,7.75" xml:id="b25">
+	<analytic>
+		<title level="a" type="main">Corneal Confocal Microscopy Identifies Small-Fiber Neuropathy in Subjects With Impaired Glucose Tolerance Who Develop Type 2 Diabetes</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Shazli</forename><surname>Azmi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Maryam</forename><surname>Ferdousi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Ioannis</forename><forename type="middle">N</forename><surname>Petropoulos</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Georgios</forename><surname>Ponirakis</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Uazman</forename><surname>Alam</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Hassan</forename><surname>Fadavi</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Omar</forename><surname>Asghar</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Andrew</forename><surname>Marshall</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Andrew</forename><forename type="middle">J</forename><surname>Atkinson</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Wendy</forename><surname>Jones</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Andrew</forename><forename type="middle">J M</forename><surname>Boulton</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Mitra</forename><surname>Tavakoli</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Maria</forename><surname>Jeziorska</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0"><forename type="first">Rayaz</forename><forename type="middle">A</forename><surname>Malik</surname></persName>
+		</author>
+		<idno type="DOI">10.2337/dc14-2733</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Diabetes Care</title>
+		<title level="j" type="abbrev">Dia Care</title>
+		<idno type="ISSN">0149-5992</idno>
+		<idno type="ISSNe">1935-5548</idno>
+		<imprint>
+			<biblScope unit="volume">38</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page" from="1502" to="1508" />
+			<date type="published" when="2015-04-15" />
+			<publisher>American Diabetes Association</publisher>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="6,320.81,147.88,220.58,7.75;6,320.81,157.48,220.58,7.75;6,320.81,167.08,122.89,7.75" xml:id="b26">
+	<analytic>
+		<title level="a" type="main">Glucose tolerance testing in the evaluation of idiopathic neuropathy</title>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">J</forename><forename type="middle">R</forename><surname>Singleton</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">A</forename><forename type="middle">G</forename><surname>Smith</surname></persName>
+		</author>
+		<author>
+			<persName xmlns="http://www.tei-c.org/ns/1.0" coords=""><forename type="first">M</forename><forename type="middle">B</forename><surname>Bromberg</surname></persName>
+		</author>
+		<idno type="DOI">10.1016/j.annpneurol.1998.08.03</idno>
+	</analytic>
+	<monogr>
+		<title level="j">Ann Neurol</title>
+		<imprint>
+			<biblScope unit="volume">44</biblScope>
+			<biblScope unit="page">477</biblScope>
+			<date type="published" when="1998" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

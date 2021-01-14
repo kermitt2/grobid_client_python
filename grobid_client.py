@@ -1,4 +1,3 @@
-import sys
 import os
 import io
 import json
@@ -8,6 +7,7 @@ import concurrent.futures
 from client import ApiClient
 import ntpath
 import requests
+import pathlib
 
 '''
 This version uses the standard ProcessPoolExecutor for parallelizing the concurrent calls to the GROBID services. 
@@ -36,7 +36,12 @@ class grobid_client(ApiClient):
         if len(self.config['grobid_port'])>0:
             the_url += ":"+self.config['grobid_port']
         the_url += "/api/isalive"
-        r = requests.get(the_url)
+        try:
+            r = requests.get(the_url)
+        except:
+            print('GROBID server does not appear up and running, the connection to the server failed')
+            exit(1)
+
         status = r.status_code
 
         if status != 200:
@@ -70,31 +75,32 @@ class grobid_client(ApiClient):
                     pdf_files.append(os.sep.join([dirpath, filename]))
 
                     if len(pdf_files) == batch_size_pdf:
-                        self.process_batch(service, pdf_files, output, n, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, teiCoordinates, force, verbose)
+                        self.process_batch(service, pdf_files, input_path, output, n, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, teiCoordinates, force, verbose)
                         pdf_files = []
 
         # last batch
         if len(pdf_files) > 0:
-            self.process_batch(service, pdf_files, output, n, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, teiCoordinates, force, verbose)
+            self.process_batch(service, pdf_files, input_path, output, n, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, teiCoordinates, force, verbose)
 
-    def process_batch(self, service, pdf_files, output, n, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, teiCoordinates, force, verbose=False):
+    def process_batch(self, service, pdf_files, input_path, output, n, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, teiCoordinates, force, verbose=False):
         if verbose:
             print(len(pdf_files), "PDF files to process in current batch")
         #with concurrent.futures.ThreadPoolExecutor(max_workers=n) as executor:
         with concurrent.futures.ProcessPoolExecutor(max_workers=n) as executor:
             for pdf_file in pdf_files:
-                executor.submit(self.process_pdf, service, pdf_file, output, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, teiCoordinates, force, verbose)
+                executor.submit(self.process_pdf, service, pdf_file, input_path, output, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, teiCoordinates, force, verbose)
 
-    def process_pdf(self, service, pdf_file, output, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, teiCoordinates, force, verbose=False):
+    def process_pdf(self, service, pdf_file, input_path, output, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, teiCoordinates, force, verbose=False):
         # check if TEI file is already produced 
         # we use ntpath here to be sure it will work on Windows too
-        pdf_file_name = ntpath.basename(pdf_file)
         if output is not None:
+            pdf_file_name = str(os.path.relpath(os.path.abspath(pdf_file), input_path))
             filename = os.path.join(output, os.path.splitext(pdf_file_name)[0] + '.tei.xml')
         else:
+            pdf_file_name = ntpath.basename(pdf_file)
             filename = os.path.join(ntpath.dirname(pdf_file), os.path.splitext(pdf_file_name)[0] + '.tei.xml')
 
-        if not force and os.path.isfile(filename) and verbose:
+        if not force and os.path.isfile(filename):
             print(filename, "already exist, skipping... (use --force to reprocess pdf input files)")
             return
 
@@ -136,12 +142,13 @@ class grobid_client(ApiClient):
 
         if status == 503:
             time.sleep(self.config['sleep_time'])
-            return self.process_pdf(pdf_file, output, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates)
+            return self.process_pdf(pdf_file, input_path, output, service, generateIDs, consolidate_header, consolidate_citations, include_raw_citations, include_raw_affiliations, force, teiCoordinates)
         elif status != 200:
             print('Processing failed with error ' + str(status))
         else:
             # writing TEI file
             try:
+                pathlib.Path(os.path.dirname(filename)).mkdir(parents=True, exist_ok=True)
                 with io.open(filename,'w',encoding='utf8') as tei_file:
                     tei_file.write(res.text)
             except OSError:  

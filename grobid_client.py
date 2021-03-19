@@ -55,6 +55,22 @@ class GrobidClient(ApiClient):
         else:
             print("GROBID server is up and running")
 
+    def _output_file_name(self, pdf_file, input_path, output):
+        # we use ntpath here to be sure it will work on Windows too
+        if output is not None:
+            pdf_file_name = str(os.path.relpath(os.path.abspath(pdf_file), input_path))
+            filename = os.path.join(
+                output, os.path.splitext(pdf_file_name)[0] + ".tei.xml"
+            )
+        else:
+            pdf_file_name = ntpath.basename(pdf_file)
+            filename = os.path.join(
+                ntpath.dirname(pdf_file),
+                os.path.splitext(pdf_file_name)[0] + ".tei.xml",
+            )
+
+        return filename
+
     def process(
         self,
         service,
@@ -138,60 +154,57 @@ class GrobidClient(ApiClient):
     ):
         if verbose:
             print(len(pdf_files), "PDF files to process in current batch")
+
         # with concurrent.futures.ThreadPoolExecutor(max_workers=n) as executor:
         with concurrent.futures.ProcessPoolExecutor(max_workers=n) as executor:
+            results = []
             for pdf_file in pdf_files:
-                executor.submit(
+                # check if TEI file is already produced
+                filename = self._output_file_name(pdf_file, input_path, output)
+                if not force and os.path.isfile(filename):
+                    print(f"{filename} already exist, skipping... (use --force"
+                           " to reprocess pdf input files)")
+                    continue
+
+                r = executor.submit(
                     self.process_pdf,
                     service,
                     pdf_file,
-                    input_path,
-                    output,
                     generateIDs,
                     consolidate_header,
                     consolidate_citations,
                     include_raw_citations,
                     include_raw_affiliations,
                     teiCoordinates,
-                    force,
-                    verbose,
                 )
+                results.append(r)
+
+        for r in concurrent.futures.as_completed(results):
+            pdf_file, status, text = r.result()
+            filename = self._output_file_name(pdf_file, input_path, output)
+
+            if text is None:
+                print(f"Processing of {pdf_file} failed with error {str(status)}")
+            else:
+                # writing TEI file
+                try:
+                    pathlib.Path(os.path.dirname(filename)).mkdir(parents=True, exist_ok=True)
+                    with open(filename,'w',encoding='utf8') as tei_file:
+                        tei_file.write(text)
+                except OSError:
+                   print("Writing resulting TEI XML file {filename} failed")
 
     def process_pdf(
         self,
         service,
         pdf_file,
-        input_path,
-        output,
         generateIDs,
         consolidate_header,
         consolidate_citations,
         include_raw_citations,
         include_raw_affiliations,
         teiCoordinates,
-        force,
-        verbose=False,
     ):
-        # check if TEI file is already produced
-        # we use ntpath here to be sure it will work on Windows too
-        if output is not None:
-            pdf_file_name = str(os.path.relpath(os.path.abspath(pdf_file), input_path))
-            filename = os.path.join(
-                output, os.path.splitext(pdf_file_name)[0] + ".tei.xml"
-            )
-        else:
-            pdf_file_name = ntpath.basename(pdf_file)
-            filename = os.path.join(
-                ntpath.dirname(pdf_file),
-                os.path.splitext(pdf_file_name)[0] + ".tei.xml",
-            )
-
-        if not force and os.path.isfile(filename):
-            print(
-                filename,
-                "already exist, skipping... (use --force to reprocess pdf input files)",
-            )
-            return
 
         files = {
             "input": (
@@ -241,19 +254,8 @@ class GrobidClient(ApiClient):
                 force,
                 teiCoordinates,
             )
-        elif status != 200:
-            print("Processing failed with error " + str(status))
-        else:
-            # writing TEI file
-            try:
-                pathlib.Path(os.path.dirname(filename)).mkdir(
-                    parents=True, exist_ok=True
-                )
-                with io.open(filename, "w", encoding="utf8") as tei_file:
-                    tei_file.write(res.text)
-            except OSError:
-                print("Writing resulting TEI XML file %s failed" % filename)
-                pass
+
+        return (pdf_file, status, res.text)
 
 
 if __name__ == "__main__":

@@ -1,33 +1,37 @@
+"""Grobid Client.
+
+This version uses the standard ProcessPoolExecutor for parallelizing the
+concurrent calls to the GROBID services.  Given the limits of
+ThreadPoolExecutor (the legendary GIL, input stored in memory, blocking
+Executor.map until the whole input is acquired), ProcessPoolExecutor works with
+batches of PDF of a size indicated in the config.json file (default is 1000
+entries). We are moving from first batch to the second one only when the first
+is entirely processed - which means it is slightly sub-optimal, but should
+scale better. Working without batch would mean acquiring a list of millions of
+files in directories and would require something scalable too (e.g. done in a
+separate thread), which is not implemented for the moment and possibly not
+implementable in Python as long it uses the GIL.
+"""
 import os
 import io
 import json
 import argparse
 import time
 import concurrent.futures
-from client import ApiClient
 import ntpath
 import requests
 import pathlib
 
-"""
-This version uses the standard ProcessPoolExecutor for parallelizing the concurrent calls to the GROBID services. 
-Given the limits of ThreadPoolExecutor (the legendary GIL, input stored in memory, blocking Executor.map until 
-the whole input is acquired), ProcessPoolExecutor works with batches of PDF of a size indicated in the config.json 
-file (default is 1000 entries). We are moving from first batch to the second one only when the first is entirely 
-processed - which means it is slightly sub-optimal, but should scale better. Working without batch would mean 
-acquiring a list of millions of files in directories and would require something scalable too (e.g. done in a separate 
-thread), which is not implemented for the moment and possibly not implementable in Python as long it uses the GIL.
-"""
+from client import ApiClient
 
 
-class grobid_client(ApiClient):
+class GrobidClient(ApiClient):
     def __init__(self, config_path="./config.json"):
         self.config = None
         self._load_config(config_path)
 
     def _load_config(self, path="./config.json"):
-        """
-        Load the json configuration
+        """Load the json configuration
         """
         config_json = open(path).read()
         self.config = json.loads(config_json)
@@ -40,9 +44,8 @@ class grobid_client(ApiClient):
         try:
             r = requests.get(the_url)
         except:
-            print(
-                "GROBID server does not appear up and running, the connection to the server failed"
-            )
+            print("GROBID server does not appear up and running, the "
+                  "connection to the server failed")
             exit(1)
 
         status = r.status_code
@@ -359,7 +362,7 @@ if __name__ == "__main__":
         print("Missing or invalid service, must be one of", valid_services)
         exit(1)
 
-    client = grobid_client(config_path=config_path)
+    client = GrobidClient(config_path=config_path)
 
     start_time = time.time()
 

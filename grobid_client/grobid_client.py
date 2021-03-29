@@ -22,7 +22,7 @@ import ntpath
 import requests
 import pathlib
 
-from client import ApiClient
+from .client import ApiClient
 
 
 class GrobidClient(ApiClient):
@@ -258,7 +258,7 @@ class GrobidClient(ApiClient):
         return (pdf_file, status, res.text)
 
 
-if __name__ == "__main__":
+def main():
     valid_services = [
         "processFulltextDocument",
         "processHeaderDocument",
@@ -385,3 +385,6 @@ if __name__ == "__main__":
 
     runtime = round(time.time() - start_time, 3)
     print("runtime: %s seconds " % (runtime))
+
+if __name__ == "__main__":
+    main()

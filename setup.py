@@ -7,5 +7,8 @@ setup(name='grobid_client_python',
       description='grobid_client_python',
       author='kermitt2',
       packages=find_packages(exclude=["*.tests", "*.tests.*", "tests.*", "tests"]),
+      entry_points={
+          'console_scripts': ['grobid_client=grobid_client.grobid_client:main']
+      },
       license='LICENSE',
     )

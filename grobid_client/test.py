@@ -1,10 +1,5 @@
-'''
-Recursively apply GROBID to the PDF present in a file tree via the grobid client.
-'''
-
-import grobid_client as grobid
+from grobid_client.grobid_client import GrobidClient
 
 if __name__ == "__main__":
-
-    client = grobid.grobid_client(config_path="./config.json")
+    client = GrobidClient(config_path="./config.json")
     client.process("processFulltextDocument", "./resources/test", output="./resources/test_out/", consolidate_citations=True, teiCoordinates=True, force=True)

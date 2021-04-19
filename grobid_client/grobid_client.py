@@ -44,8 +44,7 @@ class GrobidClient(ApiClient):
         try:
             r = requests.get(the_url)
         except:
-            print("GROBID server does not appear up and running, the "
-                  "connection to the server failed")
+            print("GROBID server does not appear up and running, the connection to the server failed")
             exit(1)
 
         status = r.status_code
@@ -162,8 +161,7 @@ class GrobidClient(ApiClient):
                 # check if TEI file is already produced
                 filename = self._output_file_name(pdf_file, input_path, output)
                 if not force and os.path.isfile(filename):
-                    print(f"{filename} already exist, skipping... (use --force"
-                           " to reprocess pdf input files)")
+                    print(filename, "already exist, skipping... (use --force to reprocess pdf input files)")
                     continue
 
                 r = executor.submit(
@@ -184,7 +182,7 @@ class GrobidClient(ApiClient):
             filename = self._output_file_name(pdf_file, input_path, output)
 
             if text is None:
-                print(f"Processing of {pdf_file} failed with error {str(status)}")
+                print("Processing of", pdf_file, "failed with error", str(status))
             else:
                 # writing TEI file
                 try:
@@ -192,7 +190,7 @@ class GrobidClient(ApiClient):
                     with open(filename,'w',encoding='utf8') as tei_file:
                         tei_file.write(text)
                 except OSError:
-                   print("Writing resulting TEI XML file {filename} failed")
+                   print("Writing resulting TEI XML file", filename, "failed")
 
     def process_pdf(
         self,
@@ -335,9 +333,7 @@ def main():
         try:
             n = int(args.n)
         except ValueError:
-            print(
-                "Invalid concurrency parameter n:", n, "n = 10 will be used by default"
-            )
+            print("Invalid concurrency parameter n:", n, ", n = 10 will be used by default")
             pass
 
     # if output path does not exist, we create it
@@ -346,9 +342,9 @@ def main():
             print("output directory does not exist but will be created:", output_path)
             os.makedirs(output_path)
         except OSError:
-            print("Creation of the directory %s failed" % output_path)
+            print("Creation of the directory", output_path, "failed")
         else:
-            print("Successfully created the directory %s" % output_path)
+            print("Successfully created the directory", output_path)
 
     service = args.service
     generateIDs = args.generateIDs

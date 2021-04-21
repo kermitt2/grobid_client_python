@@ -240,16 +240,13 @@ class GrobidClient(ApiClient):
         if status == 503:
             time.sleep(self.config["sleep_time"])
             return self.process_pdf(
-                pdf_file,
-                input_path,
-                output,
                 service,
+                pdf_file,
                 generateIDs,
                 consolidate_header,
                 consolidate_citations,
                 include_raw_citations,
                 include_raw_affiliations,
-                force,
                 teiCoordinates,
             )
 

@@ -18,4 +18,6 @@ data/*.png
 my_config.json
 __pycache__
 doc/
-
+build/
+dist/
+grobid_client_python.egg-info/

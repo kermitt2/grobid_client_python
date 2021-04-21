@@ -14,16 +14,20 @@ This client has been developed and tested with Python `3.5` and should work with
 
 Get the github repo:
 
-> git clone https://github.com/kermitt2/grobid_client_python
+```
+git clone https://github.com/kermitt2/grobid_client_python
+cd grobid_client_python
+python setup.py install
+```
 
-> cd grobid_client_python
+
 
 There is nothing more to do to start using the python command lines, see the next section. 
 
 ## Usage and options
 
 ```
-usage: grobid_client.py [-h] [--input INPUT] [--output OUTPUT]
+usage: grobid_client [-h] [--input INPUT] [--output OUTPUT]
                         [--config CONFIG] [--n N] [--generateIDs]
                         [--consolidate_header] [--consolidate_citations]
                         [--include_raw_citations] [--include_raw_affiliations]
@@ -65,32 +69,32 @@ optional arguments:
 
 Examples:
 
-> python3 grobid_client.py --input ~/tmp/in2 --output ~/tmp/out processFulltextDocument
+> grobid_client --input ~/tmp/in2 --output ~/tmp/out processFulltextDocument
 
 This command will process all the PDF files present under the input directory recursively (files with extension `.pdf` only) with the `processFulltextDocument` service of GROBID, and write the resulting XML TEI files under the output directory, reusing the file name with a different file extension (`.tei.xml`), using the default `10` concurrent workers. 
 
 If `--output` is omitted, the resulting XML TEI documents will be produced alongside the PDF in the `--input` directory.
 
-> python3 grobid_client.py --input ~/tmp/in2 --output ~/tmp/out --n 20 processHeaderDocument
+> grobid_client --input ~/tmp/in2 --output ~/tmp/out --n 20 processHeaderDocument
 
 This command will process all the PDF files present in the input directory (files with extension `.pdf` only) with the `processHeaderDocument` service of GROBID, and write the resulting XML TEI files under the output directory, reusing the file name with a different file extension (`.tei.xml`), using `20` concurrent workers. 
 
 By default if an existing `.tei.xml` file is present in the output directory corresponding to a PDF in the input directory, this PDF will be skipped to avoid reprocessing several times the same PDF. To force the processing of PDF and over-write of existing TEI files, use the parameter `--force`.   
 
-The file `test.py` gives an example of usage from a another python script. 
+The file `example.py` gives an example of usage from a another python script. 
 
 ## Using the client in your python
 
 Import and call the client as follow:
 
 ```
-import grobid_client as grobid
+from grobid_client.grobid_client import GrobidClient
 
-client = grobid.grobid_client(config_path="./config.json")
+client = GrobidClient(config_path="./config.json")
 client.process("processFulltextDocument", "/mnt/data/covid/pdfs", n=20)
 ```
 
-See also `test.py`.
+See also `example.py`.
 
 ## Benchmarking
 

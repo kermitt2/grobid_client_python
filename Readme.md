@@ -83,6 +83,8 @@ This command will process all the PDF files present in the input directory (file
 
 By default if an existing `.tei.xml` file is present in the output directory corresponding to a PDF in the input directory, this PDF will be skipped to avoid reprocessing several times the same PDF. To force the processing of PDF and over-write of existing TEI files, use the parameter `--force`.   
 
+`processCitationList` does not take a repertory of PDF as input, but a repertory of `.txt` files, with one reference raw string per line. 
+
 The file `example.py` gives an example of usage from a another python script. 
 
 ## Using the client in your python

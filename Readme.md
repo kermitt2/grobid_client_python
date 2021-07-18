@@ -17,32 +17,33 @@ Get the github repo:
 ```
 git clone https://github.com/kermitt2/grobid_client_python
 cd grobid_client_python
-python setup.py install
+python3 setup.py install
 ```
-
-
 
 There is nothing more to do to start using the python command lines, see the next section. 
 
 ## Usage and options
 
 ```
-usage: grobid_client [-h] [--input INPUT] [--output OUTPUT]
-                        [--config CONFIG] [--n N] [--generateIDs]
-                        [--consolidate_header] [--consolidate_citations]
-                        [--include_raw_citations] [--include_raw_affiliations]
-                        [--force] [--teiCoordinates] [--verbose]
-                        service
+usage: grobid_client [-h] [--input INPUT] [--output OUTPUT] [--config CONFIG]
+                     [--n N] [--generateIDs] [--consolidate_header]
+                     [--consolidate_citations] [--include_raw_citations]
+                     [--include_raw_affiliations] [--force] [--teiCoordinates]
+                     [--verbose]
+                     service
 
 Client for GROBID services
 
 positional arguments:
-  service               one of [processFulltextDocument,
-                        processHeaderDocument, processReferences]
+  service               one of ['processFulltextDocument',
+                        'processHeaderDocument', 'processReferences',
+                        'processCitationList']
 
 optional arguments:
   -h, --help            show this help message and exit
-  --input INPUT         path to the directory containing PDF to process
+  --input INPUT         path to the directory containing PDF files or .txt
+                        (for processCitationList only, one reference per line)
+                        to process
   --output OUTPUT       path to the directory where to put the results
                         (optional)
   --config CONFIG       path to the config file, default is ./config.json
@@ -64,6 +65,7 @@ optional arguments:
   --teiCoordinates      add the original PDF coordinates (bounding boxes) to
                         the extracted elements
   --verbose             print information about processed files in the console
+
 
 ```
 

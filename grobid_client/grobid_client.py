@@ -54,18 +54,18 @@ class GrobidClient(ApiClient):
         else:
             print("GROBID server is up and running")
 
-    def _output_file_name(self, pdf_file, input_path, output):
+    def _output_file_name(self, input_file, input_path, output):
         # we use ntpath here to be sure it will work on Windows too
         if output is not None:
-            pdf_file_name = str(os.path.relpath(os.path.abspath(pdf_file), input_path))
+            input_file_name = str(os.path.relpath(os.path.abspath(input_file), input_path))
             filename = os.path.join(
-                output, os.path.splitext(pdf_file_name)[0] + ".tei.xml"
+                output, os.path.splitext(input_file_name)[0] + ".tei.xml"
             )
         else:
-            pdf_file_name = ntpath.basename(pdf_file)
+            input_file_name = ntpath.basename(input_file)
             filename = os.path.join(
-                ntpath.dirname(pdf_file),
-                os.path.splitext(pdf_file_name)[0] + ".tei.xml",
+                ntpath.dirname(input_file),
+                os.path.splitext(input_file_name)[0] + ".tei.xml",
             )
 
         return filename
@@ -86,23 +86,24 @@ class GrobidClient(ApiClient):
         verbose=False,
     ):
         batch_size_pdf = self.config["batch_size"]
-        pdf_files = []
+        input_files = []
 
         for (dirpath, dirnames, filenames) in os.walk(input_path):
             for filename in filenames:
-                if filename.endswith(".pdf") or filename.endswith(".PDF"):
+                if filename.endswith(".pdf") or filename.endswith(".PDF") or \
+                    (service == 'processCitationList' and (filename.endswith(".txt") or filename.endswith(".TXT"))):
                     if verbose:
                         try:
                             print(filename)
                         except Exception:
                             # may happen on linux see https://stackoverflow.com/questions/27366479/python-3-os-walk-file-paths-unicodeencodeerror-utf-8-codec-cant-encode-s
                             pass
-                    pdf_files.append(os.sep.join([dirpath, filename]))
+                    input_files.append(os.sep.join([dirpath, filename]))
 
-                    if len(pdf_files) == batch_size_pdf:
+                    if len(input_files) == batch_size_pdf:
                         self.process_batch(
                             service,
-                            pdf_files,
+                            input_files,
                             input_path,
                             output,
                             n,
@@ -115,13 +116,13 @@ class GrobidClient(ApiClient):
                             force,
                             verbose,
                         )
-                        pdf_files = []
+                        input_files = []
 
         # last batch
-        if len(pdf_files) > 0:
+        if len(input_files) > 0:
             self.process_batch(
                 service,
-                pdf_files,
+                input_files,
                 input_path,
                 output,
                 n,
@@ -138,7 +139,7 @@ class GrobidClient(ApiClient):
     def process_batch(
         self,
         service,
-        pdf_files,
+        input_files,
         input_path,
         output,
         n,
@@ -152,37 +153,41 @@ class GrobidClient(ApiClient):
         verbose=False,
     ):
         if verbose:
-            print(len(pdf_files), "PDF files to process in current batch")
+            print(len(input_files), "files to process in current batch")
 
         # with concurrent.futures.ThreadPoolExecutor(max_workers=n) as executor:
         with concurrent.futures.ProcessPoolExecutor(max_workers=n) as executor:
             results = []
-            for pdf_file in pdf_files:
+            for input_file in input_files:
                 # check if TEI file is already produced
-                filename = self._output_file_name(pdf_file, input_path, output)
+                filename = self._output_file_name(input_file, input_path, output)
                 if not force and os.path.isfile(filename):
                     print(filename, "already exist, skipping... (use --force to reprocess pdf input files)")
                     continue
 
+                selected_process = self.process_pdf
+                if service == 'processCitationList':
+                    selected_process = self.process_txt
+                
                 r = executor.submit(
-                    self.process_pdf,
+                    selected_process,
                     service,
-                    pdf_file,
+                    input_file,
                     generateIDs,
                     consolidate_header,
                     consolidate_citations,
                     include_raw_citations,
                     include_raw_affiliations,
-                    teiCoordinates,
-                )
+                    teiCoordinates)
+
                 results.append(r)
 
         for r in concurrent.futures.as_completed(results):
-            pdf_file, status, text = r.result()
-            filename = self._output_file_name(pdf_file, input_path, output)
+            input_file, status, text = r.result()
+            filename = self._output_file_name(input_file, input_path, output)
 
             if text is None:
-                print("Processing of", pdf_file, "failed with error", str(status))
+                print("Processing of", input_file, "failed with error", str(status))
             else:
                 # writing TEI file
                 try:
@@ -203,7 +208,6 @@ class GrobidClient(ApiClient):
         include_raw_affiliations,
         teiCoordinates,
     ):
-
         files = {
             "input": (
                 pdf_file,
@@ -252,21 +256,68 @@ class GrobidClient(ApiClient):
 
         return (pdf_file, status, res.text)
 
+    def process_txt(
+        self,
+        service,
+        txt_file,
+        generateIDs,
+        consolidate_header,
+        consolidate_citations,
+        include_raw_citations,
+        include_raw_affiliations,
+        teiCoordinates,
+    ):
+        # create request based on file content
+        references = None
+        with open(txt_file) as f:
+            references = [line.rstrip() for line in f]
+
+        the_url = "http://" + self.config["grobid_server"]
+        if len(self.config["grobid_port"]) > 0:
+            the_url += ":" + self.config["grobid_port"]
+        the_url += "/api/" + service
+
+        # set the GROBID parameters
+        the_data = {}
+        if consolidate_citations:
+            the_data["consolidateCitations"] = "1"
+        if include_raw_citations:
+            the_data["includeRawCitations"] = "1"
+        the_data["citations"] = references
+        res, status = self.post(
+            url=the_url, data=the_data, headers={"Accept": "text/plain"}
+        )
+
+        if status == 503:
+            time.sleep(self.config["sleep_time"])
+            return self.process_txt(
+                service,
+                txt_file,
+                generateIDs,
+                consolidate_header,
+                consolidate_citations,
+                include_raw_citations,
+                include_raw_affiliations,
+                teiCoordinates,
+            )
+
+        return (txt_file, status, res.text)
 
 def main():
     valid_services = [
         "processFulltextDocument",
         "processHeaderDocument",
         "processReferences",
+        "processCitationList"
     ]
 
     parser = argparse.ArgumentParser(description="Client for GROBID services")
     parser.add_argument(
         "service",
-        help="one of [processFulltextDocument, processHeaderDocument, processReferences]",
+        help="one of " + str(valid_services),
     )
     parser.add_argument(
-        "--input", default=None, help="path to the directory containing PDF to process"
+        "--input", default=None, help="path to the directory containing PDF files or .txt (for processCitationList only, one reference per line) to process"
     )
     parser.add_argument(
         "--output",

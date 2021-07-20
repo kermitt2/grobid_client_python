@@ -25,10 +25,14 @@ import pathlib
 from .client import ApiClient
 
 
+class ServerUnavailableException(Exception):
+    pass
+
+
 class GrobidClient(ApiClient):
     def __init__(self, grobid_server='localhost', grobid_port='8070',
                  batch_size=100, coordinates=[], sleep_time=5,
-                 config_path=None):
+                 config_path=None, check_server=True):
         self.config = {
             'grobid_server': grobid_server,
             'grobid_port': grobid_port,
@@ -38,6 +42,8 @@ class GrobidClient(ApiClient):
         }
         if config_path:
             self._load_config(config_path)
+        if check_server:
+            self._test_server_connection()
 
     def _load_config(self, path="./config.json"):
         """Load the json configuration
@@ -45,7 +51,8 @@ class GrobidClient(ApiClient):
         config_json = open(path).read()
         self.config = json.loads(config_json)
 
-        # test if the server is up and running...
+    def _test_server_connection(self):
+        """Test if the server is up and running."""
         the_url = "http://" + self.config["grobid_server"]
         if len(self.config["grobid_port"]) > 0:
             the_url += ":" + self.config["grobid_port"]
@@ -54,7 +61,7 @@ class GrobidClient(ApiClient):
             r = requests.get(the_url)
         except:
             print("GROBID server does not appear up and running, the connection to the server failed")
-            exit(1)
+            raise ServerUnavailableException
 
         status = r.status_code
 
@@ -366,7 +373,10 @@ def main():
         print("Missing or invalid service, must be one of", valid_services)
         exit(1)
 
-    client = GrobidClient(config_path=config_path)
+    try:
+        client = GrobidClient(config_path=config_path)
+    except ServerUnavailableException:
+        exit(1)
 
     start_time = time.time()
 

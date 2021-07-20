@@ -26,9 +26,18 @@ from .client import ApiClient
 
 
 class GrobidClient(ApiClient):
-    def __init__(self, config_path="./config.json"):
-        self.config = None
-        self._load_config(config_path)
+    def __init__(self, grobid_server='localhost', grobid_port='8070',
+                 batch_size=100, coordinates=[], sleep_time=5,
+                 config_path=None):
+        self.config = {
+            'grobid_server': grobid_server,
+            'grobid_port': grobid_port,
+            'batch_size': batch_size,
+            'coordinates': coordinates,
+            'sleep_time': sleep_time
+        }
+        if config_path:
+            self._load_config(config_path)
 
     def _load_config(self, path="./config.json"):
         """Load the json configuration

@@ -28,10 +28,9 @@ from .client import ApiClient
 class ServerUnavailableException(Exception):
     pass
 
-
 class GrobidClient(ApiClient):
     def __init__(self, grobid_server='localhost', grobid_port='8070',
-                 batch_size=100, coordinates=[], sleep_time=5,
+                 batch_size=1000, coordinates=["persName", "figure", "ref", "biblStruct", "formula" ], sleep_time=5,
                  config_path=None, check_server=True):
         self.config = {
             'grobid_server': grobid_server,

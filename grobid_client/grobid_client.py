@@ -238,7 +238,7 @@ class GrobidClient(ApiClient):
             the_data["teiCoordinates"] = self.config["coordinates"]
 
         res, status = self.post(
-            url=the_url, files=files, data=the_data, headers={"Accept": "text/plain"}
+            url=the_url, files=files, data=the_data, headers={"Accept": "application/xml"}
         )
 
         if status == 503:
@@ -285,7 +285,7 @@ class GrobidClient(ApiClient):
             the_data["includeRawCitations"] = "1"
         the_data["citations"] = references
         res, status = self.post(
-            url=the_url, data=the_data, headers={"Accept": "text/plain"}
+            url=the_url, data=the_data, headers={"Accept": "application/xml"}
         )
 
         if status == 503:

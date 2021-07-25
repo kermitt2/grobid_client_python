@@ -29,9 +29,13 @@ class ServerUnavailableException(Exception):
     pass
 
 class GrobidClient(ApiClient):
-    def __init__(self, grobid_server='localhost', grobid_port='8070',
-                 batch_size=1000, coordinates=["persName", "figure", "ref", "biblStruct", "formula" ], sleep_time=5,
-                 config_path=None, check_server=True):
+    def __init__(self, grobid_server='localhost', 
+                 grobid_port='8070',
+                 batch_size=1000, 
+                 coordinates=["persName", "figure", "ref", "biblStruct", "formula", "s" ], 
+                 sleep_time=5,
+                 config_path=None, 
+                 check_server=True):
         self.config = {
             'grobid_server': grobid_server,
             'grobid_port': grobid_port,
@@ -96,7 +100,8 @@ class GrobidClient(ApiClient):
         consolidate_citations=False,
         include_raw_citations=False,
         include_raw_affiliations=False,
-        teiCoordinates=False,
+        tei_coordinates=False,
+        segment_sentences=False,
         force=True,
         verbose=False,
     ):
@@ -127,7 +132,8 @@ class GrobidClient(ApiClient):
                             consolidate_citations,
                             include_raw_citations,
                             include_raw_affiliations,
-                            teiCoordinates,
+                            tei_coordinates,
+                            segment_sentences,
                             force,
                             verbose,
                         )
@@ -146,7 +152,8 @@ class GrobidClient(ApiClient):
                 consolidate_citations,
                 include_raw_citations,
                 include_raw_affiliations,
-                teiCoordinates,
+                tei_coordinates,
+                segment_sentences,
                 force,
                 verbose,
             )
@@ -163,7 +170,8 @@ class GrobidClient(ApiClient):
         consolidate_citations,
         include_raw_citations,
         include_raw_affiliations,
-        teiCoordinates,
+        tei_coordinates,
+        segment_sentences,
         force,
         verbose=False,
     ):
@@ -193,7 +201,8 @@ class GrobidClient(ApiClient):
                     consolidate_citations,
                     include_raw_citations,
                     include_raw_affiliations,
-                    teiCoordinates)
+                    tei_coordinates,
+                    segment_sentences)
 
                 results.append(r)
 
@@ -221,7 +230,8 @@ class GrobidClient(ApiClient):
         consolidate_citations,
         include_raw_citations,
         include_raw_affiliations,
-        teiCoordinates,
+        tei_coordinates,
+        segment_sentences
     ):
         files = {
             "input": (
@@ -249,8 +259,10 @@ class GrobidClient(ApiClient):
             the_data["includeRawCitations"] = "1"
         if include_raw_affiliations:
             the_data["includeRawAffiliations"] = "1"
-        if teiCoordinates:
+        if tei_coordinates:
             the_data["teiCoordinates"] = self.config["coordinates"]
+        if segment_sentences:
+            the_data["segmentSentences"] = "1"
 
         res, status = self.post(
             url=the_url, files=files, data=the_data, headers={"Accept": "application/xml"}
@@ -266,7 +278,8 @@ class GrobidClient(ApiClient):
                 consolidate_citations,
                 include_raw_citations,
                 include_raw_affiliations,
-                teiCoordinates,
+                tei_coordinates,
+                segment_sentences
             )
 
         return (pdf_file, status, res.text)
@@ -280,7 +293,8 @@ class GrobidClient(ApiClient):
         consolidate_citations,
         include_raw_citations,
         include_raw_affiliations,
-        teiCoordinates,
+        tei_coordinates,
+        segment_sentences
     ):
         # create request based on file content
         references = None
@@ -313,7 +327,8 @@ class GrobidClient(ApiClient):
                 consolidate_citations,
                 include_raw_citations,
                 include_raw_affiliations,
-                teiCoordinates,
+                tei_coordinates,
+                segment_sentences
             )
 
         return (txt_file, status, res.text)
@@ -381,6 +396,11 @@ def main():
         help="add the original PDF coordinates (bounding boxes) to the extracted elements",
     )
     parser.add_argument(
+        "--segmentSentences",
+        action="store_true",
+        help="segment sentences in the text content of the document with additional <s> elements",
+    )
+    parser.add_argument(
         "--verbose",
         action="store_true",
         help="print information about processed files in the console",
@@ -416,7 +436,8 @@ def main():
     include_raw_citations = args.include_raw_citations
     include_raw_affiliations = args.include_raw_affiliations
     force = args.force
-    teiCoordinates = args.teiCoordinates
+    tei_coordinates = args.teiCoordinates
+    segment_sentences = args.segmentSentences
     verbose = args.verbose
 
     if service is None or not service in valid_services:
@@ -440,7 +461,8 @@ def main():
         consolidate_citations=consolidate_citations,
         include_raw_citations=include_raw_citations,
         include_raw_affiliations=include_raw_affiliations,
-        teiCoordinates=teiCoordinates,
+        tei_coordinates=tei_coordinates,
+        segment_sentences=segment_sentences,
         force=force,
         verbose=verbose,
     )

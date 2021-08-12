@@ -29,11 +29,13 @@ class ServerUnavailableException(Exception):
     pass
 
 class GrobidClient(ApiClient):
+
     def __init__(self, grobid_server='localhost', 
                  grobid_port='8070',
                  batch_size=1000, 
                  coordinates=["persName", "figure", "ref", "biblStruct", "formula", "s" ], 
                  sleep_time=5,
+                 timeout=60,
                  config_path=None, 
                  check_server=True):
         self.config = {
@@ -41,7 +43,8 @@ class GrobidClient(ApiClient):
             'grobid_port': grobid_port,
             'batch_size': batch_size,
             'coordinates': coordinates,
-            'sleep_time': sleep_time
+            'sleep_time': sleep_time,
+            'timeout': timeout
         }
         if config_path:
             self._load_config(config_path)
@@ -264,23 +267,26 @@ class GrobidClient(ApiClient):
         if segment_sentences:
             the_data["segmentSentences"] = "1"
 
-        res, status = self.post(
-            url=the_url, files=files, data=the_data, headers={"Accept": "application/xml"}
-        )
-
-        if status == 503:
-            time.sleep(self.config["sleep_time"])
-            return self.process_pdf(
-                service,
-                pdf_file,
-                generateIDs,
-                consolidate_header,
-                consolidate_citations,
-                include_raw_citations,
-                include_raw_affiliations,
-                tei_coordinates,
-                segment_sentences
+        try:
+            res, status = self.post(
+                url=the_url, files=files, data=the_data, headers={"Accept": "text/plain"}, timeout=self.config['timeout']
             )
+
+            if status == 503:
+                time.sleep(self.config["sleep_time"])
+                return self.process_pdf(
+                    service,
+                    pdf_file,
+                    generateIDs,
+                    consolidate_header,
+                    consolidate_citations,
+                    include_raw_citations,
+                    include_raw_affiliations,
+                    teiCoordinates,
+                    segment_sentences
+                )
+        except requests.exceptions.ReadTimeout:
+            return (pdf_file, 408, None)
 
         return (pdf_file, status, res.text)
 

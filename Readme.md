@@ -20,8 +20,6 @@ cd grobid_client_python
 python setup.py install
 ```
 
-
-
 There is nothing more to do to start using the python command lines, see the next section. 
 
 ## Usage and options

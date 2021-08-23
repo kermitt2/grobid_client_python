@@ -1,6 +1,6 @@
 # Simple python client for GROBID REST services
 
-This Python client can be used to process in an efficient concurrent manner a set of PDF in a given directory by the [GROBID](https://github.com/kermitt2/grobid) service. It includes a command line for processing PDF on a file system and write results in a given output directory and a library for import in other python scripts. 
+This Python client can be used to process in an efficient concurrent manner a set of PDF in a given directory by the [GROBID](https://github.com/kermitt2/grobid) service. It includes a command line for processing PDF on a file system and write results in a given output directory and a library for import in other python scripts. The client can also process similarly a list of files with reference strings (one per line).
 
 ## Build and run
 
@@ -8,7 +8,7 @@ You need first to install and start the *grobid* service, latest stable version,
 
 ## Requirements
 
-This client has been developed and tested with Python `3.5` and should work with any higher `3.*` versions. It does not require any dependencies beyond the standard python ones.
+This client has been developed and tested with Python `3.5` and should work with any higher `3.*` versions. It does not require any dependencies beyond the standard Python ones.
 
 ## Install
 
@@ -17,30 +17,33 @@ Get the github repo:
 ```
 git clone https://github.com/kermitt2/grobid_client_python
 cd grobid_client_python
-python setup.py install
+python3 setup.py install
 ```
 
-There is nothing more to do to start using the python command lines, see the next section. 
+There is nothing more needed to start using the python command lines, see the next section. 
 
 ## Usage and options
 
 ```
-usage: grobid_client [-h] [--input INPUT] [--output OUTPUT]
-                        [--config CONFIG] [--n N] [--generateIDs]
-                        [--consolidate_header] [--consolidate_citations]
-                        [--include_raw_citations] [--include_raw_affiliations]
-                        [--force] [--teiCoordinates] [--verbose]
-                        service
+usage: grobid_client [-h] [--input INPUT] [--output OUTPUT] [--config CONFIG]
+                     [--n N] [--generateIDs] [--consolidate_header]
+                     [--consolidate_citations] [--include_raw_citations]
+                     [--include_raw_affiliations] [--force] [--teiCoordinates]
+                     [--verbose]
+                     service
 
 Client for GROBID services
 
 positional arguments:
-  service               one of [processFulltextDocument,
-                        processHeaderDocument, processReferences]
+  service               one of ['processFulltextDocument',
+                        'processHeaderDocument', 'processReferences',
+                        'processCitationList']
 
 optional arguments:
   -h, --help            show this help message and exit
-  --input INPUT         path to the directory containing PDF to process
+  --input INPUT         path to the directory containing PDF files or .txt
+                        (for processCitationList only, one reference per line)
+                        to process
   --output OUTPUT       path to the directory where to put the results
                         (optional)
   --config CONFIG       path to the config file, default is ./config.json
@@ -61,7 +64,10 @@ optional arguments:
                         files already exist
   --teiCoordinates      add the original PDF coordinates (bounding boxes) to
                         the extracted elements
+  --segmentSentences    segment sentences in the text content of the document
+                        with additional <s> elements
   --verbose             print information about processed files in the console
+
 
 ```
 
@@ -79,7 +85,15 @@ This command will process all the PDF files present in the input directory (file
 
 By default if an existing `.tei.xml` file is present in the output directory corresponding to a PDF in the input directory, this PDF will be skipped to avoid reprocessing several times the same PDF. To force the processing of PDF and over-write of existing TEI files, use the parameter `--force`.   
 
-The file `example.py` gives an example of usage from a another python script. 
+`processCitationList` does not take a repertory of PDF as input, but a repertory of `.txt` files, with one reference raw string per line, for example:
+
+> grobid_client --input resources/test_txt/ --output resources/test_out/ --n 20 processCitationList
+
+The following command example will process all the PDF files present in the input directory and add bounding box coordinates (`--teiCoordinates`) relative to the original PDFs for the elements listed in the config file. It will also segment the sentences (`--segmentSentences`, this is a "layout aware" sentence segmentation) in the identified paragraphs with bounding box coordinates for the sentences. 
+
+> grobid_client --input ~/tmp/in2 --output ~/tmp/out --teiCoordinates --segmentSentences processFulltextDocument
+
+The file `example.py` gives an example of usage as a library, from a another python script. 
 
 ## Using the client in your python
 
@@ -113,7 +127,7 @@ As complementary info, GROBID processing of header of the 136 PDF and with `n=10
 
 ## Todo
 
-Benchmarking with many more files (e.g. million PDFs). Also implement existing GROBID services for text input (date, name, affiliation/address, raw bibliographical references, etc.). Better support for parameters.
+Benchmarking with many more files (e.g. million PDFs). 
 
 ## License and contact
 

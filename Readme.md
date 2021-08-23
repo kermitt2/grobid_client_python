@@ -85,7 +85,9 @@ This command will process all the PDF files present in the input directory (file
 
 By default if an existing `.tei.xml` file is present in the output directory corresponding to a PDF in the input directory, this PDF will be skipped to avoid reprocessing several times the same PDF. To force the processing of PDF and over-write of existing TEI files, use the parameter `--force`.   
 
-`processCitationList` does not take a repertory of PDF as input, but a repertory of `.txt` files, with one reference raw string per line. 
+`processCitationList` does not take a repertory of PDF as input, but a repertory of `.txt` files, with one reference raw string per line, for example:
+
+> grobid_client --input resources/test_txt/ --output resources/test_out/ --n 20 processCitationList
 
 The following command example will process all the PDF files present in the input directory and add bounding box coordinates (`--teiCoordinates`) relative to the original PDFs for the elements listed in the config file. It will also segment the sentences (`--segmentSentences`, this is a "layout aware" sentence segmentation) in the identified paragraphs with bounding box coordinates for the sentences. 
 

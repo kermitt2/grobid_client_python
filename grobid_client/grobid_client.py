@@ -282,7 +282,7 @@ class GrobidClient(ApiClient):
                     consolidate_citations,
                     include_raw_citations,
                     include_raw_affiliations,
-                    teiCoordinates,
+                    tei_coordinates,
                     segment_sentences
                 )
         except requests.exceptions.ReadTimeout:

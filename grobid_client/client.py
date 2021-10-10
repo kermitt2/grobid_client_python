@@ -10,24 +10,19 @@ except ImportError:
 
 
 class ApiClient(object):
-    """ Client to interact with a generic Rest API.
+    """Client to interact with a generic Rest API.
 
     Subclasses should implement functionality accordingly with the provided
     service methods, i.e. ``get``, ``post``, ``put`` and ``delete``.
     """
 
-    accept_type = 'application/xml'
+    accept_type = "application/xml"
     api_base = None
 
     def __init__(
-            self,
-            base_url,
-            username=None,
-            api_key=None,
-            status_endpoint=None,
-            timeout=60
+        self, base_url, username=None, api_key=None, status_endpoint=None, timeout=60
     ):
-        """ Initialise client.
+        """Initialise client.
 
         Args:
             base_url (str): The base URL to the service being used.
@@ -43,7 +38,7 @@ class ApiClient(object):
 
     @staticmethod
     def encode(request, data):
-        """ Add request content data to request body, set Content-type header.
+        """Add request content data to request body, set Content-type header.
 
         Should be overridden by subclasses if not using JSON encoding.
 
@@ -57,14 +52,14 @@ class ApiClient(object):
         if data is None:
             return request
 
-        request.add_header('Content-Type', 'application/json')
+        request.add_header("Content-Type", "application/json")
         request.data = json.dumps(data)
 
         return request
 
     @staticmethod
     def decode(response):
-        """ Decode the returned data in the response.
+        """Decode the returned data in the response.
 
         Should be overridden by subclasses if something else than JSON is
         expected.
@@ -81,7 +76,7 @@ class ApiClient(object):
             return e.message
 
     def get_credentials(self):
-        """ Returns parameters to be added to authenticate the request.
+        """Returns parameters to be added to authenticate the request.
 
         This lives on its own to make it easier to re-implement it if needed.
 
@@ -91,16 +86,16 @@ class ApiClient(object):
         return {"username": self.username, "api_key": self.api_key}
 
     def call_api(
-            self,
-            method,
-            url,
-            headers=None,
-            params=None,
-            data=None,
-            files=None,
-            timeout=None,
+        self,
+        method,
+        url,
+        headers=None,
+        params=None,
+        data=None,
+        files=None,
+        timeout=None,
     ):
-        """ Call API.
+        """Call API.
 
         This returns object containing data, with error details if applicable.
 
@@ -117,11 +112,11 @@ class ApiClient(object):
             ResultParser or ErrorParser.
         """
         headers = deepcopy(headers) or {}
-        headers['Accept'] = self.accept_type
+        headers["Accept"] = self.accept_type
         params = deepcopy(params) or {}
         data = data or {}
         files = files or {}
-        #if self.username is not None and self.api_key is not None:
+        # if self.username is not None and self.api_key is not None:
         #    params.update(self.get_credentials())
         r = requests.request(
             method,
@@ -136,7 +131,7 @@ class ApiClient(object):
         return r, r.status_code
 
     def get(self, url, params=None, **kwargs):
-        """ Call the API with a GET request.
+        """Call the API with a GET request.
 
         Args:
             url (str): Resource location relative to the base URL.
@@ -145,15 +140,10 @@ class ApiClient(object):
         Returns:
             ResultParser or ErrorParser.
         """
-        return self.call_api(
-            "GET",
-            url,
-            params=params,
-            **kwargs
-        )
+        return self.call_api("GET", url, params=params, **kwargs)
 
     def delete(self, url, params=None, **kwargs):
-        """ Call the API with a DELETE request.
+        """Call the API with a DELETE request.
 
         Args:
             url (str): Resource location relative to the base URL.
@@ -162,15 +152,10 @@ class ApiClient(object):
         Returns:
             ResultParser or ErrorParser.
         """
-        return self.call_api(
-            "DELETE",
-            url,
-            params=params,
-            **kwargs
-        )
+        return self.call_api("DELETE", url, params=params, **kwargs)
 
     def put(self, url, params=None, data=None, files=None, **kwargs):
-        """ Call the API with a PUT request.
+        """Call the API with a PUT request.
 
         Args:
             url (str): Resource location relative to the base URL.
@@ -182,16 +167,11 @@ class ApiClient(object):
             An instance of ResultParser or ErrorParser.
         """
         return self.call_api(
-            "PUT",
-            url,
-            params=params,
-            data=data,
-            files=files,
-            **kwargs
+            "PUT", url, params=params, data=data, files=files, **kwargs
         )
 
     def post(self, url, params=None, data=None, files=None, **kwargs):
-        """ Call the API with a POST request.
+        """Call the API with a POST request.
 
         Args:
             url (str): Resource location relative to the base URL.
@@ -203,23 +183,15 @@ class ApiClient(object):
             An instance of ResultParser or ErrorParser.
         """
         return self.call_api(
-            method="POST",
-            url=url,
-            params=params,
-            data=data,
-            files=files,
-            **kwargs
+            method="POST", url=url, params=params, data=data, files=files, **kwargs
         )
 
     def service_status(self, **kwargs):
-        """ Call the API to get the status of the service.
+        """Call the API to get the status of the service.
 
         Returns:
             An instance of ResultParser or ErrorParser.
         """
         return self.call_api(
-            'GET',
-            self.status_endpoint,
-            params={'format': 'json'},
-            **kwargs
+            "GET", self.status_endpoint, params={"format": "json"}, **kwargs
         )

@@ -1,0 +1,500 @@
+A. Cau, R. Kuiper, and W.-P. de Roever. Formalising Dijkstra's development strategy within Stark's formalism. In C. B. Jones, R. C. Shaw, and T. Denvir, editors, Proc. 5th. BCS-FACS Refinement Workshop, 1992. 
+M. Kitsuregawa, H. Tanaka, and T. Moto-oka. Application of hash to data base machine and its architecture. New Generation Computing, 1(1), 1983. 
+Alexander Vrchoticky. Modula/R language definition. Technical Report TU Wien rr-02-92, version 2.0, Dept. for Real-Time Systems, Technical University of Vienna, May 1993. 
+Marc Shapiro and Susan Horwitz. Fast and accurate flow-insensitive points-to analysis. In Proceedings of the 24th Annual ACM Symposium on Principles of Programming Languages, January 1997. 
+W. Landi and B. G. Ryder. Aliasing with and without pointers: A problem taxonomy. Center for Computer Aids for Industrial Productivity Technical Report CAIP-TR-125, Rutgers University, September 1990. 
+W. H. Enright. Improving the efficiency of matrix operations in the numerical solution of stiff ordinary differential equations. ACM Trans. Math. Softw., 4(2), 127-136, June 1978. 
+Gmytrasiewicz, P. J., Durfee, E. H., & Wehe, D. K. (1991a). A decision theoretic approach to coordinating multiagent interaction. In Proceedings of the Twelfth International Joint Conference on Artificial Intelligence, pp. 62-68 Sydney, Australia. 
+A. Bookstein and S. T. Klein, Detecting content-bearing words by serial clustering, Proceedings of the Nineteenth Annual International ACM SIGIR Conference on Research and Development in Information Retrieval, pp. 319327, 1995. 
+U. Dayal, H. Garcia-Molina, M. Hsu, B. Kao, and M.- C. Shan. Third generation TP monitors: A database challenge. In ACM SIGMOD Conference on Management of Data, pages 393-397, Washington, D. C., May 1993. 
+C. Qiao and R. Melhem, "Reducing Communication Latency with Path Multiplexing in Optically Interconnected Multiprocessor Systems", Proc. of HPCA-1, 1995. 
+Ramadge, P., & Wonham, W. (1989). The Control of Discrete Event Systems. Proceedings of the IEEE, 77 (1), 81-98. 
+Schaal, S., & Atkeson, C. (1994). Robot juggling: An implementation of memory-based learning. Control Systems, 14, 57-71. 
+Hinton, G. E., & Nowlan, S. J. (1987). How learning can guide evolution. Complex Systems, 1, 495-502. 
+Cameron-Jones, R. M., & Quinlan, J. R. (1994). Efficient top-down induction of logic programs. SIGART Bulletin, 5 (1), 33-42. 
+D. Ourston and R. J. Mooney. Changing the Rules: A Comprehensive Approach to Theory Refinement. In Proceedings of the Eighth International Conference on Machine Learning, pages 485-489, 1991. 
+E. Styer, "Improving Fast Mutual Exclusion", Proceedings of the Eleventh Annual ACM Symposium on Principles of Distributed Computing, 1992, pp. 159-168. 
+Pearl, J. (1988). Probabilistic Reasoning in Intelligent Systems: Networks of Plausible Inference. Morgan Kaufmann. 
+Larry D. Wittie, Gudjun Hermannsson, and Ai Li. Eager sharing for efficient massive parallelism. In 1992 International Conference on Parallel Processing, pages 251-255, St. Charles, IL, August 1992.
+Bylander, T. (1992). Complexity results for serial decomposability. In Proceedings of National Conference on Artificial Intelligence, pp. 729-734. San Jose, CA. AAAI Press. 
+A. Elmagarmid, editor. Transaction Models for Advanced Database Applications. Morgan-Kaufmann, 1992. 
+T. Fahringer, R. Blasko, and H. Zima. Automatic performance prediction to support parallelization of Fortran programs for massively parallel systems. In Proceedings of the 1992 ACM International Conference on Supercomputing, Washington, DC, July 1992. 
+A. D. Kallis and D. Klappholz, ``Reaching definitions analysis on code containing array references,'' Conf. Rec. of the 4th Workshop on Languages and Compilers for Parallel Computing, Aug. 1991. 
+R. Fletcher. Practical Methods of Optimization. John Wiley & Sons, 1987. 
+Clark, K. L., Negation as Failure, in: H. Gallaire and J. Minker (eds.), Logic and Data Bases, Plenum Press, New York, 1978. 
+Gent, I. P., & Walsh, T. (1994a). Easy problems are sometimes hard. Artificial Intelligence, 70, 335-345. 
+P. D. Alevizos. A linear time algorithm for labeling planar projections of polyhedra. IEEE/RSJ IROS '91 (Osaka, Japan), 1991. 
+Ancona, D., and Zucca, E. An algebraic approach to mixins and modularity. In Proc. Conference on Algebraic and Logic Programming (Berlin, 1996), 
+P. Yang and J. H. Chern "Design for Reliability: The Major Challenge for VLSI," Proceedings of IEEE, Vol. 81, No. 5, pp. 730-744, May 1993. 
+M. Gupta and P. Banerjee. Automatic data partitioning on distributed memory multiprocessors. In Proceedings of the 6th Distributed Memory Computing Conference, Portland, OR, April 1991. 
+Harry Heffes and David Lucantoni. A markov modulated characterization of voice and data traffic and related statistical multiplexer performance. IEEE J.Select.Areas Commun., SAC- 4, 856-867, September 1986. 
+C. Ghezzi, D. Mandriolli, and A. Morzenti. Trio: A logic language for executable specifications of real-time systems. Journal of Systems and Software, 12(2), 107-123, May 1990. 
+Cohen, W. W. (1992). Compiling knowledge into an explicit bias. In Proceedings of the Ninth International Conference on Machine Learning. 
+Winston, P. H., Binford, T. O., Katz, B., & Lowry, M. (1983). "Learning physical descriptions from functional definitions, examples, and precedents". National Conference on Artificial Intelligence, 433-439. 
+Domingos, P. (1996b). Using partitioning to speed up specific-to-general rule induction. In Proceedings of the AAAI-96 Workshop on Integrating Multiple Learned Models, pp. 29-34. 
+P. T. Harker and J.-S. Pang. Finite-dimensional variational inequality and nonlinear complementarity problems: A survey of theory, algorithms, and applications. Mathematical Programming, 48(2), 161-220, September 1990. 
+Knopfmacher, A., and Warlimont, R. Distinct degree factorizations for polynomials over a finite field. Trans. Amer. Math. Soc. 347, (1995), 2235-2243. 
+Feferman, S., Transfinite Recursive Progressions of Axiomatic Theories, J. Symbolic Logic, 27, 259-316 (1962). 
+K. Gharachorloo, D. Lenoski, J. Laudon, P. Gibbons, A. Gupta, and J. Hennessy. Memory consistency and event ordering in scalable shared-memory multiprocessors. In Proceedings of the 17th Annual International Symposium on Computer Architecture, pages 15-26, May 1990. 
+Etzioni, O. and Weld, D. (1994) A Softbot-based Interface to the Internet, Comm. of th e ACM, 37(7), pages 72-76. 
+S. Hiranandani, K. Kennedy, C. Koelbel, U. Kremer, and C. Tseng. An overview of the fortran d programming system. Technical Report CRPC-TR91121, Dept of computer Science, Rice University, 1991. 
+R. Chandra, S. Devine, B. Verghese, A. Gupta, M. Rosenblum, Scheduling and Page Migration for Multiprocessor Compute Servers. Proc. 6th Int'l. Conf. on Architectural Support for Programming Languages and Operating Systems (ASPLOS-VI), San Jose, CA, pp. 12-24, October 1994. 
+R. S. Zemel, M. C. Mozer, and G. E. Hinton. TRAFFIC: Recognizing objects using hierarchical reference frame transformations. In D. S. Touretzky, editor, Neural Information Processing Systems, Vol. 2, pages 266-273. Morgan Kaufmann, San Mateo, CA, 1990. 
+Corkill, D. D. (1979). Hierarchical planning in a distributed environment. In Proceedings of the Sixth International Joint Conference on Artificial Intelligence, pp. 168-175 Tokyo. 
+D. Callahan, S. Carr, and K. Kennedy. Improving register allocation for subscripted variables. In Proceedings of the SIGPLAN '90 Conference on Program Language Design and Implementation, White Plains, NY, June 1990. 
+Forsyth, C. H., Implementation of the Worst-Case Execution Time Analyser June 1992, York Software Engineering Ltd., University of York: Task 8 Volume E Deliverable on ESTEC contract 9198/90/NL/SF 
+J. Tromp, "How to Construct an Atomic Variable", Proceedings of the Third International Workshop on Distributed Algorithms, Lecture Notes in Computer Science 392, Springer Verlag, 1989, pp. 292-302. 
+Hughes Network Systems, DirecPC Home Page, http://www.direcpc.com/, Oct, 1996. 
+T. E. Anderson, H. M. Levy, B. N. Bershad, and E. D. Lazowska. "The interaction of architecture and operating system design". In ASPLOS IV, pages 108-122, 1991. 
+F. Jahanian and Al Mok. Safety analysis of timing properties in real-time systems. IEEE Transactions on Software Engineering, 12(9), 890-904, September 1986. 
+Hughes, G. E., & Cresswell, J. M. (1968). An Introduction to Modal Logic. Methuen and Co. Ltd. 
+Ostroff, J. S., "Temporal Logic for Real-Time Systems", Advanced Software Development Series, England, 1989. 
+T. Imielinski, S. Viswanathan, Adaptive Wire less Information Systems, Proc. of SIGDBS Conf., Tokyo, October, 1994. 
+Pagallo, G., & Haussler, D. (1990). Boolean feature discovery in empirical learning. Machine Learning, 5 (1), 71-99. 
+D. Waltz. Understanding line-drawings of scenes with shadows. Artificial Intelligence, 2, 79-116, 1971. 
+Cheeseman, P., Kanefsky, B., & Taylor, W. (1991). Where the really hard problems are. 12th International Joint Conference on Artificial Intelligence, 163-169. 
+Cleveland, W. S., and C. Loader, (1994). Computational Methods for Local Regression. Technical Report 11, Murray Hill, NJ: AT&T Bell Laboratories, Statistics Department. 
+T. W. Sandholm and V. R. Lesser, "An Exchange Protocol Without Enforcement", in the Proceedings of 13th International Distributed Artificial Intelligence Workshop, Seattle, WA., July 1994. 
+Mozer, M. C. & Smolensky, P. (1988). Skeletonization: A technique for trimming the fat from a network via relevance assessment. Advances in Neural Information Processing Systems (Vol. 1), (pp. 107-115). Denver, CO: Morgan Kaufmann. 
+A. Gupta, I. Mumick, and V. Subrahmanian. Maintaining views incrementally. In Preceedings of the 1993 ACM SIGMOD International Conference on Management of Data, pages 157-166, Washington, D. C., May 1993. 
+Dietterich, T. G., & Bakiri, G. (1995). Solving multiclass learning problems via error-correcting output codes. Journal of Artificial Intelligence Research, 2, 263-286. 
+A. P. Witkin. Scale-space filtering. In Proc. Intl. Joint Conf. Art. Intell., pages 1019-1023, 1983. 
+Fink, E., & Veloso, M. (1994). Formalizing the prodigy planning algorithm. CMU CS Tech Report CMU-CS-94-123. 
+Langley, P., & Simon, H. A. (1995). Applications of machine learning and rule induction. Communications of the ACM, 38 (11), 55-64. 
+Kirkpatrick, S., Gelatt, C., & Vecchi, M. (1983). Optimization by simulated annealing. Science, 220 (4598), 671-680. 
+C. Rosene, ``Incremental dependence analysis,'' Ph.D. thesis, Rice University, March 1990. 
+Michalski, R. (1983). A theory and methodology of inductive learning. Artificial Intelligence, 20, 111-161. 
+David R. Cheriton, Hendrik A. Goosen, and Philip Machanick. Restructuring a Parallel Simulation to Improve Cache Behavior in a Shared-Memory Multiprocessor: A First Experience. In International Symposium on Shared Memory Multiprocessing, pages 109-118, April 1991. 
+Gmytrasiewicz, P. J., & Durfee, E. H. (1992). A logic of knowledge and belief for recursive modeling: Preliminary report. In Proceedings of the Tenth National Conference on Artificial Intelligence, pp. 628-634 San Jose, California. 
+Baader, F. (1991). Augmenting concept languages by transitive closure of roles: An alternative to terminological cycles. In Proc. of the 12th Int. Joint Conf. on Artificial Intelligence (IJCAI-91) Sydney, Australia. 
+E. Dantsin and A. Voronkov. Complexity of query answering in logic databases with complex values. In S. Adian and A. Nerode, editors, Logical Foundations of Computer Science. 4th International Symposium, LFCS'97, volume 1234, of Lecture Notes in Computer Science, pages 56-66, Yaroslavl, Russia, July 1997. 
+M. Peot and D. E. Smith. Threat-removal strategies for partial-order planning. In Proceedings of the Eleventh National Conference on Artificial Intelligence, pages 492-499, Washington, D. C., 1993. 
+Burton, Robert P. and Sutherland, Ivan E. "Twinkle Box: A Three-dimensional Computer Input Device". in Proceedings of the National Computer Conference (1974) pp. 513-520. 
+Barry Wilkinson, Digital System Design Prentice Hall 1987. 
+Andreas Ermedahl and Jan Gustafsson. Deriving annotations for tight calculation of execution time. Department of Computer Systems, University of Uppsala and Department of Computer Engineering, Malardalen University, Sweden. Submitted to EuroPar'97, February 1997. 
+Horn, B. (1986). Robot Vision, MIT Press. 
+J. Dongarra, J. Bunch, C. Moler, and G. Stewart. LINPACK User's Guide. SIAM Publications, Philadelphia, PA, 1979. 
+Dempster, A. P., Laird, N. M., & Rubin, D. B. (1977). Maximum-likelihood from incomplete data via the EM algorithm. Journal of Royal Statistical Society B, 39, 1-38. 
+Peter Puschner and Anton Schedl. A tool for the computation of worst case task execution times. In Proc. of the 5th EUROMICRO Workshop on Real-Time Systems, 1993. 
+Rivest, R. L., & Schapire, R. E. (1989). Inference of Finite Automata Using Homing Sequences. In Proceedings of the 21th ACM Symp. on Theory of Computing, pp. 411-420. 
+D. M. Chiarulli, S. P. Levitan, R. G. Melhem, and C. Qiao. Locality based control algorithms for reconfigurable optical interconnection networks. Applied Optics, to appear. 
+W. Sterling, F. Carino and C. Boss, "Multimedia Databases and Servers," AT&T Technical Journal, Vol. 74, No. 5, September / October 1995, pp. 54-67. 
+Salomons, O. (1994). Computer support in the design of mechanical products. Ph.D. Thesis, Universiteit Twente, Netherlands. 
+S. C. Woo, M. Ohara, E. Torrie, J. P. Singh, and A. Gupta. The SPLASH-2 Programs: Characterization and Methodological Considerations. In Proceedings of the 22nd International Symposium on Computer Architecture, pages 24-36, June 1995. 
+J. E. Dennis and R. B. Schnabel. Numerical Methods for Unconstrained Optimization and Nonlinear Equations. Prentice-Hall Series in Computational Mathematics. Prentice-Hall, Inc, Englewood Cliffs, New Jersey, 1983. 
+J. Borenstein and Y. Koren, "Obstacle avoidance with ultrasonic sensors," IEEE J. Robotics Automation 4, pp. 213-218, 1988. 
+V. Lifschitz. On the semantics of STRIPS. In Reasoning about Actions and Plans: Proceedings of the 1986 Workshop, Timberline, OR, 1987. Reprinted in Readings in Planning, J. Allen, J. Hendler, A. Tate (eds.), Morgan-Kaufmann, 1990, 523-530. 
+W. Li. Linearly convergent descent methods for unconstrained minimization of convex quadratic splines. Technical Report TR93-3, Department of Mathematics and Statistics, Old Dominion University, Norfolk, VA 23529, 1993. Journal of Optimization Theory and Applications, to appear. 
+Moggi, E. Computational lambda-calculus and monads. In Proc. Symposium on Logic in Computer Science, 1989, 14-23. 
+K. Smith, W. Appelbe, and K. Stirewalt. Incremental dependence analysis for interactive parallelization. In Proceedings of the 1990 ACM International Conference on Supercomputing, Amsterdam, The Netherlands, June 1990. 
+A. S. Acampora and M. J. Karol, "An Overview of Lightwave Packet Network." IEEE Network Mag. 3(1), pages 29-41, 1989. 
+Blumer, A., Ehrenfeucht, A., Haussler, D., & Warmuth, M. (1989). Learnability and the Vapnik-Chervonenkis dimension. Journal of the ACM, 36 (4), 929-965. 
+Tim Watson. A new representation technique for genetic algorithms. In Keane et al. [4], pages 233-246. 
+Hermenegildo, M. V., An Abstract Machine for Restricted AND-parallel Execution of Logic Programs, in Third International Conference on Logic Programming, Springer-Verlag, Berlin, 1986. 
+L. G. Valiant. A Bridging Model for Parallel Computation. Communications of the ACM, 33(8), 103-111, 1990. 
+Ling, C. X. (1995). Personal communication. 
+Albert R. Meyer and Mitchell Wand. Continuation semantics in typed lambda calculi (summary). In Rohit Parikh, editor, Logics of Programs, volume 193, of Lecture Notes in Computer Science, pages 219-224. Springer-Verlag, 1985. 
+S. E. Conry, K. Kuwabara, V. R. Lesser and R. A. Meyer. (1991) Multistage Negotiation for Distributed Satisfaction, IEEE Transactions on Systems, Man, and Cybernetics, Special Issue on Distributed Artificial Intelligence, 21(6), 1462-1477 . 
+Chernoff, H. (1952). A measure of the asymptotic efficiency for tests of a hypothesis based on the sum of observations. Annals of Mathematical Statistics, 23, 493-509. 
+Flajolet, P., Gourdon, X., and Panario, D. Random polynomials and polynomial factorization. In Automata, Languages, and Programming (1996), F. Meyer auf der Heide and B. Monien, Eds., vol. 1099, of Lecture Notes in Computer Science, Springer-Verlag, pp. 232-243. Proceedings of the 23rd ICALP Conference, Paderborn, July 1996. 
+Lars Ole Andersen. Program Analysis and Specialization for the C Programming Language. PhD thesis, DIKU, University of Copenhagen, May 1994. 
+L. G. Votta and M. L. Zajac. Design process improvement case study using process waiver data. In Proceedings of the Fifth European Conference in Software Engineering, volume 989 of Lecture Notes in Computer Science, pages 44-58. Springer-Verlag, September 1995. 
+J. B. Kam and J. D. Ullman, ``Monotone data flow analysis frameworks,'' Acta Informatica, vol. 7, no. 3, pp. 305-317, Jul. 1977. 
+Cooper, G. F. (1990). The computational complexity of probabilistic inference using Bayesian belief networks. Artificial Intelligence, 42(2-3), 393-405. 
+C. Pedregal-Martin and K. Ramamritham. Delegation: Efficiently Rewriting History. TR95-90 Computer Science Dept., University of Massachusetts, Amherst, October 1995. 
+W. Cohen. Learning from textbook knowledge: A case study. In AAAI-90, 1990. 
+M. Reiman, and B. Simon. An Interpolation Approximation for Queueing Systems with Poisson Input. Operations Research 36, 3 (1988), 454-469. 
+M. Herlihy and J. Wing, "Axioms for Concurrent Objects", Proceedings of the 14th ACM Symposium on Principles of Programming Languages, pp. 13-26, 1987. 
+Linden, A., & Weber, F. (1993). Implementing inner drive by competence reflection. In Roitblat, H.(Ed.), Proceedings of the 2nd International Conference on Simulation of Adaptive Behavior. MIT Press, Cambridge, MA. 
+Holte, R. C., Acker, L. E., & Porter, B. W. (1989). Concept learning and the problem of small disjuncts. In Proceedings of the Eleventh International Joint Conference on Artificial Intelligence, pp. 813-818 Detroit. Morgan Kaufmann. 415 
+I. Meilijson and U. Yechiali, "On optimal right-of-way policies at a single-server station when insertion of idles times is permitted," Stoch. Proc. and their Appl. 6, 25-32, 1977. 
+Hopcroft, J., & Ullman, J. (1979). Introduction to Automata Theory, Languages, and Computation. Addison-Wesley. 
+S. Aditya, C. Flood, and J. Hicks. Garbage collection for strongly-typed languages using run-time type reconstruction. In Proceedings of the 1994 ACM Conference on Lisp and Functional Programming, pages 12-23, Orlando, FL, June 1994. 
+Arthur M. Keller and Julie Basu. A predicate-based caching scheme for client-server database architectures. In Proceedings of PDIS-94, 1994. 
+P. T. Zellweger. Interactions between high-level debugging and optimised code. PhD thesis, Computer Science Division, University of California, Berkeley, 1984. Published as Xerox PARC Technical Report CSL-84-5. 
+Oliker, S., Furst, M., & Maimon, O. (1992). A distributed genetic algorithm for neural network design and training. Complex Systems, 6, 459-477. 
+B. K. P. Horn. Robot Vision. MIT Press, Cambridge, MA, 1986. 
+M. J. Feeley and H. M. Levy. Distributed shared memory with versioned objects. In OOPSLA '92 Conference Proceedings, pages 247-262, October 1992. 
+Gardenfors, Peter (1988). Knowledge in Flux. The MIT Press, Cambridge, MA. 
+De Raedt, L., & Bruynooghe, M. (1990). Indirect relevance and bias in inductive concept learning. Knowledge Acquisition, 2, 365-390. desJardins, M., & Gordon, D. F. (Eds.). (1995). 
+Reilly, W. S. (1996). Believable Emotional and Social Agents. Ph.D. thesis, School of Computer Science, Carnegie Mellon University. 
+Arun Garg. Parallel STREAMS: A multi-processor implementation. In Proceedings of the Winter 1990 USENIX Conference, pages 163-176, Washington, D. C., January 1990. 
+J. C. Butcher. Diagonally implicit general linear methods for ordinary differential equations. Technical report, University of Auckland, 1993. Submitted for publication. 
+Bederson, B. B., & Hollan, J. D., Pad++: A zooming graphical interface for exploring alternate interface physics, Proceedings of User Interface Software and Technology (UIST 94) 1726, ACM, New York, 1994. 
+Gmytrasiewicz, P. J., Durfee, E. H., & Wehe, D. K. (1991b). The utility of communication in coordinating intelligent agents. In Proceedings of the Ninth National Conference on Artificial Intelligence, pp. 166-172. 
+A. Gupta, V Harinarayan, D. Quass. "Aggregate-Query Processing in Data Warehousing Environments", Proceedings of the 21st VLDB Conference, Zurich, Swizerland, 1995. 
+Ling Tony Chen, R. Drach, M. Keating, S . Louis, Doron Rotem, Arie Shoshani, Efficient organization and access of multidimensional datasets on tertiary storage systems, Information Systems 20(2), pp. 155-183 (1995). 
+Deransart, P., Jourdan, M., and Lorho, B., Attribute Grammars: Definitions, Systems and Bibliography, Lecture Notes in Computer Science, Vol. 323, Springer-Verlag, New York, NY (1988). 
+E. Mohr, D. A. Kranz, and R. H. Halstead. Lazy Task Creation: a Technique for Increasing the Granularity of Parallel Programs. In Proceedings of the 1990 ACM Conference on LISP and Functional Programming, pages 185-197, June 1990. 
+Richter (Eds.), Topics in Case-Based Reasoning. Berlin: Springer-Verlag, pp. 167-181. 
+Scott, D., and de Souza, C. S. 1990. Getting the message across in RST-based text generation. In Dale, R.; Mellish, C.; and Zock, M., eds., Current Research in Natural Language Generation. New York: Academic Press. 47-73. 
+Poole, David (1988). A logical framework for default reasoning. Artificial Intelligence, 36(1), 27-47 . 
+S. J. Eggers, D. R. Keppel, E. J. Koldinger, and H. M. Levy. Techniques for efficient inline tracing on a shared-memory multiprocessor. In Proceedings of the International Conference on Measurement and Modeling of Computer Systems, pages 37-47, May 1990. 
+S. Abiteboul and V. Vianu. Datalog extensions for database queries and updates. Journal of Computer and System Sciences, 43, 62-124, 1991. 
+R. Lipsett, C. Schaefer, C. Ussery, VHDL: Hardware Description and Design, Kluwer Academic Publishers, 1989. 
+S. Majumdar, D. Eager, and R. Bunt. Scheduling in Multiprogrammed Parallel Systems. Proc. of the ACM SIGMETRICS Conf. on Measurement & Modeling of Computer Systems 16, 1, (May 1988), 104-113. 
+S. Carr, K. S. McKinley, and C.-W. Tseng. Compiler optimizations for improving data locality. In Proceedings of the Sixth International Conference on Architectural Support for Programming Languages and Operating Systems (ASPLOS-VI), San Jose, CA, October 1994. 
+Fikes, R. E., & Nilsson, N. J. (1971). STRIPS: A new approach to the application of theorem proving to problem solving. Artificial Intelligence, 2, 189-208. Also in (Allen et al., 1990). Planning for Contingencies: A Decision-based Approach 
+Felleisen, M. Programming languages and lambda calculi. URL: www.cs.rice.edu/~matthias/411web/mono.ps. 
+M. Herlihy and J. Wing, "Linearizability: A Correctness Condition for Concurrent Objects", ACM Transactions on Programming Languages and Systems, Vol. 12, No. 3, 1990, pp. 463-492. 
+M. J. Wolfe and U. Banerjee. Data dependence and its application to parallel processing. International Journal of Parallel Programming, 16(2), 137-178, April 1987. 
+Raab, F. H., "Remote object position locator". US patent 4 0054 881 October 18, 1977. 
+Jinxin Lin and Alberto O. Mendelzon. Merging databases under constraints. Manuscript, 1995. 
+R. T. Snodgrass. The Temporal Query Language TQuel. ACM TODS, 12(2), 247-298, June 1987. 
+Harandi, M. T., Ning, J. Q., (1990), Knowledge Based Program Analysis", IEEE Software. 
+Vander Linden, K.; Cumming, S.; and Martin, J. 1992. Expressing local rhetorical relations in instructional text. Technical Report 92-43, University of Colorado. To appear in Computational Linguistics. 
+Witten, I. H., Neal R. M., and Cleary J. G. (1987). Arithmetic coding for data compression. Communications of the ACM 30, 520-540. 
+Emihovich, C., & Miller, G. E. (1988). Talking to the turtle: A discourse analysis of Logo instruction. Discourse Processes, 11, 183-201. 
+R. Harper and G. Morrisett. Compiling polymorphism using intensional type analysis. In Conference Record of the 22nd Annual ACM Symposium on Principles of Programming Languages, San Francisco, CA, Jan. 1995. 
+A. Romanow and S. Floyd. The Dynamics of TCP Traffic over ATM Networks. IEEE Journal on Selected Areas in Communication, 13(4), May 1995. 
+Knopfmacher, A. On the number of distinct degree sizes of a polynomial over a finite field. Preprint, 1996. 
+S. Amarasinghe and M. Lam. Communication optimization and code generation for distributed memory machines. In Proceedings of the SIGPLAN '93 Conference on Programming Language Design and Implementation, Albuquerque, NM, June 1993. 
+C. Amza, A. L. Cox, S. Dwarkadas, P. Keleher, H. Lu, R. Rajamony, W. Yu, and W. Zwaenepoel. Tread-Marks: Shared memory computing on networks of workstations. IEEE Computer, 29(2), 18-28, February 1996. 
+Srinivasan, A., Muggleton, S. H., Sternberg, M. J. E., & King, R. D. (1996). Theories for mutagenicity: a study in first-order and feature-based induction. Artificial Intelligence, 84, 277-299. 
+B. Berthomieu and M. Diaz. Modeling and verification of time dependent systems using time Petri nets. IEEE Trans. Softw. Eng., 17 259-273, 1991. 
+A. Agarwal, B.-H. Lim, D. Kranz, and J. Kubiatowicz. APRIL: a processor architecture for multiprocessing. In Proceedings of the 17th Annual International Symposium on Computer Architecture, pages 104-114, May 1990. 
+Serra, J. (1982). Image Analysis and Mathematical Morphology. Academic Press, London. 
+D. Borman, Editor, ``Telnet Encryption Option,'' Internet-Draft, Internet Engineering Task Force, Telnet Working Group (July 1991). 
+Catlett, J. (1991b). Megainduction: Machine Learning on Very Large Databases. Ph.D. thesis, Basser Department of Computer Science, University of Sydney. 
+Quinlan, J. R. (1990). Learning logical definitions from relations. Machine Learning, 5, 239-266. 
+Felleisen, M. The theory and practice of first-class prompts. Proceedings of the 15th Annual Symposium on Principles of Programming Languages (1988), 180-190. 
+Narayana, K. T. and Aaby, A. A., "Specification of Real-Time Systems in Real-Time Temporal Interval Logic", Proceedings of Real-Time Systems Symposium, December 1988. 
+Adorni, G., Broggi, A., Conte, G., & D'Andrea, V. (1993). A self-tuning system for real-time Optical Flow detection. In Proceedings IEEE System, Man, and Cybernetics Conf, Vol. 3, pp. 7-12. 
+Ripley, B. (1992). Statistical aspects of neural networks. Invited lectures for SemStat (Seminaire Europeen de Statistique, Sandbjerg, Denmark, 25-30 April 1992). 
+Umrigar, Zerksis D. and Pitchumani, Vijay (1985). An experiment in programming with full first-order logic. In Symposium of Logic Programming, Boston, MA. IEEE Computer Society Press. 
+van Arragon, Paul (1990). Nested Default Reasoning for User Modeling. PhD thesis, Department of Computer Science, University of Waterloo, Waterloo, Ontario. Published by the department as Research Report CS-90-25. 
+Eifrig, J., Smith, S., Trifonov, V., and Zwarico, A. Application of OOP type theory: State, decid-ability, integration. In Proc. Conference on Object-Oriented Programming Systems, Languages, and Applications (Oct. 1994), pp. 16-30. 
+MacWhinney, B. (1993). Connections and symbols: closing the gap. Cognition, 49 (3), 291-296. 
+L. Lovasz and N. Young. Lecture notes on evasiveness of graph properties. Technical Report CS-TR-317-91, Computer Science Department, Princeton University, 1991. 
+Azer Bestavros and Carlos Cunha. Server-initiated document dissemination for the www. IEEE Data Engineering Bulletin, September 1996. Page 15 
+Bunke, H., & Allermann, G. (1983). Inexact graph matching for structural pattern recognition. Pattern Recognition Letters, 1 (4), 245-253. 
+Kyriazis, G. C., Approximation Orders of Principal Shift-Invariant Spaces Generated by Box Splines, Preprint. 
+A. Bricker, M. Litzkow, and M. Livny. Condor Technical Summary. TR 1069, Computer Sciences Dept., Univ. of Wisconsin-Madison, January 1992. 
+Laird, J. E., Jones, R. M., & Nielsen, P. E. (1994). Coordinated behavior of computer generated forces in tacair-soar. In Proceedings of the Fourth Conference on Computer Generated Forces and Behavioral Representation. Orlando, Florida: Institute for Simulation and Training, University of Central Florida. 
+Peot, M. A., & Smith, D. E. (1993). Threat-removal strategies for partial-order planning. In Proceedings of the Eleventh National Conference of the American Association for Artificial Intelligence (AAAI-93), pp. 492-499 Washington, D. C. Morgan Kaufmann. 
+J. Demmel, I. Dhillon, and H. Ren. On the correctness of parallel bisection in floating point. ETNA, 3 116-149, 1995. (See also LAPACK Working Note No.70). 
+Sarita V. Adve. Using information from the programmer to implement system optimizations without violating sequential consistency. Technical Report Technical report TR 9603 (Submitted for publication), Department of Electrical and Computer Engineering, Rice University, March 1996. 
+Jia, R.-Q., and J. Lei, Approximation by Multiinteger Translates of Functions Having Global Support, J. Approx. Theory 72 (1993), 2-23. 
+Rees, J. and W. Clinger (Eds.). The revised 3 report on the algorithmic language Scheme. SIGPLAN Notices 21(12), 1986, 37-79. 
+Wettschereck, Dietrich, and Thomas G. Dietterich, (1995). An Experimental Comparison of Nearest-Neighbor and Nearest-Hyperrectangle Algorithms. Machine Learning, Vol. 19, No. 1, pp. 5-28. 
+C. K. I. Williams. Combining deformable models and neural networks for handprinted digit recognition. PhD thesis, Dept. of Computer Science, University of Toronto, 1994. 
+Mostow, J., & Bhatnagar, N. (1987). Failsafe: A floor planner that uses ebg to learn from its failures. In Proceedings IJCAI-87. 
+H. Raiffa. The Art and Science of Negotiation. Harvard Univ. Press, Cambridge, Mass., 1982. 
+Plotkin, G. D. (1971a). Automatic Methods of Inductive Inference. Ph.D. thesis, Edinburgh University. 
+T. E. Hull, T. F. Fairgrieve, and P. T. P. Tang. Implementing complex elementary functions using exception handling. ACM Trans. Math. Softw., 20(2) 215-244, 1994. 
+Anoop Gupta, Andrew Tucker, and Shigeru Urushibara. The impact of operating system scheduling policies and synchro nization methods on the performance of parallel applications. In Proceedings of the ACM SIGMETRICS Conference on Measurement and Modeling of Computer Systems, pages 120-132, May 1991. 
+Aaron Kershenbaum, David Musser, and Alexander Stepanov. Higher order imperative programming. Technical report, Computer Science Department, Rensselaer Polytechnic Institute, 1988. 
+Card, S. K., Robertson, G. G., Mackinlay, J. D., The Information Visualizer, an Information Workspace, Proceedings of Human Factors in Computing Systems (CHI91), 181188, ACM, New York, 1991. 
+M. Wolfe, ``Optimizing supercompilers for supercomputers,'' Pitman Publishing Company, London, MIT Press, Cambridge, Massachusets, 1989. 
+Plunkett, K., & Marchman, V. (1991). U-shaped learning and frequency effects in a multilayered perceptron: Implications for child language acquisition. Cognition, 38, 43 - 102. 
+William G. Cochran. Sampling Techniques. John Wiley and Sons, Inc., New York, New York, 3 edition, 1977. 
+Renals, Steve, and Richard Rohwer, (1989). Phoneme Classification Experiments Using Radial Basis Functions. In Proceedings of the IEEE International Joint Conference on Neural Networks (IJCNN89), Vol. 1, pp. 461-467. 
+Selman, B., Levesque, H., & Mitchell, D. (1992). A new method for solving hard satisfiability problems. In Proceedings of AAAI-92, pp. 440-446. AAAI/MIT Press. 
+Rivest, R. L. (1987). Learning decision lists. Machine Learning, 2 (3), 229-246. 
+McKinsey, J. C. C. (1943). The decision problem for some classes of sentences without quantifier. Journal of Symbolic Logic, 8 (3), 61-76. 
+Schaffer, C. (1992). Sparse data and the effect of overfitting avoidance in decision tree induction. In AAAI-92 Proceedings of the Tenth National Conference on Artificial Intelligence, pp. 147-152 San Jose, CA. AAAI Press. 
+C. Thekkath, H. Levy, and E. Lazowska. Efficient Support for Multicomputing on ATM Networks. Technical Report TR93-04-03, Department of Computer Science and Engineering, University of Washington, April 1993. 
+Mahadevan, S., & Connell, J. (1991). "Automatic Programming of Behavoir-Based Robots Using Reinforcement Learning". In AAAI, pp. 768-773. 
+Robert A. Ballance, Arthur B. Maccabe, and Karl J. Ottenstein. The program dependence web: A representation supporting control-, data-, and demand-driven interpretation of imperative languages. In Proc. of Sigplan '90 Conf. on Programming Language Design and Implementation, pages 257-271, 1990. 
+Y. L. Chang and M. E. Marhic. Fiber-optic ladder networks for inverse decoding coherent CDMA. Journal of Lightwave Technology, 10(12) 1952-1962, December 1992. 
+J. H. M. J. Daily and K. Reiser, "Detecting obstacles in range imagery," Proc. of [ARPA] Image Understanding Workshop, pp. 87-97, 1987. 
+Cousot, P. and Cousot, R. 1978. Static determination of dynamic properties of recursive procedures. In Proceedings of the IFIP Conference on Programming Concepts, E. Neuhold, Ed. North-Holland Pub. Co., 237-277. 
+Oded Shmueli. Decidability and expressiveness aspects of logic queries. In Proceedings of the Sixth Symposium on Principles of Database Systems (PODS), pages 237-249, San Diego, CA, March 1987. 
+Conklin, D., Fortier, S., & Glasgow, J. (1993a). Knowledge discovery in molecular databases. IEEE Transactions on Knowledge and Data Engineering, 985-987. Special Issue on Learning and Discovery in Knowledge-Based Databases. 
+Huffman, D. A. (1952). A method for the construction of minimum redundancy codes. Proceedings of the Institute of Radio Engineers 40, 1098-1101. 
+Baffes, P., & Mooney, R. (1993). Symbolic revision of theories with M-of-N rules. In Proceedings of the Thirteenth International Joint Conference on Artificial Intelligence, pp. 1135-1140, Chambery, France. Morgan Kaufmann. 
+Lamaire, R. O, and D. N. Serpanos, Two Dimensional Round Robin Schedulers for Packet Switches with Multiple Input Queues, IEEE/ACM Tr ans. on Networking , pp. 471-482. (October 94). 
+McCarthy, J. (1958). Programs with common sense. In Proceedings of the Symposium on the Mechanization of Thought Processes, Vol. 1, pp. 77-84. National Physical Laboratory. Reprinted in Minsky`s (ed.) Semantic Information Processing, MIT Press (1968), 403-409.
+K. D. Cooper, ``Analyzing aliases of reference formal parameters'', Proc. Twelfth POPL, Jan. 1985. 
+Miller, G. 1995. WordNet: A lexical database for English. Communications of the ACM 38 39-41 . 
+A. Louri and H. Sung. "A Compiler Directed Cache Coherence Scheme With Fast and Parallel Explicit Invalidation." In Proc. of the 1992 International Conference on Parallel Processing, pages 2-9, Aug 1992. 
+G. Patnaik. Personal communication, September 1995. 
+Kennedy, A. D. (1990) "The theory of hybrid stochastic algorithms", in P. H. Damgaard, et al. (editors) Probabilistic Methods in Quantum Field Theory and Quantum Gravity, New York: Plenum Press. 
+J. Singh and J. Hennessy. An empirical investigation of the effectiveness of and limitations of automatic parallelization. In Proceedings of the International Symposium on Shared Memory Multiprocessors, Tokyo, Japan, April 1991. 
+D. J. Burr. Elastic matching of line drawings. IEEE Trans. Pattern Analysis and Machine Intelligence, 3(6), 708-713, 1981. 
+Wermuth, N., & Lauritzen, S. L. (1983). Graphical and recursive models for contingency tables. Biometrika, 70, 537-552. 
+D. Lomet and Mark R. Tuttle. Redo Recovery after System Crashes. In Proc. of the 21st International Conference on Very Large Data Bases, Zurich, Sept. 1995. 
+A. V. Aho, R. Sethi, and J. Ullman. Compilers: Principles, Techniques, and Tools. Addison-Wesley, Reading, MA, second edition, 1986. 
+B. Shneiderman. Tree visualization with tree-maps: A 2-d space filling approach. ACM Transactions on Graphics, 11(1) 1-39, Jan. 1992. 
+Murthy, S. K., Kasif, S., Salzberg, S., & Beigel, R. (1993). OC 1 Randomized induction of oblique decision trees. In Proceedings of the Eleventh National Conference on Artificial Intelligence, pp. 322-327. Washington, D. C. MIT Press. 
+Leroy, X. Typage polymorphe d'un langage algorithmique. PhD thesis, Universite Paris 7, 1992. 
+Millroth, H., Reforming Compilation of Logic Programs, Ph.D. Thesis, Computing Science Department, Uppsala University, 1990. 
+Angrist, J., Imbens, G., & Rubin, D. (1995). Identification of causal effects using instrumental variables. Journal of the American Statistical Association, in press. 
+D. Padua and M. J. Wolfe. Advanced compiler optimizations for supercomputers. Communications of the ACM, 29(12) 1184-1201, December 1986. 
+Wellman Kephart, J. O., Hogg, T., & Huberman, B. A. (1989). Dynamics of computational ecosystems. Physical Review A, 40, 404-421. 
+Jeffrey Kuskin, David Ofelt, Mark Heinrich, John Heinlein, Richard Simoni, Kourosh Gharachorloo, John Chapin, David Nakahira, Joel Baxter, Mark Horowitz, Anoop Gupta, Mendel Rosenbaum, and John Hennessy. The Stanford FLASH multiprocessor. In Proceedings of the 21st Annual International Conference on Computer Architecture, pages 302-313, April 1994. 
+T. A. Cook and E. A. Harcourt. A functional specification language for instruction set architectures. In Proc. 1994 International Conference on Computer Languages, pages 11-19, 1994. 
+A. L. Yuille. Deformable templates for face recognition. Journal of Cognitive Neuroscience, 3(1) 59-70, 1991. 
+F. Facchinei and C. Kanzow. On unconstrained and constrained stationary points of the implicit Lagrangian. Journal of Optimization Theory and Applications, 92 99-115, 1997. 
+N. A. Lorentzos and Y. G. Mitsopoulos. SQL Extension for Interval Data. IEEE TKDE, 9(3) 480-499, May 1997. 
+M. J. Harrold and M. L. Soffa, "An Incremental Approach to Unit Testing During Maintenance," Proc. of the Conference on Software Maintenance, pages 362-367, 1988. 
+Friedman, J. H., & Stuetzle, W. (1981). Projection pursuit regression. Journal of the American Statistics Association, 76, 817-823. 
+R. Fikes, M. Cutkosky, T. Gruber, and J. V. Baalen. Knowledge Sharing Technology Project Overview. Technical Report KSL-91-71, Knowledge Systems Laboratory, Stanford University, 1991. 
+J. Adams, W. Brainerd, J. Martin, B. Smith, and J. Wagener. Fortran 90 Handbook. McGraw-Hill, New York, NY, 1992. 
+Ruth Shapira. A note on Sugihara's claim. IEEE Transactions on Pattern Analysis and Machine Intelligence, 6(1) 122-123, 1984. 
+Howard Turtle and W. Bruce Croft. Inference networks for document retrieval. In Jean-Luc Vidick, editor, Proceedings of the 13th Annual International ACM-SIGIR Conference on Research and Development in Information Retrieval, pages 1-24, Brussels, Belgium, September 1990. 
+Dwork, C., Kanellakis, P. C., and Mitchell, J. C., On the sequential nature of unification, Journal of Logic Programming 1 pp. 35-50 (1984). 
+Jin-yi Cai (1990), A Note on the Determinant and Permanent Problem, Information and Computation, 84, No. 1, 119-127. 
+Rao, A. S., Georgeff, M. P., & Sonenberg, E. (1991). Social plans: a preliminary report. In Pre-Proceedings of the Third European Workshop on Modeling Autonomous Agents and Multi-Agent Worlds Germany. 
+Gentner, D. and Markman, A. B. (1992). Analogy Watershed or Waterloo? Structural alignment and the development of connectionist models of analogy. In Giles, C. L., Hanson, S. J., and Cowan, J. D., editors, Advances in Neural Information Processing Systems 5 (NIPS*92), pages 855-862, San Mateo, CA. Morgan Kaufmann. 
+Paul Hudak, Simon Peyton Jones, and Philip Wadler (Editors). Report on the Programming Language Haskell, version 1.2. ACM SIGPLAN Notices, 27(5), 1992. 
+Hill, P. M. and Lloyd, J. W., The Godel Programming Language, MIT Press, Cambridge, Mass., 1994. 
+Shoham, Y. (1988). Reasoning about Change. Cambridge, MA: MIT Press. van Benthem, J. F. A. K. (1989). Semantic parallels in natural language and computation. 
+T. J. Sabin, C. A. L. Bailer-Jones, S. M. Roberts, D. J. C. MacKay, P. J. Withers, to be presented at THERMEC 97 (International Conference on Thermomechanical Processing), July 1997. 
+Roland Wismuller. Debugging of globally optimized programs using data flow analysis. In Proceedings of the ACM/SIGPLAN Conference on Programming Language Design and Implementation, pages 278-289. ACM, June 1994. Available via WWW from http://wwwbode.informatik.tu-muenchen.de/~wismuell/publications.html 
+P. Evripidou and J-L. Gaudiot, "The USC decoupled multilevel data-flow execution model," In Jean-Luc Gaudiot and Lubomir Bic, editors, Advanced Topics in Data-Flow Computing, pages 347-379. New Jersey: Prentice Hall, 1991. 
+Cherri M. Pancake and Sue Utter. Models for visualization in parallel debuggers. In Proceedings Supercomputing '89, November 1989. 
+Gupta, R., Smolka, S., & Bhaskar, S. (1994). On randomization in sequential and distributed algorithms. ACM Computing Surveys, 26 (1), 7-86. 
+H. Lu, S. Dwarkadas, A. Cox, and W. Zwaenepoel. Message passing versus distributed shared memory on networks of workstations. In Proceedings SuperComputing '95, Dec. 1995. 
+A. Garvey and V. R. Lesser, "Design-to-time Real-Time Scheduling", IEEE Transactions on Systems, Man, and Cybernetics: Special Issue on Scheduling, Planning, and Control, 23(6), 1993. 
+Gertz M., Lipeck U. W. Deriving Integrity Maintaining Triggers from Transition Graphs. In International Conference on Data Engineering, 1993. 
+D. G. Bradlee, S. J. Eggers and R. R. Henry, Integrating Register Allocation and Instruction Scheduling for RISCs, Proc. Fourth International Conf. on ASPLOS, Santa Clara, CA, April 8-11, 1991, pp. 122-131. 
+B. Ryder and M. Paull. Incremental data flow analysis algorithms. ACM Transactions on Programming Languages and Systems, 10(1) 1-50, January 1988. 
+Weiss, S., & Indurkhya, N. (1993a). Optimized Rule Induction. IEEE Expert, 8 (6), 61-69. 
+Sutherland, I. Sketchpad: A Man-Machine Graphical Communication System, Tech Report #296, MIT Lincoln Labs, Cambridge, MA, 1963. 
+Zhai, S. & Milgram, P. (1991). A telerobotic virtual control system. Proceedings of SPIE 1612, Cooperative Intelligent Robotics in Space II, (pp. 311-320). Boston, MA. 
+J. Anderson, "Composite Registers", Distributed Computing, 6(3), 1993, pp. 141-154. 
+Ventura, Dan, (1995). On Discretization as a Preprocessing Step for Supervised Learning Models, Masters Thesis, Department of Computer Science, Brigham Young University. 
+Amdur, E. S. On the Message Complexity of Byzantine Agreement. Master's Thesis, Department of Computer Science, University of Toronto, September 1988. 
+Plunkett, K., & Marchman, V. (1991). U-shaped learning and frequency effects in a mul-tilayered perceptron: Implications for child language acquisition. Cognition, 38, 43 - 102. 
+In Wrobel, S.(Ed.), Proceedings of the Fourth International Workshop on Inductive Logic Programming Bad Honnef/Bonn, Germany. 
+K. Keeton, B. A. Mah, S. Seshan, R. H. Katz, and D. Ferrari. Providing Connection-Oriented Service to Mobile Hosts. In Proceedings of the First USENIX Symposium on Mobile and Location-Independent Computing, August 1993. 
+Parr, R., & Russell, S. (1995). Approximating optimal polices for partially observable stochastic domains. In Proceedings of IJCAI-95, 1088-1094. 
+Bennett, K. H., Bull, T. and Yang, H., "A Transformation System for Maintenance | Turning Theory into Practice", IEEE Conference on Software Maintenance-1992, Orlando, Florida, November, 1992. 
+J. M. Lalouel. GEMINI a computer program for optimization of general nonlinear functions. Technical Report 14, University of Utah, Department of Medical Biophysics and Computing, Salt Lake City, Utah, 1979. 
+Cau, A. and Zedan, H., "Refining Interval Temporal Logic specifications", Draft Paper, November 1996. 
+Dempster, A., Laird, N., and Rubin, D. (1977) Maximum likelihood from incomplete data via the EM algorithm. Journal of the Royal Statistical Society B39, 1-38. 
+Michalski, Ryszard S., Robert E. Stepp, and Edwin Diday, (1981). A Recent Advance in Data Analysis: Clustering Objects into Classes Characterized by Conjunctive Concepts. Progress in Pattern Recognition, Vol. 1, Laveen N. Kanal and Azriel Rosenfeld (Eds.). New York: North-Holland, pp. 33-56. 
+Tambe, M. (1996). Tracking dynamic team activity. In Proceedings of the National Conference on Artificial Intelligence (AAAI). 
+Valiant, L. G. (1984). A theory of the learnable. Communications of the ACM, 27 (11). 
+D. Georgakopoulos, M. Rusinkiewicz, and A. Sheth. Using tickets to enforce the serializability of multidatabase transactions. IEEE Trans. on Knowledge and Data Eng., 6(1) 166, February 1994. 
+J. Kim and P. Khosla, "Real-time obstacle avoidance using harmonic potential functions," Tech. Report COMPSI T-RA 8, pp. 338-349, 1992. 
+Surajit Chaudhuri and Moshe Vardi. On the equivalence of recursive and nonrecursive data-log programs. In The Proceedings of the PODS-92, pages 55-66, 1992. 
+Verlinden, J., Bolter, J. D., & van der Mast, C. Voice Annotation in Virtual Environments, paper submitted to ESS '93. 
+Lisa F. Rau. Extracting company names from text. In Proceedings of the Sixth IEEE Conference on Artificial Intelligence Applications, 1991. 
+C. Norris and L. Pollock, "A scheduler-sensitive global register allocator," In Proc. of Supercomputing, pages 804-813, 1993. 
+Jeffay, K., Stone, D. L., Smith, F. D., Kernel Support for Live Digital Audio and Video, Computer Communications, Vol. 15, No. 6 (July / August 1992), pp. 388-395. 
+A. Demers, S. Keshav, and S. Shenker. Analysis and simulation of a fair queueing algorithm. Internetworking:Research and Experience, 1 3-26 . 
+Fikes, R. E., Hart, P. E., & Nilsson, N. J. (1972). Learning and executing generalized robot plans. Artificial Intelligence, 3, 251-288. 
+Zhang, Z., & Faugeras, O. (1992). 3D Dynamic Scene Analysis. Springer-Verlag. 
+Hawley, D. K., & McClure, W. R. (1983). Compilation and analysis of escherichia coli promoter DNA sequences. Nucleic Acids Research, 11 (8), 2237-2255. 
+M. Kamath and K. Ramamritham. Modeling, Correctness & Systems Issues in Supporting Advanced Database Applications using Workflow Management Systems. Technical Report TR 95-50, University of Massachusetts, Computer Science Dept., 1995. 
+M. J. Harrold and M. L. Soffa, ``An incremental approach to unit testing during maintenance,'' Proceedings of the International Conference on Software Maintenance, pp. 362-367, October 1988. 
+VanLehn, K., Jones, R. M., & Chi, M. T. H. (1992). A model of the self-explanation effect. Journal of the Learning Sciences, 2 (1), 1-59. 
+Boddy, M., 1991. Any Time Problem Solving Using Dynamic Programming. In Proceedings AAAI-91. AAAI. 
+Jurafsky, D., Wooters, C., Tajchman, G., Segal, J., Stolcke, A., Fosler, E., & Morgan, N. (1994a). The Berkeley Restaurant Project. In Proceedings of the International Conference on Speech and Language Processing. pp. 2139-2142, Yokohama, Japan. 
+Alon Y. Levy, Divesh Srivastava, and Thomas Kirk. Data model and query evaluation in global information systems. Journal of Intelligent Information Systems, 1995. Special Issue on Networked Information Discovery and Retrieval (to appear). 
+Sussman, G. J. (1975). A Computer Model of Skill Acquisition. New York: American Elsevier. 
+Crawford, J., & Auton, L. (1993). Experimental results on the crossover point in satisfiability problems. Proceedings of the 11th National Conference on Artificial Intelligence, 21-27. 
+Hermans, J., Habbema, J. D. F., & Van der Burght, A. T. (1974). Cases of doubt in allocation problems, k populations. Bulletin of the International Statistics Institute, 45, 523-529. 
+Reichman, R. (1985). Getting Computers to Talk Like You and Me: Discourse Context, Focus, and Semantics. Cambridge, MA: MIT Press. 
+K. Chandy and J. Misra, Parallel Program Design: A Foundation, Addison-Wesley, 1988. 
+S. L. Peyton Jones & P. L. Wadler [Jan 1993], "Imperative functional programming," in 20th ACM Symposium on Principles of Programming Languages, Charleston, ACM, 71-84. 
+Nishida, T., & et al. (1991). Automated phase portrait analysis by integrating qualitative and quantitative analysis. In Proceedings of AAAI. 
+Kosslyn, S. M. (1994). Image and Brain: the resolution of the imagery debate. MIT Press. 
+Shoham, Y., & Tennenholtz, M. (1994). Co-learning and the evolution of social activity. Tech. rep. STAN-CS-TR-94-1511, Dept. of Computer Science, Stanford University. 
+Reiter, R. (1980). A logic for default reasoning. Artificial Intelligence, 13, 81-132. 
+L. Hernquist, "Vectorization of Tree Traversals," Journal of Computational Physics, vol. 87, 1990. 
+Kibler, D., and David W. Aha, (1987). Learning representative exemplars of concepts: An initial case study. Proceedings of the Fourth International Workshop on Machine Learning. Irvine, CA: Morgan Kaufmann, pp. 24-30. 
+Kohonen, Teuvo, (1990). The Self-Organizing Map. In Proceedings of the IEEE, Vol. 78, No. 9, pp. 1464-1480. 
+F. Allen, M. Burke, P. Charles, R. Cytron, and J. Ferrante. An overview of the PTRAN analysis system for multiprocessing. In Proceedings of the First International Conference on Supercomputing. Springer-Verlag, Athens, Greece, June 1987. 
+M. Burke and R. Cytron, ``Interprocedural dependence analysis and parallelization'', Proc. SIGPLAN 86 Symposium on Compiler Construction, SIGPLAN Notices 21(7), July 1986. 
+D. Haussler. Quantifying inductive bias: AI learning algorithms and Valiant's learning framework. Artificial Intelligence, 1988. 
+Litman, D., & Hirschberg, J. (1990). Disambiguating cue phrases in text and speech. In Proceedings of the Thirteenth International Conference on Computational Linguistics (COLING). 
+Jaswinder Pal Singh, Wolf-Dietrich Weber, and Anoop Gupta. SPLASH: Stanford Parallel Applications for Shared Memory. Computer Architecture News, 20(1), 5-44, March 1992. 
+Forbus, K. D. (1989). Introducing Actions in Qualitative Simulation. Proceedings of IJCAI-89, 1273-1278. 
+M. C. Rinard and M. S. Lam. Semantic foundations of Jade. In Record of the Nineteenth Annual ACM Symposium on Principles of Programming Languages, pages 105-118, January 1992. 
+Webber, Bonnie Lynn and Mays, Eric (1983). Varieties of user misconceptions: Detection and correction. In Proceedings of the Eighth International Joint Conference on Artificial Intelligence, Karlsruhe. pages 650-652. 
+C. Baru, O. Frieder, D. Kandlur, and M. Segal. Join on a cube: Analysis, simulation, and implementation. In M. Kitsuregawa and H. Tanaka, editors, Database Machines and Knowledge Base Machines. Kluwer Academic Publishers, 1987. 
+Pryor, L., & Collins, G. (1993). Cassandra: Planning with contingencies. Technical report 41, Institute for the Learning Sciences, Northwestern University. 
+Harper, M. P., & Helzerman, R. A. (1995b). Managing multiple knowledge sources in constraint-based parsing of spoken language. Fundamenta Informaticae, 23 (2, 3, 4), 303-353. 
+Mark Friedell, Mark LaPolla, Sandeep Kochhar, Steve Sistare, and Janusz Juda. Visualizing the behavior of massively parallel programs. In Proceedings Supercomputing '91, November 1991. 
+Michael Stonebraker, Anant Jhingaran, Jef-frey Goh, and Spyros Potamianos. On rules, procedures, caching and views in databases. Technical Report UCB/ERL M90/36, University of California, Berkeley, April 1990. 
+Arvind Krishnamurthy and Katherine Yelick. Optimizing parallel programs with explicit synchronization. In Proceedings of the ACM SIG-PLAN '95 Conference on Programming Language Design and Implementation, July 1995. 
+I. Koren and A. D. Singh, "Fault Tolerance in VLSI Circuits," Computer, Special Issue on Fault-Tolerant Systems, Vol. 23, No. 7, pp. 73-83, July 1990. 
+Krogh, A., & Vedelsby, J. (1995). Neural network ensembles, cross validation, and active learning. In Tesauro, G., Touretzky, D., & Leen, T. (Eds.), Advances in Neural Information Processing Systems, Vol. 7, pp. 231-238, Cambridge, MA. MIT Press. 
+Stephen Lindell (1992), A Purely Logical Characterization of Circuit Uniformity, Seventh IEEE Structure in Complexity Theory, 185-192. 
+Brieman, L., Friedman, J., Olshen, R., & Stone, C. (1984). Classification and Regression Trees. Monterey, CA: Wadsworth and Brooks. 
+S. P. Amarasinghe, J. M. Anderson, C. S. Wilson, S.-W. Liao, B. M. Murphy, R. S. French, M. S. Lam, and M. W. Hall. Multiprocessors from a software perspective. IEEE Micro, pages 5261, June 1996. 
+Y. Breitbart, A. Silberschatz, and G. R. Thompson. An approach to recovery management in a multidatabase system. The VLDB Journal, 1(11), July 1992. 
+D. R. Helman, D. A. Bader, and J. JaJa. Parallel Algorithms for Personalized Communication and Sorting With an Experimental Study. In Proceedings of the Eighth Annual ACM Symposium on Parallel Algorithms and Architectures, pages 211-220, Padua, Italy, June 1996. 
+Frank Kappe, Hermann Maurer, and Nick Sherbakov. Hyper-G a universal hypermedia system. Journal of Educational Multimedia and Hypermedia, 2(1) 39-66, 1993. 
+Dyn, N. and A. Ron (1993) "Radial basis function approximation: from gridded centres to scattered centres", CMS Technical Summary Report #94-3, University of Wisconsin-Madison. 
+J. Wiener, H. Gupta, W. Labio, Y. Zhuge, H. Garcia-Molina, and J. Widom. A system prototype for warehouse view maintenance. In The Workshop on Materialized Views, pages 26-33, June 1996. 
+Albert Croker and David Maier. A Dynamic Tree-Locking Protocol. In Proceedings of the International Conference in Data Engineering, pages 49-56, Los Angeles, CA, 1986. 
+R. Graham. Bounds on multiprocessing timing anomalies. SIAM Journal of Computing, 17 416 - 429, 1969. 
+M. Holliday and M. Stumm. Performance evaluation of hierarchical ring-based shared memory mutliprocessors. Technical Report CS-1992-18, Computer Science Department, Duke University, 1992. 
+C. Forsyth. Implementation of the worst-case execution analyser. Technical Report Hard Real-Time Operating System Kernel Study Task 8, Volume E, York Software Engineering Ltd, July 1992. 
+J. P. Callan, "Document Filtering With Inference Networks," Proceedings of SIGIR, 262-269, 1996. 
+Deutsch, A. Modeles Operationnels de Language de Programmation et Representations de Relations sue des Languages Rationnels avec Application a la Determination Statique de Proprietes de Partages Dy-namiques de Donnees. PhD thesis, Universite Paris VI, 1992. 
+J.-S. Pang and S. A. Gabriel, NE/SQP: A robust algorithm for the nonlinear complementarity problem, Math. Programming, 60 (1993), pp. 295-337. 
+Allen, James F. (1979). A Plan-Based Approach to Speech Act Recognition. PhD thesis, Department of Computer Science, University of Toronto, Toronto, Canada. Published as University of Toronto, Department of Computer Science Technical Report No. 131. 
+Danvy, O. and A. Filinski. Representing control: A study of the CPS transformation. Tech. Rpt. CIS-91-2. Kansas State University, 1991. 
+E. Allender, N. Immerman, J. Balcazar (1993), A First-Order Isomor-phism Theorem, STACS, 163-174. 
+Milgrom, P., & Roberts, J. (1991). Adaptive and sophisticated learning in normal form games. Games and Economic Behavior, 3, 82-100. 
+Lovejoy, W. S. (1991b). Computationally feasible bounds for partially observed Markov decision processes. Operations Research, 39 (1), 162-175. 
+Spirtes, P., Glymour, C., & Scheines, R. (1993). Causation, Prediction, and Search. Springer-Verlag, New York. 
+Hadzilacos, V. Issues of Fault Tolerance in Concurrent Computations. Ph.D. dissertation, Harvard University, June 1984. 
+R. B. Kieburtz, B. Agapiev and J. Hook. Three Monads for Continuations. In Proceedings of the ACM SIGPLAN Workshop on Continuations, Department of Computer Science, Stanford University, Report No. STAN-CS-92-1462, June 1992. 
+Y. Robert. The Impact of Vector and Parallel Architectures on the Gaussian Elimination Algorithm. Halsted Press, New York, 1990. 
+Halpern, J. Y., & Moses, Y. (1990). Knowledge and common knowledge in a distributed environment. Journal of the ACM, 37 (3), 549-587. 
+Buntine, W. (1994). Operations for learning with graphical models. Journal of Artificial Intelligence Research, 2, 159-225. 
+A. J. Bernstein. Analysis of programs for parallel processing. IEEE Transactions on Electronic Computers, pages 757-763, October 1966. 
+Debray, S. K. and Warren, D. S., Automatic Mode Inference for Logic Programs, J. Logic Programming, 5 207-229 (1988). 
+Whittaker, J. (1991). Graphical Models in Applied Multivariate Statistics. Chichester: Wiley. 
+Henderson, D. A. Jr. And Card, S. K. Rooms: The Use of Multiple Virtual Workspaces to Reduce Space Contention in a Window-Based Graphical User Interface, IEEE Transactions on Graphics, 5 (3), 211-243, 1987. 
+Mooney, R. J., & Califf, M. E. (1995). Induction of first-order decision lists: results on learning the past tense of english verbs. Journal of Artificial Intelligence Research, 3, 1-24. 
+Hooman, J., "Specification and Compositional Verification of Real-Time Systems", PhD Thesis, Eindhoven, the Netherlands, 1991. 
+Hauptman, H., & Karle, J. (1953). Solution of the Phase Problem, 1. The Centrosymmetric Crystal, ACA Monograph No. 3. Wilmington: Polycrystal Book Service. 
+D. A. Patterson and J. L. Hennessy. Computer Architecture A Quantitative Approach, page 346. Morgan Kaufman Publishers Inc., San Mateo, California, second edition, 1994. Uncorrected preliminary manuscript. 
+Mooney, R. J. (1990). Learning plan schemata from observation: Explanation-based learning for plan recognition. Cognitive Science, 14, 483-509. 
+S. Hiranandani, K. Kennedy, and C. Tseng. Compiling Fortran D for MIMD distributed-memory machines. Communications of the ACM, 35(8) 66-80, Aug. 1992. 
+F. Rabiti, E. Brtino, W. Kim, D. Woelk, A Model of Authorization for Next-Generation Database Systems, to appear in ACM Transactions on Database Systems. 
+Crammond, J., Scheduling and Variable Assignment in the Parallel Parlog Implementation, in Proceedings of the North American Conference on Logic Programming, Austin, MIT Press, Cambridge, Mass., 1990. 
+Aumann, R., & Maschler, M. (1995). Repeated Games with Incomplete Information. The MIT Press. 
+N. J. Nilsson. Probabilistic logic. Artificial Intelligence, 28(1) 71-87, 1986. 
+Neil Immerman (1989), Expressibility and Parallel Complexity, SIAM J. of Comput 18, 625-638. 	
+N. Benvenuto and F. Piazza. On the Complex Backpropagation Algorithm. IEEE Transactions on Signal Processing, 40(4) 967-969, 1992. 
+E. Granston and A. Veidenbaum. Detecting redundant accesses to array data. In Proceedings of Supercomputing '91, Albuquerque, NM, November 1991. 
+Guziec, A., & Ayache, N. (1992). Smoothing and matching of 3-d space curves. Visualization in Biomedical Computing, Proc. SPIE, 1808, 259-273. 
+P. Havlak and K. Kennedy. An implementation of inter procedural bounded regular section analysis. IEEE Transactions on Parallel and Distributed Systems, 2(3) 350-360, July 1991. 
+Berlekamp, E. Algebraic coding theory. McGraw Hill, New York NY, 1968. 
+Milner, R., M. Tofte, and R. Harper. The Definition of Standard ML. The MIT Press, Cambridge, Massachusetts and London, England, 1990. 
+Mark Keane, Padraig Cunningham, Mike Brady, and Ruth Byrne, editors. Proc. Seventh Irish Annual Conference of AI and Cognitive Science. Dublin University Press, 1994. 
+Odlyzko, A. Asymptotic enumeration methods. In Handbook of Combinatorics, R. Graham, M. Grotschel, and L. Lovasz, Eds., vol. 2. Elsevier, 1995, pp. 1063-1229. 
+K. Decker and V. Lesser, "Designing a Family of Coordination Algorithms", in the Proceedings of 13th International Distributed Artificial Intelligence Workshop, Seattle, WA., July 1994. 
+J. Choi, R. Cytron, and J. Ferrante. Automatic construction of sparse data flow evaluation graphs. In Proceedings of the Eighteenth Annual ACM Symposium on the Principles of Programming Languages, pages 55-66, Orlando, FL, January 1991. 
+M. C. Ferris and J.-S. Pang (editors). Complementarity and variational problems : State of the Art. SIAM Publications, 1997. 
+Bourdoncle, F. Abstract debugging of higher-order imperative languages. In ACM SIGPLAN Conference on Programming Language Design and Implementation, pages 46-55, 1993. 
+D. Callahan, K. D. Cooper, K. Kennedy, and L. Torczon, ``Interprocedural constant propagation'', Proc. SIGPLAN 86 Symposium on Compiler Construction, SIGPLAN Notices, 21(7), July 1986. 
+Bengio, Y., & Frasconi, P. (1994). Credit assignment through time: Alternatives to backpropagation. In Cowan, J. D., Tesauro, G., & Alspector, J. (Eds.), Advances in Neural Information Processing Systems 6. Morgan Kaufmann. 
+Bengio, Y., & Frasconi, P. (1995a). Diffusion of credit in Markovian models. In Tesauro, G., Touretzky, D. S., & Alspector, J. (Eds.), Advances in Neural Information Processing Systems 7. MIT Press. 
+T. Carpenter, K. Driscoll, K. Hoyme, and J. Carciofini. ARINC659 acheduling: Problem definition. In Proceedings of the Real Time Systems Symposium, pages 165-169, December 1994. 
+M. J. Zekauskas, W. A. Sawdon, and B. N. Bershad. Software write detection for distributed shared memory. In Proceedings of the First USENIX Symposium on Operating System Design and Implementation, pages 87-100, November 1994. 27 
+Ware, C. & Slipp, L. (1991). Using velocity control to navigate 3D graphical environments: a comparison of three interfaces. Proceedings of the Human Factors Society 35th annual meeting. 
+David A. Wood, Satish Chandra, Babak Falsafi, Mark D. Hill, James R. Larus, Alvin R. Lebeck, James C. Lewis, Shubhendu S. Mukherjee, Subbarao Palacharla, and Steven K. Reinhardt. Mechanisms for Cooperative Shared Memory. In Proceedings of the 20th Annual International Symposium on Computer Architecture, pages 156-168, May 1993. 
+Morgenstern, L. (1990). A formal theory of multiple agent nonmonotonic reasoning. In Proceedings of the Eighth National Conference on Artificial Intelligence, pp. 538-544 Boston, Massachusetts. 
+Bergamaschi, S., & Sartori, C. (1992). On taxonomic reasoning in conceptual design. ACM Transaction on Database Systems, 17 (3), 385-422. 
+J. J. Koenderink. The structure of images. Biological Cybernetics, 50 363-396, 1984. 
+V. Guarna, D. Gannon, Y. Gaur, and D. Jablonowski. Faust: An environment for programming parallel scientific applications. In Proceedings of Supercomputing '88, Orlando, FL, November 1988. 
+Thrun, T., Schwartz, A. (1995) "Finding Structure in Reinforcement Learning," in Advances in Neural Information Processing Systems, 7. San Mateo: Morgan Kaufmann. 
+Rumelhart, D. E., Hinton, G. E., & Williams, R. J. (1986). Learning internal representations by error propagation. In Rumelhart, D. E., McClelland, J. L., & The PDP research group (Eds.), Parallel Distributed Processing, Vol. 1., pp. 318-362. MIT Press, Cambridge, MA. 
+Tim Berners-Lee, Robert Cailliau, Jean-Francois Groff, and Bernd Pollermann. WorldWideWeb: the information universe. Electronic Networking: Research, Applications and Policy, 2(1) 52-58, Spring 1992. 
+Georgeff, M. P. (1987). Actions, processes, and causality. In Georgeff, M. P., & Lansky, A. L. (Eds.), Reasoning About Actions & Plans, pp. 99-122. Morgan Kaufmann Publishers, Inc., Los Altos, California. 
+H. Johnson and P. Johnson, Designers-identified requirements for tools to support task analyses, INTERACT 90 Proceedings, August 1990, pp. 259-264. 
+Card, S. K., Mackinlay, J. D. and Robertson, G. G. "The Design Space of Input Devices", in Proceedings of CHI 90 (Seattle, Washington, April 1-5, 1990). ACM, New York 1990, pp. 117-124. 
+Brady, J. M., Agre, P. E., Braunegg, D. J., & Connell, J. H. (1984). The mechanic's mate. In Proceedings of the 1984 European Conference on Artificial Intelligence Pisa, Italy. 
+J. K. Peir and R. Cytron. Minimum distance a method for partitioning recur-resnces for multiprocessors. In Proceedings of the 1987 International Conference on Parallel Processing, pages 217-224, 1987. 
+Kambhampati, S., Knoblock, C., & Yang, Q. (1995). Planning as refinement search: a unified framework for evaluating design tradeoffs in partial-order planning. Artificial Intelligence, 76, 167-238. 
+W. W. Carlson and J. M. Draper. AC for the T3D. Technical Report SRC-TR-95-141, Supercomputing Research Center, Bowie, MD, February 1995. 
+Ventura, Dan, (1995). On Discretization as a Preprocessing Step for Supervised Learning Models, Masters Thesis, Department of Computer Science, Brigham Young University. 
+Rosenbloom, P. S., Laird, J. E., & Newell, A. (1988). The chunking of skill and knowledge. 
+Genesereth, M., & Nourbakhsh, I. R. (1993). Time Saving Tips for Problem Solving with Incomplete Information. In Proceedings of AAAI-93. 
+Muggleton, S., & De Raedt, L. (1994). Inductive logic programming: Theory and methods. Journal of Logic Programming, 19, 629-679. 
+J. J Koenderink and A. J. van Doorn. Representation of local geometry in the visual system. Biological Cybernetics, 55 367-375, 1987. 
+R. Reiter. A theory of diagnosis from first principles. Artificial Intelligence, 33(1) 57-95, 1987. 
+J. T. Hecht, Y. Wang, B. Connor, S. H. Blanton, and S. P. Daiger. Non-syndromic cleft lip and palate: No evidence of linkage to HLA or factor 13a. American Journal of Human Genetics, 52 1230-1233, 1993. 
+Strang, G. and G. Fix, A Fourier analysis of the finite element variational method, Constructive Aspects of Functional Analysis (G. Geymonat, ed.), C. I. M. E., 1973, pp. 793-840. 
+E. Berlekamp. "Factoring polynomials over large finite fields," Mathematics of Computation,, Vol. 24, No. 111, pp. 713-735 (1970). 
+J. Allen and J. Koomen. Planning using a temporal world model. In Proc. IJCAI, pages 741-747, 1983. 
+D. Terzopoulos, "Image Analysis using Multigrid Relaxation Methods," IEEE Trans. Patt. Anal. Mach. Intell., Vol. 8, pp. 129-139, March 1986. 
+Narendra, K., & Thathachar, M. A. L. (1989). Learning Automata: An Introduction. Prentice Hall. 
+J. Hafner and K. McCurley. "On the distribution of running times of certain integer factoring algorithms," preprint (1987). 
+In Bouma, H., & Elsendoorn, A. G. (Eds.), Working Models of Human Perception, pp. 391-410. Academic Press, London, England. 
+J. Fortes and B. Wah, Systolic Arrays | from Concept to Implementation, Computer 20 (1987), 
+A. Borgida and T. Imielinski. Decision making in committees-a framework for dealing with inconsistency and non-monotonicity. In Proceedings Nonmono-tonic Reasoning Workshop, pages 21-32, 1984. 
+De Schreye, D. and Martens, B., A Sensible Least Herbrand Semantics for Untyped Vanilla Meta-Programming and its Extension to a Limited Form of Amalgamation, in: A. Pettorossi (ed.), Meta-Programming in Logic, LNCS 649, Springer-Verlag, Berlin, 1992. 
+Warren, D. H. D. (1976). Generating Conditional Plans and Programs. In Proceedings of the Summer Conference on AI and Simulation of Behavior, Edinburgh. 
+McDermott, J. (1982). R1: A rule-based configurer of computer systems. Artificial Intelligence, 19. 
+Chapman, D. (1987). Planning for conjunctive goals. Artificial Intelligence, 32, 333-377. 
+Thomas von Eicken, David E. Culler, Seth Copen Goldstein, and Karl Erik Schauser. Active messages: A mechanism for integrated communication and computation. In Proceedings of the 19th Annual International Symposium on Computer Architecture, pages 256-266, May 1992. 
+K. Li and P. Hudak. Memory coherence in shared virtual memory systems. ACM Transactions on Computer Systems, 7(4) 321-359, November 1989. 
+Quinlan, J. R., & Cameron-Jones, R. M. (1993). FOIL: A midterm report. In Proceedings of the European Conference on Machine Learning, pp. 3-20 Vienna. 
+Asahiro, Y., Iwama, K., & Miyano, E. (1993). Random generation of test instances with controlled attributes. In Second DIMACS Challenge Workshop. 
+Leroy, X. The Objective Caml system, documentation and user's guide, 1997. 
+Thomas F. LaPorta and Mischa Schwartz. Performance analysis of MSP: Feature-rich high-speed transport protocol. IEEE/ACM Transactions on Networking, 1(6) 740-753, December 1993. 
+U. Kremer, H. Zima, H.-J. Bast, and M. Gerndt. Advanced tools and techniques for automatic parallelization. Parallel Computing, 7 387-393, 1988. 
+J. S. Huang and Y. C. Chow. Parallel Sorting and Data Partitioning by Sampling. In Proceedings of the 7th Computer Software and Applications Conference, pages 627-631, November 1983. 
+Hume, D., & Sammut, C. (1991). Using inverse resolution to learn relations from experiments. In Proceedings of the Eighth International Workshop on Machine Learning. Morgan Kaufmann. 
+Baral, C., & Subrahmanian, V. (1991). Duality between alternative semantics of logic programs and nonmonotonic formalisms. In Proc. Intl. Workshop on Logic Programming and Nonmonotonic Reasoning. Springer. 
+M. Galles and E. Williams. Performance optimizations, implementation, and verification of the SGI Challenge multiprocessor. In Proceedings of the Twenty-Seventh Hawaii International Conference on System Sciences, volume I: Architecture, pages 134-143, January 1994. 
+Deerwester, S., Dumais, S., Furnas, G., Landauer, T., & Harshman, R. (1990). Indexing by latent semantic analysis. Journal of the American Society for Information Science, 41, 391-407. 
+Geddes, K., Czapor, S., and Labahn, G. Algorithms for Computer Algebra. Kluwer Academic Publishers, Boston, 1992. 
+Warren R. Greiff. Computationally tractable, conceptually plausible classes of link matrices for the inquery inference network. Technical Report CmpSci TR-96-66, University of Massachusetts, Amherst, Massachusetts, September 1996. 
+Puterman, M. L. (1994). Markov Decision Problems. Wiley, New York. 
+Hel-Or, Y., & Werman, M. (1992). Absolute orientation from uncertain data: A unified approach. In Proc. Intern. Conference on Computer Vision and Pattern Recognition, pp. 77-82. 
+Foley, J. D., van Dam, A., Feiner, S. K., Hughes, J. F., Computer Graphics: Principles and Practice, pp. 992-996, Addison-Wesley, Massachusetts 1990. 
+A. V. Aho, J. E. Hopcroft, and J. D. Ullman, The Design and Analysis of Computer Algorithms, Addison-Wesley, Reading, MA, 1974. 
+Panario, D., Gourdon, X., and Flajolet, P. An analytic approach to smooth polynomials. Submitted, 1998. 
+H. Wachter and A. Reuter. The ConTract model. In [24], chapter 7, pages 220-263. 1992. 
+J. McCarthy. Circumscription a form of non-monotonic reasoning. Artificial Intelligence, 13 27-39, 171-172, 1980. 
+O. Shechory and S. Kraus. Feasible formation of stable coalitions among autonomous agents in general environments. Computational Intelligence Journal, 1995. Submitted. 
+R. R. Jueneman, S. M. Matyas, and C. H. Meyer, ``Message Authentication,'' IEEE Communications 23(9), pp. 29-40 (September 1985). 
+Korf, R. (1985). Macro-operators: a weak method for learning. Artificial Intelligence, 26, 35-77. 
+Michalski, R. S. (1983). "A theory and methodology of inductive learning". In Michalski, R. S., Carbonell, J. G., & Mitchell, T. M. (Eds.), Machine Learning: An Artificial Intelligence Approach. Tioga Publishing Company, Palo Alto, CA. 
+R. Gupta, "Optimizing Array Bound Checks using Flow Analysis," ACM Letters on Programming Languages and Systems, Vol. 2, Nos. 1-4, pages 135-150, March - December 1994. 
+Sun Microsystems. Java (tm): Programming for the Internet. http://java.sun.com. 
+Golomb, S., & Baumert, L. (1965). Backtrack programming. J. ACM, 12, 516-524. 
+MacWhinney, B. (1990). The CHILDES Project: Tools for Analyzing Talk. Hillsdale, NJ: Erlbaum. 
+L. Sha, R. Rajkumar, and J. Lehoczky, "Priority Inheritance Protocols: An Approach to RealTime System Synchronization", IEEE Transactions on Computers, Vol. 39, No. 9, 1990, pp. 1175-1185. 
+P. Keleher, S. Dwarkadas, A. Cox, and W. Zwaenepoel. Treadmarks: Distributed shared memory on standard workstations and operating systems. In Proc. 1994 Winter USENIX Conference, pages 115-131, 1994. 
+De Raedt, L., Lavrac, N., & Dzeroski, S. (1993). Multiple predicate learning. In Proceedings of the Third International Workshop on Inductive Logic Programming Bled, Slovenia. 
+Whitley, D., & Gruau, F. (1993). Adding learning to the cellular development of neural networks: Evolution and the Baldwin effect. Evolutionary Computation, 1, 213-233. 
+Wellman, M. (1985). Reasoning about preference models. Tech. rep. MIT/LCS/TR-340, Laboratory for Computer Science, MIT. 
+Soskin, William F. (1963). Verbal Interactions in a Young Married Couple. University of Kansas Publications, Lawrence, Kansas. 
+T. E. Hull and M. S. Cohen. Toward an ideal computer arithmetic. In M. J. Irwin and R. Stafanelli, editors, Proceedings of the 8th Symposium on Computer Arithmetic, pages 131-138. IEEE Computer Society, Los Angeles, 1987. 
+Grosz, B. J., and Sidner, C. L. 1986. Attention, intention, and the structure of discourse. Computational Linguistics 12(3) 175-204 . 
+Wilke, W. (1993). Entwurf und Implementierung eines Algorithmus zum wissensintensiven Lernen von Planabstraktionen nach der PABS-Methode. Projektarbeit, Universitat Kaiserslautern. 
+J. M. Ponte and W. B. Croft, Text Segmentation by Topic, in Proceedings of the First European Conference on Research and Advanced Technology for Digitial Libraries, pp. 120-129, 1997. 
+McCarthy, J. F., & Lehnert, W. G. (1995). Using decision trees for coreference resolution. In Proceedings of the Fourteenth International Joint Conference on Artificial Intelligence (IJCAI). 
+Dario Giarrizzo, Matthias Kaiserswerth, Thomas Wicki, and Robin C. Williamson. High-speed parallel protocol implementation. First IFIP WG6.1/WG6.4 International Workshop on Protocols for High-Speed Networks, pages 165-180, May 1989. 
+Abelson, H., G. J. Sussman and J. Sussman. Structure and Interpretation of Computer Programs. MIT Press, 1985. 
+G. E. Blelloch, S. Chatterjee, J. C. Hardwick, J. Sipelstein, and M. Zagha. Implementation of a portable nested data-parallel language. In 4th Symposium on Principles and Practice of Parallel Programming. ACM SIGPLAN, 1993. 
+S. Keshav H. Zhang. Comparison of rate-based service disciplines. In SIGCOMM. 
+Lewis, D. (1973). Counterfactuals. Harvard University Press, Cambridge, MA. 
+Lapedes, A., Steeg, E., & Farber, R. (1995). Use of adaptive networks to evolve highly predictable protein secondary-structure classes. Machine Learning, 21, 103-124. 
+V. Faber (1993): Global communication algorithms for hypercubes and other Cayley coset graphs. SIAM J. Discr. Math., to appear. 
+Marinari, E. and Parisi, G. (1992) "Simulated tempering: A new Monte Carlo Scheme", Europhysics Letters, vol. 19, pp. 451-458. 
+P. K. Chrysanthis and K. Ramamritham. Synthesis of extended transaction models using ACTA. ACM Transactions on Database Systems, 19(3) 450-491, September 1994. 
+CONVEX Computer Corporation, "Exemplar Programming Guide," Richardson, TX, 1993. 
+R. White, F. Muller, C. Healy, D. Whalley, and M. Harmon. Timing analysis for data caches and set-associative caches. In Proceedings of the IEEE Real-Time Technology and Applications Symposium, pages 192-202, June 1997. 
+Wright, A. K. Simple imperative polymorphism. Lisp and Symbolic Computation 8, 4 (Dec. 1995), 343-356. 
+Hirschberg, J. (1990). Accent and discourse context: Assigning pitch accent in synthetic speech. In Proceedings of the Eighth National Conference on Artificial Intelligence (AAAI). 
+Jennings, N. (1994). Commitments and conventions: the foundation of coordination in multi-agent systems. The Knowledge Engineering Review, 8. 
+Weigend, A. (1993). Measuring the effective number of dimensions during backpropagation training. In Proceedings of the 1993 Connectionist Models Summer School, pp. 335-342. Morgan Kaufmann, San Francisco, CA. 
+David Chapman. Planning for conjunctive goals. Artificial Intelligence, 32, 1987. 
+P. Hsu and E. Davidson, "Highly Concurrent Scalar Processing," 13th Annual International Symposium on Computer Architecture, pages 386-395, 1986. 
+LeBlanc, M., & Tibshirani, R. (1993). Combining estimates in regression and classification. Tech. rep., Department of Statistics, U. of Toronto. 
+H. Shin, C.-C. King and C. Hu, "Thin Oxide Damage by Plasma Etching and Ashing Process," Proc. IEEE/IRPS, pp. 37-41, 1992. 
+Rubinstein, A. (1982). Perfect equilibrium in a bargaining model. Econometrica, 50 (1), 97-109. 
+Selman, B., & Kautz, H. A. (1996). Knowledge Compilation and Theory Approximation. Journal of the ACM, Vol. 43, No. 2, 193-224. 
+Fisher, D. H. (1987). Knowledge acquisition via incremental conceptual clustering. Machine Learning, 2 (2), 139-172. 
+K. H. Wolf, K. Froitzheim and P. Schulthess, (1995) Multimedia Application Sharing in a Heterogeneous Environment, ACM Multimedia 95, Pages 57-64. 
+P. Perez and F. Heitz, "Multiscale Markov Random Fields and Constrained Relaxation in Low Level Image Analysis," IEEE International Conf. on Acoustics, Speech, and Signal Processing, Vol. 3, pp. 61-64, 1992. 
+R. Fagin, J. Halpern, and M. Vardi. A model-theoretic analysis of knowledge. Journal of the ACM, 38(2), 382-428, 1991. 
+W. Enkelmann, "Obstacle detection by evaluation of optical flow fields from image sequence," Image and Vision Computing 9, pp. 160-168, 1991. 
+D. Callahan and K. Kennedy. Compiling programs for distributed-memory multiprocessors. Journal of Supercomputing, 2 151-169, October 1988. 
+Remler, Jane E. (1978). Some repairs on the notion of repairs in the interest of relevance. In Farkas, Donka, Jacobsen, Wesley M., and Todrys, Karol W., editors, Papers from the Fourteenth Regional Meeting of the Chicago Linguistic Society, Chicago, IL. Chicago Linguistic Society, pages 391-502. 
+S. Lakshmanan and H. Derin, "Gaussian Markov Random Fields at Multiple Resolutions," in Markov Random Fields: Theory and Applications (R. Chellappa, ed.), pp. 131-157, Academic Press, 1993. 
+Ting, Kai Ming, (1996). Discretisation in Lazy Learning. To appear in the special issue on Lazy Learning in Artificial Intelligence Review.
+J. C. Butcher. General linear method: A survey. Appl. Numer. Math., 1 273, 1985. 
+M. C. Speer, L. H. Yamaoka, J. H. Gilchrist, C. P. Gaskell, J. M. Stajich, J. M. Vance, Z. Kazantsev, A. Lastra, C. S. Haynes, J. S. Beckmann, D. Cohen, J. L. Weber, A. D. Roses, and M. A. Pericak-Vance. Confirmation of genetic heterogeneity in limb-girdle muscular dystrophy: Linkage of an autosomal dominant form to chromosome 5q. Am. J. Hum. Genet., 50 1211-1217, 1992. 
+Flanagan, C., and Felleisen, M. Modular and polymorphic set-based analysis: Theory and practice. Technical Report TR-96-266, Rice University, 1996. 
+Marr, D., & Nishihara, H. (1978). Representation and recognition of the spatial organisation of three-dimensional shapes. Proceedings of the Royal Society of London, B200, 269-294. 
+Barendregt, H. P. The Lambda Calculus: Its Syntax and Semantics. Revised Edition. Studies in Logic and the Foundations of Mathematics 103. North-Holland, Amsterdam, 1984. 
+Dechter, R. (1992). From local to global consistency. Artificial Intelligence, 55, 87-107. 
+Beeri, C. (1990). A formal approach to object-oriented databases. Data and Knowledge Engineering, 5, 353-382. 
+Y. Sagiv and M. Yannakakis. Equivalence among relational expressions with the union and difference operators. In J. ACM 27(4) pp. 633-655, 1981. 
+M. V. Solodov. Some optimization reformulations of the extended linear complementarity problems, 1997. Computational Optimization and Applications, to appear. 
+W. Chen. Declarative specification and evaluation of database updates. In Intl. Conference on Deductive and Object-Oriented Databases (DOOD), volume 566 of Lecture Notes in Computer Science, pages 147-166. Springer-Verlag, December 1991. 
+D. Gannon, W. Jalby, and K. Gallivan. Strategies for cache and local memory management by global program transformation. Journal of Parallel and Distributed Computing, 5(5) 587-616, October 1988. 
+S. M. Robinson. Some continuity properties of polyhedral multifunctions. Mathematical Programming Study, 14 206-214, 1981. 
+Weiss, S., & Kapouleas, I. (1989). An empirical comparison of pattern recognition, neural nets, and machine learning classification methods. In Proceedings of the 11th International Joint Conference of Artificial Intelligence, pp. 781-787. Detroit, MI. Morgan Kaufmann. 
+R. von Hanxleden and K. Kennedy. Give-N-Take a balanced code placement framework. In Proceedings of the ACM SIGPLAN 91 Conference on Programming Language Design and Implementation, June 1994. 
+DeWitt, D. J., "DIRECT A Multiprocessor Organization for Supporting Relational Database Management Systems," IEEE Transactions on Computers, June, 1979. 
+I. Lee, P. Bremond-Gregoire, and R. Gerber. A Process Algebraic Approach to the Specification and Analysis of Resource-Bound Real-Time Systems. IEEE Proceedings, 82(1), January 1994. 
+van Benthem, J. F. A. K. (1989) Semantic parallels in natural language and computation. In Ebbinghaus, H. D., & al. (Eds.), Logic Colloquium'87, Granada, pp. 331-375. Amsterdam: North-Holland. 
+Koppel, M., Feldman, R., & Segre, A. M. (1994b). Bias-driven revision of logical domain theories. Journal of Artificial Intelligence Research, 1, 159-208. 
+Webb, G. I., & Brkic, N. (1993). Learning decision lists by prepending inferred rules. In Proceedings of the Australian Workshop on Machine Learning and Hybrid Systems, pp. 6-10 Melbourne, Australia. 
+Barklund, J., Costantini, S., Dell'Acqua, P. and Lanzarone, G. A., Integrating Reflection into SLD-Resolution, in: A. Momigliano and M. Ornaghi (eds.), Proc. Post-Conf. Ws. on Proof-Theoretical Extensions of Logic Programming, 1994. 
+R. Rosenfeld and D. S. Touretzky Coarse-coded symbol memories and their properties. Complex Systems, 2(4) 463-484, 1988. 

@@ -1,16 +1,18 @@
-"""Grobid Client.
+"""
 
-This version uses the standard ProcessPoolExecutor for parallelizing the
+Grobid Python Client
+
+This version uses the standard ThreadPoolExecutor for parallelizing the
 concurrent calls to the GROBID services.  Given the limits of
-ThreadPoolExecutor (the legendary GIL, input stored in memory, blocking
-Executor.map until the whole input is acquired), ProcessPoolExecutor works with
-batches of PDF of a size indicated in the config.json file (default is 1000
-entries). We are moving from first batch to the second one only when the first
-is entirely processed - which means it is slightly sub-optimal, but should
-scale better. Working without batch would mean acquiring a list of millions of
-files in directories and would require something scalable too (e.g. done in a
-separate thread), which is not implemented for the moment and possibly not
-implementable in Python as long it uses the GIL.
+ThreadPoolExecutor (input stored in memory, blocking Executor.map until the 
+whole input is acquired), it works with batches of PDF of a size indicated 
+in the config.json file (default is 1000 entries). We are moving from first 
+batch to the second one only when the first is entirely processed - which 
+means it is slightly sub-optimal, but should scale better. Working without 
+batch would mean acquiring a list of millions of files in directories and 
+would require something scalable too (e.g. done in a separate thread), 
+which is not implemented for the moment.
+
 """
 import os
 import io
@@ -52,7 +54,8 @@ class GrobidClient(ApiClient):
             self._test_server_connection()
 
     def _load_config(self, path="./config.json"):
-        """Load the json configuration
+        """
+        Load the json configuration
         """
         config_json = open(path).read()
         self.config = json.loads(config_json)
@@ -181,8 +184,9 @@ class GrobidClient(ApiClient):
         if verbose:
             print(len(input_files), "files to process in current batch")
 
-        # with concurrent.futures.ThreadPoolExecutor(max_workers=n) as executor:
-        with concurrent.futures.ProcessPoolExecutor(max_workers=n) as executor:
+        # we use ThreadPoolExecutor and not ProcessPoolExecutor because it is an I/O intensive process
+        with concurrent.futures.ThreadPoolExecutor(max_workers=n) as executor:
+            #with concurrent.futures.ProcessPoolExecutor(max_workers=n) as executor:
             results = []
             for input_file in input_files:
                 # check if TEI file is already produced

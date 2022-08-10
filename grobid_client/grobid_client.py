@@ -240,10 +240,11 @@ class GrobidClient(ApiClient):
         tei_coordinates,
         segment_sentences
     ):
+        pdf_handle = open(pdf_file, "rb")
         files = {
             "input": (
                 pdf_file,
-                open(pdf_file, "rb"),
+                pdf_handle,
                 "application/pdf",
                 {"Expires": "0"},
             )
@@ -290,8 +291,10 @@ class GrobidClient(ApiClient):
                     segment_sentences
                 )
         except requests.exceptions.ReadTimeout:
+            pdf_handle.close()
             return (pdf_file, 408, None)
 
+        pdf_handle.close()
         return (pdf_file, status, res.text)
 
     def process_txt(

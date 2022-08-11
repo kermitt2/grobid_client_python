@@ -62,10 +62,7 @@ class GrobidClient(ApiClient):
 
     def _test_server_connection(self):
         """Test if the server is up and running."""
-        the_url = "http://" + self.config["grobid_server"]
-        if len(self.config["grobid_port"]) > 0:
-            the_url += ":" + self.config["grobid_port"]
-        the_url += "/api/isalive"
+        the_url = self.config['grobid_server'] + "/api/isalive"
         try:
             r = requests.get(the_url)
         except:
@@ -249,11 +246,8 @@ class GrobidClient(ApiClient):
                 {"Expires": "0"},
             )
         }
-
-        the_url = "http://" + self.config["grobid_server"]
-        if len(self.config["grobid_port"]) > 0:
-            the_url += ":" + self.config["grobid_port"]
-        the_url += "/api/" + service
+        
+        the_url = self.config['grobid_server'] + "/api/"+service
 
         # set the GROBID parameters
         the_data = {}

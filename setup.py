@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 
 setup(name='grobid_client_python',
-      version='0.0.3',
+      version='0.0.4',
       description='Simple python client for GROBID REST services',
       author='kermitt2',
       long_description=open("Readme.md", encoding='utf-8').read(),

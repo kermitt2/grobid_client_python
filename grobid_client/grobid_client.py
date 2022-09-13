@@ -214,8 +214,8 @@ class GrobidClient(ApiClient):
             input_file, status, text = r.result()
             filename = self._output_file_name(input_file, input_path, output)
 
-            if text is None:
-                print("Processing of", input_file, "failed with error", str(status))
+            if status != 200 or text is None:
+                print("Processing of", input_file, "failed with error", str(status), ",", text)
             else:
                 # writing TEI file
                 try:

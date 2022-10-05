@@ -214,8 +214,18 @@ class GrobidClient(ApiClient):
             input_file, status, text = r.result()
             filename = self._output_file_name(input_file, input_path, output)
 
-            if text is None:
-                print("Processing of", input_file, "failed with error", str(status))
+            if status != 200 or text is None:
+                print("Processing of", input_file, "failed with error", str(status), ",", text)
+                # writing error file with suffixed error code
+                try:
+                    pathlib.Path(os.path.dirname(filename)).mkdir(parents=True, exist_ok=True)
+                    with open(filename.replace(".tei.xml", "_"+str(status)+".txt"), 'w', encoding='utf8') as tei_file:
+                        if text is not None:
+                            tei_file.write(text)
+                        else:
+                            tei_file.write("")
+                except OSError:
+                    print("Writing resulting TEI XML file", filename, "failed")
             else:
                 # writing TEI file
                 try:

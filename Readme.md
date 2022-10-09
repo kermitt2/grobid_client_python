@@ -77,13 +77,17 @@ optional arguments:
 
 Examples:
 
+```console
 > grobid_client --input ~/tmp/in2 --output ~/tmp/out processFulltextDocument
+```
 
 This command will process all the PDF files present under the input directory recursively (files with extension `.pdf` only) with the `processFulltextDocument` service of GROBID, and write the resulting XML TEI files under the output directory, reusing the file name with a different file extension (`.tei.xml`), using the default `10` concurrent workers. 
 
 If `--output` is omitted, the resulting XML TEI documents will be produced alongside the PDF in the `--input` directory.
 
+```console
 > grobid_client --input ~/tmp/in2 --output ~/tmp/out --n 20 processHeaderDocument
+```
 
 This command will process all the PDF files present in the input directory (files with extension `.pdf` only) with the `processHeaderDocument` service of GROBID, and write the resulting XML TEI files under the output directory, reusing the file name with a different file extension (`.tei.xml`), using `20` concurrent workers. 
 
@@ -91,11 +95,15 @@ By default if an existing `.tei.xml` file is present in the output directory cor
 
 `processCitationList` does not take a repertory of PDF as input, but a repertory of `.txt` files, with one reference raw string per line, for example:
 
+```console
 > grobid_client --input resources/test_txt/ --output resources/test_out/ --n 20 processCitationList
+```
 
 The following command example will process all the PDF files present in the input directory and add bounding box coordinates (`--teiCoordinates`) relative to the original PDFs for the elements listed in the config file. It will also segment the sentences (`--segmentSentences`, this is a "layout aware" sentence segmentation) in the identified paragraphs with bounding box coordinates for the sentences. 
 
+```console
 > grobid_client --input ~/tmp/in2 --output ~/tmp/out --teiCoordinates --segmentSentences processFulltextDocument
+```
 
 The file `example.py` gives an example of usage as a library, from a another python script. 
 
@@ -103,7 +111,7 @@ The file `example.py` gives an example of usage as a library, from a another pyt
 
 Import and call the client as follow:
 
-```
+```python
 from grobid_client.grobid_client import GrobidClient
 
 client = GrobidClient(config_path="./config.json")

@@ -33,7 +33,6 @@ class ServerUnavailableException(Exception):
 class GrobidClient(ApiClient):
 
     def __init__(self, grobid_server='localhost', 
-                 grobid_port='8070',
                  batch_size=1000, 
                  coordinates=["persName", "figure", "ref", "biblStruct", "formula", "s" ], 
                  sleep_time=5,
@@ -42,7 +41,6 @@ class GrobidClient(ApiClient):
                  check_server=True):
         self.config = {
             'grobid_server': grobid_server,
-            'grobid_port': grobid_port,
             'batch_size': batch_size,
             'coordinates': coordinates,
             'sleep_time': sleep_time,
@@ -318,9 +316,7 @@ class GrobidClient(ApiClient):
         with open(txt_file) as f:
             references = [line.rstrip() for line in f]
 
-        the_url = "http://" + self.config["grobid_server"]
-        if len(self.config["grobid_port"]) > 0:
-            the_url += ":" + self.config["grobid_port"]
+        the_url = self.config['grobid_server']
         the_url += "/api/" + service
 
         # set the GROBID parameters

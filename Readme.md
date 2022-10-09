@@ -18,7 +18,7 @@ This client has been developed and was tested with Python `3.5`-`3.8` and should
 
 Get the github repo:
 
-```
+```console
 git clone https://github.com/kermitt2/grobid_client_python
 cd grobid_client_python
 python3 setup.py install

@@ -9,11 +9,14 @@ This Python client can be used to process in an efficient concurrent manner a se
 ## Before you start
 
 Please be aware that, at the moment, [grobid does not support Windows](https://grobid.readthedocs.io/en/latest/Troubleshooting/#windows-related-issues).
-If you are a Windows user, don't worry. You can [run grobid at ease via Docker](https://grobid.readthedocs.io/en/latest/Grobid-docker/).
+If you are a Windows user, don't worry. You can still [run grobid 
+via Docker](https://grobid.readthedocs.io/en/latest/Grobid-docker/).
 
 ## Build and run
 
-You need first to install and start the *grobid* service, latest stable version, see the [documentation](http://grobid.readthedocs.io/). It is assumed that the server will run on the address `http://localhost:8070`. You can change the server address by editing the file `config.json`.
+You need first a running *grobid* service, latest stable version, see the [documentation](http://grobid.readthedocs.io/) for installation. 
+By default, it is assumed that the server will run on the address `http://localhost:8070`. 
+You can change the server address by editing the file `config.json`, see below.
 
 ## Requirements
 
@@ -30,6 +33,7 @@ python3 setup.py install
 ```
 
 There is nothing more needed to start using the python command lines, see the next section. 
+
 
 ## Usage and options
 
@@ -124,6 +128,32 @@ client.process("processFulltextDocument", "/mnt/data/covid/pdfs", n=20)
 ```
 
 See also `example.py`.
+
+## Configuration of the client
+
+There are a few parameters that can be set with the `config.json` file. 
+
+- `grobid_server` indicates the URL of the GROBID server to be used by the client. 
+
+- `batch_size` is the the size of the pool of threads used by ThreadPoolExecutor, you normally don't want to change this. This should be a high number (default 1000) - but not too high to protect the memory on the machine running the client. This should not be confused with the concurrency parameter `n` which indicates how many parallel requests can be send to GROBID.
+
+- `sleep_time` indicates in seconds the time to wait for sending a new request to GROBID when the server indicates that all its threads are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. This wait time usually depends on the service and the capacities of the server, we suggest 5-10 seconds for the `processFulltextDocument` service and 2 seconds for `processHeaderDocument` service.
+
+- `timeout` is a client side timeout - the process on server side will still be running until the server finished the task or the server timeout is reached.
+
+- `coordinates` indicates the structure XML elements that should contains PDF coordinates when the parameters `--teiCoordinates` is used see [here](https://grobid.readthedocs.io/en/latest/Coordinates-in-PDF/) for more details.
+
+Here is the default `config.json` file for the client:
+
+```
+{
+    "grobid_server": "http://localhost:8070",
+    "batch_size": 1000,
+    "sleep_time": 5,
+    "timeout": 60,
+    "coordinates": [ "persName", "figure", "ref", "biblStruct", "formula", "s" ]
+}
+```
 
 ## Benchmarking
 

@@ -60,7 +60,7 @@ class GrobidClient(ApiClient):
 
     def _test_server_connection(self):
         """Test if the server is up and running."""
-        the_url = get_server_url("isalive")
+        the_url = self.get_server_url("isalive")
         try:
             r = requests.get(the_url)
         except:

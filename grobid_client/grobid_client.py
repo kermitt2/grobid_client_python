@@ -60,7 +60,7 @@ class GrobidClient(ApiClient):
 
     def _test_server_connection(self):
         """Test if the server is up and running."""
-        the_url = self.config['grobid_server'] + "/api/isalive"
+        the_url = get_server_url("isalive")
         try:
             r = requests.get(the_url)
         except:
@@ -255,7 +255,7 @@ class GrobidClient(ApiClient):
             )
         }
         
-        the_url = self.config['grobid_server'] + "/api/"+service
+        the_url = self.get_server_url(service)
 
         # set the GROBID parameters
         the_data = {}
@@ -299,6 +299,9 @@ class GrobidClient(ApiClient):
         pdf_handle.close()
         return (pdf_file, status, res.text)
 
+    def get_server_url(self, service):
+        return self.config['grobid_server'] + "/api/" + service
+
     def process_txt(
         self,
         service,
@@ -316,8 +319,7 @@ class GrobidClient(ApiClient):
         with open(txt_file) as f:
             references = [line.rstrip() for line in f]
 
-        the_url = self.config['grobid_server']
-        the_url += "/api/" + service
+        the_url = self.get_server_url(service)
 
         # set the GROBID parameters
         the_data = {}

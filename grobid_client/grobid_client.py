@@ -79,13 +79,13 @@ class GrobidClient(ApiClient):
         if output is not None:
             input_file_name = str(os.path.relpath(os.path.abspath(input_file), input_path))
             filename = os.path.join(
-                output, os.path.splitext(input_file_name)[0] + ".tei.xml"
+                output, os.path.splitext(input_file_name)[0] + ".grobid.tei.xml"
             )
         else:
             input_file_name = ntpath.basename(input_file)
             filename = os.path.join(
                 ntpath.dirname(input_file),
-                os.path.splitext(input_file_name)[0] + ".tei.xml",
+                os.path.splitext(input_file_name)[0] + ".grobid.tei.xml",
             )
 
         return filename
@@ -217,7 +217,7 @@ class GrobidClient(ApiClient):
                 # writing error file with suffixed error code
                 try:
                     pathlib.Path(os.path.dirname(filename)).mkdir(parents=True, exist_ok=True)
-                    with open(filename.replace(".tei.xml", "_"+str(status)+".txt"), 'w', encoding='utf8') as tei_file:
+                    with open(filename.replace(".grobid.tei.xml", "_"+str(status)+".txt"), 'w', encoding='utf8') as tei_file:
                         if text is not None:
                             tei_file.write(text)
                         else:

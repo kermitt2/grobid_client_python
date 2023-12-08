@@ -243,9 +243,18 @@ class GrobidClient(ApiClient):
         include_raw_citations,
         include_raw_affiliations,
         tei_coordinates,
-        segment_sentences
+        segment_sentences,
+        from_memory=False
     ):
-        pdf_handle = open(pdf_file, "rb")
+        if from_memory:
+            # PDF already loaded into memory
+            # expects pdf_file to be of type 'bytes'
+            pdf_handle = io.BytesIO(pdf_file)            
+            pdf_file = ""
+        else:
+            # expects pdf_file to be path to PDF file
+            pdf_handle = open(pdf_file, "rb")
+            
         files = {
             "input": (
                 pdf_file,

@@ -3,5 +3,5 @@
     "batch_size": 100,
     "sleep_time": 5,
     "timeout": 60,
-    "coordinates": [ "persName", "figure", "ref", "biblStruct", "formula", "s", "note" ]
+    "coordinates": [ "persName", "figure", "ref", "biblStruct", "formula", "s", "note", "title" ]
 }

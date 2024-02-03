@@ -34,7 +34,7 @@ class GrobidClient(ApiClient):
 
     def __init__(self, grobid_server='localhost', 
                  batch_size=1000, 
-                 coordinates=["persName", "figure", "ref", "biblStruct", "formula", "s" ], 
+                 coordinates=["persName", "figure", "ref", "biblStruct", "formula", "s", "note", "title"], 
                  sleep_time=5,
                  timeout=60,
                  config_path=None, 
@@ -112,7 +112,8 @@ class GrobidClient(ApiClient):
         for (dirpath, dirnames, filenames) in os.walk(input_path):
             for filename in filenames:
                 if filename.endswith(".pdf") or filename.endswith(".PDF") or \
-                    (service == 'processCitationList' and (filename.endswith(".txt") or filename.endswith(".TXT"))):
+                    (service == 'processCitationList' and (filename.endswith(".txt") or filename.endswith(".TXT"))) or \
+                    (service == 'processCitationPatentST36' and (filename.endswith(".xml") or filename.endswith(".XML"))):
                     if verbose:
                         try:
                             print(filename)
@@ -353,7 +354,9 @@ def main():
         "processFulltextDocument",
         "processHeaderDocument",
         "processReferences",
-        "processCitationList"
+        "processCitationList",
+        "processCitationPatentST36",
+        "processCitationPatentPDF"
     ]
 
     parser = argparse.ArgumentParser(description="Client for GROBID services")
@@ -362,7 +365,7 @@ def main():
         help="one of " + str(valid_services),
     )
     parser.add_argument(
-        "--input", default=None, help="path to the directory containing PDF files or .txt (for processCitationList only, one reference per line) to process"
+        "--input", default=None, help="path to the directory containing files to process: PDF or .txt (for processCitationList only, one reference per line), or .xml for patents in ST36"
     )
     parser.add_argument(
         "--output",

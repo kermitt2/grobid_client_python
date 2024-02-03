@@ -4,7 +4,7 @@
 
 # Simple python client for GROBID REST services
 
-This Python client can be used to process in an efficient concurrent manner a set of PDF in a given directory by the [GROBID](https://github.com/kermitt2/grobid) service. It includes a command line for processing PDF on a file system and write results in a given output directory and a library for import in other python scripts. The client can also process similarly a list of files with reference strings (one per line).
+This Python client can be used to process in an efficient concurrent manner a set of PDF in a given directory by the [GROBID](https://github.com/kermitt2/grobid) service. It includes a command line for processing PDF on a file system and write results in a given output directory and a library for import in other python scripts. The client can also process similarly a list of files with reference strings (one per line) and patents in XML ST36 formats.
 
 ## Before you start
 
@@ -20,7 +20,7 @@ You can change the server address by editing the file `config.json`, see below.
 
 ## Requirements
 
-This client has been developed and was tested with Python `3.5`-`3.8` and should work with any higher `3.*` versions. It does not require any dependencies beyond the standard Python ones.
+This client has been developed and was tested with Python `3.5`-`3.9` and should work with any higher `3.*` versions. It uses `requests` as dependency beyond the Standard Python Library.
 
 ## Install
 
@@ -34,8 +34,9 @@ python3 setup.py install
 
 There is nothing more needed to start using the python command lines, see the next section. 
 
-
 ## Usage and options
+
+The call to the script can normally be realized interchangeably with `python3 -m grobid_client.grobid_client` or simply `grobid_client`. 
 
 ```
 usage: grobid_client [-h] [--input INPUT] [--output OUTPUT] [--config CONFIG]
@@ -50,7 +51,8 @@ Client for GROBID services
 positional arguments:
   service               one of ['processFulltextDocument',
                         'processHeaderDocument', 'processReferences',
-                        'processCitationList']
+                        'processCitationList','processCitationPatentST36',
+                        'processCitationPatentPDF']
 
 optional arguments:
   -h, --help            show this help message and exit

@@ -71,8 +71,10 @@ class GrobidClient(ApiClient):
 
         if status != 200:
             print("GROBID server does not appear up and running " + str(status))
+            return False, status
         else:
             print("GROBID server is up and running")
+            return True, status
 
     def _output_file_name(self, input_file, input_path, output):
         # we use ntpath here to be sure it will work on Windows too
@@ -89,6 +91,13 @@ class GrobidClient(ApiClient):
             )
 
         return filename
+
+    def ping(self) -> (bool, int):
+        """
+        Check the Grobid service. Returns True if the service is up.
+        In addition, returns also the status code.
+        """
+        return self._test_server_connection()
 
     def process(
         self,

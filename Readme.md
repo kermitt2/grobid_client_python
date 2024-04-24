@@ -24,10 +24,26 @@ This client has been developed and was tested with Python `3.5`-`3.9` and should
 
 ## Install
 
-Get the github repo:
+The client can be installed with any of the following ways:
+
+* Install *latest stable release* from PyPI:
+
+```console
+python3 -m pip install grobid-client-python
+```
+
+* Install *current master development version* from GitHub:
 
 ```console
 pip install git+https://github.com/kermitt2/grobid_client_python.git
+```
+
+* Install and build from a clone of the repo (*current master development version*): 
+
+```
+git clone https://github.com/kermitt2/grobid_client_python
+cd grobid_client_python
+python3 setup.py install
 ```
 
 There is nothing more needed to start using the python command lines, see the next section. 

@@ -35,7 +35,7 @@ python3 -m pip install grobid-client-python
 * Install *current master development version* from GitHub:
 
 ```console
-pip install git+https://github.com/kermitt2/grobid_client_python.git
+python3 -m pip install git+https://github.com/kermitt2/grobid_client_python.git
 ```
 
 * Install and build from a clone of the repo (*current master development version*): 

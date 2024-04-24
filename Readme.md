@@ -193,6 +193,20 @@ In similar conditions, extraction and structuring of bibliographical references 
 Processing of 3500 raw bibliographical take 4.3 s with `n=10` (814 references parsed per second).
 
 
+## Developer notes 
+
+### New release 
+
+New releases can be published by using `bump-my-version`:
+
+```shell
+pip install bump-my-version
+bump-my-version bump patch 
+```
+
+Use of  `major`, `minor`, or `patch` or  will increment the first, second or the third digit of the version, respectively.  
+The release will be published automatically on pypy. 
+
 ## License and contact
 
 Distributed under [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0). 

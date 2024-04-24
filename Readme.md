@@ -27,9 +27,7 @@ This client has been developed and was tested with Python `3.5`-`3.9` and should
 Get the github repo:
 
 ```console
-git clone https://github.com/kermitt2/grobid_client_python
-cd grobid_client_python
-python3 setup.py install
+pip install git+https://github.com/kermitt2/grobid_client_python.git
 ```
 
 There is nothing more needed to start using the python command lines, see the next section. 

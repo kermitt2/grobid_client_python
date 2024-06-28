@@ -28,10 +28,13 @@ dependencies = {file = ["requirements.txt"]}
 
 [tool.setuptools_scm]
 
+[tool.setuptools]
+packages=['grobid_client']
+
 [project.urls]
 Homepage = "https://github.com/kermitt2/grobid_client_python"
 Repository = "https://github.com/kermitt2/grobid_client_python"
 Changelog = "https://github.com/kermitt2/grobid_client_python"
 
 [project.scripts]
-hello-world = "grobid_client=grobid_client.grobid_client"
+grobid_client = "grobid_client.grobid_client:main"

@@ -121,7 +121,8 @@ class GrobidClient(ApiClient):
         for (dirpath, dirnames, filenames) in os.walk(input_path):
             for filename in filenames:
                 if filename.endswith(".pdf") or filename.endswith(".PDF") or \
-                    (service == 'processCitationList' and (filename.endswith(".txt") or filename.endswith(".TXT"))) or \
+                    ((service == 'processCitationList' or service == 'processNameAddressList' or service == 'processAddressList') and \
+                     (filename.endswith(".txt") or filename.endswith(".TXT"))) or \
                     (service == 'processCitationPatentST36' and (filename.endswith(".xml") or filename.endswith(".XML"))):
                     if verbose:
                         try:
@@ -201,7 +202,7 @@ class GrobidClient(ApiClient):
                     continue
 
                 selected_process = self.process_pdf
-                if service == 'processCitationList':
+                if service == 'processCitationList' or service == 'processNameAddressList' or service == 'processAddressList':
                     selected_process = self.process_txt
                 
                 r = executor.submit(
@@ -325,9 +326,9 @@ class GrobidClient(ApiClient):
         segment_sentences
     ):
         # create request based on file content
-        references = None
+        texts = None
         with open(txt_file) as f:
-            references = [line.rstrip() for line in f]
+            texts = [line.rstrip() for line in f]
 
         the_url = self.get_server_url(service)
 
@@ -337,7 +338,12 @@ class GrobidClient(ApiClient):
             the_data["consolidateCitations"] = "1"
         if include_raw_citations:
             the_data["includeRawCitations"] = "1"
-        the_data["citations"] = references
+
+        if service == 'processCitationList':
+            the_data["citations"] = texts
+        elif service == 'processNameAddressList' or service == 'processAddressList':
+            the_data["texts"] = texts
+
         res, status = self.post(
             url=the_url, data=the_data, headers={"Accept": "application/xml"}
         )
@@ -365,7 +371,9 @@ def main():
         "processReferences",
         "processCitationList",
         "processCitationPatentST36",
-        "processCitationPatentPDF"
+        "processCitationPatentPDF",
+        "processNameAddressList",
+        "processAddressList"
     ]
 
     parser = argparse.ArgumentParser(description="Client for GROBID services")

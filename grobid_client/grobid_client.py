@@ -287,7 +287,7 @@ class GrobidClient(ApiClient):
 
         try:
             res, status = self.post(
-                url=the_url, files=files, data=the_data, headers={"Accept": "text/plain"}, timeout=self.config['timeout']
+                url=the_url, files=files, data=the_data, headers={"Accept": "application/xml"}, timeout=self.config['timeout']
             )
 
             if status == 503:
@@ -323,13 +323,41 @@ class GrobidClient(ApiClient):
         include_raw_citations,
         include_raw_affiliations,
         tei_coordinates,
-        segment_sentences
+        segment_sentences,
+        response_type="application/xml"
     ):
         # create request based on file content
         texts = None
         with open(txt_file) as f:
             texts = [line.rstrip() for line in f]
 
+        return self.process_list_full(
+                service,
+                texts,
+                generateIDs,
+                consolidate_header,
+                consolidate_citations,
+                include_raw_citations,
+                include_raw_affiliations,
+                tei_coordinates,
+                segment_sentences,
+                response_type=response_type
+            )
+
+    def process_list_full(
+        self,
+        service,
+        texts,
+        generateIDs,
+        consolidate_header,
+        consolidate_citations,
+        include_raw_citations,
+        include_raw_affiliations,
+        tei_coordinates,
+        segment_sentences,
+        response_type="application/xml"
+    ):
+        # create request based on text list
         the_url = self.get_server_url(service)
 
         # set the GROBID parameters
@@ -345,24 +373,47 @@ class GrobidClient(ApiClient):
             the_data["texts"] = texts
 
         res, status = self.post(
-            url=the_url, data=the_data, headers={"Accept": "application/xml"}
+            url=the_url, data=the_data, headers={"Accept": response_type}
         )
 
         if status == 503:
             time.sleep(self.config["sleep_time"])
             return self.process_txt(
                 service,
-                txt_file,
+                texts,
                 generateIDs,
                 consolidate_header,
                 consolidate_citations,
                 include_raw_citations,
                 include_raw_affiliations,
                 tei_coordinates,
-                segment_sentences
+                segment_sentences,
+                response_type=response_type
             )
 
-        return (txt_file, status, res.text)
+        return (texts, status, res.text)
+
+    def process_list(
+        self,
+        service,
+        texts,
+        response_type="application/xml"
+    ):
+        """
+        For convenience
+        """
+        return self.process_list_full(
+            service,
+            texts,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            None,
+            response_type=response_type
+        )
 
 def main():
     valid_services = [

@@ -16,7 +16,8 @@ class ApiClient(object):
     service methods, i.e. ``get``, ``post``, ``put`` and ``delete``.
     """
 
-    accept_type = "application/xml"
+    accept_type_xml = "application/xml"
+    accept_type_json = "application/json"
     api_base = None
 
     def __init__(
@@ -112,7 +113,8 @@ class ApiClient(object):
             ResultParser or ErrorParser.
         """
         headers = deepcopy(headers) or {}
-        headers["Accept"] = self.accept_type
+        if "Accept" not in headers:
+            headers["Accept"] = self.accept_type_xml
         params = deepcopy(params) or {}
         data = data or {}
         files = files or {}
@@ -130,7 +132,7 @@ class ApiClient(object):
 
         return r, r.status_code
 
-    def get(self, url, params=None, **kwargs):
+    def get(self, url, params=None, headers=None, **kwargs):
         """Call the API with a GET request.
 
         Args:
@@ -140,9 +142,9 @@ class ApiClient(object):
         Returns:
             ResultParser or ErrorParser.
         """
-        return self.call_api("GET", url, params=params, **kwargs)
+        return self.call_api("GET", url, params=params, headers=headers, **kwargs)
 
-    def delete(self, url, params=None, **kwargs):
+    def delete(self, url, params=None, headers=None, **kwargs):
         """Call the API with a DELETE request.
 
         Args:
@@ -152,9 +154,9 @@ class ApiClient(object):
         Returns:
             ResultParser or ErrorParser.
         """
-        return self.call_api("DELETE", url, params=params, **kwargs)
+        return self.call_api("DELETE", url, params=params, headers=headers, **kwargs)
 
-    def put(self, url, params=None, data=None, files=None, **kwargs):
+    def put(self, url, params=None, data=None, headers=None, files=None, **kwargs):
         """Call the API with a PUT request.
 
         Args:
@@ -167,10 +169,10 @@ class ApiClient(object):
             An instance of ResultParser or ErrorParser.
         """
         return self.call_api(
-            "PUT", url, params=params, data=data, files=files, **kwargs
+            "PUT", url, params=params, data=data, header=headers, files=files, **kwargs
         )
 
-    def post(self, url, params=None, data=None, files=None, **kwargs):
+    def post(self, url, params=None, data=None, headers=None, files=None, **kwargs):
         """Call the API with a POST request.
 
         Args:
@@ -183,7 +185,7 @@ class ApiClient(object):
             An instance of ResultParser or ErrorParser.
         """
         return self.call_api(
-            method="POST", url=url, params=params, data=data, files=files, **kwargs
+            method="POST", url=url, params=params, data=data, headers=headers, files=files, **kwargs
         )
 
     def service_status(self, **kwargs):

@@ -6,7 +6,7 @@ if __name__ == "__main__":
 
     texts = [ "P & W Trading, 63 avenue de l'Europe F-77184 Emerainville FR", 
               "1-5: Jacob Johan Würtzen, Nyhavn 3, 1051 København, Denmark",
-              "John Smith, 63 avenue de l'Europe F-77184 Emerainville FR; Bob Moore, 63 avenue de l'Europe F-77184 Emerainville FR"]
+              "John Smith, 63 avenue de l'Europe F-77184 Emerainville FR; Robert Moore, 63 avenue de l'Europe F-77184 Emerainville FR"]
 
     _, status, result = client.process_list("processNameAddressList", texts)
     print(result)

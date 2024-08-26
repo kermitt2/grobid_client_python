@@ -1,0 +1,1557 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xml:space="preserve" xmlns="http://www.tei-c.org/ns/1.0" 
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+xsi:schemaLocation="http://www.tei-c.org/ns/1.0 https://raw.githubusercontent.com/kermitt2/grobid/master/grobid-home/schemas/xsd/Grobid.xsd"
+ xmlns:xlink="http://www.w3.org/1999/xlink">
+	<teiHeader xml:lang="en">
+		<fileDesc>
+			<titleStmt>
+				<title level="a" type="main" coords="1,56.69,122.54,319.90,22.06;1,56.69,148.56,286.41,22.06;1,56.69,174.52,404.70,22.06;1,56.69,200.55,290.19,22.06">Multi-contact functional electrical stimulation for hand opening: electrophysiologically driven identification of the optimal stimulation site</title>
+				<funder ref="#_zPUQBRn">
+					<orgName type="full">German Federal Ministry for Education and Research [BMBF</orgName>
+				</funder>
+				<funder ref="#_dm5cHBj">
+					<orgName type="full">German Research Council</orgName>
+				</funder>
+				<funder ref="#_VH8m7du #_dXhRSD6">
+					<orgName type="full">Federal Ministry for Education and Research</orgName>
+				</funder>
+			</titleStmt>
+			<publicationStmt>
+				<publisher>Springer Science and Business Media LLC</publisher>
+				<availability  status="unknown">
+					<licence/>
+				</availability>
+				<date type="published" when="2016-03-08">2016-03-08</date>
+			</publicationStmt>
+			<sourceDesc>
+				<biblStruct>
+					<analytic>
+						<author>
+							<persName coords="1,56.69,234.15,85.88,9.71"><forename type="first">Cristiano</forename><surname>De Marchis</surname></persName>
+							<email>cristiano.demarchis@uniroma3.it</email>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Division of Functional and Restorative Neurosurgery</orgName>
+								<orgName type="department" key="dep2">Department of Neurosurgery</orgName>
+								<orgName type="institution">Eberhard Karls University</orgName>
+								<address>
+									<addrLine>Otfried-Mueller-Str.45</addrLine>
+									<postCode>72076</postCode>
+									<settlement>Tübingen</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName><forename type="first">Thiago</forename><surname>Santos Monteiro</surname></persName>
+						</author>
+						<author>
+							<persName coords="1,278.42,234.15,98.97,9.71"><forename type="first">Cristina</forename><surname>Simon-Martinez</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Division of Functional and Restorative Neurosurgery</orgName>
+								<orgName type="department" key="dep2">Department of Neurosurgery</orgName>
+								<orgName type="institution">Eberhard Karls University</orgName>
+								<address>
+									<addrLine>Otfried-Mueller-Str.45</addrLine>
+									<postCode>72076</postCode>
+									<settlement>Tübingen</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,391.12,234.15,60.85,9.71"><forename type="first">Silvia</forename><surname>Conforto</surname></persName>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Division of Functional and Restorative Neurosurgery</orgName>
+								<orgName type="department" key="dep2">Department of Neurosurgery</orgName>
+								<orgName type="institution">Eberhard Karls University</orgName>
+								<address>
+									<addrLine>Otfried-Mueller-Str.45</addrLine>
+									<postCode>72076</postCode>
+									<settlement>Tübingen</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<author>
+							<persName coords="1,75.74,248.16,78.49,9.71"><forename type="first">Alireza</forename><surname>Gharabaghi</surname></persName>
+							<email>alireza.gharabaghi@uni-tuebingen.de</email>
+							<affiliation key="aff0">
+								<orgName type="department" key="dep1">Division of Functional and Restorative Neurosurgery</orgName>
+								<orgName type="department" key="dep2">Department of Neurosurgery</orgName>
+								<orgName type="institution">Eberhard Karls University</orgName>
+								<address>
+									<addrLine>Otfried-Mueller-Str.45</addrLine>
+									<postCode>72076</postCode>
+									<settlement>Tübingen</settlement>
+									<country key="DE">Germany</country>
+								</address>
+							</affiliation>
+						</author>
+						<title level="a" type="main" coords="1,56.69,122.54,319.90,22.06;1,56.69,148.56,286.41,22.06;1,56.69,174.52,404.70,22.06;1,56.69,200.55,290.19,22.06">Multi-contact functional electrical stimulation for hand opening: electrophysiologically driven identification of the optimal stimulation site</title>
+					</analytic>
+					<monogr>
+						<title level="j" type="main">Journal of NeuroEngineering and Rehabilitation</title>
+						<title level="j" type="abbrev">J NeuroEngineering Rehabil</title>
+						<idno type="eISSN">1743-0003</idno>
+						<imprint>
+							<publisher>Springer Science and Business Media LLC</publisher>
+							<biblScope unit="volume">13</biblScope>
+							<biblScope unit="issue">1</biblScope>
+							<date type="published" when="2016-03-08" />
+						</imprint>
+					</monogr>
+					<idno type="MD5">ADF9B2C06A6F99930D17D335369ECA4F</idno>
+					<idno type="DOI">10.1186/s12984-016-0129-6</idno>
+					<note type="submission">Received: 11 November 2015 Accepted: 24 February 2016</note>
+				</biblStruct>
+			</sourceDesc>
+		</fileDesc>
+		<encodingDesc>
+			<appInfo>
+				<application version="0.8.1" ident="GROBID" when="2024-08-26T10:05+0000">
+					<desc>GROBID - A machine learning software for extracting information from scholarly documents</desc>
+					<ref target="https://github.com/kermitt2/grobid"/>
+				</application>
+			</appInfo>
+		</encodingDesc>
+		<profileDesc>
+			<textClass>
+				<keywords>
+					<term>Neuromuscular electrical stimulation</term>
+					<term>Multi-contact stimulation</term>
+					<term>EMG</term>
+					<term>M-wave</term>
+					<term>Hand function</term>
+					<term>Neurorehabilitation</term>
+				</keywords>
+			</textClass>
+			<abstract>
+<div xmlns="http://www.tei-c.org/ns/1.0"><p>Background: Functional Electrical Stimulation (FES) is increasingly applied in neurorehabilitation. Particularly, the use of electrode arrays may allow for selective muscle recruitment. However, detecting the best electrode configuration constitutes still a challenge. Methods: A multi-contact set-up with thirty electrodes was applied for combined FES and electromyography (EMG) recording of the forearm. A search procedure scanned all electrode configurations by applying single, sub-threshold stimulation pulses while recording M-waves of the extensor digitorum communis (EDC), extensor carpi radialis (ECR) and extensor carpi ulnaris (ECU) muscles. The electrode contacts with the best electrophysiological response were then selected for stimulation with FES bursts while capturing finger/wrist extension and radial/ulnar deviation with a kinematic glove. Results: The stimulation electrodes chosen on the basis of M-waves of the EDC/ECR/ECU muscles were able to effectively elicit the respective finger/wrist movements for the targeted extension and/or deviation with high specificity in two different hand postures. Conclusions: A subset of functionally relevant stimulation electrodes could be selected fast, automatic and nonpainful from a multi-contact array on the basis of muscle responses to subthreshold stimulation pulses. The selectivity of muscle recruitment predicted the kinematic pattern. This electrophysiologically driven approach would thus allow for an operator-independent positioning of the electrode array in neurorehabilitation.</p></div>
+			</abstract>
+		</profileDesc>
+	</teiHeader>
+	<facsimile>
+		<surface n="1" ulx="0.0" uly="0.0" lrx="595.276" lry="790.866"/>
+		<surface n="2" ulx="0.0" uly="0.0" lrx="595.276" lry="790.866"/>
+		<surface n="3" ulx="0.0" uly="0.0" lrx="595.276" lry="790.866"/>
+		<surface n="4" ulx="0.0" uly="0.0" lrx="595.276" lry="790.866"/>
+		<surface n="5" ulx="0.0" uly="0.0" lrx="595.276" lry="790.866"/>
+		<surface n="6" ulx="0.0" uly="0.0" lrx="595.276" lry="790.866"/>
+		<surface n="7" ulx="0.0" uly="0.0" lrx="595.276" lry="790.866"/>
+		<surface n="8" ulx="0.0" uly="0.0" lrx="595.276" lry="790.866"/>
+		<surface n="9" ulx="0.0" uly="0.0" lrx="595.276" lry="790.866"/>
+	</facsimile>
+	<text xml:lang="en">
+		<body>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Background</head><p>Functional Electrical Stimulation (FES) is a widely used technique for inducing muscle contraction. FES induces muscle activation through the application of currents that are able to excite the axons of the motor-neurons innervating the target muscles. This technique has been extensively studied for both training and rehabilitation purposes. A number of studies have shown the effectiveness of FES for improving muscle function in different central nervous system (CNS) disorders such as stroke <ref type="bibr" coords="1,304.72,601.94,10.01,8.98" target="#b0">[1]</ref>, tremor <ref type="bibr" coords="1,352.28,601.94,10.01,8.98" target="#b1">[2]</ref>, multiple sclerosis <ref type="bibr" coords="1,442.64,601.94,10.19,8.98" target="#b2">[3,</ref><ref type="bibr" coords="1,455.84,601.94,8.06,8.98" target="#b3">4]</ref> or spinal cord injury <ref type="bibr" coords="1,323.49,613.96,11.21,8.98" target="#b4">[5]</ref> for both the upper and lower extremity <ref type="bibr" coords="1,501.74,613.96,10.01,8.98" target="#b5">[6]</ref>.</p><p>Particularly, the hand function is a major target of FES in CNS disorders due to its relevance for quality of life <ref type="bibr" coords="1,510.50,637.94,10.89,8.98" target="#b6">[7]</ref> and activities of daily living <ref type="bibr" coords="1,401.20,649.96,10.83,8.98" target="#b7">[8]</ref> in both the acute and chronic phase <ref type="bibr" coords="1,330.78,661.92,9.61,8.98" target="#b8">[9]</ref>. In this context, FES might enhance hand functionality when physical therapy alone is ineffective <ref type="bibr" coords="1,502.82,673.94,12.28,8.98" target="#b9">[10]</ref><ref type="bibr" coords="1,515.10,673.94,4.09,8.98" target="#b10">[11]</ref><ref type="bibr" coords="1,515.10,673.94,4.09,8.98" target="#b11">[12]</ref><ref type="bibr" coords="1,515.10,673.94,4.09,8.98" target="#b12">[13]</ref><ref type="bibr" coords="1,519.19,673.94,12.28,8.98" target="#b13">[14]</ref>.</p><p>Due to its simplicity, most FES applications use pairs of electrodes in bi-or monopolar configuration <ref type="bibr" coords="2,254.16,100.72,14.60,8.98" target="#b14">[15]</ref>. Depending on the shape, size and positioning of the active and return electrodes, different current paths are induced in the motor axons underlying the stimulating electrodes, and different muscles are thus targeted. In particular, the larger the electrode, the less specific the stimulation becomes <ref type="bibr" coords="2,145.82,172.72,14.62,8.98" target="#b15">[16]</ref>. When aiming at the recovery of specific hand functions, it is though essential to induce specific muscle contraction. However, surface electrode stimulation is generally limited by its lack of selectivity. This is particularly critical when targeting specific hand movements due to the complexity of the muscle topography within the forearm. A more selective stimulation can be achieved with the use of an electrode array <ref type="bibr" coords="2,81.42,268.76,15.09,8.98" target="#b16">[17,</ref><ref type="bibr" coords="2,100.73,268.76,11.32,8.98" target="#b17">18]</ref>, which needs, however, to be adjusted in terms of contact selection for each individual subject <ref type="bibr" coords="2,56.69,292.74,14.60,8.98" target="#b18">[19]</ref>. Such an approach would facilitate the stimulation of specific muscles for selective movements, physiological synergies or more complex patterns relevant for activities of daily living.</p><p>Up till now, different procedures have been proposed to detect the optimal FES site <ref type="bibr" coords="2,198.10,352.72,12.75,8.98" target="#b19">[20]</ref><ref type="bibr" coords="2,210.85,352.72,4.25,8.98" target="#b20">[21]</ref><ref type="bibr" coords="2,210.85,352.72,4.25,8.98" target="#b21">[22]</ref><ref type="bibr" coords="2,210.85,352.72,4.25,8.98" target="#b22">[23]</ref><ref type="bibr" coords="2,210.85,352.72,4.25,8.98" target="#b23">[24]</ref><ref type="bibr" coords="2,215.11,352.72,12.75,8.98" target="#b24">[25]</ref>. All of these methods have in common that they probe stimulation induced muscle twitch responses, e.g. by capturing the kinematic response of the targeted degrees of freedom. However, this kinematic response might be diminished or even absent e.g. in stroke patients due to spasticity. Moreover, the application of high current levels could lead to pain and muscle fatigue if applied repeatedly. However, electrical stimulation pulses evoke an electrophysiological response as well, i.e. the M-wave, which closely relates to muscle fiber recruitment. This electrophysiological response is detectable even when subthreshold stimulation pulses are applied, which do not elicit kinematic responses, i.e. movements. The M-wave represents the synchronous muscle response to the action potentials traveling ortho-dromically through the axon of the motor neuron; this signal can be detected quickly and reliably by using standard electromyographic (EMG) measurements over the target muscle, thereby providing an objective and specific measure of the neuromuscular effects of electrical stimulation <ref type="bibr" coords="2,249.85,592.69,12.76,8.98" target="#b25">[26]</ref><ref type="bibr" coords="2,262.61,592.69,4.25,8.98" target="#b26">[27]</ref><ref type="bibr" coords="2,266.86,592.69,12.76,8.98" target="#b27">[28]</ref>.</p><p>The present study is based on the hypothesis that the electrophysiological response to sub-motor threshold single pulse neuromuscular electrical stimulation will predict the effects of supra-motor threshold FES bursts. The mapping procedure is based on M-wave recordings from multiple muscles of the forearm during single pulse stimulation. The functional relevance of the selected stimulation sites is verified after the mapping with stimulation bursts producing specific movements of fingers and wrist extension/deviation. This electrophysiologically driven approach is expected to lead to automatic identification of selective electrode configurations of a multi-contact array for functional hand opening. The feasibility of selective muscle recruitment and kinematic pattern prediction is tested here in healthy subjects, while the ultimate goal will be to translate this technique to neuro-rehabilitation for the recovery of hand function in stroke patients.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Methods</head><p>This section is divided into three main sub-sections. The first part describes the setup used for applying electrical stimulation, recording the EMG responses and measuring the kinematic output. The second part describes all the procedures adopted during the experimental sessions, including the stimulation protocol and data processing. The third part describes the offline analysis procedures for performance evaluation.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Participants</head><p>Eight young healthy subjects (27.4 ± 2.6 years old) participated in the study after providing written informed consent. The study was carried out according to the principles of the declaration of Helsinki and was approved by the ethics committee of the medical faculty of the University of Tuebingen. All subjects were right handed, and the stimulated forearm was the left one.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Experimental setup</head><p>Neuromuscular electrical stimulation and EMG recording FES was provided through a surface electrode array (RehaStim2+, HASOMED GmbH, Magdeburg, Germany). The array was composed of two main blocks with fixed electrode positions: a proximal block containing 15 electrodes with 9 stimulation and 6 return contacts, and a distal block containing 6 stimulation and 6 return contacts arranged in a 3×4 configuration, as shown in Fig. <ref type="figure" coords="2,512.05,496.72,3.52,8.98" target="#fig_0">1</ref>. The stimulation/return electrodes were oval shaped (gold, 1,4 cm x 0,8 cm) and had an inter-electrode, center-tocenter distance of 2 cm and 2,2 cm in the vertical and horizontal direction, respectively. The contact quality was improved through the use of a conductive gel sheet placed on each electrode. A stimulation configuration was defined as a pair composed of an active and a return electrode and will be referred to as stimulation pattern. Based on this array configuration, 180 different FES stimulation patterns could be studied.</p><p>EMG signals were recorded with a monopolar configuration;, the recording electrodes (Ag/AgCl, AMBU Neuroline) were positioned over the three targeted forearm muscles, i.e. Extensor Digitorum Communis (EDC), Extensor Carpi Radialis (ECR) and Extensor Carpi Ulnaris (ECU), while reference and ground electrodes were positioned over the olecranon. EMG electrodes were positioned based on anatomical landmarks identified in previous studies aiming at recording selective EMG activity from forearm muscles <ref type="bibr" coords="3,214.50,340.76,15.41,8.98" target="#b28">[29,</ref><ref type="bibr" coords="3,233.89,340.76,11.55,8.98" target="#b29">30]</ref>. The correct positioning was supported by palpation during targeted movements <ref type="bibr" coords="3,148.28,364.74,14.96,8.98" target="#b28">[29]</ref>. EMG signals were sampled at 5000 Hz (BrainAmp DC amplifier; Brain Products GmbH, Gilching, Germany) and digitized through a 16 bit A/D converter.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Kinematics recording</head><p>Finger and wrist movements were recorded by using a DG5 VHand 3.0 Glove device (DGTech Engineering Solutions, Italy, <ref type="url" coords="3,114.97,460.72,119.86,8.98" target="http://www.dg-tech.it/vhand3">http://www.dg-tech.it/vhand3</ref>) providing a resolution of 12 bit for the bending sensors and of 0.01°, 0.01°and 0.05°for pitch, roll and yaw, respectively, for the attitude estimation of the hand. This devise was equipped with five resistive bending sensors that provided a measure of bending for the five fingers. A triaxial Inertial Measurement Unit placed on the dorsal side of the hand provided the pitch, yaw and roll angles, respectively, corresponding to finger and wrist flexion/ extension, radial/ulnar deviation and forearm pronation/ supination angle. Kinematic data were recorded with a sampling frequency of 100 Hz and digitized with 16 bits.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Experimental protocol</head><p>During the experimental sessions, the subjects sat comfortably in a chair with the forearm kept in a relaxed pronated position, while the wrist was kept relaxed and free of any constraints. Before the stimulation part of the experimental protocol, the subjects were asked to perform 10 natural hand openings. This template of hand openings was used as a reference for both the evaluation of the behavioral outcome of FES and for post-hoc data analysis.</p><p>The experimental protocol consisted of two main parts that will be described in two separate sections. The first part describes the single pulse scanning procedure: all possible stimulation patterns were used to identify subsets of optimal stimulation patterns for each of the three analyzed muscles. M-waves generated by the application of each pulse were then analyzed. The second part describes the application of FES bursts at the previously identified stimulation patterns with the aim of eliciting targeted movements of the wrist and fingers. The setup, including glove and electrodes donning, scanning the array and EMG offline analysis, took approximately 15 min.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Scanning the array and selecting the optimal stimulation patterns</head><p>In order to determine subsets of optimal stimulation patterns, the electrode array was scanned with single stimulation pulses. Each pulse was biphasic and applied with a fixed total pulse width of 500 μs. This pulsewidth value was chosen after a pilot study in order to reduce inter-subject variability of the threshold and stabilize the current values <ref type="bibr" coords="3,418.74,592.76,14.60,8.98" target="#b17">[18]</ref>. First, single pulses were delivered at 10 mA at each stimulation pattern. The subjects were asked to report any uncomfortable sensation. The contacts inducing any kind of discomfort were excluded. The remaining patterns were then stimulated at three different amplitudes (9 mA, 10 mA and 11 mA) with each current level applied three times at each pattern, i.e. resulting in nine pulses per pattern. These intensities were below the kinematic threshold when applied as single pulses, i.e. they did not elicit functional finger extension, wrist extension and ulnar deviation. Single pulses were applied every 300 ms in order to avoid summation effects and muscle contraction by allowing a complete muscle relaxation before the application of the next pulse <ref type="bibr" coords="4,163.50,112.74,14.60,8.98" target="#b30">[31]</ref>. This scanning procedure led to the application of a maximum of 1620 single pulses and was completed in approximately 8 min.</p><p>After the completion of the scanning procedure, a EMG offline analysis was performed with a custom written MATLAB script (The MathWorks, Natick, MA). After visual inspection of the data quality, EMG signals were band pass filtered (10Hz-1000Hz, 3rd order Butterworth filter) in order to remove low frequency movement artifacts and high frequency noise. When present, power line noise interference and the first two higher order harmonics were removed with a 5th order Butterworth band stop filter around 50Hz. In order to eliminate the stimulation artifact from the analyzed EMG channels, a threshold algorithm was applied to the absolute value of the EMG signal derivative, and the signal was blanked within the detected spike intervals. This procedure led to EMG signals containing only the muscular response to the applied stimulation. In order to compare the responses across different targeted muscles, each EMG signal was normalized with respect to the amplitude of the maximum absolute value of the processed EMG, corresponding to the maximum evoked M-wave among all the provided pulses and stimulation patterns.</p><p>After EMG pre-processing, the muscular response to each delivered pulse for each muscle was analyzed in a time window from 2 ms to 40 ms after the identified stimulation artifacts. The muscular response was quantified in terms of features extracted from the recorded Mwaves. The peak-to-peak amplitude was calculated for the M-waves recorded from each muscle. The selection of the optimal stimulation patterns was based on the selectivity of the recorded M-waves: for each pattern, the median Mwave was calculated from the muscle response of the nine applied pulses. A stimulation pattern was considered optimal for a muscle if the peak-to-peak of the median Mwave was at least twice as a high as the median M-wave recorded from each of the other two muscles (Fig. <ref type="figure" coords="4,259.15,556.75,3.34,8.98">2</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Stimulating at the optimal patterns</head><p>After identifying the subset of optimal stimulation patterns for each muscle, each pattern was stimulated individually through the application of a 5 s FES burst. Each burst was applied with a frequency of 30 Hz and a pulse width of 500 μs. All identified patterns were first stimulated with the current level used during the test procedure (10 mA as default value). If no movement was present at the baseline level, the amplitude was gradually increased in steps of 2 mA until the kinematic threshold was reached and a visible movement elicited. The stimulation of the optimal EDC pattern was carried out in two different starting positions of the forearm: a reference position of the arm, identical to the one during the scanning procedure, and a 90°neutral forearm position. This procedure was carried out to study the robustness of the obtained patterns to a rotation of the forearm, during which the relative rotation of the skin on the muscles might lead to muscles sliding with respect to the original electrodes position. For both conditions, the subject was asked to close the handwithout providing resistance to the elicited movementbefore the application of each FES burst. For ECR (wrist extension) and ECU (wrist ulnar deviation) the same procedure was applied, but using only the reference forearm posture; this additional part of the experimental protocol was performed to check the sensitivity of the stimulation patterns to generic arm movements.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Data analysis</head><p>Percentage of fingers extensions with respect to template opening was used as a measure of behavioral outcome for finger extension, as indicated in the following equation:</p><formula xml:id="formula_0" coords="4,319.75,324.34,218.81,23.08">Fext i ¼ 100 FE i T FEi<label>ð1Þ</label></formula><p>Where Fext i denotes the metric for the extension of the i-th finger, FE i denotes the value measured by the glove for the extension of the i-th finger, and T FEi indicates the value measured during template hand opening for the same finger.</p><p>For the other degrees of freedom (i.e. wrist extension and ulnar deviation) absolute angles were used as measures of behavioral outcome. In order to assess the performance of the stimulated patterns, a measure of selectivity was introduced for each stimulated pattern targeting a specific degree of freedom (fingers extensions, wrist extension and ulnar deviation). Assuming that the three targeted degrees of freedom are independent, we can represent each of them as one of three orthogonal directions in a Cartesian reference system and define a measure of selectivity related to the cosine of the elevation angle in spherical coordinates as follows:</p><formula xml:id="formula_1" coords="4,319.75,568.97,218.81,25.18">S ¼ cos θ ð Þ ¼ A ffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffiffi A 2 þ B 2 þ C 2 p<label>ð2Þ</label></formula><p>Where A is the targeted degree of freedom, B and C are the non-targeted degrees of freedom and θ is the angle between the desired direction and the obtained one. The parameter S provides a direct measure of selectivity for each stimulated pattern with respect to the targeted degree of freedom, assuming values in the range [0:1].</p><p>In order to evaluate the effectiveness of the proposed method, we compared the behavioral outcomes emerging from the stimulation of the optimal patterns for the targeted degree of freedom A OPT with a set of control measurements, defined as the behavioral outcome A CONTROL when the optimal patterns for B and C were applied. This procedure was adopted because it was not possible to apply effective control measurements deriving from random patterns, due to fatigue and potential pain. In order to assess the statistical significance of the difference, we performed multiple Wilcoxon tests. The difference was considered statistically significant for values of p &lt; 0.05.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Results</head><p>We explored 1440 stimulation patterns during the scanning procedure, i.e. 180 patterns in each of the 8 subjects; 50 stimulation patterns (about 3 %) were excluded from further evaluation due to discomfort. In 12 cases, the selected pattern, which was comfortable during the scanning procedure, revealed discomfort, when stimulated with 30Hz bursts at baseline intensity (5 cases for EDC, 2 cases for ECR, 5 cases for ECU). For these patterns the intensity was not increased and they were excluded from further analysis.</p><p>The presented approach was successful in detecting the stimulation patterns which were effective for functional hand opening in all subjects. This allowed reducing the total number of possible stimulation patterns (n = 180) to the sufficient ones for hand opening (meanFE = 12.5, minFE = 5, maxFE = 29), wrist extension (meanWE = 7.4, minWE = 6, maxWE = 10) and ulnar deviation (meanUD = 8.7, minUD = 3, maxUD = 15), respectively.</p><p>With regard to hand opening, the targeted template hand opening with a complete extension of all fingers could be achieved with 66 % of the selected stimulation patterns; in 21 % of the patterns, an incomplete extension of the fingers was achieved or additional wrist deviation occurred. In only 13 % of the patterns, M-waves did not predict the targeted movements.</p><p>To better assess the efficacy of stimulation for functional hand opening, the findings were divided into two classes on the basis of the functional relevance of the finger extension (i.e. functional or non-functional extension). The finger extension was defined as functionally relevant when corresponding to two thirds of the full extension from a closed finger position. The number of functionally relevant stimulation patterns was highly dependent on the subject, ranging from a minimum of 2 to a maximum of 21 across subjects (mean number of functional patterns = 8.9). In general, the functional finger extension was closely mimicking the template hand opening.</p><p>For the different muscles, a different number (N: mean/median) of 2 mA intensity increments from the baseline value were necessary to achieve the results presented in this section: N EDC = 2.25/2, N ECR = 2.71/3, N ECU = 1.25/1. ECU required generally lower currents for eliciting movements, because in the reference position ulnar deviation was the only degree of freedom that had not to overcome gravity.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Optimal patterns vs control measurements</head><p>The behavioral outcome obtained with stimulation at the optimal pattern was significantly higher than that obtained from the control measurements. More specifically, with regard to hand opening, the extension of all fingers was significantly higher with the optimal Finger Extension Patterns (FEP) as compared to the corresponding control measurements (Wrist Extension Patterns, WEP, and Ulnar Deviation Patterns, UDP) (Fig. <ref type="figure" coords="5,528.38,676.72,3.40,8.98" target="#fig_1">3</ref>). With regard to wrist extension, the WEP was significantly more effective that UDP, but not than FEP (Fig. <ref type="figure" coords="5,509.73,700.76,3.52,8.98">4</ref>, left). Moreover, ulnar deviation was significantly more effective during UDP as compared to WEP and FEP (Fig. <ref type="figure" coords="5,499.13,724.74,4.90,8.98">4</ref> </p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>right).</head><p>Fig. <ref type="figure" coords="5,78.07,289.74,4.42,7.36">2</ref> M-waves during the scanning procedure for the identified optimal stimulation patterns for one representative subject (black: EDC, red: ECR, blue: ECU). Thick lines represent the average M-wave for the corresponding set of stimulation patterns Selectivity with optimal stimulation pattern All movements obtained by the respective optimal stimulation pattern (FEP for hand opening/finger extension, WEP for wrist extension and UDP for ulnar deviation) proved to be highly selective. When the parameter S was higher than 0.6, this indicated that the contribution of the non-targeted movements was negligible in comparison to the targeted ones (Fig. <ref type="figure" coords="6,246.10,364.74,3.40,8.98">5</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Hand opening with a rotated forearm position</head><p>When applying the identified optimal FEP during changed forearm/hand position no differences were found with regard to the individual finger extension. The identified patterns were thus independent of the forearm pronation/supination postures, i.e. with a 90°rotation of the forearm (Fig. <ref type="figure" coords="6,128.41,465.71,3.40,8.98">6</ref>).</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Discussion</head><p>We introduced a novel FES mapping procedure with a multi-contact array. This approach allowed identifying a subset of electrodes that were optimal for eliciting functional hand opening with selective muscle recruitment for achieving the targeted movement. Furthermore, other movements, such as wrist extension and ulnar deviation, could be elicited as well with detecting a different optimal electrode configuration for selective muscle recruitment. Thereby, the presented procedure facilitated the detection of both muscle specific and behaviorally relevant electrode configurations.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Innovation of the study</head><p>With respect to previous studies aiming at identifying the optimal stimulation patterns for eliciting selective hand and wrist movements, this is the first to fully rely on an electrophysiologically-based approach. Moreover, this approach is novel in using a variable location for both the active and return electrodes; the use of a set of different return electrodes on the array led to an increased amount of available stimulation patterns. This aspect might play an important role when aiming at an operatorindependent FES positioning <ref type="bibr" coords="6,427.35,518.72,14.84,8.98" target="#b16">[17,</ref><ref type="bibr" coords="6,446.34,518.72,11.20,8.98" target="#b31">32]</ref>. Once the optimal muscle-selective stimulation patterns have been identified, further computational methods could be applied to generate even more specific movement patterns <ref type="bibr" coords="7,228.42,328.74,14.89,8.98" target="#b23">[24,</ref><ref type="bibr" coords="7,245.82,328.74,11.20,8.98" target="#b32">33]</ref>.</p><p>Analyzing the muscle response to specific stimulation patterns through the use of surface EMG allows the extraction of specific features from the signal. In this study we studied the main muscles controlling the two kinematic degrees of freedom of the wrist (flexion/extension and radial/ulnar deviation) and the metacarpal joints of the fingers. However, increasing the sources of EMG recording even further would allow a selective identification of optimal patterns for a higher number muscles and of degrees of freedom: the thumb movement, for example, was not explicitly targeted in this study; however recording EMG from the M. abductor pollicis brevis could probably lead to a selective control of the thumb aperture as well allowing an independent control of the thumb.</p><p>Another advantage of the present approach is that it allows detecting the optimal stimulation pattern with relatively low current intensities. All previous methods necessitated supra-threshold stimulation, both in single pulse approaches <ref type="bibr" coords="7,377.81,316.72,16.11,8.98" target="#b21">[22]</ref> and in FES burst applications <ref type="bibr" coords="7,520.28,316.72,14.60,8.98" target="#b19">[20]</ref>, since they used kinematics as the primary read-out. The approach proposed in this study overcomes potential limitations of applying supra-threshold stimulation, i.e. the risk of fatigue and pain, and could constitute a solution for e.g. stroke patients with a disturbed kinematic response due to spasticity.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Potential Application for Neurorehabilitation</head><p>The selective activation of a single muscle, as shown in this study, or of a specific group of muscles, might be of particular relevance for neurorehabilitation where particularly the interplay between agonist and antagonist muscles might be disturbed. After stroke for example, the neuromuscular system might be impaired to a degree that the resulting spasticity would limit the detection of any muscle twitches. In this view, the proposed method might be particularly useful for those severely affected patients who show no residual hand movement at all. This technique might moreover allow a fine tuning of stimulation Fig. <ref type="figure" coords="7,78.07,274.72,4.42,7.36">5</ref> Measure of selectivity under the optimal stimulation pattern for finger extension, wrist extension and ulnar deviation, respectively. A high selectivity level was obtained for each of the identified sets of optimal patterns Fig. <ref type="figure" coords="7,78.07,709.38,4.42,7.36">6</ref> Finger extension (median value ± median absolute deviation) in the reference position (0°) and in the rotated forearm position (90°): No differences were found for each of the fingers. The amount of hand opening was thus comparable for the two forearm postures parameters as well, e.g. by disentangling the involvement of central pathways through spinal reflexes <ref type="bibr" coords="8,256.94,100.72,15.37,8.98" target="#b25">[26,</ref><ref type="bibr" coords="8,278.39,100.72,12.14,8.98" target="#b33">34,</ref><ref type="bibr" coords="8,56.69,112.74,13.13,8.98" target="#b34">35]</ref> and the peripheral contribution of the stimulation as detected with the M-wave, thus potentially limiting the stimulation induced muscle fatigue <ref type="bibr" coords="8,199.27,136.72,14.39,8.98" target="#b35">[36]</ref>.</p><p>Furthermore, the effectiveness of FES interventions may depend on the targeted function and the stimulation specificity. From a motor learning perspective, the ability to select a single hand function could potentially enhance motor recovery and facilitate CNS plasticity <ref type="bibr" coords="8,56.69,208.72,14.60,8.98" target="#b36">[37]</ref>. Especially, after neurological injuries such as stroke, and particularly in those therapeutic scenarios seeking to close the loop between motor intention/attempt and assistive technology, a targeted activation of the periphery might be essential <ref type="bibr" coords="8,135.33,256.74,15.09,8.98" target="#b37">[38,</ref><ref type="bibr" coords="8,154.07,256.74,11.32,8.98" target="#b38">39]</ref>. However, further research is necessary along these lines to better understand the physiological effects of FES on the CNS, and particularly on cortical connectivity <ref type="bibr" coords="8,157.04,292.74,14.60,8.98" target="#b39">[40]</ref>. With regard to the cortical physiology during peripheral input <ref type="bibr" coords="8,204.27,304.76,15.09,8.98" target="#b40">[41,</ref><ref type="bibr" coords="8,223.01,304.76,11.32,8.98" target="#b41">42]</ref>, recent findings in the field of brain-robot interfaces may inform FES applications as well <ref type="bibr" coords="8,162.14,328.74,14.60,8.98" target="#b42">[43]</ref>, with the goal of bridging the abilities and cortical networks of motor imagery and motor execution <ref type="bibr" coords="8,131.59,352.72,13.64,8.98" target="#b43">[44]</ref><ref type="bibr" coords="8,145.23,352.72,4.55,8.98" target="#b44">[45]</ref><ref type="bibr" coords="8,149.78,352.72,13.64,8.98" target="#b45">[46]</ref> and strengthening corticospinal connectivity <ref type="bibr" coords="8,127.12,364.74,14.60,8.98" target="#b46">[47]</ref>.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Possible limitations and future perspectives</head><p>Peak-to-peak values of M-waves were sufficient to detect optimal patterns, even though this approach did not always result in complete finger extensions. There was also no significant correlation between the M-wave peak-topeak value and the quality, i.e. functional characteristics, of the finger extension. A more careful inspection of the recorded signals may help to further differentiate between functional and non-functional extensions. This could possibly be achieved by extracting additional features from the recorded M-wave besides the peak-to-peak values used in this study, e.g. power and area of the M-wave.</p><p>Due to space limitations for positioning the EMG electrodes on the dorsal side of the forearm, we used monopolar instead of bipolar recordings. Although this approach might be less selective, noisier, and more affected by cross-talk during simultaneous recording and stimulation, it nevertheless resulted in the identification of a relevant number of selective patterns. However, we might have missed some stimulation patterns due crosstalk among EMG channels. Future studies need to explore whether bipolar EMG recordings might improve the scanning procedure and lead to a higher number of selective stimulation patterns.</p><p>In neurological patients with central nervous system damage, e.g. stroke, the peripheral pathways are intact <ref type="bibr" coords="8,56.69,700.75,15.86,8.98" target="#b30">[31]</ref> and M-waves can be elicited similarly to the findings in healthy subjects studied here. For practical application, however, EMG signal quality needs to be carefully considered for the effective application of the proposed technique, due to potential atrophy <ref type="bibr" coords="8,453.14,100.72,14.93,8.98" target="#b47">[48,</ref><ref type="bibr" coords="8,471.66,100.72,11.20,8.98" target="#b48">49]</ref>. In this context, electrode arrays allowing concurrent recording and stimulation with a higher spatial specificity, i.e. lower inter-electrode distance, could potentially improve the selectivity of the proposed approach. Future studies could simultaneously record and stimulate both sides of the forearm, integrating the selective activation of flexor muscles in a bid to develop a system that is able to elicit selective hand opening and grasping together with the functional stabilization of the wrist.</p></div>
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Conclusions</head><p>This study has introduced a novel method to automatically select stimulation electrodes for FES. The protocol identifies a small subset of electrodes from an array entirely based on the electrophysiological response to stimulation. This technique is capable of eliciting a full hand opening. The complete procedure is fast, comfortable and precise with regard to the targeted muscles. This could be particularly important for rehabilitation protocols addressing muscle synergies and activities of daily living.</p></div><figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_0" coords="3,62.70,303.06,464.49,7.36;3,62.70,313.34,343.74,7.06;3,155.68,94.85,283.87,201.88"><head>Fig. 1</head><label>1</label><figDesc>Fig. 1 Multi-contact set-up visualized for the left arm: Electrode array for FES with a fixed configuration of two blocks, i.e. a proximal and a distal (close to the hand) block with 15 and 12 contacts respectively, and 3 flexible electrodes for EMG recording</figDesc><graphic coords="3,155.68,94.85,283.87,201.88" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" xml:id="fig_1" coords="6,62.70,246.09,467.97,7.36;6,62.70,256.42,458.01,7.06;6,63.84,94.85,467.66,144.91"><head>Fig. 3</head><label>3</label><figDesc>Fig. 3 Finger extension movements (median value ± median absolute deviation) comparing different stimulation patterns (FEP = Finger Extension Pattern, WEP = Wrist Extension Pattern, UDP = Ulnar Deviation Pattern). In this case WEP and UDP constitute the control measurements for FEP</figDesc><graphic coords="6,63.84,94.85,467.66,144.91" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" coords="5,63.84,94.85,467.66,188.56"><head></head><label></label><figDesc></figDesc><graphic coords="5,63.84,94.85,467.66,188.56" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" coords="7,127.28,94.85,340.76,173.54"><head></head><label></label><figDesc></figDesc><graphic coords="7,127.28,94.85,340.76,173.54" type="bitmap" /></figure>
+<figure xmlns="http://www.tei-c.org/ns/1.0" coords="7,63.84,581.44,467.66,121.61"><head></head><label></label><figDesc></figDesc><graphic coords="7,63.84,581.44,467.66,121.61" type="bitmap" /></figure>
+		</body>
+		<back>
+
+			<div type="acknowledgement">
+<div><head>Acknowledgements</head><p>This study was supported by the <rs type="funder">German Federal Ministry for Education and Research [BMBF</rs> <rs type="grantNumber">16SV5824</rs>]. <rs type="institution">HASOMED GmbH (Magdeburg, Germany)</rs> provided the multi-electrode array and stimulator. AG was also supported by grants from the <rs type="funder">German Research Council</rs> [<rs type="grantNumber">DFG EC 307</rs>], and from the <rs type="funder">Federal Ministry for Education and Research</rs> [<rs type="grantNumber">BFNT 01GQ0761</rs>, <rs type="grantNumber">BMBF 0316064B</rs>]. There is no conflict of interests.</p></div>
+			</div>
+			<listOrg type="funding">
+				<org type="funding" xml:id="_zPUQBRn">
+					<idno type="grant-number">16SV5824</idno>
+				</org>
+				<org type="funding" xml:id="_dm5cHBj">
+					<idno type="grant-number">DFG EC 307</idno>
+				</org>
+				<org type="funding" xml:id="_VH8m7du">
+					<idno type="grant-number">BFNT 01GQ0761</idno>
+				</org>
+				<org type="funding" xml:id="_dXhRSD6">
+					<idno type="grant-number">BMBF 0316064B</idno>
+				</org>
+			</listOrg>
+			<div type="annex">
+<div xmlns="http://www.tei-c.org/ns/1.0"><head>Competing interests</head><p>The authors declare that they have no competing interests. </p></div>			</div>
+			<div type="references">
+
+				<listBibl>
+
+<biblStruct coords="8,307.02,636.26,227.61,6.62;8,319.75,645.27,210.17,6.62;8,319.75,654.28,118.20,6.62" xml:id="b0">
+	<analytic>
+		<title level="a" type="main" coords="8,387.27,636.26,147.37,6.62;8,319.75,645.27,137.61,6.62">The influence of functional electrical stimulation on hand motor recovery in stroke patients: a review</title>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Quandt</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">F</forename><forename type="middle">C</forename><surname>Hummel</surname></persName>
+		</author>
+		<idno type="DOI">10.1186/2040-7378-6-9</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="8,462.33,645.27,67.59,6.62;8,319.75,654.28,10.45,6.62">Exp Translational Stroke Med</title>
+		<imprint>
+			<biblScope unit="volume">6</biblScope>
+			<biblScope unit="page">9</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,307.02,663.30,222.66,6.62;8,319.75,672.26,207.41,6.62;8,319.75,681.27,62.06,6.62" xml:id="b1">
+	<analytic>
+		<title level="a" type="main" coords="8,446.97,663.30,82.72,6.62;8,319.75,672.26,169.32,6.62">A neuroprosthesis for tremor management through the control of muscle co-contraction</title>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">Á</forename><surname>Gallego</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Rocon</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">M</forename><surname>Belda-Lois</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">L</forename><surname>Pons</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="8,494.02,672.26,33.14,6.62;8,319.75,681.27,19.20,6.62">J Neuroeng Rehabil</title>
+		<imprint>
+			<biblScope unit="volume">10</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page">36</biblScope>
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="8,307.02,690.28,218.43,6.62;8,319.75,699.30,199.04,6.62;8,319.75,708.26,204.79,6.62;8,319.75,717.27,216.88,6.62;8,319.75,726.28,135.06,6.62" xml:id="b2">
+	<analytic>
+		<title level="a" type="main" coords="8,501.95,690.28,23.50,6.62;8,319.75,699.30,199.04,6.62;8,319.75,708.26,204.79,6.62;8,319.75,717.27,165.87,6.62">Habitual functional electrical stimulation therapy improves gait kinematics and walking performance, but Not patient-reported functional outcomes, of people with multiple sclerosis who present with foot-drop</title>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">L</forename><surname>Van Der Linden</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">E</forename><surname>Hooper</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Cowan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><forename type="middle">B</forename><surname>Weller</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><forename type="middle">H</forename><surname>Mercer</surname></persName>
+		</author>
+		<idno type="DOI">10.1371/journal.pone.0103368</idno>
+	</analytic>
+	<monogr>
+		<title level="j" coords="8,490.62,717.27,25.77,6.62">PLoS One</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page">103368</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,58.99,90.30,222.40,6.62;9,71.72,99.26,208.66,6.62;9,71.72,108.27,210.19,6.62;9,71.72,117.29,212.55,6.62;9,71.72,126.30,67.99,6.62" xml:id="b3">
+	<analytic>
+		<title level="a" type="main" coords="9,84.64,99.26,195.74,6.62;9,71.72,108.27,210.19,6.62;9,71.72,117.29,159.01,6.62">Using functional electrical stimulation mediated by iterative learning control and robotics to improve arm movement for people with Multiple Sclerosis. Neural Systems and Rehabilitation Engineering</title>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Sampson</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Freeman</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Coote</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Demain</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Feys</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Meadmore</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">M</forename><surname>Hughes</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,235.84,117.29,48.43,6.62;9,71.72,126.30,5.83,6.62">IEEE Transactions on</title>
+		<imprint>
+			<biblScope unit="volume">4</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="1534" to="4320" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,58.99,135.60,229.81,6.62;9,71.72,144.56,215.25,6.62;9,71.72,153.57,96.39,6.62" xml:id="b4">
+	<analytic>
+		<title level="a" type="main" coords="9,71.72,144.56,153.54,6.62">Functional electrical stimulation and spinal cord injury</title>
+		<author>
+			<persName coords=""><forename type="first">C</forename><forename type="middle">H</forename><surname>Ho</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><forename type="middle">J</forename><surname>Triolo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">L</forename><surname>Elias</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><forename type="middle">L</forename><surname>Kilgore</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">F</forename><surname>Dimarco</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Bogie</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">V</forename><forename type="middle">K</forename><surname>Mushahwar</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,229.83,144.56,57.14,6.62;9,71.72,153.57,38.76,6.62">Physical Med Rehab Clin North Am</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="631" to="654" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,58.99,162.87,227.62,6.62;9,71.72,171.88,193.26,6.62" xml:id="b5">
+	<analytic>
+		<title level="a" type="main" coords="9,165.97,162.87,120.65,6.62;9,71.72,171.88,98.20,6.62">Electrical stimulation as a means for achieving recovery of function in stroke patients</title>
+		<author>
+			<persName coords=""><forename type="first">D</forename><forename type="middle">B</forename><surname>Popovic</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Sinkjaer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">B</forename><surname>Popovic</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,174.04,171.88,48.68,6.62">Neurorehabilitation</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="page" from="45" to="58" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,58.99,181.18,225.45,6.62;9,71.72,190.19,212.08,6.62;9,71.72,199.15,208.52,6.62;9,71.72,208.17,71.01,6.62" xml:id="b6">
+	<analytic>
+		<title level="a" type="main" coords="9,101.03,190.19,182.77,6.62;9,71.72,199.15,190.69,6.62">A four-week, task-specific neuroprosthesis program for a person with no active wrist or finger movement because of chronic stroke</title>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Dunning</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Berberich</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Albers</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Mortellite</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><forename type="middle">G</forename><surname>Levine</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Vah</forename><surname>Hermann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Sja</forename><surname>Page</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,267.19,199.15,13.05,6.62;9,71.72,208.17,10.97,6.62">Phys Ther</title>
+		<imprint>
+			<biblScope unit="volume">88</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="397" to="405" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,58.99,217.46,226.59,6.62" xml:id="b7">
+	<analytic>
+		<title level="a" type="main" coords="9,105.62,217.46,71.35,6.62">Rehabilitation after stroke</title>
+		<author>
+			<persName coords=""><forename type="first">B</forename><forename type="middle">H</forename><surname>Dobkin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,181.70,217.46,36.25,6.62">N Engl J Med</title>
+		<imprint>
+			<biblScope unit="volume">352</biblScope>
+			<biblScope unit="issue">16</biblScope>
+			<biblScope unit="page" from="1677" to="1684" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,58.99,226.76,218.27,6.62;9,71.72,235.78,57.40,6.62" xml:id="b8">
+	<analytic>
+		<title level="a" type="main" coords="9,179.83,226.76,55.75,6.62">Stroke rehabilitation</title>
+		<author>
+			<persName coords=""><forename type="first">P</forename><surname>Langhorne</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Bernhardt</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Kwakkel</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,240.26,226.76,17.15,6.62">Lancet</title>
+		<imprint>
+			<biblScope unit="volume">377</biblScope>
+			<biblScope unit="issue">9778</biblScope>
+			<biblScope unit="page" from="1693" to="1702" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,62.03,245.07,216.66,6.62;9,71.72,254.09,215.05,6.62;9,71.72,263.10,69.23,6.62" xml:id="b9">
+	<analytic>
+		<title level="a" type="main" coords="9,188.90,245.07,89.79,6.62;9,71.72,254.09,152.75,6.62">Treatment interventions for the paretic upper limb of stroke survivors: a critical review</title>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Barreca</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">L</forename><surname>Wolf</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Fasoli</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Bohannon</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,229.43,254.09,57.33,6.62;9,71.72,263.10,16.07,6.62">Neurorehabil Neural Repair</title>
+		<imprint>
+			<biblScope unit="volume">17</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="220" to="226" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,62.03,272.40,191.79,6.62;9,71.72,281.36,191.98,6.62;9,71.72,290.37,211.76,6.62" xml:id="b10">
+	<analytic>
+		<title level="a" type="main" coords="9,163.33,272.40,90.49,6.62;9,71.72,281.36,191.98,6.62;9,71.72,290.37,74.66,6.62">Functional electrical stimulation enhancement of upper extremity functional recovery during stroke rehabilitation: a pilot study</title>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Alon</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">F</forename><surname>Levitt</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><forename type="middle">A</forename><surname>Mccarthy</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,151.31,290.37,75.54,6.62">Neurorehabil Neural Repair</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="207" to="215" />
+			<date type="published" when="2007">2007</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,62.03,299.67,228.03,6.62;9,71.72,308.68,200.03,6.62;9,71.72,317.70,205.16,6.62" xml:id="b11">
+	<analytic>
+		<title level="a" type="main" coords="9,157.10,299.67,132.97,6.62;9,71.72,308.68,200.03,6.62;9,71.72,317.70,77.44,6.62">Functional electrical stimulation (FES) may modify the poor prognosis of stroke survivors with severe motor loss of the upper extremity: a preliminary study</title>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Alon</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">F</forename><surname>Levitt</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><forename type="middle">A</forename><surname>Mccarthy</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,153.53,317.70,70.49,6.62">Am J Physical Med Rehabil</title>
+		<imprint>
+			<biblScope unit="volume">87</biblScope>
+			<biblScope unit="issue">8</biblScope>
+			<biblScope unit="page" from="627" to="636" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,62.03,326.99,216.66,6.62;9,71.72,335.95,216.43,6.62;9,71.72,344.97,30.12,6.62" xml:id="b12">
+	<analytic>
+		<title level="a" type="main" coords="9,93.60,326.99,185.10,6.62;9,71.72,335.95,131.36,6.62">Neurorehabilitation with new functional electrical stimulation for hemiparetic upper extremity in stroke patients</title>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Hara</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,207.89,335.95,60.39,6.62">J Nippon Med School</title>
+		<imprint>
+			<biblScope unit="volume">75</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="4" to="14" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,62.03,354.26,224.77,6.62;9,71.72,363.28,214.72,6.62;9,71.72,372.29,202.35,6.62;9,71.72,381.25,133.53,6.62" xml:id="b13">
+	<analytic>
+		<title level="a" type="main" coords="9,265.83,354.26,20.98,6.62;9,71.72,363.28,214.72,6.62;9,71.72,372.29,202.35,6.62;9,71.72,381.25,40.70,6.62">Efficacy of electrical stimulation as an adjunct to repetitive task practice therapy on skilled hand performance in hemiparetic stroke patients: a randomized controlled trial</title>
+		<author>
+			<persName coords=""><forename type="first">N</forename><forename type="middle">M</forename><surname>Gharib</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">M</forename><surname>Aboumousa</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">A</forename><surname>Elowishy</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">S</forename><surname>Rezk-Allah</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">F</forename><forename type="middle">S</forename><surname>Yousef</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,116.44,381.25,32.13,6.62">Clin Rehabil</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="355" to="364" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,62.03,390.60,220.98,6.62" xml:id="b14">
+	<analytic>
+		<title level="a" type="main" coords="9,103.86,390.60,85.90,6.62">Functional electrical stimulation</title>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Rushton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,194.23,390.60,36.61,6.62">Physiol Meas</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="241" to="275" />
+			<date type="published" when="1997">1997</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,62.03,399.90,195.37,6.62;9,71.72,408.86,121.05,6.62" xml:id="b15">
+	<analytic>
+		<title level="a" type="main" coords="9,120.13,399.90,137.27,6.62;9,71.72,408.86,30.04,6.62">Electrodes for transcutaneous (surface) electrical stimulation</title>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Keller</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Kuhn</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,106.64,408.86,42.77,6.62">J Auto Control</title>
+		<imprint>
+			<biblScope unit="volume">18</biblScope>
+			<biblScope unit="page" from="35" to="45" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,62.03,418.16,212.01,6.62;9,71.72,427.17,215.93,6.62;9,71.72,436.18,153.99,6.62" xml:id="b16">
+	<analytic>
+		<title level="a" type="main" coords="9,197.12,418.16,76.92,6.62;9,71.72,427.17,215.93,6.62;9,71.72,436.18,59.96,6.62">An electrode configuration technique using an electrode matrix arrangement for FES-based upper arm rehabilitation systems</title>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">B</forename><surname>O'dwyer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">O</forename><surname>'keeffe</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><forename type="middle">T</forename><surname>Coote</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Lyons</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,136.74,436.18,42.18,6.62">Med Eng Phys</title>
+		<imprint>
+			<biblScope unit="volume">28</biblScope>
+			<biblScope unit="page" from="166" to="176" />
+			<date type="published" when="2006">2006</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,62.03,445.48,225.99,6.62;9,71.72,454.50,212.08,6.62;9,71.72,463.45,207.33,6.62;9,71.72,472.47,55.18,6.62" xml:id="b17">
+	<analytic>
+		<title level="a" type="main" coords="9,71.72,454.50,212.08,6.62;9,71.72,463.45,50.61,6.62">A two-step model to optimise transcutaneous electrical stimulation of the human upper arm</title>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Goffredo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Schmid</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Conforto</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Bilotti</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Palma</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Vegni</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D'</forename><surname>Alessio</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,127.50,463.45,148.52,6.62">COMPEL Int J Comput Math Electrical Electronic Eng</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="1329" to="1345" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,62.03,481.76,224.18,6.62;9,71.72,490.78,202.99,6.62;9,71.72,499.79,68.22,6.62" xml:id="b18">
+	<analytic>
+		<title level="a" type="main" coords="9,83.17,490.78,174.94,6.62">Multi-field surface electrode for selective electrical stimulation</title>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Popovic-Bijelic</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Bijelic</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Jorgovanovic</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Bojanic</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">B</forename><surname>Popovic</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><forename type="middle">B</forename><surname>Popovic</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,262.99,490.78,11.71,6.62;9,71.72,499.79,18.36,6.62">Artif Organs</title>
+		<imprint>
+			<biblScope unit="volume">29</biblScope>
+			<biblScope unit="page" from="448" to="452" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,62.03,509.09,221.30,6.62;9,71.72,518.05,210.86,6.62;9,71.72,527.06,100.92,6.62" xml:id="b19">
+	<analytic>
+		<title level="a" type="main" coords="9,187.03,509.09,96.30,6.62;9,71.72,518.05,110.75,6.62">Optimization of multi-pad surface electrode: Selective stimulation of wrist</title>
+		<author>
+			<persName coords=""><forename type="first">L</forename><forename type="middle">Z</forename><surname>Popovic</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><forename type="middle">M</forename><surname>Malesevic</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">B</forename><surname>Popovic</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="m" coords="9,195.64,518.05,83.43,6.62">EUROCON 2009, EUROCON&apos;09</title>
+		<meeting><address><addrLine>New York City</addrLine></address></meeting>
+		<imprint>
+			<publisher>IEEE</publisher>
+			<date type="published" when="2009">2009</date>
+			<biblScope unit="page" from="142" to="145" />
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,62.03,536.36,216.16,6.62;9,71.72,545.37,215.45,6.62;9,71.72,554.39,69.34,6.62" xml:id="b20">
+	<analytic>
+		<title level="a" type="main" coords="9,198.37,536.36,79.82,6.62;9,71.72,545.37,192.17,6.62">Muscle twitch responses for shaping the multi-pad electrode for functional electrical stimulation</title>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Malešević</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Popović</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Bijelić</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Kvaščev</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,268.78,545.37,18.39,6.62;9,71.72,554.39,19.46,6.62">J Auto Control</title>
+		<imprint>
+			<biblScope unit="volume">20</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="53" to="58" />
+			<date type="published" when="2010">2010</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,62.03,563.69,206.03,6.63;9,71.72,572.70,214.30,6.62;9,71.72,581.66,177.73,6.62" xml:id="b21">
+	<analytic>
+		<title level="a" type="main" coords="9,112.99,572.70,173.03,6.62;9,71.72,581.66,86.01,6.62">A multi-pad electrode based functional electrical stimulation system for restoration of grasp</title>
+		<author>
+			<persName coords=""><forename type="first">N</forename><forename type="middle">M</forename><surname>Malešević</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><forename type="middle">Z</forename><surname>Maneski</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">V</forename><surname>Ilić</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Jorgovanović</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Bijelić</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Keller</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Dba</forename><surname>Popovid</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,162.65,581.66,54.46,6.62">J Neuroeng Rehabil</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page">66</biblScope>
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,62.03,590.96,216.12,6.62;9,71.72,599.97,156.54,6.62" xml:id="b22">
+	<analytic>
+		<title level="a" type="main" coords="9,143.09,590.96,135.07,6.62;9,71.72,599.97,42.33,6.62">Mapping the motor point in the human tibialis anterior muscle</title>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">L</forename><surname>Bowden</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><forename type="middle">A</forename><surname>Mcnulty</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,119.22,599.97,48.66,6.62">Clin Neurophysiol</title>
+		<imprint>
+			<biblScope unit="volume">123</biblScope>
+			<biblScope unit="issue">2</biblScope>
+			<biblScope unit="page" from="386" to="392" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,62.03,609.27,219.10,6.62;9,71.72,618.28,202.72,6.62;9,71.72,627.30,152.73,6.62" xml:id="b23">
+	<analytic>
+		<title level="a" type="main" coords="9,71.72,618.28,202.72,6.62;9,71.72,627.30,68.57,6.62">Optimisation of hand posture stimulation using an electrode array and iterative learning control</title>
+		<author>
+			<persName coords=""><forename type="first">T</forename><forename type="middle">A</forename><surname>Exell</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><forename type="middle">T</forename><surname>Freeman</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><forename type="middle">L</forename><surname>Meadmore</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A-M</forename><surname>Hughes</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Hallewell</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Burridge</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,145.07,627.30,39.99,6.62">J Auto Control</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="page" from="1" to="5" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,62.03,636.60,202.64,6.62;9,71.72,645.55,217.31,6.62;9,71.72,654.57,110.36,6.62" xml:id="b24">
+	<analytic>
+		<title level="a" type="main" coords="9,207.95,636.60,56.72,6.62;9,71.72,645.55,217.31,6.62;9,71.72,654.57,8.17,6.62">Muscle motor point identification is essential for optimizing neuromuscular electrical stimulation use</title>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Gobbo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><forename type="middle">A</forename><surname>Maffiuletti</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Orizio</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">A</forename><surname>Minetto</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,84.75,654.57,54.46,6.62">J Neuroeng Rehabil</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page">17</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,62.03,663.87,202.07,6.62;9,71.72,672.88,215.18,6.62;9,71.72,681.89,159.66,6.62" xml:id="b25">
+	<analytic>
+		<title level="a" type="main" coords="9,71.72,672.88,215.18,6.62;9,71.72,681.89,38.59,6.62">Neuromuscular electrical stimulation: implications of the electrically evoked sensory volley</title>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">J</forename><surname>Bergquist</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">M</forename><surname>Clair</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">O</forename><surname>Lagerquist</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><forename type="middle">S</forename><surname>Mang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Okuma</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><forename type="middle">F</forename><surname>Collins</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,114.97,681.89,49.65,6.62">Eur J Appl Physiol</title>
+		<imprint>
+			<biblScope unit="volume">111</biblScope>
+			<biblScope unit="issue">10</biblScope>
+			<biblScope unit="page" from="2409" to="2426" />
+			<date type="published" when="2011">2011</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,62.03,691.19,224.33,6.62;9,71.71,700.15,204.57,6.62;9,71.71,709.16,141.12,6.62" xml:id="b26">
+	<analytic>
+		<title level="a" type="main" coords="9,227.84,691.19,58.51,6.62;9,71.71,700.15,204.57,6.62;9,71.71,709.16,20.56,6.62">Electrical stimulation site influences the spatial distribution of motor units recruited in tibialis anterior</title>
+		<author>
+			<persName coords=""><forename type="first">Y</forename><surname>Okuma</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">J</forename><surname>Bergquist</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Hong</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><forename type="middle">M</forename><surname>Chan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><forename type="middle">F</forename><surname>Collins</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,97.00,709.16,48.66,6.62">Clin Neurophysiol</title>
+		<imprint>
+			<biblScope unit="volume">124</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<biblScope unit="page" from="2257" to="2263" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,310.06,90.30,218.96,6.62;9,319.75,99.26,198.94,6.62;9,319.75,108.27,153.60,6.62" xml:id="b27">
+	<analytic>
+		<title level="a" type="main" coords="9,492.09,90.30,36.93,6.62;9,319.75,99.26,196.14,6.62">Experimental and simulated EMG responses in the study of the human spinal cord</title>
+		<author>
+			<persName coords=""><forename type="first">R</forename><forename type="middle">A</forename><surname>Mezzarane</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><forename type="middle">A</forename><surname>Elias</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">F</forename><forename type="middle">H</forename><surname>Magalhães</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">V</forename><forename type="middle">M</forename><surname>Chaud</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">F</forename><surname>Kohn</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,319.75,108.27,110.96,6.62">Electrodiagnosis New Frontiers Clin Res</title>
+		<imprint>
+			<biblScope unit="volume">1</biblScope>
+			<biblScope unit="page" from="57" to="87" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,310.06,117.29,222.47,6.62;9,319.75,126.30,215.03,6.62;9,319.75,135.26,142.65,6.62" xml:id="b28">
+	<analytic>
+		<title level="a" type="main" coords="9,499.46,117.29,33.07,6.62;9,319.75,126.30,215.03,6.62;9,319.75,135.26,32.78,6.62">Assessment of individual finger muscle activity in the extensor digitorum communis by surface EMG</title>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">N</forename><surname>Leijnse</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><forename type="middle">H</forename><surname>Campbell-Kyureghyan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Spektor</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><forename type="middle">M</forename><surname>Quesada</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,358.30,135.26,40.33,6.62">J Neurophysiol</title>
+		<imprint>
+			<biblScope unit="volume">100</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page" from="3225" to="3235" />
+			<date type="published" when="2008">2008</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,310.06,144.27,218.33,6.62;9,319.75,153.29,207.38,6.62;9,319.75,162.30,121.39,6.62" xml:id="b29">
+	<analytic>
+		<title level="a" type="main" coords="9,403.08,144.27,125.31,6.62;9,319.75,153.29,204.13,6.62">Continuous and simultaneous estimation of finger kinematics using inputs from an EMG-to-muscle activation model</title>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">G</forename><surname>Ngeo</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Tamei</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Shibata</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,319.75,162.30,54.46,6.62">J Neuroeng Rehabil</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">122</biblScope>
+			<biblScope unit="page" from="3" to="11" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,310.06,171.26,228.34,6.62;9,319.75,180.27,146.62,6.62" xml:id="b30">
+	<analytic>
+		<title level="a" type="main" coords="9,393.50,171.26,144.90,6.62;9,319.75,180.27,32.43,6.62">Functional electrical stimulation for neuromuscular applications</title>
+		<author>
+			<persName coords=""><forename type="first">P</forename><forename type="middle">H</forename><surname>Peckham</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">S</forename><surname>Knutson</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,357.05,180.27,62.92,6.62">Annu Rev Biomed Eng</title>
+		<imprint>
+			<biblScope unit="volume">7</biblScope>
+			<biblScope unit="page" from="327" to="360" />
+			<date type="published" when="2005">2005</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,310.06,189.29,223.36,6.62;9,319.75,198.30,218.61,6.62;9,319.75,207.26,125.65,6.62" xml:id="b31">
+	<analytic>
+		<title level="a" type="main" coords="9,362.21,198.30,139.45,6.62">Multi-pad electrode for effective grasping: design</title>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Popovic-Maneski</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Kostic</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Bijelic</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Keller</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Mitrovic</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">L</forename><surname>Konstantinovic</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><forename type="middle">B</forename><surname>Popovic</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,506.71,198.30,31.64,6.62;9,319.75,207.26,68.90,6.62">Neural Syst Rehabil Eng IEEE Transac</title>
+		<imprint>
+			<biblScope unit="volume">21</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="648" to="654" />
+			<date type="published" when="2013">2013</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,310.06,216.27,212.53,6.62;9,319.74,225.29,170.15,6.62" xml:id="b32">
+	<analytic>
+		<title level="a" type="main" coords="9,357.39,216.27,165.20,6.62;9,319.74,225.29,70.02,6.62">Electrode array-based electrical stimulation using ILC with restricted input subspace</title>
+		<author>
+			<persName coords=""><forename type="first">C</forename><forename type="middle">T</forename><surname>Freeman</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,394.97,225.29,48.95,6.62">Control Eng Pract</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="page" from="32" to="43" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,310.06,234.30,195.77,6.62;9,319.74,243.26,214.45,6.62;9,319.74,252.27,210.01,6.62" xml:id="b33">
+	<analytic>
+		<title level="a" type="main" coords="9,433.86,234.30,71.97,6.62;9,319.74,243.26,214.45,6.62;9,319.74,252.27,89.38,6.62">The effects of wide pulse neuromuscular electrical stimulation on elbow flexion torque in individuals with chronic hemiparetic stroke</title>
+		<author>
+			<persName coords=""><forename type="first">Clair-Auger Jm</forename><surname>Collins</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><forename type="middle">F</forename><surname>Dewald</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Jpa</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,413.91,252.27,48.66,6.62">Clin Neurophysiol</title>
+		<imprint>
+			<biblScope unit="volume">123</biblScope>
+			<biblScope unit="issue">11</biblScope>
+			<biblScope unit="page" from="2247" to="2255" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,310.06,261.29,225.82,6.62;9,319.74,270.30,216.11,6.62;9,319.74,279.26,194.55,6.62;9,319.74,288.27,99.51,6.62" xml:id="b34">
+	<analytic>
+		<title level="a" type="main" coords="9,325.47,270.30,210.38,6.62;9,319.74,279.26,178.32,6.62">Extra Forces induced by wide-pulse, high-frequency electrical stimulation: Occurrence, magnitude, variability and underlying mechanisms</title>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Wegrzyk</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Fouré</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Vilmen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">B</forename><surname>Ghattas</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><forename type="middle">A</forename><surname>Maffiuletti</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">P</forename><surname>Mattei</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Gondin</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,503.54,279.26,10.75,6.62;9,319.74,288.27,35.79,6.62">Clin Neurophysiol</title>
+		<imprint>
+			<biblScope unit="volume">126</biblScope>
+			<biblScope unit="issue">7</biblScope>
+			<biblScope unit="page" from="1400" to="1412" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,310.06,297.29,221.25,6.62;9,319.74,306.30,217.04,6.62;9,319.74,315.26,194.42,6.62" xml:id="b35">
+	<analytic>
+		<title level="a" type="main" coords="9,319.74,306.30,217.04,6.62;9,319.74,315.26,30.04,6.62">Online tremor suppression using electromyography and Low level electrical stimulation</title>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Dosen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Muceli</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">L</forename><surname>Dideriksen</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">P</forename><surname>Romero</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Rocon</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">F</forename><surname>Pons</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Farina</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,354.67,315.26,102.75,6.62">Neural Syst Rehabil Eng IEEE Transac</title>
+		<imprint>
+			<biblScope unit="volume">23</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="385" to="395" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,310.06,324.27,204.70,6.62;9,319.74,333.29,123.14,6.62" xml:id="b36">
+	<analytic>
+		<title level="a" type="main" coords="9,357.67,324.27,157.09,6.62;9,319.74,333.29,28.85,6.62">Functional electrical stimulation and rehabilitation-an hypothesis</title>
+		<author>
+			<persName coords=""><forename type="first">D</forename><forename type="middle">N</forename><surname>Rushton</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,353.59,333.29,42.18,6.62">Med Eng Phys</title>
+		<imprint>
+			<biblScope unit="volume">25</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page" from="75" to="78" />
+			<date type="published" when="2003">2003</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,310.06,342.30,217.02,6.62;9,319.74,351.26,215.99,6.62;9,319.74,360.27,204.36,6.62;9,319.74,369.29,82.79,6.62" xml:id="b37">
+	<analytic>
+		<title level="a" type="main" coords="9,486.48,342.30,40.60,6.62;9,319.74,351.26,215.99,6.62;9,319.74,360.27,176.00,6.62">Feasibility of a new application of noninvasive brain computer interface (BCI): a case study of training for recovery of volitional motor control after stroke</title>
+		<author>
+			<persName coords=""><forename type="first">J</forename><forename type="middle">J</forename><surname>Daly</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Cheng</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">J</forename><surname>Rogers</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Litinas</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><surname>Hrovat</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Dohring</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,500.53,360.27,23.57,6.62;9,319.74,369.29,26.17,6.62">J Neurol Phys Ther</title>
+		<imprint>
+			<biblScope unit="volume">33</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="203" to="211" />
+			<date type="published" when="2009">2009</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,310.06,378.30,194.99,6.62;9,319.74,387.26,208.20,6.62;9,319.74,396.27,216.69,6.62;9,319.74,405.29,51.62,6.62" xml:id="b38">
+	<analytic>
+		<title level="a" type="main" coords="9,401.15,387.26,126.80,6.62;9,319.74,396.27,174.68,6.62">Decoding of motor intentions from epidural ECoG recordings in severely paralyzed chronic stroke patients</title>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Spuler</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Walter</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Ramos</forename><surname>Murguialday</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Naros</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Birbaumer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><surname>Gharabaghi</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Bogdan</forename><forename type="middle">M</forename></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,499.23,396.27,34.18,6.62">J Neural Eng</title>
+		<imprint>
+			<biblScope unit="volume">11</biblScope>
+			<biblScope unit="issue">6</biblScope>
+			<biblScope unit="page">66008</biblScope>
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,310.06,414.30,215.61,6.62;9,319.74,423.26,203.64,6.62;9,319.74,432.27,109.94,6.62" xml:id="b39">
+	<analytic>
+		<title level="a" type="main" coords="9,347.86,423.26,175.52,6.62;9,319.74,432.27,24.62,6.62">Re-thinking the role of motor cortex: Context-sensitive motor outputs?</title>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Gandolla</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><surname>Ferrante</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">F</forename><surname>Molteni</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">E</forename><surname>Guanziroli</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">T</forename><surname>Frattini</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Martegani</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">N</forename><forename type="middle">S</forename><surname>Ward</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,346.50,432.27,33.09,6.62">NeuroImage</title>
+		<imprint>
+			<biblScope unit="volume">91</biblScope>
+			<biblScope unit="page" from="366" to="374" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,310.06,441.29,204.70,6.62;9,319.74,450.30,217.36,6.62;9,319.74,459.26,197.91,6.62" xml:id="b40">
+	<analytic>
+		<title level="a" type="main" coords="9,401.23,441.29,113.52,6.62;9,319.74,450.30,217.36,6.62;9,319.74,459.26,103.64,6.62">Predicting work load profiles of brain-robot interface and electromygraphic neurofeedback with cortical resting-state networks: personal trait or task-specific challenge?</title>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Fels</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Bauer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Gharabaghi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,425.02,459.26,31.55,6.62">J Neural Eng</title>
+		<imprint>
+			<biblScope unit="volume">14</biblScope>
+			<biblScope unit="issue">4</biblScope>
+			<biblScope unit="page" from="12" to="046029" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,310.06,468.27,219.65,6.62;9,319.75,477.29,205.11,6.62;9,319.75,486.30,79.78,6.62" xml:id="b41">
+	<analytic>
+		<title level="a" type="main" coords="9,401.83,468.27,127.87,6.62;9,319.75,477.29,202.22,6.62">Oscillatory entrainment of the motor cortical network during motor imagery is modulated by the feedback modality</title>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Vukelić</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Gharabaghi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,319.75,486.30,33.09,6.62">Neuroimage</title>
+		<imprint>
+			<biblScope unit="volume">111</biblScope>
+			<biblScope unit="page" from="1" to="11" />
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,310.06,495.26,218.71,6.62;9,319.75,504.27,206.01,6.62;9,319.75,513.29,174.99,6.62" xml:id="b42">
+	<analytic>
+		<title level="a" type="main" coords="9,512.61,495.26,16.16,6.62;9,319.75,504.27,206.01,6.62;9,319.75,513.29,72.74,6.62">Braincontrolled functional electrical stimulation therapy for gait rehabilitation after stroke: a safety study</title>
+		<author>
+			<persName coords=""><forename type="first">C</forename><forename type="middle">M</forename><surname>Mccrimmon</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><forename type="middle">E</forename><surname>King</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">P</forename><forename type="middle">T</forename><surname>Wang</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">S</forename><forename type="middle">C</forename><surname>Cramer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">Z</forename><surname>Nenadic</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">H</forename><surname>Do</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,397.42,513.29,54.46,6.62">J Neuroeng Rehabil</title>
+		<imprint>
+			<biblScope unit="volume">12</biblScope>
+			<biblScope unit="issue">1</biblScope>
+			<biblScope unit="page">57</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,310.06,522.30,212.89,6.62;9,319.75,531.26,210.60,6.62;9,319.75,540.27,156.94,6.62" xml:id="b43">
+	<analytic>
+		<title level="a" type="main" coords="9,492.71,522.30,30.24,6.62;9,319.75,531.26,210.60,6.62;9,319.75,540.27,69.09,6.62">Lateralized alpha-band cortical networks regulate volitional modulation of beta-band sensorimotor oscillations</title>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Vukelić</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Bauer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Naros</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">I</forename><surname>Naros</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><surname>Braun</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Gharabaghi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,393.45,540.27,33.09,6.62">NeuroImage</title>
+		<imprint>
+			<biblScope unit="volume">87</biblScope>
+			<biblScope unit="page" from="147" to="153" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,310.06,549.29,221.62,6.62;9,319.75,558.30,192.04,6.62;9,319.75,567.26,191.29,6.62" xml:id="b44">
+	<analytic>
+		<title level="a" type="main" coords="9,402.52,549.29,129.17,6.62;9,319.75,558.30,192.04,6.62;9,319.75,567.26,93.96,6.62">Self-regulation of circumscribed brain activity modulates spatially selective and frequency specific connectivity of distributed resting state networks</title>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Vukelic</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Gharabaghi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,418.85,567.26,56.27,6.62">Front Behv Neurosci</title>
+		<imprint>
+			<biblScope unit="volume">9</biblScope>
+			<biblScope unit="page">181</biblScope>
+			<date type="published" when="2015">2015</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,310.06,576.27,213.05,6.62;9,319.75,585.29,214.66,6.62;9,319.75,594.30,86.58,6.62" xml:id="b45">
+	<analytic>
+		<title level="a" type="main" coords="9,474.63,576.27,48.48,6.62;9,319.75,585.29,212.09,6.62">Bridging the gap between motor imagery and motor execution with a brain-robot interface</title>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Bauer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Fels</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><surname>Vukelić</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">U</forename><surname>Ziemann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Gharabaghi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,319.75,594.30,33.09,6.62">NeuroImage</title>
+		<imprint>
+			<biblScope unit="volume">108</biblScope>
+			<biblScope unit="page" from="319" to="327" />
+			<date type="published" when="2014">2014</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,310.06,603.26,222.90,6.62;9,319.75,612.27,186.79,6.62;9,319.75,621.29,130.47,6.62" xml:id="b46">
+	<analytic>
+		<title level="a" type="main" coords="9,501.16,603.26,31.81,6.62;9,319.75,612.27,186.79,6.62;9,319.75,621.29,28.74,6.62">Brain-robot interface driven plasticity: Distributed modulation of corticospinal excitability</title>
+		<author>
+			<persName coords=""><forename type="first">D</forename><surname>Kraus</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><surname>Naros</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><surname>Bauer</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">M</forename><forename type="middle">T</forename><surname>Leão</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">U</forename><surname>Ziemann</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">A</forename><surname>Gharabaghi</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,353.02,621.29,33.09,6.62">Neuroimage</title>
+		<imprint>
+			<biblScope unit="volume">15</biblScope>
+			<biblScope unit="issue">125</biblScope>
+			<biblScope unit="page" from="522" to="532" />
+			<date type="published" when="2016">2016</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,310.06,630.30,227.97,6.62;9,319.75,639.26,211.63,6.62;9,319.75,648.27,79.26,6.62" xml:id="b47">
+	<analytic>
+		<title level="a" type="main" coords="9,481.38,630.30,56.66,6.62;9,319.75,639.26,163.62,6.62">Hemiparetic muscle atrophy and increased intramuscular fat in stroke patients</title>
+		<author>
+			<persName coords=""><forename type="first">A</forename><forename type="middle">S</forename><surname>Ryan</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">C</forename><forename type="middle">L</forename><surname>Dobrovolny</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">G</forename><forename type="middle">V</forename><surname>Smith</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">K</forename><forename type="middle">H</forename><surname>Silver</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">R</forename><forename type="middle">F</forename><surname>Macko</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,488.18,639.26,43.20,6.62;9,319.75,648.27,19.20,6.62">Arch Phys Med Rehabil</title>
+		<imprint>
+			<biblScope unit="volume">83</biblScope>
+			<biblScope unit="issue">12</biblScope>
+			<biblScope unit="page" from="1703" to="1707" />
+			<date type="published" when="2002">2002</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+<biblStruct coords="9,310.06,657.29,227.24,6.62;9,319.75,666.30,120.94,6.62" xml:id="b48">
+	<analytic>
+		<title level="a" type="main" coords="9,403.59,657.29,133.71,6.62;9,319.75,666.30,23.27,6.62">Investigation of hand muscle atrophy in stroke survivors</title>
+		<author>
+			<persName coords=""><forename type="first">K</forename><forename type="middle">M</forename><surname>Triandafilou</surname></persName>
+		</author>
+		<author>
+			<persName coords=""><forename type="first">D</forename><forename type="middle">G</forename><surname>Kamper</surname></persName>
+		</author>
+	</analytic>
+	<monogr>
+		<title level="j" coords="9,347.75,666.30,35.71,6.62">Clin Biomech</title>
+		<imprint>
+			<biblScope unit="volume">27</biblScope>
+			<biblScope unit="issue">3</biblScope>
+			<biblScope unit="page" from="268" to="272" />
+			<date type="published" when="2012">2012</date>
+		</imprint>
+	</monogr>
+</biblStruct>
+
+				</listBibl>
+			</div>
+		</back>
+	</text>
+</TEI>

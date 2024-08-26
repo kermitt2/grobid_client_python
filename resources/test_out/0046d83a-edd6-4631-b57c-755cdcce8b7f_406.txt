@@ -1,0 +1,5 @@
+HTTP ERROR 406 Not Acceptable
+URI: /api/processFulltextDocument
+STATUS: 406
+MESSAGE: Not Acceptable
+SERVLET: jersey

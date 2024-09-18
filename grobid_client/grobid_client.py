@@ -378,7 +378,7 @@ class GrobidClient(ApiClient):
 
         if status == 503:
             time.sleep(self.config["sleep_time"])
-            return self.process_txt(
+            return self.process_list_full(
                 service,
                 texts,
                 generateIDs,

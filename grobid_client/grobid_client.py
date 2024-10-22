@@ -253,7 +253,9 @@ class GrobidClient(ApiClient):
         include_raw_citations,
         include_raw_affiliations,
         tei_coordinates,
-        segment_sentences
+        segment_sentences,
+        start=-1,
+        end=-1
     ):
         pdf_handle = open(pdf_file, "rb")
         files = {
@@ -283,6 +285,10 @@ class GrobidClient(ApiClient):
             the_data["teiCoordinates"] = self.config["coordinates"]
         if segment_sentences:
             the_data["segmentSentences"] = "1"
+        if start > 0:
+            the_data["start"] = str(start)
+        if end > 0:
+            the_data["end"] = str(end)
 
         try:
             res, status = self.post(

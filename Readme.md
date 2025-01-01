@@ -20,7 +20,8 @@ You can change the server address by editing the file `config.json`, see below.
 
 ## Requirements
 
-This client has been developed and was tested with Python `3.5`-`3.9` and should work with any higher `3.*` versions. It uses `requests` as dependency beyond the Standard Python Library.
+This client has been developed and was tested with Python `3.8`-`3.13` and should work with any higher `3.*` versions. 
+It uses `requests` as dependency beyond the Standard Python Library.
 
 ## Install
 
@@ -43,7 +44,7 @@ python3 -m pip install git+https://github.com/kermitt2/grobid_client_python.git
 ```
 git clone https://github.com/kermitt2/grobid_client_python
 cd grobid_client_python
-python3 setup.py install
+pip install -e . 
 ```
 
 There is nothing more needed to start using the python command lines, see the next section. 

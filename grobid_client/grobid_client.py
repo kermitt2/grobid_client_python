@@ -261,6 +261,8 @@ class GrobidClient(ApiClient):
         include_raw_affiliations,
         tei_coordinates,
         segment_sentences,
+        start=-1,
+        end=-1,
         flavor=None
     ):
         pdf_handle = open(pdf_file, "rb")
@@ -293,6 +295,10 @@ class GrobidClient(ApiClient):
             the_data["segmentSentences"] = "1"
         if flavor:
             the_data["flavor"] = flavor
+        if start > 0:
+            the_data["start"] = str(start)
+        if end > 0:
+            the_data["end"] = str(end)
 
         try:
             res, status = self.post(
@@ -310,7 +316,9 @@ class GrobidClient(ApiClient):
                     include_raw_citations,
                     include_raw_affiliations,
                     tei_coordinates,
-                    segment_sentences
+                    segment_sentences,
+                    start,
+                    end
                 )
         except requests.exceptions.ReadTimeout:
             pdf_handle.close()

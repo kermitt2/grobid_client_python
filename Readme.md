@@ -20,14 +20,31 @@ You can change the server address by editing the file `config.json`, see below.
 
 ## Requirements
 
-This client has been developed and was tested with Python `3.5`-`3.9` and should work with any higher `3.*` versions. It uses `requests` as dependency beyond the Standard Python Library.
+This client has been developed and was tested with Python `3.8`-`3.13` and should work with any higher `3.*` versions. 
+It uses `requests` as dependency beyond the Standard Python Library.
 
 ## Install
 
-Get the github repo:
+The client can be installed with any of the following ways:
+
+* Install *latest stable release* from PyPI:
 
 ```console
-pip install git+https://github.com/kermitt2/grobid_client_python.git
+python3 -m pip install grobid-client-python
+```
+
+* Install *current master development version* from GitHub:
+
+```console
+python3 -m pip install git+https://github.com/kermitt2/grobid_client_python.git
+```
+
+* Install and build from a clone of the repo (*current master development version*): 
+
+```
+git clone https://github.com/kermitt2/grobid_client_python
+cd grobid_client_python
+pip install -e . 
 ```
 
 There is nothing more needed to start using the python command lines, see the next section. 
@@ -176,6 +193,20 @@ In similar conditions, extraction and structuring of bibliographical references 
 
 Processing of 3500 raw bibliographical take 4.3 s with `n=10` (814 references parsed per second).
 
+
+## Developer notes 
+
+### New release 
+
+New releases can be published by using `bump-my-version`:
+
+```shell
+pip install bump-my-version
+bump-my-version bump patch 
+```
+
+Use of  `major`, `minor`, or `patch` or  will increment the first, second or the third digit of the version, respectively.  
+The release will be published automatically on pypy. 
 
 ## License and contact
 

@@ -302,8 +302,6 @@ class GrobidClient(ApiClient):
         if end > 0:
             the_data["end"] = str(end)
 
-        the_data["includeDiscardedText"] = "1"
-
         try:
             res, status = self.post(
                 url=the_url, files=files, data=the_data, headers={"Accept": "text/plain"}, timeout=self.config['timeout']

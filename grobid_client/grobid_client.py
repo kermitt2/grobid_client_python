@@ -114,6 +114,7 @@ class GrobidClient(ApiClient):
         segment_sentences=False,
         force=True,
         verbose=False,
+        flavor=None
     ):
         batch_size_pdf = self.config["batch_size"]
         input_files = []
@@ -147,6 +148,7 @@ class GrobidClient(ApiClient):
                             segment_sentences,
                             force,
                             verbose,
+                            flavor
                         )
                         input_files = []
 
@@ -185,6 +187,7 @@ class GrobidClient(ApiClient):
         segment_sentences,
         force,
         verbose=False,
+        flavor=None
     ):
         if verbose:
             print(len(input_files), "files to process in current batch")
@@ -203,6 +206,9 @@ class GrobidClient(ApiClient):
                 selected_process = self.process_pdf
                 if service == 'processCitationList':
                     selected_process = self.process_txt
+
+                if verbose:
+                    print(f"Adding {input_file} to the queue.")
                 
                 r = executor.submit(
                     selected_process,
@@ -214,7 +220,8 @@ class GrobidClient(ApiClient):
                     include_raw_citations,
                     include_raw_affiliations,
                     tei_coordinates,
-                    segment_sentences)
+                    segment_sentences,
+                    flavor)
 
                 results.append(r)
 
@@ -255,7 +262,8 @@ class GrobidClient(ApiClient):
         tei_coordinates,
         segment_sentences,
         start=-1,
-        end=-1
+        end=-1,
+        flavor=None
     ):
         pdf_handle = open(pdf_file, "rb")
         files = {
@@ -285,6 +293,8 @@ class GrobidClient(ApiClient):
             the_data["teiCoordinates"] = self.config["coordinates"]
         if segment_sentences:
             the_data["segmentSentences"] = "1"
+        if flavor:
+            the_data["flavor"] = flavor
         if start > 0:
             the_data["start"] = str(start)
         if end > 0:
@@ -368,6 +378,7 @@ class GrobidClient(ApiClient):
 
 def main():
     valid_services = [
+        "processFulltextDocumentBlank",
         "processFulltextDocument",
         "processHeaderDocument",
         "processReferences",
@@ -441,11 +452,18 @@ def main():
         help="print information about processed files in the console",
     )
 
+    parser.add_argument(
+        "--flavor",
+        default=None,
+        help="Define the flavor to be used for the fulltext extraction",
+    )
+
     args = parser.parse_args()
 
     input_path = args.input
     config_path = args.config
     output_path = args.output
+    flavor = args.flavor
 
     if args.n is not None:
         try:
@@ -500,6 +518,7 @@ def main():
         segment_sentences=segment_sentences,
         force=force,
         verbose=verbose,
+        flavor=flavor
     )
 
     runtime = round(time.time() - start_time, 3)

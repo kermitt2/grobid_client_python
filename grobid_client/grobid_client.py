@@ -221,7 +221,9 @@ class GrobidClient(ApiClient):
                     include_raw_affiliations,
                     tei_coordinates,
                     segment_sentences,
-                    flavor)
+                    flavor,
+                    -1,
+                    -1)
 
                 results.append(r)
 
@@ -261,9 +263,9 @@ class GrobidClient(ApiClient):
         include_raw_affiliations,
         tei_coordinates,
         segment_sentences,
+        flavor=None,
         start=-1,
-        end=-1,
-        flavor=None
+        end=-1
     ):
         pdf_handle = open(pdf_file, "rb")
         files = {
@@ -300,6 +302,8 @@ class GrobidClient(ApiClient):
         if end > 0:
             the_data["end"] = str(end)
 
+        the_data["includeDiscardedText"] = "1"
+
         try:
             res, status = self.post(
                 url=the_url, files=files, data=the_data, headers={"Accept": "text/plain"}, timeout=self.config['timeout']
@@ -318,7 +322,8 @@ class GrobidClient(ApiClient):
                     tei_coordinates,
                     segment_sentences,
                     start,
-                    end
+                    end,
+                    flavor
                 )
         except requests.exceptions.ReadTimeout:
             pdf_handle.close()

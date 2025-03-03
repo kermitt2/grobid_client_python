@@ -297,9 +297,9 @@ class GrobidClient(ApiClient):
             the_data["segmentSentences"] = "1"
         if flavor:
             the_data["flavor"] = flavor
-        if start > 0:
+        if start and start > 0:
             the_data["start"] = str(start)
-        if end > 0:
+        if end and end > 0:
             the_data["end"] = str(end)
 
         try:

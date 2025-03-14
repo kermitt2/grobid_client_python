@@ -21,8 +21,11 @@ import argparse
 import time
 import concurrent.futures
 import ntpath
+from dataclasses import dataclass
+
 import requests
 import pathlib
+import xml.etree.ElementTree as ET
 
 from .client import ApiClient
 
@@ -379,6 +382,66 @@ class GrobidClient(ApiClient):
 
         return (txt_file, status, res.text)
 
+
+TIE_NS = "{http://www.tei-c.org/ns/1.0}"
+
+
+@dataclass
+class RawText:
+    txt: str = ""
+
+
+def extract_raw_text_from_element_recursive(el, raw_txt):
+    txt = (el.text or "").strip()
+    if txt:
+        if el.tag == f"{TIE_NS}head":
+            raw_txt.txt += "\n\n"
+        raw_txt.txt += txt
+        if el.tag == f"{TIE_NS}head":
+            raw_txt.txt += "\n"
+        else:
+            raw_txt.txt += " "
+    for child in el:
+        extract_raw_text_from_element_recursive(child, raw_txt)
+    if el.tail and isinstance(el.tail, str):
+        tail = el.tail.strip()
+        if tail:
+            raw_txt.txt += el.tail
+            raw_txt.txt += " "
+
+
+def extract_raw_text_from_tei_xml(dirpath, filename):
+    tree = ET.parse(f"{dirpath}/{filename}")
+    root = tree.getroot()
+    textEl = root.find(f"{TIE_NS}text")
+    raw_txt = RawText()
+    if textEl:
+        bodyEl = textEl.find(f"{TIE_NS}body")
+        if bodyEl:
+            for child in bodyEl:
+                if child.tag == f"{TIE_NS}div":
+                    extract_raw_text_from_element_recursive(child, raw_txt)
+    raw_txt.txt = raw_txt.txt.strip("\n")
+    raw_txt.txt = raw_txt.txt.strip()
+    if raw_txt.txt:
+        raw_txt.txt += "\n"
+    return raw_txt.txt
+
+
+def extract_raw_text(output_path, force):
+    for (dirpath, dirnames, filenames) in os.walk(output_path):
+        for filename in filenames:
+            if filename.endswith(".tei.xml"):
+                txt_file_name = filename[:-len(".tei.xml")] + ".txt"
+                txt_file_path = pathlib.Path(dirpath, txt_file_name)
+                if txt_file_path.exists():
+                    if not force:
+                        print(txt_file_name, "already exist, skipping... (use --force to reprocess txt output files)")
+                        continue
+                txt = extract_raw_text_from_tei_xml(dirpath, filename)
+                txt_file_path.write_text(txt)
+
+
 def main():
     valid_services = [
         "processFulltextDocumentBlank",
@@ -450,6 +513,11 @@ def main():
         help="segment sentences in the text content of the document with additional <s> elements",
     )
     parser.add_argument(
+        "--extractRawText",
+        action="store_true",
+        help="In --processFulltextDocument mode, additionally extracts raw text from the pdf and stores it in .txt file"
+    )
+    parser.add_argument(
         "--verbose",
         action="store_true",
         help="print information about processed files in the console",
@@ -500,6 +568,10 @@ def main():
         print("Missing or invalid service, must be one of", valid_services)
         exit(1)
 
+    if args.extractRawText and service != "processFulltextDocument":
+        print("--extractRawText only allowed with processFulltextDocument")
+        exit(1)
+
     try:
         client = GrobidClient(config_path=config_path)
     except ServerUnavailableException:
@@ -523,6 +595,8 @@ def main():
         verbose=verbose,
         flavor=flavor
     )
+    if args.extractRawText and service == "processFulltextDocument":
+        extract_raw_text(output_path or input_path, force)
 
     runtime = round(time.time() - start_time, 3)
     print("runtime: %s seconds " % (runtime))

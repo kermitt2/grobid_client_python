@@ -30,6 +30,7 @@ dependencies = {file = ["requirements.txt"]}
 
 [tool.setuptools]
 packages=['grobid_client']
+license-files = []
 
 [project.urls]
 Homepage = "https://github.com/kermitt2/grobid_client_python"

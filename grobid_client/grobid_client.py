@@ -74,7 +74,6 @@ class GrobidClient(ApiClient):
         except FileNotFoundError:
             # If config file doesn't exist, keep using default values
             print("Using default configuration values.")
-            pass
         except json.JSONDecodeError as e:
             # If config exists, but it's invalid, we raise an exception
             print(f"Warning: Could not parse config file at {path}: {str(e)}")

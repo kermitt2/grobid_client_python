@@ -30,15 +30,20 @@ from .client import ApiClient
 class ServerUnavailableException(Exception):
     pass
 
+
 class GrobidClient(ApiClient):
 
-    def __init__(self, grobid_server='localhost', 
-                 batch_size=1000, 
-                 coordinates=["persName", "figure", "ref", "biblStruct", "formula", "s", "note", "title"], 
-                 sleep_time=5,
-                 timeout=60,
-                 config_path=None, 
-                 check_server=True):
+    def __init__(
+            self,
+            grobid_server='http://localhost:8070',
+            batch_size=1000,
+            coordinates=["persName", "figure", "ref", "biblStruct", "formula", "p", "s", "note", "title"],
+            sleep_time=5,
+            timeout=60,
+            config_path=None,
+            check_server=True
+    ):
+
         self.config = {
             'grobid_server': grobid_server,
             'batch_size': batch_size,
@@ -53,10 +58,27 @@ class GrobidClient(ApiClient):
 
     def _load_config(self, path="./config.json"):
         """
-        Load the json configuration
+        Load and merge configuration from a JSON file with default values.
+        If the file doesn't exist, keep the default values.
+        
+        Args:
+            path (str): Path to the JSON configuration file
         """
-        config_json = open(path).read()
-        self.config = json.loads(config_json)
+        try:
+            with open(path, 'r') as config_file:
+                config_json = config_file.read()
+                # Update the default config with values from the file
+                file_config = json.loads(config_json)
+                self.config.update(file_config)
+        except FileNotFoundError:
+            # If config file doesn't exist, keep using default values
+            pass
+        except json.JSONDecodeError as e:
+            print(f"Warning: Could not parse config file at {path}: {str(e)}")
+            print("Using default configuration values.")
+        except Exception as e:
+            print(f"Warning: Error reading config file at {path}: {str(e)}")
+            print("Using default configuration values.")
 
     def _test_server_connection(self):
         """Test if the server is up and running."""
@@ -64,16 +86,17 @@ class GrobidClient(ApiClient):
         try:
             r = requests.get(the_url)
         except:
-            print("GROBID server does not appear up and running, the connection to the server failed")
+            print(
+                f"GROBID server {self.config['grobid_server']} does not appear up and running, the connection to the server failed")
             raise ServerUnavailableException
 
         status = r.status_code
 
         if status != 200:
-            print("GROBID server does not appear up and running " + str(status))
+            print(f"GROBID server {self.config['grobid_server']} does not appear up and running " + str(status))
             return False, status
         else:
-            print("GROBID server is up and running")
+            print(f"GROBID server {self.config['grobid_server']} is up and running")
             return True, status
 
     def _output_file_name(self, input_file, input_path, output):
@@ -100,21 +123,21 @@ class GrobidClient(ApiClient):
         return self._test_server_connection()
 
     def process(
-        self,
-        service,
-        input_path,
-        output=None,
-        n=10,
-        generateIDs=False,
-        consolidate_header=True,
-        consolidate_citations=False,
-        include_raw_citations=False,
-        include_raw_affiliations=False,
-        tei_coordinates=False,
-        segment_sentences=False,
-        force=True,
-        verbose=False,
-        flavor=None
+            self,
+            service,
+            input_path,
+            output=None,
+            n=10,
+            generateIDs=False,
+            consolidate_header=True,
+            consolidate_citations=False,
+            include_raw_citations=False,
+            include_raw_affiliations=False,
+            tei_coordinates=False,
+            segment_sentences=False,
+            force=True,
+            verbose=False,
+            flavor=None
     ):
         batch_size_pdf = self.config["batch_size"]
         input_files = []
@@ -122,8 +145,10 @@ class GrobidClient(ApiClient):
         for (dirpath, dirnames, filenames) in os.walk(input_path):
             for filename in filenames:
                 if filename.endswith(".pdf") or filename.endswith(".PDF") or \
-                    (service == 'processCitationList' and (filename.endswith(".txt") or filename.endswith(".TXT"))) or \
-                    (service == 'processCitationPatentST36' and (filename.endswith(".xml") or filename.endswith(".XML"))):
+                        (service == 'processCitationList' and (
+                                filename.endswith(".txt") or filename.endswith(".TXT"))) or \
+                        (service == 'processCitationPatentST36' and (
+                                filename.endswith(".xml") or filename.endswith(".XML"))):
                     if verbose:
                         try:
                             print(filename)
@@ -172,29 +197,29 @@ class GrobidClient(ApiClient):
             )
 
     def process_batch(
-        self,
-        service,
-        input_files,
-        input_path,
-        output,
-        n,
-        generateIDs,
-        consolidate_header,
-        consolidate_citations,
-        include_raw_citations,
-        include_raw_affiliations,
-        tei_coordinates,
-        segment_sentences,
-        force,
-        verbose=False,
-        flavor=None
+            self,
+            service,
+            input_files,
+            input_path,
+            output,
+            n,
+            generateIDs,
+            consolidate_header,
+            consolidate_citations,
+            include_raw_citations,
+            include_raw_affiliations,
+            tei_coordinates,
+            segment_sentences,
+            force,
+            verbose=False,
+            flavor=None
     ):
         if verbose:
             print(len(input_files), "files to process in current batch")
 
         # we use ThreadPoolExecutor and not ProcessPoolExecutor because it is an I/O intensive process
         with concurrent.futures.ThreadPoolExecutor(max_workers=n) as executor:
-            #with concurrent.futures.ProcessPoolExecutor(max_workers=n) as executor:
+            # with concurrent.futures.ProcessPoolExecutor(max_workers=n) as executor:
             results = []
             for input_file in input_files:
                 # check if TEI file is already produced
@@ -209,7 +234,7 @@ class GrobidClient(ApiClient):
 
                 if verbose:
                     print(f"Adding {input_file} to the queue.")
-                
+
                 r = executor.submit(
                     selected_process,
                     service,
@@ -236,7 +261,8 @@ class GrobidClient(ApiClient):
                 # writing error file with suffixed error code
                 try:
                     pathlib.Path(os.path.dirname(filename)).mkdir(parents=True, exist_ok=True)
-                    with open(filename.replace(".grobid.tei.xml", "_"+str(status)+".txt"), 'w', encoding='utf8') as tei_file:
+                    with open(filename.replace(".grobid.tei.xml", "_" + str(status) + ".txt"), 'w',
+                              encoding='utf8') as tei_file:
                         if text is not None:
                             tei_file.write(text)
                         else:
@@ -247,25 +273,25 @@ class GrobidClient(ApiClient):
                 # writing TEI file
                 try:
                     pathlib.Path(os.path.dirname(filename)).mkdir(parents=True, exist_ok=True)
-                    with open(filename,'w',encoding='utf8') as tei_file:
+                    with open(filename, 'w', encoding='utf8') as tei_file:
                         tei_file.write(text)
                 except OSError:
-                   print("Writing resulting TEI XML file", filename, "failed")
+                    print("Writing resulting TEI XML file", filename, "failed")
 
     def process_pdf(
-        self,
-        service,
-        pdf_file,
-        generateIDs,
-        consolidate_header,
-        consolidate_citations,
-        include_raw_citations,
-        include_raw_affiliations,
-        tei_coordinates,
-        segment_sentences,
-        flavor=None,
-        start=-1,
-        end=-1
+            self,
+            service,
+            pdf_file,
+            generateIDs,
+            consolidate_header,
+            consolidate_citations,
+            include_raw_citations,
+            include_raw_affiliations,
+            tei_coordinates,
+            segment_sentences,
+            flavor=None,
+            start=-1,
+            end=-1
     ):
         pdf_handle = open(pdf_file, "rb")
         files = {
@@ -276,7 +302,7 @@ class GrobidClient(ApiClient):
                 {"Expires": "0"},
             )
         }
-        
+
         the_url = self.get_server_url(service)
 
         # set the GROBID parameters
@@ -304,7 +330,8 @@ class GrobidClient(ApiClient):
 
         try:
             res, status = self.post(
-                url=the_url, files=files, data=the_data, headers={"Accept": "text/plain"}, timeout=self.config['timeout']
+                url=the_url, files=files, data=the_data, headers={"Accept": "text/plain"},
+                timeout=self.config['timeout']
             )
 
             if status == 503:
@@ -334,16 +361,16 @@ class GrobidClient(ApiClient):
         return self.config['grobid_server'] + "/api/" + service
 
     def process_txt(
-        self,
-        service,
-        txt_file,
-        generateIDs,
-        consolidate_header,
-        consolidate_citations,
-        include_raw_citations,
-        include_raw_affiliations,
-        tei_coordinates,
-        segment_sentences
+            self,
+            service,
+            txt_file,
+            generateIDs,
+            consolidate_header,
+            consolidate_citations,
+            include_raw_citations,
+            include_raw_affiliations,
+            tei_coordinates,
+            segment_sentences
     ):
         # create request based on file content
         references = None
@@ -379,6 +406,7 @@ class GrobidClient(ApiClient):
 
         return (txt_file, status, res.text)
 
+
 def main():
     valid_services = [
         "processFulltextDocumentBlank",
@@ -396,7 +424,8 @@ def main():
         help="one of " + str(valid_services),
     )
     parser.add_argument(
-        "--input", default=None, help="path to the directory containing files to process: PDF or .txt (for processCitationList only, one reference per line), or .xml for patents in ST36"
+        "--input", default=None,
+        help="path to the directory containing files to process: PDF or .txt (for processCitationList only, one reference per line), or .xml for patents in ST36"
     )
     parser.add_argument(
         "--output",
@@ -472,7 +501,7 @@ def main():
         try:
             n = int(args.n)
         except ValueError:
-            print("Invalid concurrency parameter n:", n, ", n = 10 will be used by default")
+            print(f"Invalid concurrency parameter n: {n}. n = 10 will be used by default")
             pass
 
     # if output path does not exist, we create it
@@ -526,6 +555,7 @@ def main():
 
     runtime = round(time.time() - start_time, 3)
     print("runtime: %s seconds " % (runtime))
+
 
 if __name__ == "__main__":
     main()

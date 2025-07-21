@@ -71,15 +71,16 @@ class GrobidClient(ApiClient):
                 # Update the default config with values from the file
                 file_config = json.loads(config_json)
                 self.config.update(file_config)
-        except FileNotFoundError:
+        except FileNotFoundError as e:
             # If config file doesn't exist, keep using default values
-            print("Using default configuration values.")
+            print(f"Error: The specified config file {path} was not found.")
+            raise e
         except json.JSONDecodeError as e:
             # If config exists, but it's invalid, we raise an exception
-            print(f"Warning: Could not parse config file at {path}: {str(e)}")
+            print(f"Error: Could not parse config file at {path}: {str(e)}")
             raise e
         except Exception as e:
-            print(f"Warning: Error reading config file at {path}: {str(e)}")
+            print(f"Error: Error reading config file at {path}: {str(e)}")
             raise e
 
     def _test_server_connection(self):

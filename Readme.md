@@ -58,7 +58,7 @@ usage: grobid_client [-h] [--input INPUT] [--output OUTPUT] [--config CONFIG]
                      [--n N] [--generateIDs] [--consolidate_header]
                      [--consolidate_citations] [--include_raw_citations]
                      [--include_raw_affiliations] [--force] [--teiCoordinates]
-                     [--verbose]
+                     [--verbose] [--flavor FLAVOR]
                      service
 
 Client for GROBID services
@@ -97,6 +97,9 @@ optional arguments:
   --segmentSentences    segment sentences in the text content of the document
                         with additional <s> elements
   --verbose             print information about processed files in the console
+  --flavor              specifcy the flavor to be used. Current accepted
+                        values: `article/light`, `article/light-ref`, `sdo/ietf`,
+                        however better check [here](https://grobid.readthedocs.io/en/latest/Grobid-specialized-processes/#flavors).
 
 
 ```

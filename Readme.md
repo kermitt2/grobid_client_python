@@ -2,15 +2,12 @@
 [![SWH](https://archive.softwareheritage.org/badge/origin/https://github.com/kermitt2/grobid_client_python/)](https://archive.softwareheritage.org/browse/origin/https://github.com/kermitt2/grobid_client_python/)
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
-# Simple python client for GROBID REST services
+# Simple Python client for GROBID REST services
 
 This Python client can be used to process in an efficient concurrent manner a set of PDF in a given directory by the [GROBID](https://github.com/kermitt2/grobid) service. It includes a command line for processing PDF on a file system and write results in a given output directory and a library for import in other python scripts. The client can also process similarly a list of files with reference strings (one per line) and patents in XML ST36 formats.
 
-## Before you start
-
-Please be aware that, at the moment, [grobid does not support Windows](https://grobid.readthedocs.io/en/latest/Troubleshooting/#windows-related-issues).
-If you are a Windows user, don't worry. You can still [run grobid 
-via Docker](https://grobid.readthedocs.io/en/latest/Grobid-docker/).
+> [!IMPORTANT]
+> Please be aware that, at the moment, Grobid supports windows only through Docker containers. See [here](https://grobid.readthedocs.io/en/latest/Grobid-docker/).
 
 ## Build and run
 
@@ -98,11 +95,12 @@ optional arguments:
                         with additional <s> elements
   --verbose             print information about processed files in the console
   --flavor              specifcy the flavor to be used. Current accepted
-                        values: `article/light`, `article/light-ref`, `sdo/ietf`,
-                        however better check [here](https://grobid.readthedocs.io/en/latest/Grobid-specialized-processes/#flavors).
-
-
+                        values: `article/light`, `article/light-ref`, `sdo/ietf`.
 ```
+
+> [!TIP]
+> Before using flavors, check [here](https://grobid.readthedocs.io/en/latest/Grobid-specialized-processes/#flavors).
+
 
 Examples:
 
@@ -150,6 +148,9 @@ client.process("processFulltextDocument", "/mnt/data/covid/pdfs", n=20)
 See also `example.py`.
 
 ## Configuration of the client
+
+> [!TIP]
+> from version 0.0.12 the `config.json` will be optional, by default the client will connect to the local server. 
 
 There are a few parameters that can be set with the `config.json` file. 
 

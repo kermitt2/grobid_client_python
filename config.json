@@ -1,7 +1,28 @@
 {
-    "grobid_server": "http://localhost:8070",
-    "batch_size": 100,
-    "sleep_time": 5,
-    "timeout": 60,
-    "coordinates": [ "persName", "figure", "ref", "biblStruct", "formula", "s", "note", "title" ]
+  "grobid_server": "http://localhost:8070",
+  "batch_size": 1000,
+  "timeout": 120,
+  "sleep_time": 5,
+  "coordinates": [
+    "title",
+    "persName",
+    "affiliation",
+    "orgName",
+    "formula",
+    "figure",
+    "ref",
+    "biblStruct",
+    "head",
+    "p",
+    "s",
+    "note"
+  ],
+  "logging": {
+    "level": "INFO",
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    "console": true,
+    "file": null,
+    "max_file_size": "10MB",
+    "backup_count": 3
+  }
 }

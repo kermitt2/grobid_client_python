@@ -150,7 +150,7 @@ See also `example.py`.
 ## Configuration of the client
 
 > [!TIP]
-> from version 0.0.12 the `config.json` will be optional, by default the client will connect to the local server. 
+> from version 0.0.12 the `config.json` will be optional, by default the client will connect to the local server (`http://localhost:8070`). 
 
 There are a few parameters that can be set with the `config.json` file. 
 

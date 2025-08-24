@@ -50,7 +50,20 @@ class GrobidClient(ApiClient):
     ):
         # Set default coordinates if None provided
         if coordinates is None:
-            coordinates = ["persName", "figure", "ref", "biblStruct", "formula", "p", "s", "note", "title"]
+            coordinates = [
+                "title",
+                "persName",
+                "affiliation",
+                "orgName",
+                "formula",
+                "figure",
+                "ref",
+                "biblStruct",
+                "head",
+                "p",
+                "s",
+                "note"
+            ]
 
         self.config = {
             'grobid_server': grobid_server,

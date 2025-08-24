@@ -44,7 +44,7 @@ class GrobidClient(ApiClient):
             batch_size=1000,
             coordinates=None,
             sleep_time=5,
-            timeout=60,
+            timeout=180,
             config_path=None,
             check_server=True
     ):

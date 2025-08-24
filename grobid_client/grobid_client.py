@@ -171,7 +171,7 @@ class GrobidClient(ApiClient):
         """
         Load and merge configuration from a JSON file with default values.
         If the file doesn't exist, keep the default values.
-        
+
         Args:
             path (str): Path to the JSON configuration file
 
@@ -180,28 +180,35 @@ class GrobidClient(ApiClient):
             json.JSONDecodeError: If the config file contains invalid JSON
             Exception: For other file reading errors
         """
+        # Create a temporary logger for configuration loading since main logger isn't configured yet
+        temp_logger = logging.getLogger(f"{__name__}.config_loader")
+        if not temp_logger.handlers:
+            temp_handler = logging.StreamHandler()
+            temp_handler.setFormatter(logging.Formatter('%(levelname)s - %(message)s'))
+            temp_logger.addHandler(temp_handler)
+            temp_logger.setLevel(logging.INFO)
+
         try:
-            # Use print for initial loading since logger isn't configured yet
-            print(f"Loading configuration file from {path}")
+            temp_logger.info(f"Loading configuration file from {path}")
             with open(path, 'r') as config_file:
                 config_json = config_file.read()
                 # Update the default config with values from the file
                 file_config = json.loads(config_json)
                 self.config.update(file_config)
-                print("Configuration file loaded successfully")
+                temp_logger.info("Configuration file loaded successfully")
         except FileNotFoundError as e:
             # If config file doesn't exist, keep using default values
-            error_msg = f"The specified config file {path} was not found"
-            print(f"ERROR: {error_msg}")
+            error_msg = f"The specified config file {path} was not found. Check the path or leave it blank to use the default configuration."
+            temp_logger.error(error_msg)
             raise FileNotFoundError(error_msg) from e
         except json.JSONDecodeError as e:
             # If config exists, but it's invalid, we raise an exception
             error_msg = f"Could not parse config file at {path}: {str(e)}"
-            print(f"ERROR: {error_msg}")
+            temp_logger.error(error_msg)
             raise json.JSONDecodeError(error_msg, e.doc, e.pos) from e
         except Exception as e:
             error_msg = f"Error reading config file at {path}: {str(e)}"
-            print(f"ERROR: {error_msg}")
+            temp_logger.error(error_msg)
             raise Exception(error_msg) from e
 
     def _test_server_connection(self) -> Tuple[bool, int]:
@@ -613,7 +620,6 @@ def main():
     temp_logger.setLevel(logging.INFO)
 
     valid_services = [
-        "processFulltextDocumentBlank",
         "processFulltextDocument",
         "processHeaderDocument",
         "processReferences",
@@ -629,7 +635,8 @@ def main():
         help="Grobid service to be called.",
     )
     parser.add_argument(
-        "--input", default=None,
+        "--input",
+        default=None,
         help="path to the directory containing files to process: PDF or .txt (for processCitationList only, one reference per line), or .xml for patents in ST36"
     )
     parser.add_argument(

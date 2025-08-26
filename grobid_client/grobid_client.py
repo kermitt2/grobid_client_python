@@ -24,6 +24,7 @@ import requests
 import pathlib
 import logging
 from typing import Tuple
+import copy
 
 from .client import ApiClient
 
@@ -78,17 +79,8 @@ class GrobidClient(ApiClient):
             check_server=True
     ):
         # Initialize config with defaults
-        self.config = self.DEFAULT_CONFIG.copy()
-        
-        # Override with provided parameters (None values will use defaults)
-        self._set_config_params({
-            'grobid_server': grobid_server,
-            'batch_size': batch_size,
-            'coordinates': coordinates,
-            'sleep_time': sleep_time,
-            'timeout': timeout
-        })
-
+        self.config = copy.deepcopy(self.DEFAULT_CONFIG)
+    
         # Load config file (which may override current values)
         if config_path:
             self._load_config(config_path)

@@ -55,7 +55,7 @@ usage: grobid_client [-h] [--input INPUT] [--output OUTPUT] [--config CONFIG]
                      [--n N] [--generateIDs] [--consolidate_header]
                      [--consolidate_citations] [--include_raw_citations]
                      [--include_raw_affiliations] [--force] [--teiCoordinates]
-                     [--verbose] [--flavor FLAVOR]
+                     [--verbose] [--flavor FLAVOR] [--server SERVER]
                      service
 
 Client for GROBID services
@@ -75,6 +75,7 @@ optional arguments:
                         (optional)
   --config CONFIG       path to the config file, default is ./config.json
   --n N                 concurrency for service usage
+  --server SERVER       GROBID server URL (default: http://localhost:8070)
   --generateIDs         generate random xml:id to textual XML elements of the
                         result files
   --consolidate_header  call GROBID with consolidation of the metadata
@@ -132,6 +133,15 @@ The following command example will process all the PDF files present in the inpu
 > grobid_client --input ~/tmp/in2 --output ~/tmp/out --teiCoordinates --segmentSentences processFulltextDocument
 ```
 
+To use a different GROBID server (e.g., a hosted service), use the `--server` argument:
+
+```console
+> grobid_client --server https://lfoppiano-grobid.hf.space --input ~/tmp/in2 --output ~/tmp/out processFulltextDocument
+```
+
+> [!NOTE]
+> The `--server` argument will override the server URL specified in the config file. If both are provided, the CLI argument takes precedence.
+
 The file `example.py` gives an example of usage as a library, from a another python script. 
 
 ## Using the client in your python
@@ -141,7 +151,12 @@ Import and call the client as follow:
 ```python
 from grobid_client.grobid_client import GrobidClient
 
+# Using default localhost server
 client = GrobidClient(config_path="./config.json")
+client.process("processFulltextDocument", "/mnt/data/covid/pdfs", n=20)
+
+# Using a custom server
+client = GrobidClient(grobid_server="https://lfoppiano-grobid.hf.space", config_path="./config.json")
 client.process("processFulltextDocument", "/mnt/data/covid/pdfs", n=20)
 ```
 
@@ -150,7 +165,10 @@ See also `example.py`.
 ## Configuration of the client
 
 > [!TIP]
-> from version 0.0.12 the `config.json` will be optional, by default the client will connect to the local server (`http://localhost:8070`). 
+> from version 0.0.12 the `config.json` will be optional, by default the client will connect to the local server (`http://localhost:8070`).
+
+> [!NOTE]
+> When using the CLI, the `--server` argument will override the `grobid_server` value in the config file. This allows you to use a config file for most settings while easily switching servers via command line. 
 
 There are a few parameters that can be set with the `config.json` file. 
 

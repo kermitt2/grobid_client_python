@@ -43,7 +43,7 @@ class TestGrobidClient:
         assert client.config['grobid_server'] == 'http://localhost:8070'
         assert client.config['batch_size'] == 1000
         assert client.config['sleep_time'] == 5
-        assert client.config['timeout'] == 60
+        assert client.config['timeout'] == 180
         assert 'persName' in client.config['coordinates']
         mock_configure_logging.assert_called_once()
 

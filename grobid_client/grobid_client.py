@@ -81,9 +81,33 @@ class GrobidClient(ApiClient):
             }
         }
 
+        # Store constructor parameters to ensure they take precedence over config file
+        # We'll use these to override config file values after loading
+        self._constructor_params = {
+            'grobid_server': grobid_server,
+            'batch_size': batch_size,
+            'coordinates': coordinates,
+            'sleep_time': sleep_time,
+            'timeout': timeout
+        }
+
         # Load config first (which may override logging settings)
         if config_path:
             self._load_config(config_path)
+            
+        # Ensure constructor parameters take precedence over config file values
+        # This ensures CLI arguments override config file values
+        # Only override if the parameter was explicitly provided (not the default)
+        if grobid_server != 'http://localhost:8070':
+            self.config['grobid_server'] = grobid_server
+        if batch_size != 1000:
+            self.config['batch_size'] = batch_size
+        if coordinates is not None:  # coordinates has a complex default, so check if explicitly provided
+            self.config['coordinates'] = coordinates
+        if sleep_time != 5:
+            self.config['sleep_time'] = sleep_time
+        if timeout != 180:
+            self.config['timeout'] = timeout
 
         # Configure logging based on config
         self._configure_logging()
@@ -718,6 +742,11 @@ def main():
         default=None,
         help="Define the flavor to be used for the fulltext extraction",
     )
+    parser.add_argument(
+        "--server",
+        default="http://localhost:8070",
+        help="GROBID server URL (default: http://localhost:8070)",
+    )
 
     args = parser.parse_args()
 
@@ -736,7 +765,7 @@ def main():
 
     # Initialize GrobidClient which will configure logging based on config.json
     try:
-        client = GrobidClient(config_path=config_path)
+        client = GrobidClient(grobid_server=args.server, config_path=config_path)
         # Now use the client's logger for all subsequent logging
         logger = client.logger
     except ServerUnavailableException as e:

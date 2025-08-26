@@ -758,7 +758,7 @@ def main():
     parser.add_argument(
         "--server",
         default=None,
-        help="GROBID server URL overide of the config file. If config not provided, default is http://localhost:8070",
+        help="GROBID server URL override of the config file. If config not provided, default is http://localhost:8070",
     )
 
     args = parser.parse_args()

@@ -584,8 +584,8 @@ class GrobidClient(ApiClient):
             return self._handle_request_error(pdf_file, e)
         except Exception as e:
             return self._handle_unexpected_error(pdf_file, e)
-        finally:
-            pdf_handle.close()
+            if pdf_handle is not None:
+                pdf_handle.close()
 
     def get_server_url(self, service):
         return self.config['grobid_server'] + "/api/" + service

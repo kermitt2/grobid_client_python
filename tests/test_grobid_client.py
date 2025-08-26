@@ -315,7 +315,7 @@ class TestGrobidClient:
                     segment_sentences=False
                 )
 
-                assert result[1] == 500
+                assert result[1] == 400
                 assert 'Failed to open file' in result[2]
 
     @patch('builtins.open', new_callable=mock_open, read_data='Reference 1\nReference 2\n')

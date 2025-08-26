@@ -199,7 +199,7 @@ class TestGrobidClientIntegration:
                         False, False, False, False, False, False, False
                     )
 
-                    assert result[1] == 500
+                    assert result[1] == 400
                     assert 'Failed to open file' in result[2]
 
     def test_different_file_types(self):

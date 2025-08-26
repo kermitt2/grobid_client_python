@@ -40,11 +40,11 @@ class GrobidClient(ApiClient):
 
     def __init__(
             self,
-            grobid_server='http://localhost:8070',
-            batch_size=1000,
+            grobid_server=None,
+            batch_size=None,
             coordinates=None,
-            sleep_time=5,
-            timeout=180,
+            sleep_time=None,
+            timeout=None,
             config_path=None,
             check_server=True
     ):
@@ -65,12 +65,35 @@ class GrobidClient(ApiClient):
                 "note"
             ]
 
+        # Set default values for parameters that are None
+        default_grobid_server = grobid_server if grobid_server is not None else 'http://localhost:8070'
+        default_batch_size = batch_size if batch_size is not None else 1000
+        default_sleep_time = sleep_time if sleep_time is not None else 5
+        default_timeout = timeout if timeout is not None else 180
+        
+        # Set default coordinates if None provided
+        if coordinates is None:
+            coordinates = [
+                "title",
+                "persName",
+                "affiliation",
+                "orgName",
+                "formula",
+                "figure",
+                "ref",
+                "biblStruct",
+                "head",
+                "p",
+                "s",
+                "note"
+            ]
+
         self.config = {
-            'grobid_server': grobid_server,
-            'batch_size': batch_size,
+            'grobid_server': default_grobid_server,
+            'batch_size': default_batch_size,
             'coordinates': coordinates,
-            'sleep_time': sleep_time,
-            'timeout': timeout,
+            'sleep_time': default_sleep_time,
+            'timeout': default_timeout,
             'logging': {
                 'level': 'INFO',
                 'format': '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -85,18 +108,18 @@ class GrobidClient(ApiClient):
         if config_path:
             self._load_config(config_path)
             
-        # Ensure constructor parameters take precedence over config file values
-        # This ensures CLI arguments override config file values
-        # Only override if the parameter was explicitly provided (not the default)
-        if grobid_server != 'http://localhost:8070':
+        # Only override config file values if constructor parameters were explicitly provided (not None)
+        # This ensures CLI arguments override config file values, but allows config files to be used
+        # when no constructor parameters are provided
+        if grobid_server is not None:
             self.config['grobid_server'] = grobid_server
-        if batch_size != 1000:
+        if batch_size is not None:
             self.config['batch_size'] = batch_size
-        if coordinates is not None:  # coordinates has a complex default, so check if explicitly provided
+        if coordinates is not None:
             self.config['coordinates'] = coordinates
-        if sleep_time != 5:
+        if sleep_time is not None:
             self.config['sleep_time'] = sleep_time
-        if timeout != 180:
+        if timeout is not None:
             self.config['timeout'] = timeout
 
         # Configure logging based on config
@@ -734,8 +757,8 @@ def main():
     )
     parser.add_argument(
         "--server",
-        default="http://localhost:8070",
-        help="GROBID server URL (default: http://localhost:8070)",
+        default=None,
+        help="GROBID server URL overide of the config file. If config not provided, default is http://localhost:8070",
     )
 
     args = parser.parse_args()
@@ -755,7 +778,12 @@ def main():
 
     # Initialize GrobidClient which will configure logging based on config.json
     try:
-        client = GrobidClient(grobid_server=args.server, config_path=config_path)
+        # Only pass grobid_server if it was explicitly provided (not the default)
+        client_kwargs = {'config_path': config_path}
+        if args.server is not None:  # Only override if user specified a different server
+            client_kwargs['grobid_server'] = args.server
+            
+        client = GrobidClient(**client_kwargs)
         # Now use the client's logger for all subsequent logging
         logger = client.logger
     except ServerUnavailableException as e:

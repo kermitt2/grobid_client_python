@@ -511,17 +511,18 @@ class GrobidClient(ApiClient):
             start=-1,
             end=-1
     ):
+        pdf_handle = None
         try:
-            with open(pdf_file, "rb") as fi:
+            pdf_handle = open(pdf_file, "rb")
             
-                files = {
-                    "input": (
-                        pdf_file,
-                        fi,
-                        "application/pdf",
-                        {"Expires": "0"},
-                    )
-                }
+            files = {
+                "input": (
+                    pdf_file,
+                    pdf_handle,
+                    "application/pdf",
+                    {"Expires": "0"},
+                )
+            }
 
             the_url = self.get_server_url(service)
 
@@ -583,6 +584,9 @@ class GrobidClient(ApiClient):
             return self._handle_request_error(pdf_file, e)
         except Exception as e:
             return self._handle_unexpected_error(pdf_file, e)
+        finally:
+            if pdf_handle:
+                pdf_handle.close()
 
     def get_server_url(self, service):
         return self.config['grobid_server'] + "/api/" + service

@@ -81,16 +81,6 @@ class GrobidClient(ApiClient):
             }
         }
 
-        # Store constructor parameters to ensure they take precedence over config file
-        # We'll use these to override config file values after loading
-        self._constructor_params = {
-            'grobid_server': grobid_server,
-            'batch_size': batch_size,
-            'coordinates': coordinates,
-            'sleep_time': sleep_time,
-            'timeout': timeout
-        }
-
         # Load config first (which may override logging settings)
         if config_path:
             self._load_config(config_path)

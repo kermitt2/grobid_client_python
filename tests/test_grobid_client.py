@@ -43,7 +43,7 @@ class TestGrobidClient:
         assert client.config['grobid_server'] == 'http://localhost:8070'
         assert client.config['batch_size'] == 1000
         assert client.config['sleep_time'] == 5
-        assert client.config['timeout'] == 60
+        assert client.config['timeout'] == 180
         assert 'persName' in client.config['coordinates']
         mock_configure_logging.assert_called_once()
 
@@ -315,7 +315,7 @@ class TestGrobidClient:
                     segment_sentences=False
                 )
 
-                assert result[1] == 500
+                assert result[1] == 400
                 assert 'Failed to open file' in result[2]
 
     @patch('builtins.open', new_callable=mock_open, read_data='Reference 1\nReference 2\n')

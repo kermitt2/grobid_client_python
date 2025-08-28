@@ -96,9 +96,9 @@ class TestGrobidClientIntegration:
                     check_server=False
                 )
 
-                # Config file values should override constructor values
-                assert client.config['grobid_server'] == self.test_server_url
-                assert client.config['batch_size'] == 10
+                # Constructor values should override config file values (CLI precedence)
+                assert client.config['grobid_server'] == 'http://custom:9090'
+                assert client.config['batch_size'] == 500
 
     def test_logging_configuration(self):
         """Test logging configuration from config file."""
@@ -199,7 +199,7 @@ class TestGrobidClientIntegration:
                         False, False, False, False, False, False, False
                     )
 
-                    assert result[1] == 500
+                    assert result[1] == 400
                     assert 'Failed to open file' in result[2]
 
     def test_different_file_types(self):

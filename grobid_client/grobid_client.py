@@ -24,6 +24,7 @@ import requests
 import pathlib
 import logging
 from typing import Tuple
+import copy
 
 from .client import ApiClient
 
@@ -37,59 +38,90 @@ class ServerUnavailableException(Exception):
 
 
 class GrobidClient(ApiClient):
+    # Default configuration values
+    DEFAULT_CONFIG = {
+        'grobid_server': 'http://localhost:8070',
+        'batch_size': 1000,
+        'sleep_time': 5,
+        'timeout': 180,
+        'coordinates': [
+            "title",
+            "persName",
+            "affiliation",
+            "orgName",
+            "formula",
+            "figure",
+            "ref",
+            "biblStruct",
+            "head",
+            "p",
+            "s",
+            "note"
+        ],
+        'logging': {
+            'level': 'INFO',
+            'format': '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+            'console': True,
+            'file': None,  # Disabled by default
+            'max_file_size': '10MB',
+            'backup_count': 3
+        }
+    }
 
     def __init__(
             self,
-            grobid_server='http://localhost:8070',
-            batch_size=1000,
+            grobid_server=None,
+            batch_size=None,
             coordinates=None,
-            sleep_time=5,
-            timeout=180,
+            sleep_time=None,
+            timeout=None,
             config_path=None,
             check_server=True
     ):
-        # Set default coordinates if None provided
-        if coordinates is None:
-            coordinates = [
-                "title",
-                "persName",
-                "affiliation",
-                "orgName",
-                "formula",
-                "figure",
-                "ref",
-                "biblStruct",
-                "head",
-                "p",
-                "s",
-                "note"
-            ]
-
-        self.config = {
+        # Initialize config with defaults
+        self.config = copy.deepcopy(self.DEFAULT_CONFIG)
+    
+        # Load config file (which may override current values)
+        if config_path:
+            self._load_config(config_path)
+            
+        # Constructor parameters take precedence over config file values
+        # This ensures CLI arguments override config file values
+        self._set_config_params({
             'grobid_server': grobid_server,
             'batch_size': batch_size,
             'coordinates': coordinates,
             'sleep_time': sleep_time,
-            'timeout': timeout,
-            'logging': {
-                'level': 'INFO',
-                'format': '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
-                'console': True,
-                'file': None,  # Disabled by default
-                'max_file_size': '10MB',
-                'backup_count': 3
-            }
-        }
-
-        # Load config first (which may override logging settings)
-        if config_path:
-            self._load_config(config_path)
+            'timeout': timeout
+        })
 
         # Configure logging based on config
         self._configure_logging()
 
         if check_server:
             self._test_server_connection()
+
+    def _set_config_params(self, params):
+        """Set configuration parameters, only if they are not None."""
+        for key, value in params.items():
+            if value is not None:
+                self.config[key] = value
+
+    def _handle_server_busy_retry(self, file_path, retry_func, *args, **kwargs):
+        """Handle server busy (503) retry logic."""
+        self.logger.warning(f"Server busy (503), retrying {file_path} after {self.config['sleep_time']} seconds")
+        time.sleep(self.config["sleep_time"])
+        return retry_func(*args, **kwargs)
+
+    def _handle_request_error(self, file_path, error, error_type="Request"):
+        """Handle request errors with consistent logging and return format."""
+        self.logger.error(f"{error_type} failed for {file_path}: {str(error)}")
+        return (file_path, 500, f"{error_type} failed: {str(error)}")
+
+    def _handle_unexpected_error(self, file_path, error):
+        """Handle unexpected errors with consistent logging and return format."""
+        self.logger.error(f"Unexpected error processing {file_path}: {str(error)}")
+        return (file_path, 500, f"Unexpected error: {str(error)}")
 
     def _configure_logging(self):
         """Configure logging based on the configuration settings."""
@@ -479,56 +511,53 @@ class GrobidClient(ApiClient):
             start=-1,
             end=-1
     ):
+        pdf_handle = None
         try:
             pdf_handle = open(pdf_file, "rb")
-        except IOError as e:
-            self.logger.error(f"Failed to open PDF file {pdf_file}: {str(e)}")
-            return (pdf_file, 500, f"Failed to open file: {str(e)}")
+            
+            files = {
+                "input": (
+                    pdf_file,
+                    pdf_handle,
+                    "application/pdf",
+                    {"Expires": "0"},
+                )
+            }
 
-        files = {
-            "input": (
-                pdf_file,
-                pdf_handle,
-                "application/pdf",
-                {"Expires": "0"},
-            )
-        }
+            the_url = self.get_server_url(service)
 
-        the_url = self.get_server_url(service)
+            # set the GROBID parameters
+            the_data = {}
+            if generateIDs:
+                the_data["generateIDs"] = "1"
+            if consolidate_header:
+                the_data["consolidateHeader"] = "1"
+            if consolidate_citations:
+                the_data["consolidateCitations"] = "1"
+            if include_raw_citations:
+                the_data["includeRawCitations"] = "1"
+            if include_raw_affiliations:
+                the_data["includeRawAffiliations"] = "1"
+            if tei_coordinates:
+                the_data["teiCoordinates"] = self.config["coordinates"]
+            if segment_sentences:
+                the_data["segmentSentences"] = "1"
+            if flavor:
+                the_data["flavor"] = flavor
+            if start and start > 0:
+                the_data["start"] = str(start)
+            if end and end > 0:
+                the_data["end"] = str(end)
 
-        # set the GROBID parameters
-        the_data = {}
-        if generateIDs:
-            the_data["generateIDs"] = "1"
-        if consolidate_header:
-            the_data["consolidateHeader"] = "1"
-        if consolidate_citations:
-            the_data["consolidateCitations"] = "1"
-        if include_raw_citations:
-            the_data["includeRawCitations"] = "1"
-        if include_raw_affiliations:
-            the_data["includeRawAffiliations"] = "1"
-        if tei_coordinates:
-            the_data["teiCoordinates"] = self.config["coordinates"]
-        if segment_sentences:
-            the_data["segmentSentences"] = "1"
-        if flavor:
-            the_data["flavor"] = flavor
-        if start and start > 0:
-            the_data["start"] = str(start)
-        if end and end > 0:
-            the_data["end"] = str(end)
-
-        try:
             res, status = self.post(
                 url=the_url, files=files, data=the_data, headers={"Accept": "text/plain"},
                 timeout=self.config['timeout']
             )
 
             if status == 503:
-                self.logger.warning(f"Server busy (503), retrying {pdf_file} after {self.config['sleep_time']} seconds")
-                time.sleep(self.config["sleep_time"])
-                return self.process_pdf(
+                return self._handle_server_busy_retry(
+                    pdf_file,
+                    self.process_pdf,
                     service,
                     pdf_file,
                     generateIDs,
@@ -542,21 +571,22 @@ class GrobidClient(ApiClient):
                     start,
                     end
                 )
+
+            return (pdf_file, status, res.text)
+        
+        except IOError as e:
+            self.logger.error(f"Failed to open PDF file {pdf_file}: {str(e)}")
+            return (pdf_file, 400, f"Failed to open file: {str(e)}")
         except requests.exceptions.ReadTimeout as e:
             self.logger.error(f"Request timeout for {pdf_file}: {str(e)}")
-            pdf_handle.close()
             return (pdf_file, 408, f"Request timeout: {str(e)}")
         except requests.exceptions.RequestException as e:
-            self.logger.error(f"Request failed for {pdf_file}: {str(e)}")
-            pdf_handle.close()
-            return (pdf_file, 500, f"Request failed: {str(e)}")
+            return self._handle_request_error(pdf_file, e)
         except Exception as e:
-            self.logger.error(f"Unexpected error processing {pdf_file}: {str(e)}")
-            pdf_handle.close()
-            return (pdf_file, 500, f"Unexpected error: {str(e)}")
-
-        pdf_handle.close()
-        return (pdf_file, status, res.text)
+            return self._handle_unexpected_error(pdf_file, e)
+        finally:
+            if pdf_handle:
+                pdf_handle.close()
 
     def get_server_url(self, service):
         return self.config['grobid_server'] + "/api/" + service
@@ -600,9 +630,9 @@ class GrobidClient(ApiClient):
             )
 
             if status == 503:
-                self.logger.warning(f"Server busy (503), retrying {txt_file} after {self.config['sleep_time']} seconds")
-                time.sleep(self.config["sleep_time"])
-                return self.process_txt(
+                return self._handle_server_busy_retry(
+                    txt_file,
+                    self.process_txt,
                     service,
                     txt_file,
                     generateIDs,
@@ -614,11 +644,9 @@ class GrobidClient(ApiClient):
                     segment_sentences
                 )
         except requests.exceptions.RequestException as e:
-            self.logger.error(f"Request failed for {txt_file}: {str(e)}")
-            return (txt_file, 500, f"Request failed: {str(e)}")
+            return self._handle_request_error(txt_file, e)
         except Exception as e:
-            self.logger.error(f"Unexpected error processing {txt_file}: {str(e)}")
-            return (txt_file, 500, f"Unexpected error: {str(e)}")
+            return self._handle_unexpected_error(txt_file, e)
 
         return (txt_file, status, res.text)
 
@@ -718,6 +746,11 @@ def main():
         default=None,
         help="Define the flavor to be used for the fulltext extraction",
     )
+    parser.add_argument(
+        "--server",
+        default=None,
+        help="GROBID server URL override of the config file. If config not provided, default is http://localhost:8070",
+    )
 
     args = parser.parse_args()
 
@@ -736,7 +769,12 @@ def main():
 
     # Initialize GrobidClient which will configure logging based on config.json
     try:
-        client = GrobidClient(config_path=config_path)
+        # Only pass grobid_server if it was explicitly provided (not the default)
+        client_kwargs = {'config_path': config_path}
+        if args.server is not None:  # Only override if user specified a different server
+            client_kwargs['grobid_server'] = args.server
+            
+        client = GrobidClient(**client_kwargs)
         # Now use the client's logger for all subsequent logging
         logger = client.logger
     except ServerUnavailableException as e:

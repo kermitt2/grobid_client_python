@@ -38,7 +38,7 @@ A simple, efficient Python client for [GROBID](https://github.com/kermitt2/grobi
   - Local installation: [GROBID Documentation](http://grobid.readthedocs.io/)
   - Docker: `docker run -t --rm -p 8070:8070 lfoppiano/grobid:0.8.2`
   - Default server: `http://localhost:8070`
-  - Online demo: https://lfoppiano-grobid.hf.space (usage limits apply)
+  - Online demo: https://lfoppiano-grobid.hf.space (usage limits apply), more details [here](https://grobid.readthedocs.io/en/latest/getting_started/#using-grobid-from-the-cloud).
 
 > [!IMPORTANT]
 > GROBID supports Windows only through Docker containers. See the [Docker documentation](https://grobid.readthedocs.io/en/latest/Grobid-docker/) for details.

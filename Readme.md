@@ -1,237 +1,378 @@
+# GROBID Client Python
+
 [![PyPI version](https://badge.fury.io/py/grobid_client_python.svg)](https://badge.fury.io/py/grobid_client_python)
 [![SWH](https://archive.softwareheritage.org/badge/origin/https://github.com/kermitt2/grobid_client_python/)](https://archive.softwareheritage.org/browse/origin/https://github.com/kermitt2/grobid_client_python/)
 [![License](http://img.shields.io/:license-apache-blue.svg)](http://www.apache.org/licenses/LICENSE-2.0.html)
 
-# Simple Python client for GROBID REST services
+A simple, efficient Python client for [GROBID](https://github.com/kermitt2/grobid) REST services that provides concurrent processing capabilities for PDF documents, reference strings, and patents.
 
-This Python client can be used to process in an efficient concurrent manner a set of PDF in a given directory by the [GROBID](https://github.com/kermitt2/grobid) service. It includes a command line for processing PDF on a file system and write results in a given output directory and a library for import in other python scripts. The client can also process similarly a list of files with reference strings (one per line) and patents in XML ST36 formats.
+## 📋 Table of Contents
+
+- [Features](#-features)
+- [Prerequisites](#-prerequisites)
+- [Installation](#-installation)
+- [Quick Start](#-quick-start)
+- [Usage](#-usage)
+  - [Command Line Interface](#command-line-interface)
+  - [Python Library](#python-library)
+- [Configuration](#-configuration)
+- [Services](#-services)
+- [Testing](#-testing)
+- [Performance](#-performance)
+- [Development](#-development)
+- [License](#-license)
+
+## ✨ Features
+
+- **Concurrent Processing**: Efficiently process multiple documents in parallel
+- **Flexible Input**: Process PDF files, text files with references, and XML patents
+- **Configurable**: Customizable server settings, timeouts, and processing options
+- **Command Line & Library**: Use as a standalone CLI tool or import into your Python projects
+- **Coordinate Extraction**: Optional PDF coordinate extraction for precise element positioning
+- **Sentence Segmentation**: Layout-aware sentence segmentation capabilities
+
+## 📋 Prerequisites
+
+- **Python**: 3.8 - 3.13 (tested versions)
+- **GROBID Server**: A running GROBID service instance
+  - Local installation: [GROBID Documentation](http://grobid.readthedocs.io/)
+  - Docker: `docker run -t --rm -p 8070:8070 lfoppiano/grobid:0.8.2`
+  - Default server: `http://localhost:8070`
+  - Online demo: https://lfoppiano-grobid.hf.space (usage limits apply)
 
 > [!IMPORTANT]
-> Please be aware that, at the moment, Grobid supports windows only through Docker containers. See [here](https://grobid.readthedocs.io/en/latest/Grobid-docker/).
+> GROBID supports Windows only through Docker containers. See the [Docker documentation](https://grobid.readthedocs.io/en/latest/Grobid-docker/) for details.
 
-## Build and run
+## 🚀 Installation
 
-You need first a running *grobid* service, latest stable version, see the [documentation](http://grobid.readthedocs.io/) for installation. 
-By default, it is assumed that the server will run on the address `http://localhost:8070`. 
-You can change the server address by editing the file `config.json`, see below.
+Choose one of the following installation methods:
 
-## Requirements
-
-This client has been developed and was tested with Python `3.8`-`3.13` and should work with any higher `3.*` versions. 
-It uses `requests` as dependency beyond the Standard Python Library.
-
-## Install
-
-The client can be installed with any of the following ways:
-
-* Install *latest stable release* from PyPI:
-
-```console
-python3 -m pip install grobid-client-python
+### PyPI (Recommended)
+```bash
+pip install grobid-client-python
 ```
 
-* Install *current master development version* from GitHub:
-
-```console
-python3 -m pip install git+https://github.com/kermitt2/grobid_client_python.git
+### Development Version
+```bash
+pip install git+https://github.com/kermitt2/grobid_client_python.git
 ```
 
-* Install and build from a clone of the repo (*current master development version*): 
-
-```
+### Local Development
+```bash
 git clone https://github.com/kermitt2/grobid_client_python
 cd grobid_client_python
-pip install -e . 
+pip install -e .
 ```
 
-There is nothing more needed to start using the python command lines, see the next section. 
+## ⚡ Quick Start
 
-## Usage and options
+### Command Line
+```bash
+# Process PDFs in a directory
+grobid_client --input ./pdfs --output ./output processFulltextDocument
 
-The call to the script can normally be realized interchangeably with `python3 -m grobid_client.grobid_client` or simply `grobid_client`. 
-
-```
-usage: grobid_client [-h] [--input INPUT] [--output OUTPUT] [--config CONFIG]
-                     [--n N] [--generateIDs] [--consolidate_header]
-                     [--consolidate_citations] [--include_raw_citations]
-                     [--include_raw_affiliations] [--force] [--teiCoordinates]
-                     [--verbose] [--flavor FLAVOR] [--server SERVER]
-                     service
-
-Client for GROBID services
-
-positional arguments:
-  service               one of ['processFulltextDocument',
-                        'processHeaderDocument', 'processReferences',
-                        'processCitationList','processCitationPatentST36',
-                        'processCitationPatentPDF']
-
-optional arguments:
-  -h, --help            show this help message and exit
-  --input INPUT         path to the directory containing PDF files or .txt
-                        (for processCitationList only, one reference per line)
-                        to process
-  --output OUTPUT       path to the directory where to put the results
-                        (optional)
-  --config CONFIG       path to the config file, default is ./config.json
-  --n N                 concurrency for service usage
-  --server SERVER       GROBID server URL (default: http://localhost:8070)
-  --generateIDs         generate random xml:id to textual XML elements of the
-                        result files
-  --consolidate_header  call GROBID with consolidation of the metadata
-                        extracted from the header
-  --consolidate_citations
-                        call GROBID with consolidation of the extracted
-                        bibliographical references
-  --include_raw_citations
-                        call GROBID requesting the extraction of raw citations
-  --include_raw_affiliations
-                        call GROBID requestiong the extraciton of raw
-                        affiliations
-  --force               force re-processing pdf input files when tei output
-                        files already exist
-  --teiCoordinates      add the original PDF coordinates (bounding boxes) to
-                        the extracted elements
-  --segmentSentences    segment sentences in the text content of the document
-                        with additional <s> elements
-  --verbose             print information about processed files in the console
-  --flavor              specifcy the flavor to be used. Current accepted
-                        values: `article/light`, `article/light-ref`, `sdo/ietf`.
+# Process with custom server
+grobid_client --server https://your-grobid-server.com --input ./pdfs processFulltextDocument
 ```
 
-> [!TIP]
-> Before using flavors, check [here](https://grobid.readthedocs.io/en/latest/Grobid-specialized-processes/#flavors).
+### Python Library
+```python
+from grobid_client.grobid_client import GrobidClient
 
+# Create client instance
+client = GrobidClient(config_path="./config.json")
 
-Examples:
-
-```console
-> grobid_client --input ~/tmp/in2 --output ~/tmp/out processFulltextDocument
+# Process documents
+client.process("processFulltextDocument", "/path/to/pdfs", n=10)
 ```
 
-This command will process all the PDF files present under the input directory recursively (files with extension `.pdf` only) with the `processFulltextDocument` service of GROBID, and write the resulting XML TEI files under the output directory, reusing the file name with a different file extension (`.grobid.tei.xml`), using the default `10` concurrent workers. 
+## 📖 Usage
 
-If `--output` is omitted, the resulting XML TEI documents will be produced alongside the PDF in the `--input` directory.
+### Command Line Interface
 
-```console
-> grobid_client --input ~/tmp/in2 --output ~/tmp/out --n 20 processHeaderDocument
+The client provides a comprehensive CLI with the following syntax:
+
+```bash
+grobid_client [OPTIONS] SERVICE
 ```
 
-This command will process all the PDF files present in the input directory (files with extension `.pdf` only) with the `processHeaderDocument` service of GROBID, and write the resulting XML TEI files under the output directory, reusing the file name with a different file extension (`.grobid.tei.xml`), using `20` concurrent workers. 
+#### Available Services
 
-By default if an existing `.grobid.tei.xml` file is present in the output directory corresponding to a PDF in the input directory, this PDF will be skipped to avoid reprocessing several times the same PDF. To force the processing of PDF and over-write of existing TEI files, use the parameter `--force`.   
+| Service | Description | Input Format |
+|---------|-------------|--------------|
+| `processFulltextDocument` | Extract full document structure | PDF files |
+| `processHeaderDocument` | Extract document metadata | PDF files |
+| `processReferences` | Extract bibliographic references | PDF files |
+| `processCitationList` | Parse citation strings | Text files (one citation per line) |
+| `processCitationPatentST36` | Process patent citations | XML ST36 format |
+| `processCitationPatentPDF` | Process patent PDFs | PDF files |
 
-`processCitationList` does not take a repertory of PDF as input, but a repertory of `.txt` files, with one reference raw string per line, for example:
+#### Common Options
 
-```console
-> grobid_client --input resources/test_txt/ --output resources/test_out/ --n 20 processCitationList
+| Option | Description | Default |
+|--------|-------------|---------|
+| `--input` | Input directory path | Required |
+| `--output` | Output directory path | Same as input |
+| `--server` | GROBID server URL | `http://localhost:8070` |
+| `--n` | Concurrency level | 10 |
+| `--config` | Config file path | Optional |
+| `--force` | Overwrite existing files | False |
+| `--verbose` | Enable verbose logging | False |
+
+#### Processing Options
+
+| Option | Description |
+|--------|-------------|
+| `--generateIDs` | Generate random XML IDs |
+| `--consolidate_header` | Consolidate header metadata |
+| `--consolidate_citations` | Consolidate bibliographic references |
+| `--include_raw_citations` | Include raw citation text |
+| `--include_raw_affiliations` | Include raw affiliation text |
+| `--teiCoordinates` | Add PDF coordinates to XML |
+| `--segmentSentences` | Segment sentences with coordinates |
+| `--flavor` | Processing flavor for fulltext extraction |
+
+#### Examples
+
+```bash
+# Basic fulltext processing
+grobid_client --input ~/documents --output ~/results processFulltextDocument
+
+# High concurrency with coordinates
+grobid_client --input ~/pdfs --output ~/tei --n 20 --teiCoordinates processFulltextDocument
+
+# Process citations with custom server
+grobid_client --server https://grobid.example.com --input ~/citations.txt processCitationList
+
+# Force reprocessing with sentence segmentation
+grobid_client --input ~/docs --force --segmentSentences processFulltextDocument
 ```
 
-The following command example will process all the PDF files present in the input directory and add bounding box coordinates (`--teiCoordinates`) relative to the original PDFs for the elements listed in the config file. It will also segment the sentences (`--segmentSentences`, this is a "layout aware" sentence segmentation) in the identified paragraphs with bounding box coordinates for the sentences. 
+### Python Library
 
-```console
-> grobid_client --input ~/tmp/in2 --output ~/tmp/out --teiCoordinates --segmentSentences processFulltextDocument
-```
-
-To use a different GROBID server (e.g., a hosted service), use the `--server` argument:
-
-```console
-> grobid_client --server https://lfoppiano-grobid.hf.space --input ~/tmp/in2 --output ~/tmp/out processFulltextDocument
-```
-
-> [!NOTE]
-> The `--server` argument will override the server URL specified in the config file. If both are provided, the CLI argument takes precedence.
-
-The file `example.py` gives an example of usage as a library, from a another python script. 
-
-## Using the client in your python
-
-Import and call the client as follow:
+#### Basic Usage
 
 ```python
 from grobid_client.grobid_client import GrobidClient
 
-# Using default localhost server
+# Initialize with default localhost server
+client = GrobidClient()
+
+# Initialize with custom server
+client = GrobidClient(grobid_server="https://your-server.com")
+
+# Initialize with config file
 client = GrobidClient(config_path="./config.json")
-client.process("processFulltextDocument", "/mnt/data/covid/pdfs", n=20)
 
-# Using a custom server
-client = GrobidClient(grobid_server="https://lfoppiano-grobid.hf.space", config_path="./config.json")
-client.process("processFulltextDocument", "/mnt/data/covid/pdfs", n=20)
+# Process documents
+client.process(
+    service="processFulltextDocument",
+    input_path="/path/to/pdfs",
+    output_path="/path/to/output",
+    n=20
+)
 ```
 
-See also `example.py`.
+#### Advanced Usage
 
-## Configuration of the client
+```python
+# Process with specific options
+client.process(
+    service="processFulltextDocument",
+    input_path="/path/to/pdfs",
+    output_path="/path/to/output",
+    n=10,
+    generateIDs=True,
+    consolidate_header=True,
+    teiCoordinates=True,
+    segmentSentences=True
+)
 
-> [!TIP]
-> from version 0.0.12 the `config.json` will be optional, by default the client will connect to the local server (`http://localhost:8070`).
-
-> [!NOTE]
-> When using the CLI, the `--server` argument will override the `grobid_server` value in the config file. This allows you to use a config file for most settings while easily switching servers via command line. 
-
-There are a few parameters that can be set with the `config.json` file. 
-
-- `grobid_server` indicates the URL of the GROBID server to be used by the client. 
-
-- `batch_size` is the the size of the pool of threads used by ThreadPoolExecutor, you normally don't want to change this. This should be a high number (default 1000) - but not too high to protect the memory on the machine running the client. This should not be confused with the concurrency parameter `n` which indicates how many parallel requests can be send to GROBID.
-
-- `sleep_time` indicates in seconds the time to wait for sending a new request to GROBID when the server indicates that all its threads are currently used. The client need to re-send the query after a wait time that will allow the server to free some threads. This wait time usually depends on the service and the capacities of the server, we suggest 5-10 seconds for the `processFulltextDocument` service and 2 seconds for `processHeaderDocument` service.
-
-- `timeout` is a client side timeout - the process on server side will still be running until the server finished the task or the server timeout is reached.
-
-- `coordinates` indicates the structure XML elements that should contains PDF coordinates when the parameters `--teiCoordinates` is used see [here](https://grobid.readthedocs.io/en/latest/Coordinates-in-PDF/) for more details.
-
-Here is the default `config.json` file for the client:
-
+# Process citation lists
+client.process(
+    service="processCitationList",
+    input_path="/path/to/citations.txt",
+    output_path="/path/to/output"
+)
 ```
+
+## ⚙️ Configuration
+
+Configuration can be provided via a JSON file. When using the CLI, the `--server` argument overrides the config file settings.
+
+### Default Configuration
+
+```json
 {
     "grobid_server": "http://localhost:8070",
     "batch_size": 1000,
     "sleep_time": 5,
     "timeout": 60,
-    "coordinates": [ "persName", "figure", "ref", "biblStruct", "formula", "s" ]
+    "coordinates": ["persName", "figure", "ref", "biblStruct", "formula", "s"]
 }
 ```
 
-## Benchmarking
+### Configuration Parameters
 
-Full text processing of __136 PDF__ (total 3443 pages, in average 25 pages per PDF) on Intel Core i7-4790K CPU 4.00GHz, 4 cores (8 threads), 16GB memory, `n` being the concurrency parameter:
+| Parameter | Description | Default |
+|-----------|-------------|---------|
+| `grobid_server` | GROBID server URL | `http://localhost:8070` |
+| `batch_size` | Thread pool size | 1000 |
+| `sleep_time` | Wait time when server is busy (seconds) | 5 |
+| `timeout` | Client-side timeout (seconds) | 60 |
+| `coordinates` | XML elements for coordinate extraction | See above |
 
-| n  | runtime (s)| s/PDF | PDF/s |
-|----|------------|-------|-------|
-| 1  | 209.0      | 1.54  | 0.65  |
-| 2  | 112.0      | 0.82  | 1.21  |
-| 3  | 80.4       | 0.59  | 1.69  |
-| 5  | 62.9       | 0.46  | 2.16  |
-| 8  | 55.7       | 0.41  | 2.44  |
-| 10 | 55.3       | 0.40  | 2.45  |
+> [!TIP]
+> Since version 0.0.12, the config file is optional. The client will use default localhost settings if no configuration is provided.
+
+## 🔬 Services
+
+### Fulltext Document Processing
+Extracts complete document structure including headers, body text, figures, tables, and references.
+
+```bash
+grobid_client --input pdfs/ --output results/ processFulltextDocument
+```
+
+### Header Document Processing
+Extracts only document metadata (title, authors, abstract, etc.).
+
+```bash
+grobid_client --input pdfs/ --output headers/ processHeaderDocument
+```
+
+### Reference Processing
+Extracts and structures bibliographic references from documents.
+
+```bash
+grobid_client --input pdfs/ --output refs/ processReferences
+```
+
+### Citation List Processing
+Parses raw citation strings from text files.
+
+```bash
+grobid_client --input citations.txt --output parsed/ processCitationList
+```
+
+> [!TIP]
+> For citation lists, input should be text files with one citation string per line.
+
+## 🧪 Testing
+
+The project includes comprehensive unit and integration tests using pytest.
+
+### Running Tests
+
+```bash
+# Install development dependencies
+pip install -e .[dev]
+
+# Run all tests
+pytest
+
+# Run with coverage
+pytest --cov=grobid_client
+
+# Run specific test file
+pytest tests/test_client.py
+
+# Run with verbose output
+pytest -v
+```
+
+### Test Structure
+
+- `tests/test_client.py` - Unit tests for the base API client
+- `tests/test_grobid_client.py` - Unit tests for the GROBID client
+- `tests/test_integration.py` - Integration tests with real GROBID server
+- `tests/conftest.py` - Test configuration and fixtures
+
+### Continuous Integration
+
+Tests are automatically run via GitHub Actions on:
+- Push to main branch
+- Pull requests
+- Multiple Python versions (3.8-3.13)
+
+## 📊 Performance
+
+Benchmark results for processing **136 PDFs** (3,443 pages total, ~25 pages per PDF) on Intel Core i7-4790K CPU 4.00GHz:
+
+| Concurrency | Runtime (s) | s/PDF | PDF/s |
+|-------------|-------------|-------|-------|
+| 1           | 209.0       | 1.54  | 0.65  |
+| 2           | 112.0       | 0.82  | 1.21  |
+| 3           | 80.4        | 0.59  | 1.69  |
+| 5           | 62.9        | 0.46  | 2.16  |
+| 8           | 55.7        | 0.41  | 2.44  |
+| 10          | 55.3        | 0.40  | 2.45  |
 
 ![Runtime Plot](resources/20180928112135.png)
 
-As complementary info, GROBID processing of header of the 136 PDF and with `n=10` takes 3.74 s (15 times faster than the complete full text processing because only the two first pages of the PDF are considered), 36 PDF/s. 
+### Additional Benchmarks
 
-In similar conditions, extraction and structuring of bibliographical references takes 26.9 s (5.1 PDF/s).
+- **Header processing**: 3.74s for 136 PDFs (36 PDF/s) with n=10
+- **Reference extraction**: 26.9s for 136 PDFs (5.1 PDF/s) with n=10  
+- **Citation parsing**: 4.3s for 3,500 citations (814 citations/s) with n=10
 
-Processing of 3500 raw bibliographical take 4.3 s with `n=10` (814 references parsed per second).
+## 🛠️ Development
 
+### Setting Up Development Environment
 
-## Developer notes 
+```bash
+# Clone the repository
+git clone https://github.com/kermitt2/grobid_client_python
+cd grobid_client_python
 
-### New release 
+# Create virtual environment
+python -m venv venv
+source venv/bin/activate  # On Windows: venv\Scripts\activate
 
-New releases can be published by using `bump-my-version`:
+# Install in development mode with test dependencies
+pip install -e .[dev]
 
-```shell
-pip install bump-my-version
-bump-my-version bump patch 
+# Install pre-commit hooks (optional)
+pre-commit install
 ```
 
-Use of  `major`, `minor`, or `patch` or  will increment the first, second or the third digit of the version, respectively.  
-The release will be published automatically on pypy. 
+### Creating a New Release
 
-## License and contact
+The project uses `bump-my-version` for version management:
 
-Distributed under [Apache 2.0 license](http://www.apache.org/licenses/LICENSE-2.0). 
+```bash
+# Install bump-my-version
+pip install bump-my-version
 
-Main author and contact: Patrice Lopez (<patrice.lopez@science-miner.com>)
+# Bump version (patch, minor, or major)
+bump-my-version bump patch
+
+# The release will be automatically published to PyPI
+```
+
+### Contributing
+
+1. Fork the repository
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Make your changes
+4. Add tests for new functionality
+5. Run the test suite (`pytest`)
+6. Commit your changes (`git commit -m 'Add amazing feature'`)
+7. Push to the branch (`git push origin feature/amazing-feature`)
+8. Open a Pull Request
+
+## 📄 License
+
+Distributed under the [Apache 2.0 License](http://www.apache.org/licenses/LICENSE-2.0). See `LICENSE` for more information.
+
+## 👥 Authors & Contact
+
+**Main Author**: Patrice Lopez (patrice.lopez@science-miner.com)  
+**Maintainer**: Luca Foppiano (luca@sciencialab.com)
+
+## 🔗 Links
+
+- [GROBID Documentation](https://grobid.readthedocs.io/)
+- [PyPI Package](https://pypi.org/project/grobid-client-python/)
+- [GitHub Repository](https://github.com/kermitt2/grobid_client_python)
+- [Issue Tracker](https://github.com/kermitt2/grobid_client_python/issues)

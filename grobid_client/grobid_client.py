@@ -424,6 +424,7 @@ class GrobidClient(ApiClient):
             verbose=False,
             flavor=None
     ):
+        batch_start_time = time.time()
         if verbose:
             self.logger.info(f"{len(input_files)} files to process in current batch")
 
@@ -493,6 +494,14 @@ class GrobidClient(ApiClient):
                     self.logger.debug(f"Successfully wrote TEI file: {filename}")
                 except OSError as e:
                     self.logger.error(f"Failed to write TEI XML file {filename}: {str(e)}")
+
+        # Calculate batch statistics
+        batch_runtime = time.time() - batch_start_time
+        batch_docs_per_second = processed_count / batch_runtime if batch_runtime > 0 else 0
+        
+        if verbose:
+            self.logger.info(f"⏱️  Runtime: {batch_runtime:.2f} seconds")
+            self.logger.info(f"🚀 Speed: {batch_docs_per_second:.2f} documents/second")
 
         return processed_count
 

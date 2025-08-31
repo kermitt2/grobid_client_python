@@ -439,3 +439,382 @@ class TestServerUnavailableException:
         exception = ServerUnavailableException(custom_message)
         assert str(exception) == custom_message
         assert exception.message == custom_message
+
+
+# ============================================================================
+# CONFIGURATION SCENARIOS TEST CLASS
+# ============================================================================
+
+
+class TestConfigurationScenarios:
+    """Test various configuration scenarios using test configuration files."""
+
+    def setup_method(self):
+        """Set up test fixtures."""
+        self.temp_files = []
+
+    def teardown_method(self):
+        """Clean up temporary files."""
+        for temp_file in self.temp_files:
+            try:
+                if os.path.exists(temp_file):
+                    os.unlink(temp_file)
+            except OSError:
+                pass
+
+    def create_temp_config(self, config_data):
+        """Create a temporary configuration file."""
+        import tempfile
+        temp_file = tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False)
+        temp_file.write(json.dumps(config_data))
+        temp_file.close()
+        self.temp_files.append(temp_file.name)
+        return temp_file.name
+
+    def test_valid_configuration(self):
+        """Test with valid configuration file."""
+        config_data = {
+            'grobid_server': 'http://localhost:8070',
+            'batch_size': 1000,
+            'coordinates': ["persName", "figure", "ref"],
+            'sleep_time': 5,
+            'timeout': 180,
+            'logging': {
+                'level': 'INFO',
+                'format': '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                'console': True,
+                'file': None
+            }
+        }
+        config_file = self.create_temp_config(config_data)
+        
+        with patch('grobid_client.grobid_client.GrobidClient._test_server_connection'):
+            with patch('logging.getLogger') as mock_get_logger:
+                # Mock the logger to avoid interference with the temporary logger
+                mock_logger = Mock()
+                mock_get_logger.return_value = mock_logger
+                client = GrobidClient(config_path=config_file, check_server=False)
+                
+                assert client.config['grobid_server'] == "http://localhost:8070"
+                assert client.config['batch_size'] == 1000
+                assert client.config['timeout'] == 180
+                assert client.config['sleep_time'] == 5
+                assert len(client.config['coordinates']) == 3
+                assert client.config['logging']['level'] == "INFO"
+
+    def test_custom_server_configuration(self):
+        """Test with custom server configuration."""
+        config_data = {
+            'grobid_server': 'http://custom-server:9090',
+            'batch_size': 500,
+            'coordinates': ["title", "figure"],
+            'sleep_time': 10,
+            'timeout': 300,
+            'logging': {
+                'level': 'DEBUG',
+                'format': '%(levelname)s - %(message)s',
+                'console': True,
+                'file': None
+            }
+        }
+        config_file = self.create_temp_config(config_data)
+        
+        with patch('grobid_client.grobid_client.GrobidClient._test_server_connection'):
+            with patch('logging.getLogger') as mock_get_logger:
+                # Mock the logger to avoid interference with the temporary logger
+                mock_logger = Mock()
+                mock_get_logger.return_value = mock_logger
+                client = GrobidClient(config_path=config_file, check_server=False)
+                
+                assert client.config['grobid_server'] == "http://custom-server:9090"
+                assert client.config['batch_size'] == 500
+                assert client.config['timeout'] == 300
+                assert client.config['sleep_time'] == 10
+                assert client.config['coordinates'] == ["title", "figure"]
+                assert client.config['logging']['level'] == "DEBUG"
+
+    def test_file_logging_configuration(self):
+        """Test with file logging configuration."""
+        config_data = {
+            'grobid_server': 'http://localhost:8070',
+            'batch_size': 1000,
+            'logging': {
+                'level': 'WARNING',
+                'format': '%(asctime)s - %(levelname)s - %(message)s',
+                'console': False,
+                'file': '/tmp/grobid_test.log',
+                'max_file_size': '5MB',
+                'backup_count': 2
+            }
+        }
+        config_file = self.create_temp_config(config_data)
+        
+        with patch('grobid_client.grobid_client.GrobidClient._test_server_connection'):
+            with patch('logging.getLogger') as mock_get_logger:
+                with patch('logging.handlers.RotatingFileHandler'):
+                    # Mock the logger to avoid interference with the temporary logger
+                    mock_logger = Mock()
+                    mock_get_logger.return_value = mock_logger
+                    client = GrobidClient(config_path=config_file, check_server=False)
+                    
+                    assert client.config['logging']['level'] == "WARNING"
+                    assert client.config['logging']['console'] is False
+                    assert client.config['logging']['file'] == "/tmp/grobid_test.log"
+                    assert client.config['logging']['max_file_size'] == "5MB"
+                    assert client.config['logging']['backup_count'] == 2
+
+    def test_minimal_configuration(self):
+        """Test with minimal configuration (only required fields)."""
+        config_data = {
+            'grobid_server': 'http://localhost:8070'
+        }
+        config_file = self.create_temp_config(config_data)
+        
+        with patch('grobid_client.grobid_client.GrobidClient._test_server_connection'):
+            with patch('logging.getLogger') as mock_get_logger:
+                # Mock the logger to avoid interference with the temporary logger
+                mock_logger = Mock()
+                mock_get_logger.return_value = mock_logger
+                client = GrobidClient(config_path=config_file, check_server=False)
+                
+                # Should use default values for missing fields
+                assert client.config['grobid_server'] == "http://localhost:8070"
+                assert client.config['batch_size'] == 1000  # Default
+                assert client.config['timeout'] == 180  # Default
+                assert client.config['sleep_time'] == 5  # Default
+
+    def test_invalid_configuration(self):
+        """Test with invalid configuration (wrong data types)."""
+        config_data = {
+            'grobid_server': 123,  # Should be string
+            'batch_size': "not_a_number",  # Should be int
+            'timeout': "invalid_timeout",  # Should be int
+            'sleep_time': None,  # Should be int
+            'coordinates': "not_a_list",  # Should be list
+            'logging': "not_a_dict"  # Should be dict
+        }
+        config_file = self.create_temp_config(config_data)
+        
+        with patch('grobid_client.grobid_client.GrobidClient._test_server_connection'):
+            with patch('logging.getLogger') as mock_get_logger:
+                # Mock the logger to avoid interference with the temporary logger
+                mock_logger = Mock()
+                mock_get_logger.return_value = mock_logger
+                client = GrobidClient(config_path=config_file, check_server=False)
+                
+                # Should accept any values (validation happens elsewhere)
+                assert client.config['grobid_server'] == 123
+                assert client.config['batch_size'] == "not_a_number"
+                assert client.config['timeout'] == "invalid_timeout"
+                assert client.config['sleep_time'] is None
+                assert client.config['coordinates'] == "not_a_list"
+                assert client.config['logging'] == "not_a_dict"
+
+    def test_none_values_configuration(self):
+        """Test with None values in configuration."""
+        config_data = {
+            'grobid_server': None,
+            'batch_size': None,
+            'timeout': None,
+            'sleep_time': None,
+            'coordinates': None,
+            'logging': None
+        }
+        config_file = self.create_temp_config(config_data)
+        
+        with patch('grobid_client.grobid_client.GrobidClient._test_server_connection'):
+            with patch('logging.getLogger') as mock_get_logger:
+                # Mock the logger to avoid interference with the temporary logger
+                mock_logger = Mock()
+                mock_get_logger.return_value = mock_logger
+                client = GrobidClient(config_path=config_file, check_server=False)
+                
+                # Should accept None values
+                assert client.config['grobid_server'] is None
+                assert client.config['batch_size'] is None
+                assert client.config['timeout'] is None
+                assert client.config['sleep_time'] is None
+                assert client.config['coordinates'] is None
+                assert client.config['logging'] is None
+
+    def test_empty_values_configuration(self):
+        """Test with empty values in configuration."""
+        config_data = {
+            'grobid_server': '',
+            'batch_size': 0,
+            'timeout': 0,
+            'sleep_time': 0,
+            'coordinates': [],
+            'logging': {}
+        }
+        config_file = self.create_temp_config(config_data)
+        
+        with patch('grobid_client.grobid_client.GrobidClient._test_server_connection'):
+            with patch('logging.getLogger') as mock_get_logger:
+                # Mock the logger to avoid interference with the temporary logger
+                mock_logger = Mock()
+                mock_get_logger.return_value = mock_logger
+                client = GrobidClient(config_path=config_file, check_server=False)
+                
+                # Should accept empty values
+                assert client.config['grobid_server'] == ''
+                assert client.config['batch_size'] == 0
+                assert client.config['timeout'] == 0
+                assert client.config['sleep_time'] == 0
+                assert client.config['coordinates'] == []
+                assert client.config['logging'] == {}
+
+    def test_extreme_values_configuration(self):
+        """Test with extreme values in configuration."""
+        config_data = {
+            'grobid_server': 'http://localhost:8070',
+            'batch_size': 999999999,
+            'timeout': 999999999,
+            'sleep_time': 999999999,
+            'coordinates': ["a" * 1000],  # Very long string
+            'logging': {
+                'level': 'DEBUG',
+                'format': '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                'console': True,
+                'file': None
+            }
+        }
+        config_file = self.create_temp_config(config_data)
+        
+        with patch('grobid_client.grobid_client.GrobidClient._test_server_connection'):
+            with patch('logging.getLogger') as mock_get_logger:
+                # Mock the logger to avoid interference with the temporary logger
+                mock_logger = Mock()
+                mock_get_logger.return_value = mock_logger
+                client = GrobidClient(config_path=config_file, check_server=False)
+                
+                # Should accept extreme values
+                assert client.config['batch_size'] == 999999999
+                assert client.config['timeout'] == 999999999
+                assert client.config['sleep_time'] == 999999999
+                assert client.config['coordinates'] == ["a" * 1000]
+
+    def test_unicode_configuration(self):
+        """Test with Unicode characters in configuration."""
+        config_data = {
+            'grobid_server': 'http://localhost:8070',
+            'batch_size': 1000,
+            'coordinates': ["用户名", "密码", "文档"],
+            'logging': {
+                'level': 'INFO',
+                'format': '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                'console': True,
+                'file': None
+            }
+        }
+        config_file = self.create_temp_config(config_data)
+        
+        with patch('grobid_client.grobid_client.GrobidClient._test_server_connection'):
+            with patch('logging.getLogger') as mock_get_logger:
+                # Mock the logger to avoid interference with the temporary logger
+                mock_logger = Mock()
+                mock_get_logger.return_value = mock_logger
+                client = GrobidClient(config_path=config_file, check_server=False)
+                
+                # Should handle Unicode characters
+                assert client.config['coordinates'] == ["用户名", "密码", "文档"]
+
+    def test_special_characters_configuration(self):
+        """Test with special characters in configuration."""
+        config_data = {
+            'grobid_server': 'http://localhost:8070',
+            'batch_size': 1000,
+            'coordinates': ["test@example.com", "file/path", "user-name"],
+            'logging': {
+                'level': 'INFO',
+                'format': '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                'console': True,
+                'file': None
+            }
+        }
+        config_file = self.create_temp_config(config_data)
+        
+        with patch('grobid_client.grobid_client.GrobidClient._test_server_connection'):
+            with patch('logging.getLogger') as mock_get_logger:
+                # Mock the logger to avoid interference with the temporary logger
+                mock_logger = Mock()
+                mock_get_logger.return_value = mock_logger
+                client = GrobidClient(config_path=config_file, check_server=False)
+                
+                # Should handle special characters
+                assert client.config['coordinates'] == ["test@example.com", "file/path", "user-name"]
+
+    def test_constructor_override_configuration(self):
+        """Test that constructor parameters override config file values."""
+        config_data = {
+            'grobid_server': 'http://config-server:8080',
+            'batch_size': 1000,
+            'timeout': 180,
+            'sleep_time': 5,
+            'coordinates': ["config_coord"],
+            'logging': {
+                'level': 'INFO',
+                'format': '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                'console': True,
+                'file': None
+            }
+        }
+        config_file = self.create_temp_config(config_data)
+        
+        with patch('grobid_client.grobid_client.GrobidClient._test_server_connection'):
+            with patch('logging.getLogger') as mock_get_logger:
+                # Mock the logger to avoid interference with the temporary logger
+                mock_logger = Mock()
+                mock_get_logger.return_value = mock_logger
+                client = GrobidClient(
+                    config_path=config_file,
+                    grobid_server="http://constructor-server:9090",
+                    batch_size=500,
+                    timeout=300,
+                    sleep_time=10,
+                    coordinates=["constructor_coord"],
+                    check_server=False
+                )
+                
+                # Constructor parameters should override config file
+                assert client.config['grobid_server'] == "http://constructor-server:9090"
+                assert client.config['batch_size'] == 500
+                assert client.config['timeout'] == 300
+                assert client.config['sleep_time'] == 10
+                assert client.config['coordinates'] == ["constructor_coord"]
+
+    def test_missing_config_file(self):
+        """Test behavior when config file doesn't exist."""
+        with pytest.raises(FileNotFoundError) as exc_info:
+            GrobidClient(config_path="/nonexistent/config.json", check_server=False)
+        
+        assert "was not found" in str(exc_info.value)
+
+    def test_invalid_json_config_file(self):
+        """Test behavior with invalid JSON in config file."""
+        # Create a temporary file with invalid JSON
+        import tempfile
+        temp_file = tempfile.NamedTemporaryFile(mode='w', suffix='.json', delete=False)
+        temp_file.write('invalid json content')
+        temp_file.close()
+        self.temp_files.append(temp_file.name)
+        
+        with pytest.raises(json.JSONDecodeError):
+            GrobidClient(config_path=temp_file.name, check_server=False)
+
+    def test_empty_config_file(self):
+        """Test behavior with empty config file."""
+        config_file = self.create_temp_config({})
+        
+        with patch('grobid_client.grobid_client.GrobidClient._test_server_connection'):
+            with patch('logging.getLogger') as mock_get_logger:
+                # Mock the logger to avoid interference with the temporary logger
+                mock_logger = Mock()
+                mock_get_logger.return_value = mock_logger
+                client = GrobidClient(config_path=config_file, check_server=False)
+                
+                # Should use default values
+                assert client.config['grobid_server'] == "http://localhost:8070"
+                assert client.config['batch_size'] == 1000
+                assert client.config['timeout'] == 180
+                assert client.config['sleep_time'] == 5

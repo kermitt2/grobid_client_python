@@ -41,7 +41,7 @@ class GrobidClient(ApiClient):
     # Default configuration values
     DEFAULT_CONFIG = {
         'grobid_server': 'http://localhost:8070',
-        'batch_size': 1000,
+        'batch_size': 10,
         'sleep_time': 5,
         'timeout': 180,
         'coordinates': [

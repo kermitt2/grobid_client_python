@@ -98,39 +98,39 @@ grobid_client [OPTIONS] SERVICE
 
 #### Available Services
 
-| Service | Description | Input Format |
-|---------|-------------|--------------|
-| `processFulltextDocument` | Extract full document structure | PDF files |
-| `processHeaderDocument` | Extract document metadata | PDF files |
-| `processReferences` | Extract bibliographic references | PDF files |
-| `processCitationList` | Parse citation strings | Text files (one citation per line) |
-| `processCitationPatentST36` | Process patent citations | XML ST36 format |
-| `processCitationPatentPDF` | Process patent PDFs | PDF files |
+| Service                     | Description                       | Input Format                       |
+|-----------------------------|-----------------------------------|------------------------------------|
+| `processFulltextDocument`   | Extract full document structure   | PDF files                          |
+| `processHeaderDocument`     | Extract document metadata         | PDF files                          |
+| `processReferences`         | Extract bibliographic references  | PDF files                          |
+| `processCitationList`       | Parse citation strings            | Text files (one citation per line) |
+| `processCitationPatentST36` | Process patent citations          | XML ST36 format                    |
+| `processCitationPatentPDF`  | Process patent PDFs               | PDF files                          |
 
 #### Common Options
 
-| Option | Description | Default |
-|--------|-------------|---------|
-| `--input` | Input directory path | Required |
-| `--output` | Output directory path | Same as input |
-| `--server` | GROBID server URL | `http://localhost:8070` |
-| `--n` | Concurrency level | 10 |
-| `--config` | Config file path | Optional |
-| `--force` | Overwrite existing files | False |
-| `--verbose` | Enable verbose logging | False |
+| Option      | Description              | Default                 |
+|-------------|--------------------------|-------------------------|
+| `--input`   | Input directory path     | Required                |
+| `--output`  | Output directory path    | Same as input           |
+| `--server`  | GROBID server URL        | `http://localhost:8070` |
+| `--n`       | Concurrency level        | 10                      |
+| `--config`  | Config file path         | Optional                |
+| `--force`   | Overwrite existing files | False                   |
+| `--verbose` | Enable verbose logging   | False                   |
 
 #### Processing Options
 
-| Option | Description |
-|--------|-------------|
-| `--generateIDs` | Generate random XML IDs |
-| `--consolidate_header` | Consolidate header metadata |
-| `--consolidate_citations` | Consolidate bibliographic references |
-| `--include_raw_citations` | Include raw citation text |
-| `--include_raw_affiliations` | Include raw affiliation text |
-| `--teiCoordinates` | Add PDF coordinates to XML |
-| `--segmentSentences` | Segment sentences with coordinates |
-| `--flavor` | Processing flavor for fulltext extraction |
+| Option                       | Description                               |
+|------------------------------|-------------------------------------------|
+| `--generateIDs`              | Generate random XML IDs                   |
+| `--consolidate_header`       | Consolidate header metadata               |
+| `--consolidate_citations`    | Consolidate bibliographic references      |
+| `--include_raw_citations`    | Include raw citation text                 |
+| `--include_raw_affiliations` | Include raw affiliation text              |
+| `--teiCoordinates`           | Add PDF coordinates to XML                |
+| `--segmentSentences`         | Segment sentences with coordinates        |
+| `--flavor`                   | Processing flavor for fulltext extraction |
 
 #### Examples
 
@@ -214,13 +214,13 @@ Configuration can be provided via a JSON file. When using the CLI, the `--server
 
 ### Configuration Parameters
 
-| Parameter | Description | Default |
-|-----------|-------------|---------|
-| `grobid_server` | GROBID server URL | `http://localhost:8070` |
-| `batch_size` | Thread pool size | 1000 |
-| `sleep_time` | Wait time when server is busy (seconds) | 5 |
-| `timeout` | Client-side timeout (seconds) | 60 |
-| `coordinates` | XML elements for coordinate extraction | See above |
+| Parameter       | Description                                                                                                      | Default                 |
+|-----------------|------------------------------------------------------------------------------------------------------------------|-------------------------|
+| `grobid_server` | GROBID server URL                                                                                                | `http://localhost:8070` |
+| `batch_size`    | Thread pool size. **Tune carefully: a large batch size will result in the data being written less frequently**   | 1000                    |
+| `sleep_time`    | Wait time when server is busy (seconds)                                                                          | 5                       |
+| `timeout`       | Client-side timeout (seconds)                                                                                    | 180                     |
+| `coordinates`   | XML elements for coordinate extraction                                                                           | See above               |
 
 > [!TIP]
 > Since version 0.0.12, the config file is optional. The client will use default localhost settings if no configuration is provided.

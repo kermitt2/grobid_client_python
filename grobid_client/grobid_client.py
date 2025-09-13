@@ -321,7 +321,8 @@ class GrobidClient(ApiClient):
             segment_sentences=False,
             force=True,
             verbose=False,
-            flavor=None
+            flavor=None,
+            json_output=False
     ):
         batch_size_pdf = self.config["batch_size"]
 
@@ -378,7 +379,8 @@ class GrobidClient(ApiClient):
                     segment_sentences,
                     force,
                     verbose,
-                    flavor
+                    flavor,
+                    json_output
                 )
                 processed_files_count += batch_processed
                 input_files = []
@@ -400,6 +402,8 @@ class GrobidClient(ApiClient):
                 segment_sentences,
                 force,
                 verbose,
+                flavor,
+                json_output
             )
             processed_files_count += batch_processed
 
@@ -422,7 +426,8 @@ class GrobidClient(ApiClient):
             segment_sentences,
             force,
             verbose=False,
-            flavor=None
+            flavor=None,
+            json_output=False
     ):
         if verbose:
             self.logger.info(f"{len(input_files)} files to process in current batch")
@@ -491,6 +496,24 @@ class GrobidClient(ApiClient):
                     with open(filename, 'w', encoding='utf8') as tei_file:
                         tei_file.write(text)
                     self.logger.debug(f"Successfully wrote TEI file: {filename}")
+                    
+                    # Convert to JSON if requested
+                    if json_output:
+                        try:
+                            from .format.TEI2LossyJSON import TEI2LossyJSONConverter
+                            converter = TEI2LossyJSONConverter()
+                            json_data = converter.convert_tei_file(filename, stream=False)
+                            
+                            if json_data:
+                                json_filename = filename.replace('.grobid.tei.xml', '.json')
+                                with open(json_filename, 'w', encoding='utf8') as json_file:
+                                    json.dump(json_data, json_file, indent=2, ensure_ascii=False)
+                                self.logger.debug(f"Successfully wrote JSON file: {json_filename}")
+                            else:
+                                self.logger.warning(f"Failed to convert TEI to JSON for {filename}")
+                        except Exception as e:
+                            self.logger.error(f"Failed to convert TEI to JSON for {filename}: {str(e)}")
+                            
                 except OSError as e:
                     self.logger.error(f"Failed to write TEI XML file {filename}: {str(e)}")
 
@@ -751,6 +774,11 @@ def main():
         default=None,
         help="GROBID server URL override of the config file. If config not provided, default is http://localhost:8070",
     )
+    parser.add_argument(
+        "--json",
+        action="store_true",
+        help="Convert TEI output to JSON format using the TEI2LossyJSON converter",
+    )
 
     args = parser.parse_args()
 
@@ -758,6 +786,7 @@ def main():
     config_path = args.config
     output_path = args.output
     flavor = args.flavor
+    json_output = args.json
 
     # Initialize n with default value
     n = 10
@@ -826,7 +855,8 @@ def main():
             segment_sentences=segment_sentences,
             force=force,
             verbose=verbose,
-            flavor=flavor
+            flavor=flavor,
+            json_output=json_output
         )
     except Exception as e:
         logger.error(f"Processing failed: {str(e)}")

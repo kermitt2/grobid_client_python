@@ -181,7 +181,7 @@ class TEI2LossyJSONConverter:
                         head = item.head
                         label = item.label
                         if item.has_attr("type") and item.attrs["type"] == "table":
-                            content = xml_table_to_markdown(item.table) if item.table else None
+                            json_content = xml_table_to_json(item.table) if item.table else None
                             note = item.note
                             figures_and_tables.append(
                                 {
@@ -190,7 +190,7 @@ class TEI2LossyJSONConverter:
                                     "head": head.text if head else "",
                                     "type": "table",
                                     "desc": desc.text if desc else "",
-                                    "content": content,
+                                    "content": json_content,
                                     "note": note.text if note else "",
                                     "coords": [
                                         box_to_dict(coord.split(","))
@@ -228,35 +228,46 @@ class TEI2LossyJSONConverter:
 
     def _iter_passages_from_soup_for_text(self, text_node: Tag, passage_level: str) -> Iterator[Dict[str, Union[str, Dict[str, str]]]]:
         head_paragraph = None
-        div_nodes = text_node.find_all("div")
-        for id_div, div in enumerate(div_nodes):
-            head = div.find("head")
-            p_nodes = div.find_all("p")
-            head_section = None
+        
+        # Process body and back sections, but only their direct child divs
+        for section in text_node.find_all(['body', 'back']):
+            # Only get direct child divs of this section
+            div_nodes = [child for child in section.children if hasattr(child, 'name') and child.name == "div"]
+            
+            for id_div, div in enumerate(div_nodes):
+                head = div.find("head")
+                p_nodes = div.find_all("p")
+                head_section = None
 
-            if head:
-                if len(p_nodes) == 0:
-                    head_paragraph = head.text
+                if head:
+                    if len(p_nodes) == 0:
+                        head_paragraph = head.text
+                    else:
+                        head_section = head.text
                 else:
-                    head_section = head.text
+                    # If no head element, try to use the type attribute as head_section
+                    div_type = div.get("type")
+                    if div_type and len(p_nodes) > 0:
+                        head_section = div_type.title()  # Capitalize first letter
 
-            for id_p, p in enumerate(p_nodes):
-                paragraph_id = get_random_id(prefix="p_")
-                if passage_level == "sentence":
-                    for id_s, sentence in enumerate(p.find_all("s")):
-                        struct = get_formatted_passage(head_paragraph, head_section, paragraph_id, sentence)
+                for id_p, p in enumerate(p_nodes):
+                    paragraph_id = get_random_id(prefix="p_")
+                    
+                    if passage_level == "sentence":
+                        for id_s, sentence in enumerate(p.find_all("s")):
+                            struct = get_formatted_passage(head_paragraph, head_section, paragraph_id, sentence)
+                            if self.validate_refs:
+                                for ref in struct['refs']:
+                                    assert ref['offset_start'] < ref['offset_end']
+                                    assert struct['text'][ref['offset_start']:ref['offset_end']] == ref['text']
+                            yield struct
+                    else:
+                        struct = get_formatted_passage(head_paragraph, head_section, paragraph_id, p)
                         if self.validate_refs:
                             for ref in struct['refs']:
                                 assert ref['offset_start'] < ref['offset_end']
                                 assert struct['text'][ref['offset_start']:ref['offset_end']] == ref['text']
                         yield struct
-                else:
-                    struct = get_formatted_passage(head_paragraph, head_section, paragraph_id, p)
-                    if self.validate_refs:
-                        for ref in struct['refs']:
-                            assert ref['offset_start'] < ref['offset_end']
-                            assert struct['text'][ref['offset_start']:ref['offset_end']] == ref['text']
-                    yield struct
 
     def process_directory(self, directory: Union[str, Path], pattern: str = "*.tei.xml", parallel: bool = True, workers: int = None) -> Iterator[Dict]:
         """Process a directory of TEI files and yield converted documents.
@@ -289,7 +300,7 @@ def _convert_file_worker(path: str):
     from bs4 import BeautifulSoup
     import dateparser
     # Reuse existing top-level helpers from this module by importing here
-    from grobid_client.format.TEI2LossyJSON import box_to_dict, get_random_id, get_formatted_passage, get_refs_with_offsets, xml_table_to_markdown
+    from grobid_client.format.TEI2LossyJSON import box_to_dict, get_random_id, get_formatted_passage, get_refs_with_offsets, xml_table_to_markdown, xml_table_to_json
     content = open(path, 'r').read()
     soup = BeautifulSoup(content, 'xml')
     converter = TEI2LossyJSONConverter()
@@ -375,6 +386,56 @@ def xml_table_to_markdown(table_element):
             markdown_lines.append("| " + " | ".join(cells) + " |")
     
     return "\n".join(markdown_lines) if markdown_lines else None
+
+
+def xml_table_to_json(table_element):
+    """Convert XML table to JSON format."""
+    if not table_element:
+        return None
+    
+    table_data = {
+        "headers": [],
+        "rows": [],
+        "metadata": {}
+    }
+    
+    # Check if table has a header row (thead)
+    thead = table_element.find("thead")
+    if thead:
+        header_row = thead.find("row")
+        if header_row:
+            for cell in header_row.find_all("cell"):
+                cell_text = cell.get_text().strip()
+                table_data["headers"].append(cell_text)
+    
+    # Process table body rows
+    tbody = table_element.find("tbody")
+    if tbody:
+        rows = tbody.find_all("row")
+    else:
+        # If no tbody, get all rows
+        rows = table_element.find_all("row")
+        # Skip first row if we already processed it as header
+        if thead and rows:
+            rows = rows[1:]
+    
+    for row in rows:
+        row_data = []
+        for cell in row.find_all("cell"):
+            cell_text = cell.get_text().strip()
+            row_data.append(cell_text)
+        
+        if row_data:
+            table_data["rows"].append(row_data)
+    
+    # Add metadata
+    table_data["metadata"] = {
+        "row_count": len(table_data["rows"]),
+        "column_count": len(table_data["headers"]) if table_data["headers"] else (len(table_data["rows"][0]) if table_data["rows"] else 0),
+        "has_headers": len(table_data["headers"]) > 0
+    }
+    
+    return table_data if table_data["rows"] else None
 
 
 # Backwards compatible top-level function that uses the class

@@ -30,6 +30,7 @@ A simple, efficient Python client for [GROBID](https://github.com/kermitt2/grobi
 - **Command Line & Library**: Use as a standalone CLI tool or import into your Python projects
 - **Coordinate Extraction**: Optional PDF coordinate extraction for precise element positioning
 - **Sentence Segmentation**: Layout-aware sentence segmentation capabilities
+- **JSON Output**: Convert TEI XML output to structured JSON format with CORD-19-like structure
 
 ## 📋 Prerequisites
 
@@ -39,6 +40,7 @@ A simple, efficient Python client for [GROBID](https://github.com/kermitt2/grobi
   - Docker: `docker run -t --rm -p 8070:8070 lfoppiano/grobid:0.8.2`
   - Default server: `http://localhost:8070`
   - Online demo: https://lfoppiano-grobid.hf.space (usage limits apply), more details [here](https://grobid.readthedocs.io/en/latest/getting_started/#using-grobid-from-the-cloud).
+
 
 > [!IMPORTANT]
 > GROBID supports Windows only through Docker containers. See the [Docker documentation](https://grobid.readthedocs.io/en/latest/Grobid-docker/) for details.
@@ -131,6 +133,7 @@ grobid_client [OPTIONS] SERVICE
 | `--teiCoordinates` | Add PDF coordinates to XML |
 | `--segmentSentences` | Segment sentences with coordinates |
 | `--flavor` | Processing flavor for fulltext extraction |
+| `--json` | Convert TEI output to JSON format |
 
 #### Examples
 
@@ -141,11 +144,14 @@ grobid_client --input ~/documents --output ~/results processFulltextDocument
 # High concurrency with coordinates
 grobid_client --input ~/pdfs --output ~/tei --n 20 --teiCoordinates processFulltextDocument
 
+# Process with JSON output
+grobid_client --input ~/pdfs --output ~/results --json processFulltextDocument
+
 # Process citations with custom server
 grobid_client --server https://grobid.example.com --input ~/citations.txt processCitationList
 
-# Force reprocessing with sentence segmentation
-grobid_client --input ~/docs --force --segmentSentences processFulltextDocument
+# Force reprocessing with sentence segmentation and JSON output
+grobid_client --input ~/docs --force --segmentSentences --json processFulltextDocument
 ```
 
 ### Python Library
@@ -186,6 +192,14 @@ client.process(
     consolidate_header=True,
     teiCoordinates=True,
     segmentSentences=True
+)
+
+# Process with JSON output
+client.process(
+    service="processFulltextDocument",
+    input_path="/path/to/pdfs",
+    output_path="/path/to/output",
+    json_output=True
 )
 
 # Process citation lists
@@ -233,6 +247,87 @@ Extracts complete document structure including headers, body text, figures, tabl
 ```bash
 grobid_client --input pdfs/ --output results/ processFulltextDocument
 ```
+
+### JSON Output Format
+
+When using the `--json` flag, the client converts TEI XML output to a structured JSON format similar to CORD-19. This provides:
+
+- **Structured Bibliography**: Title, authors, DOI, publication date, journal information
+- **Body Text**: Paragraphs and sentences with metadata and reference annotations
+- **Figures and Tables**: Structured JSON format for tables with headers, rows, and metadata
+- **Reference Information**: In-text citations with offsets and targets
+
+#### JSON Structure
+
+```json
+{
+  "level": "paragraph",
+  "biblio": {
+    "title": "Document Title",
+    "authors": ["Author 1", "Author 2"],
+    "doi": "10.1000/example",
+    "publication_date": "2023-01-01",
+    "journal": "Journal Name",
+    "abstract": [...]
+  },
+  "body_text": [
+    {
+      "id": "p_12345",
+      "text": "Paragraph text with citations [1].",
+      "head_section": "Introduction",
+      "refs": [
+        {
+          "type": "bibr",
+          "target": "b1",
+          "text": "[1]",
+          "offset_start": 25,
+          "offset_end": 28
+        }
+      ]
+    }
+  ],
+  "figures_and_tables": [
+    {
+      "id": "table_1",
+      "type": "table",
+      "label": "Table 1",
+      "head": "Sample Data",
+      "content": {
+        "headers": ["Header 1", "Header 2"],
+        "rows": [["Value 1", "Value 2"]],
+        "metadata": {
+          "row_count": 1,
+          "column_count": 2,
+          "has_headers": true
+        }
+      }
+    }
+  ]
+}
+```
+
+#### Usage Examples
+
+```bash
+# Generate both TEI and JSON outputs
+grobid_client --input pdfs/ --output results/ --json processFulltextDocument
+
+# JSON output with coordinates and sentence segmentation
+grobid_client --input pdfs/ --output results/ --json --teiCoordinates --segmentSentences processFulltextDocument
+```
+
+```python
+# Python library usage
+client.process(
+    service="processFulltextDocument",
+    input_path="/path/to/pdfs",
+    output_path="/path/to/output",
+    json_output=True
+)
+```
+
+> [!NOTE]
+> When using `--json`, the `--force` flag only checks for existing TEI files. If a TEI file is rewritten (due to `--force`), the corresponding JSON file is automatically rewritten as well.
 
 ### Header Document Processing
 Extracts only document metadata (title, authors, abstract, etc.).

@@ -506,6 +506,7 @@ class GrobidClient(ApiClient):
                             
                             if json_data:
                                 json_filename = filename.replace('.grobid.tei.xml', '.json')
+                                # Always write JSON file when TEI is written (respects --force behavior)
                                 with open(json_filename, 'w', encoding='utf8') as json_file:
                                     json.dump(json_data, json_file, indent=2, ensure_ascii=False)
                                 self.logger.debug(f"Successfully wrote JSON file: {json_filename}")

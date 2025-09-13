@@ -322,7 +322,8 @@ class GrobidClient(ApiClient):
             force=True,
             verbose=False,
             flavor=None,
-            json_output=False
+            json_output=False,
+            markdown_output=False
     ):
         batch_size_pdf = self.config["batch_size"]
 
@@ -380,7 +381,8 @@ class GrobidClient(ApiClient):
                     force,
                     verbose,
                     flavor,
-                    json_output
+                    json_output,
+                    markdown_output
                 )
                 processed_files_count += batch_processed
                 input_files = []
@@ -403,7 +405,8 @@ class GrobidClient(ApiClient):
                 force,
                 verbose,
                 flavor,
-                json_output
+                json_output,
+                markdown_output
             )
             processed_files_count += batch_processed
 
@@ -427,7 +430,8 @@ class GrobidClient(ApiClient):
             force,
             verbose=False,
             flavor=None,
-            json_output=False
+            json_output=False,
+            markdown_output=False
     ):
         if verbose:
             self.logger.info(f"{len(input_files)} files to process in current batch")
@@ -514,6 +518,24 @@ class GrobidClient(ApiClient):
                                 self.logger.warning(f"Failed to convert TEI to JSON for {filename}")
                         except Exception as e:
                             self.logger.error(f"Failed to convert TEI to JSON for {filename}: {str(e)}")
+                    
+                    # Convert to Markdown if requested
+                    if markdown_output:
+                        try:
+                            from .format.TEI2Markdown import TEI2MarkdownConverter
+                            converter = TEI2MarkdownConverter()
+                            markdown_data = converter.convert_tei_file(filename)
+                            
+                            if markdown_data:
+                                markdown_filename = filename.replace('.grobid.tei.xml', '.md')
+                                # Always write Markdown file when TEI is written (respects --force behavior)
+                                with open(markdown_filename, 'w', encoding='utf8') as markdown_file:
+                                    markdown_file.write(markdown_data)
+                                self.logger.debug(f"Successfully wrote Markdown file: {markdown_filename}")
+                            else:
+                                self.logger.warning(f"Failed to convert TEI to Markdown for {filename}")
+                        except Exception as e:
+                            self.logger.error(f"Failed to convert TEI to Markdown for {filename}: {str(e)}")
                             
                 except OSError as e:
                     self.logger.error(f"Failed to write TEI XML file {filename}: {str(e)}")
@@ -780,6 +802,11 @@ def main():
         action="store_true",
         help="Convert TEI output to JSON format using the TEI2LossyJSON converter",
     )
+    parser.add_argument(
+        "--markdown",
+        action="store_true",
+        help="Convert TEI output to Markdown format",
+    )
 
     args = parser.parse_args()
 
@@ -788,6 +815,7 @@ def main():
     output_path = args.output
     flavor = args.flavor
     json_output = args.json
+    markdown_output = args.markdown
 
     # Initialize n with default value
     n = 10
@@ -857,7 +885,8 @@ def main():
             force=force,
             verbose=verbose,
             flavor=flavor,
-            json_output=json_output
+            json_output=json_output,
+            markdown_output=markdown_output
         )
     except Exception as e:
         logger.error(f"Processing failed: {str(e)}")

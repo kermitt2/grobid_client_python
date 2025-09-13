@@ -31,6 +31,7 @@ A simple, efficient Python client for [GROBID](https://github.com/kermitt2/grobi
 - **Coordinate Extraction**: Optional PDF coordinate extraction for precise element positioning
 - **Sentence Segmentation**: Layout-aware sentence segmentation capabilities
 - **JSON Output**: Convert TEI XML output to structured JSON format with CORD-19-like structure
+- **Markdown Output**: Convert TEI XML output to clean Markdown format with structured sections
 
 ## 📋 Prerequisites
 
@@ -134,6 +135,7 @@ grobid_client [OPTIONS] SERVICE
 | `--segmentSentences` | Segment sentences with coordinates |
 | `--flavor` | Processing flavor for fulltext extraction |
 | `--json` | Convert TEI output to JSON format |
+| `--markdown` | Convert TEI output to Markdown format |
 
 #### Examples
 
@@ -146,6 +148,9 @@ grobid_client --input ~/pdfs --output ~/tei --n 20 --teiCoordinates processFullt
 
 # Process with JSON output
 grobid_client --input ~/pdfs --output ~/results --json processFulltextDocument
+
+# Process with Markdown output
+grobid_client --input ~/pdfs --output ~/results --markdown processFulltextDocument
 
 # Process citations with custom server
 grobid_client --server https://grobid.example.com --input ~/citations.txt processCitationList
@@ -200,6 +205,14 @@ client.process(
     input_path="/path/to/pdfs",
     output_path="/path/to/output",
     json_output=True
+)
+
+# Process with Markdown output
+client.process(
+    service="processFulltextDocument",
+    input_path="/path/to/pdfs",
+    output_path="/path/to/output",
+    markdown_output=True
 )
 
 # Process citation lists
@@ -328,6 +341,75 @@ client.process(
 
 > [!NOTE]
 > When using `--json`, the `--force` flag only checks for existing TEI files. If a TEI file is rewritten (due to `--force`), the corresponding JSON file is automatically rewritten as well.
+
+### Markdown Output Format
+
+When using the `--markdown` flag, the client converts TEI XML output to a clean, readable Markdown format. This provides:
+
+- **Structured Sections**: Title, Authors, Affiliations, Publication Date, Fulltext, Annex, and References
+- **Clean Formatting**: Human-readable format suitable for documentation and sharing
+- **Preserved Content**: All text content with proper section organization
+- **Reference Formatting**: Bibliographic references in a readable format
+
+#### Markdown Structure
+
+The generated Markdown follows this structure:
+
+```markdown
+# Document Title
+
+## Authors
+- Author Name 1
+- Author Name 2
+
+## Affiliations
+- Affiliation 1
+- Affiliation 2
+
+## Publication Date
+January 1, 2023
+
+## Fulltext
+### Introduction
+Content of the introduction section...
+
+### Methods
+Content of the methods section...
+
+## Annex
+### Acknowledgements
+Acknowledgement text...
+
+### Competing Interests
+Competing interests statement...
+
+## References
+**[1]** Paper Title. *Author Name*. *Journal Name* (2023).
+**[2]** Another Paper. *Author et al.*. *Conference* (2022).
+```
+
+#### Usage Examples
+
+```bash
+# Generate both TEI and Markdown outputs
+grobid_client --input pdfs/ --output results/ --markdown processFulltextDocument
+
+# Markdown output with coordinates and sentence segmentation
+grobid_client --input pdfs/ --output results/ --markdown --teiCoordinates --segmentSentences processFulltextDocument
+```
+
+```python
+# Python library usage
+client.process(
+    service="processFulltextDocument",
+    input_path="/path/to/pdfs",
+    output_path="/path/to/output",
+    markdown_output=True
+)
+```
+
+> [!NOTE]
+> When using `--markdown`, the `--force` flag only checks for existing TEI files. If a TEI file is rewritten (due to `--force`), the corresponding Markdown file is automatically rewritten as well.
 
 ### Header Document Processing
 Extracts only document metadata (title, authors, abstract, etc.).

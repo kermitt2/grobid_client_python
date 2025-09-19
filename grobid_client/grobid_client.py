@@ -347,6 +347,7 @@ class GrobidClient(ApiClient):
 
         # Counter for actually processed files
         processed_files_count = 0
+        errors_files_count = 0
         input_files = []
 
         for input_file in all_input_files:
@@ -363,7 +364,7 @@ class GrobidClient(ApiClient):
             input_files.append(input_file)
 
             if len(input_files) == batch_size_pdf:
-                batch_processed = self.process_batch(
+                batch_processed, batch_errors = self.process_batch(
                     service,
                     input_files,
                     input_path,
@@ -381,11 +382,12 @@ class GrobidClient(ApiClient):
                     flavor
                 )
                 processed_files_count += batch_processed
+                errors_files_count += batch_errors
                 input_files = []
 
         # last batch
         if len(input_files) > 0:
-            batch_processed = self.process_batch(
+            batch_processed, batch_errors = self.process_batch(
                 service,
                 input_files,
                 input_path,
@@ -402,9 +404,11 @@ class GrobidClient(ApiClient):
                 verbose,
             )
             processed_files_count += batch_processed
+            errors_files_count += batch_errors
 
         # Log final statistics
         self.logger.info(f"Processing completed: {processed_files_count} out of {total_files} files processed")
+        self.logger.info(f"Errors: {errors_files_count} out of {total_files} files processed")
 
     def process_batch(
             self,
@@ -428,6 +432,7 @@ class GrobidClient(ApiClient):
             self.logger.info(f"{len(input_files)} files to process in current batch")
 
         processed_count = 0
+        error_count = 0
 
         # we use ThreadPoolExecutor and not ProcessPoolExecutor because it is an I/O intensive process
         with concurrent.futures.ThreadPoolExecutor(max_workers=n) as executor:
@@ -468,10 +473,10 @@ class GrobidClient(ApiClient):
         for r in concurrent.futures.as_completed(results):
             input_file, status, text = r.result()
             filename = self._output_file_name(input_file, input_path, output)
-            processed_count += 1
 
             if status != 200 or text is None:
                 self.logger.error(f"Processing of {input_file} failed with error {status}: {text}")
+                error_count += 1
                 # writing error file with suffixed error code
                 try:
                     pathlib.Path(os.path.dirname(filename)).mkdir(parents=True, exist_ok=True)
@@ -485,6 +490,7 @@ class GrobidClient(ApiClient):
                 except OSError as e:
                     self.logger.error(f"Failed to write error file {filename}: {str(e)}")
             else:
+                processed_count += 1
                 # writing TEI file
                 try:
                     pathlib.Path(os.path.dirname(filename)).mkdir(parents=True, exist_ok=True)
@@ -494,7 +500,7 @@ class GrobidClient(ApiClient):
                 except OSError as e:
                     self.logger.error(f"Failed to write TEI XML file {filename}: {str(e)}")
 
-        return processed_count
+        return processed_count, error_count
 
     def process_pdf(
             self,

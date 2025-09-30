@@ -258,7 +258,7 @@ class TestGrobidClient:
         with patch('grobid_client.grobid_client.GrobidClient._test_server_connection'):
             with patch('grobid_client.grobid_client.GrobidClient._configure_logging'):
                 with patch('grobid_client.grobid_client.GrobidClient.process_batch') as mock_batch:
-                    mock_batch.return_value = 2
+                    mock_batch.return_value = (2, 0)  # Return tuple as expected
                     client = GrobidClient(check_server=False)
                     client.logger = Mock()
 
@@ -421,7 +421,7 @@ class TestGrobidClient:
                                 verbose=False
                             )
 
-                            assert result == 1  # One file processed
+                            assert result == (1, 0)  # One file processed, zero errors
 
 
 class TestServerUnavailableException:

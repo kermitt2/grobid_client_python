@@ -133,7 +133,7 @@ class GrobidClient(ApiClient):
         log_level = getattr(logging, log_level_str, logging.INFO)
 
         # Parse log format
-        log_format = log_config.get('format', '%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+        log_format = log_config.get('format', '%(asctime)s - %(levelname)s - %(message)s')
 
         # Create formatter
         formatter = logging.Formatter(log_format)

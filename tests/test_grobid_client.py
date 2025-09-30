@@ -26,7 +26,7 @@ class TestGrobidClient:
             'timeout': 60,
             'logging': {
                 'level': 'INFO',
-                'format': '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+                'format': '%(asctime)s - %(levelname)s - %(message)s',
                 'console': True,
                 'file': None
             }

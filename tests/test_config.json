@@ -6,7 +6,7 @@
     "timeout": 30,
     "logging": {
         "level": "DEBUG",
-        "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+        "format": "%(asctime)s - %(levelname)s - %(message)s",
         "console": true,
         "file": null,
         "max_file_size": "10MB",

@@ -60,7 +60,7 @@ class GrobidClient(ApiClient):
         ],
         'logging': {
             'level': 'INFO',
-            'format': '%(asctime)s - %(name)s - %(levelname)s - %(message)s',
+            'format': '%(asctime)s - %(levelname)s - %(message)s',
             'console': True,
             'file': None,  # Disabled by default
             'max_file_size': '10MB',

@@ -78,6 +78,8 @@ class GrobidClient(ApiClient):
             config_path=None,
             check_server=True
     ):
+        # Track if timeout is overridden
+        self._timeout_overridden = False
         # Initialize config with defaults
         self.config = copy.deepcopy(self.DEFAULT_CONFIG)
     
@@ -97,7 +99,6 @@ class GrobidClient(ApiClient):
 
         # Configure logging based on config
         self._configure_logging()
-
         if check_server:
             self._test_server_connection()
 
@@ -106,6 +107,8 @@ class GrobidClient(ApiClient):
         for key, value in params.items():
             if value is not None:
                 self.config[key] = value
+                if key == 'timeout':
+                    self._timeout_overridden = True
 
     def _handle_server_busy_retry(self, file_path, retry_func, *args, **kwargs):
         """Handle server busy (503) retry logic."""
@@ -240,6 +243,8 @@ class GrobidClient(ApiClient):
                 # Update the default config with values from the file
                 file_config = json.loads(config_json)
                 self.config.update(file_config)
+                if 'timeout' in file_config:
+                    self._timeout_overridden = True
                 temp_logger.info("Configuration file loaded successfully")
         except FileNotFoundError as e:
             # If config file doesn't exist, keep using default values
@@ -555,9 +560,13 @@ class GrobidClient(ApiClient):
             if end and end > 0:
                 the_data["end"] = str(end)
 
+            # Only multiply timeout if consolidate_citations and not overridden
+            base_timeout = self.config['timeout']
+            effective_timeout = base_timeout * 2 if consolidate_citations and not self._timeout_overridden else base_timeout
+
             res, status = self.post(
                 url=the_url, files=files, data=the_data, headers={"Accept": "text/plain"},
-                timeout=self.config['timeout']
+                timeout=effective_timeout
             )
 
             if status == 503:
